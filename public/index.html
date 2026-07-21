@@ -4,76 +4,425 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>d20 SRD Hub</title>
+  <title>d20 SRD Hub | 3.5 Rules Reference</title>
+
+  <meta
+    name="description"
+    content="An independent, searchable reference for open d20 System rules."
+  >
 
   <style>
+    :root {
+      --page-background: #eee8da;
+      --panel-background: #fffdf8;
+      --header-background: #542020;
+      --header-dark: #341313;
+      --accent: #7a2e2e;
+      --accent-hover: #9a3b3b;
+      --text: #26211d;
+      --muted: #6d655d;
+      --border: #c9bda9;
+      --shadow: 0 8px 24px rgb(49 34 23 / 12%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
+      background: var(--page-background);
+      color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
-      background: #f4f0e6;
-      color: #222;
+      line-height: 1.6;
     }
 
-    header {
-      background: #5a1f1f;
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    .site-header {
+      background:
+        linear-gradient(rgb(52 19 19 / 30%), rgb(52 19 19 / 30%)),
+        var(--header-background);
       color: white;
-      padding: 24px;
+      border-bottom: 5px solid var(--header-dark);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px 26px;
       text-align: center;
     }
 
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 24px;
-      background: white;
-      border: 1px solid #c9c1b2;
-    }
-
-    h1 {
+    .site-title {
       margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4.25rem);
+      letter-spacing: 0.03em;
+      line-height: 1.1;
     }
 
-    nav a {
-      display: inline-block;
-      margin: 8px 12px;
-      color: #5a1f1f;
-      font-weight: bold;
+    .tagline {
+      margin: 10px 0 0;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
     }
 
-    footer {
+    .top-navigation {
+      background: var(--header-dark);
+    }
+
+    .top-navigation ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    .top-navigation a {
+      display: block;
+      padding: 13px 16px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .top-navigation a:hover,
+    .top-navigation a:focus {
+      background: var(--accent);
+    }
+
+    .page-layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 28px;
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 22px;
+    }
+
+    .sidebar,
+    .main-content {
+      background: var(--panel-background);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      align-self: start;
+      padding: 22px;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      font-size: 1.25rem;
+    }
+
+    .sidebar ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidebar li + li {
+      border-top: 1px solid #e4dccf;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 9px 4px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .main-content {
+      min-width: 0;
+      padding: clamp(24px, 5vw, 46px);
+    }
+
+    .main-content h1 {
+      margin-top: 0;
+      color: var(--header-background);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .search-panel {
+      margin: 28px 0;
+      padding: 22px;
+      background: #f5efe4;
+      border: 1px solid var(--border);
+    }
+
+    .search-panel label {
+      display: block;
+      margin-bottom: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-row input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px 14px;
+      border: 1px solid #9e9382;
+      border-radius: 3px;
+      font-size: 1rem;
+    }
+
+    .search-row button {
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 3px;
+      background: var(--accent);
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .search-row button:hover {
+      background: var(--accent-hover);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .category-card {
+      display: block;
+      min-height: 145px;
+      padding: 20px;
+      background: white;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      color: var(--text);
+      text-decoration: none;
+      transition:
+        transform 150ms ease,
+        box-shadow 150ms ease;
+    }
+
+    .category-card:hover {
+      color: var(--text);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .category-card h2 {
+      margin: 0 0 7px;
+      color: var(--accent);
+      font-size: 1.35rem;
+    }
+
+    .category-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .notice {
+      margin-top: 30px;
+      padding: 17px 20px;
+      border-left: 5px solid var(--accent);
+      background: #f5efe4;
+    }
+
+    .site-footer {
+      margin-top: 42px;
+      padding: 30px 20px;
+      background: var(--header-dark);
+      color: #eee5da;
       text-align: center;
-      padding: 24px;
-      font-size: 14px;
+    }
+
+    .site-footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 850px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        order: 2;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 540px) {
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .search-row {
+        flex-direction: column;
+      }
+
+      .search-row button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>d20 SRD Hub</h1>
-    <p>A tabletop roleplaying rules reference</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-title">d20 SRD Hub</p>
+      <p class="tagline">An independent tabletop roleplaying rules reference</p>
+    </div>
+
+    <nav class="top-navigation" aria-label="Primary navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/races/">Races</a></li>
+        <li><a href="/skills/">Skills</a></li>
+        <li><a href="/feats/">Feats</a></li>
+        <li><a href="/spells/">Spells</a></li>
+        <li><a href="/monsters/">Monsters</a></li>
+        <li><a href="/equipment/">Equipment</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <h2>Welcome to d20 SRD Hub</h2>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <h2>Rules Library</h2>
 
-    <p>
-      This website is currently under construction.
-    </p>
+      <nav aria-label="Rules categories">
+        <ul>
+          <li><a href="/basics/">The Basics</a></li>
+          <li><a href="/combat/">Combat</a></li>
+          <li><a href="/adventuring/">Adventuring</a></li>
+          <li><a href="/magic/">Magic</a></li>
+          <li><a href="/special-abilities/">Special Abilities</a></li>
+          <li><a href="/conditions/">Conditions</a></li>
+          <li><a href="/magic-items/">Magic Items</a></li>
+          <li><a href="/epic/">Epic Rules</a></li>
+          <li><a href="/psionics/">Psionics</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-    <nav>
-      <a href="#">Classes</a>
-      <a href="#">Races</a>
-      <a href="#">Skills</a>
-      <a href="#">Feats</a>
-      <a href="#">Spells</a>
-      <a href="#">Monsters</a>
-      <a href="#">Equipment</a>
-    </nav>
-  </main>
+    <main class="main-content">
+      <h1>Welcome to d20 SRD Hub</h1>
 
-  <footer>
-    d20 SRD Hub
+      <p class="intro">
+        Explore an organized, mobile-friendly reference for open d20 System
+        rules. The library is under active development, and additional
+        categories, search tools, and cross-references will be added over time.
+      </p>
+
+      <section class="search-panel" aria-labelledby="search-heading">
+        <label id="search-heading" for="site-search">
+          Search the rules
+        </label>
+
+        <div class="search-row">
+          <input
+            id="site-search"
+            type="search"
+            placeholder="Search spells, feats, monsters, classes..."
+            disabled
+          >
+          <button type="button" disabled>Search</button>
+        </div>
+
+        <small>Full-site search is coming soon.</small>
+      </section>
+
+      <section class="category-grid" aria-label="Featured rules categories">
+        <a class="category-card" href="/classes/">
+          <h2>Classes</h2>
+          <p>Core classes, class features, advancement, and related rules.</p>
+        </a>
+
+        <a class="category-card" href="/races/">
+          <h2>Races</h2>
+          <p>Racial traits, movement, size, languages, and favored classes.</p>
+        </a>
+
+        <a class="category-card" href="/skills/">
+          <h2>Skills</h2>
+          <p>Skill descriptions, checks, modifiers, and common uses.</p>
+        </a>
+
+        <a class="category-card" href="/feats/">
+          <h2>Feats</h2>
+          <p>General, item creation, metamagic, and special feats.</p>
+        </a>
+
+        <a class="category-card" href="/spells/">
+          <h2>Spells</h2>
+          <p>Spell lists, schools, components, durations, and descriptions.</p>
+        </a>
+
+        <a class="category-card" href="/monsters/">
+          <h2>Monsters</h2>
+          <p>Creature statistics, types, abilities, and encounter information.</p>
+        </a>
+
+        <a class="category-card" href="/equipment/">
+          <h2>Equipment</h2>
+          <p>Weapons, armor, adventuring gear, services, and vehicles.</p>
+        </a>
+
+        <a class="category-card" href="/magic-items/">
+          <h2>Magic Items</h2>
+          <p>Creation rules, item categories, properties, and descriptions.</p>
+        </a>
+
+        <a class="category-card" href="/combat/">
+          <h2>Combat</h2>
+          <p>Initiative, actions, attacks, movement, damage, and conditions.</p>
+        </a>
+      </section>
+
+      <div class="notice">
+        <strong>Development status:</strong>
+        The framework is online. Category pages and licensed rules content will
+        be added in the next stages.
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p><strong>d20 SRD Hub</strong></p>
+    <p>An independent rules-reference project.</p>
   </footer>
 </body>
 </html>
