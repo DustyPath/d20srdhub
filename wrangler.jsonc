@@ -1,0 +1,7 @@
+{
+  "name": "d20srdhub",
+  "compatibility_date": "2026-07-20",
+  "assets": {
+    "directory": "./public"
+  }
+}
