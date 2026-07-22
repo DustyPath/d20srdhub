@@ -1,1 +1,206 @@
-print("Hello from d20 SRD Hub!")
+from pathlib import Path
+from html import escape
+
+PUBLIC_DIR = Path("public")
+
+CATEGORIES = {
+    "classes": (
+        "Classes",
+        "Core classes, class features, advancement, and related rules.",
+    ),
+    "races": (
+        "Races",
+        "Racial traits, movement, size, languages, and favored classes.",
+    ),
+    "skills": (
+        "Skills",
+        "Skill descriptions, checks, modifiers, and common uses.",
+    ),
+    "feats": (
+        "Feats",
+        "General, item creation, metamagic, and special feats.",
+    ),
+    "spells": (
+        "Spells",
+        "Spell lists, schools, components, durations, and descriptions.",
+    ),
+    "monsters": (
+        "Monsters",
+        "Creature statistics, types, abilities, and encounter information.",
+    ),
+    "equipment": (
+        "Equipment",
+        "Weapons, armor, adventuring gear, services, and vehicles.",
+    ),
+    "magic-items": (
+        "Magic Items",
+        "Magic-item categories, creation rules, properties, and descriptions.",
+    ),
+    "combat": (
+        "Combat",
+        "Initiative, actions, attacks, movement, damage, and conditions.",
+    ),
+    "basics": (
+        "The Basics",
+        "Core rules for characters, checks, modifiers, and gameplay.",
+    ),
+    "adventuring": (
+        "Adventuring",
+        "Movement, exploration, environments, hazards, and travel.",
+    ),
+    "magic": (
+        "Magic",
+        "General spellcasting rules, schools, components, and effects.",
+    ),
+    "special-abilities": (
+        "Special Abilities",
+        "Extraordinary, supernatural, spell-like, and related abilities.",
+    ),
+    "conditions": (
+        "Conditions",
+        "Descriptions and effects of common character conditions.",
+    ),
+    "epic": (
+        "Epic Rules",
+        "Rules and options for characters beyond standard levels.",
+    ),
+    "psionics": (
+        "Psionics",
+        "Psionic characters, powers, combat, and related systems.",
+    ),
+}
+
+
+def create_category_page(slug: str, title: str, description: str) -> None:
+    folder = PUBLIC_DIR / slug
+    folder.mkdir(parents=True, exist_ok=True)
+
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{escape(title)} | d20 SRD Hub</title>
+
+  <style>
+    * {{
+      box-sizing: border-box;
+    }}
+
+    body {{
+      margin: 0;
+      background: #eee8da;
+      color: #26211d;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }}
+
+    header {{
+      padding: 28px 20px;
+      background: #542020;
+      color: white;
+      text-align: center;
+      border-bottom: 5px solid #341313;
+    }}
+
+    header h1 {{
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+    }}
+
+    nav {{
+      padding: 12px 20px;
+      background: #341313;
+      text-align: center;
+    }}
+
+    nav a {{
+      display: inline-block;
+      margin: 5px 10px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      text-decoration: none;
+    }}
+
+    main {{
+      max-width: 950px;
+      min-height: 420px;
+      margin: 36px auto;
+      padding: 38px;
+      background: #fffdf8;
+      border: 1px solid #c9bda9;
+      box-shadow: 0 8px 24px rgb(49 34 23 / 12%);
+    }}
+
+    main h2 {{
+      margin-top: 0;
+      color: #542020;
+      font-size: 2rem;
+    }}
+
+    .notice {{
+      margin-top: 28px;
+      padding: 16px 20px;
+      background: #f5efe4;
+      border-left: 5px solid #7a2e2e;
+    }}
+
+    footer {{
+      padding: 25px;
+      background: #341313;
+      color: white;
+      text-align: center;
+    }}
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>d20 SRD Hub</h1>
+    <p>An independent tabletop roleplaying rules reference</p>
+  </header>
+
+  <nav aria-label="Primary navigation">
+    <a href="/">Home</a>
+    <a href="/classes/">Classes</a>
+    <a href="/races/">Races</a>
+    <a href="/skills/">Skills</a>
+    <a href="/feats/">Feats</a>
+    <a href="/spells/">Spells</a>
+    <a href="/monsters/">Monsters</a>
+    <a href="/equipment/">Equipment</a>
+  </nav>
+
+  <main>
+    <h2>{escape(title)}</h2>
+
+    <p>{escape(description)}</p>
+
+    <div class="notice">
+      <strong>Section status:</strong>
+      This section has been created and is ready for properly licensed rules
+      content.
+    </div>
+  </main>
+
+  <footer>
+    d20 SRD Hub
+  </footer>
+</body>
+</html>
+"""
+
+    (folder / "index.html").write_text(page, encoding="utf-8")
+    print(f"Created: {folder / 'index.html'}")
+
+
+def main() -> None:
+    for slug, (title, description) in CATEGORIES.items():
+        create_category_page(slug, title, description)
+
+    print("\nAll category pages were created successfully.")
+
+
+if __name__ == "__main__":
+    main()
