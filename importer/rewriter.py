@@ -6,6 +6,58 @@ from importer.config import BASE_URL
 from importer.paths import url_to_output_path
 
 
+LEGACY_SITE_LINKS = {
+    "/ogl.htm": "/legal/",
+    "/indexes/classes.htm": "/classes/",
+    "/indexes/traps.htm": "/traps/",
+}
+
+LEGACY_FRAGMENT_LINKS = {
+    ("/srd/monsterFeats.htm", "improvedMultiattack"): (
+        "/monster-feats/",
+        "",
+    ),
+    ("/monster-feats/", "improvedMultiattack"): (
+        "/monster-feats/",
+        "",
+    ),
+}
+
+
+def rewrite_legacy_site_links(article_html):
+    """Rewrite legacy site-level links that are outside the SRD URL tree."""
+
+    soup = BeautifulSoup(article_html, "lxml")
+
+    for anchor in soup.find_all("a", href=True):
+        parsed = urlparse(anchor["href"])
+        fragment_replacement = LEGACY_FRAGMENT_LINKS.get(
+            (parsed.path, parsed.fragment)
+        )
+
+        if fragment_replacement is not None:
+            path, fragment = fragment_replacement
+            anchor["href"] = path + (f"#{fragment}" if fragment else "")
+            continue
+
+        replacement = LEGACY_SITE_LINKS.get(parsed.path)
+
+        if replacement is None:
+            continue
+
+        anchor["href"] = replacement
+
+        if parsed.fragment:
+            anchor["href"] += f"#{parsed.fragment}"
+
+    body = soup.body
+
+    if body is not None:
+        return "".join(str(item) for item in body.contents)
+
+    return str(soup)
+
+
 def rewrite_links(article_html, source_url):
     """Convert SRD article links into local d20 SRD Hub links."""
 
@@ -21,6 +73,29 @@ def rewrite_links(article_html, source_url):
         absolute_url = urljoin(source_url, original_href)
         clean_url, fragment = urldefrag(absolute_url)
         parsed = urlparse(clean_url)
+
+        fragment_replacement = LEGACY_FRAGMENT_LINKS.get(
+            (parsed.path, fragment)
+        )
+
+        if fragment_replacement is not None:
+            path, replacement_fragment = fragment_replacement
+            anchor["href"] = path
+
+            if replacement_fragment:
+                anchor["href"] += f"#{replacement_fragment}"
+
+            continue
+
+        replacement = LEGACY_SITE_LINKS.get(parsed.path)
+
+        if replacement is not None:
+            anchor["href"] = replacement
+
+            if fragment:
+                anchor["href"] += f"#{fragment}"
+
+            continue
 
         # Only rewrite d20srd.org SRD pages.
         if parsed.netloc not in {"d20srd.org", "www.d20srd.org"}:

@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from importer.config import PUBLIC_DIR
 from importer.paths import url_to_output_path
 from importer.queue import load_queue
+from importer.rewriter import rewrite_legacy_site_links
 from importer.writer import write_page
 
 TITLE_SUFFIXES = (" | d20 SRD Hub", " :: d20srd.org")
@@ -39,7 +40,9 @@ def extract_page_data(page_file):
     else:
         raise ValueError("No page title found.")
 
-    return title, article.decode_contents().strip()
+    article_html = article.decode_contents().strip()
+
+    return title, rewrite_legacy_site_links(article_html)
 
 
 def refresh_page(output_path):

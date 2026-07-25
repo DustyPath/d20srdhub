@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Powers | d20 SRD Hub</title>
+
+    <style>
+        :root {
+            --background: #f5f3ee;
+            --surface: #ffffff;
+            --surface-muted: #ece8df;
+            --text: #25231f;
+            --text-muted: #676259;
+            --border: #d7d1c5;
+            --accent: #7a241f;
+            --accent-dark: #571713;
+            --link: #185b83;
+            --header-height: 64px;
+            --sidebar-width: 240px;
+            --content-width: 900px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.65;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            min-height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 12px 24px;
+            background: var(--accent-dark);
+            color: #ffffff;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .site-header a {
+            color: #ffffff;
+        }
+
+        .site-title {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.03em;
+        }
+
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .site-search {
+            position: relative;
+            flex: 1;
+            max-width: 420px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .site-search-row {
+            display: flex;
+        }
+
+        .site-search input {
+            width: 100%;
+            min-width: 0;
+            padding: 9px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: 5px 0 0 5px;
+            background: #ffffff;
+            color: var(--text);
+            font: inherit;
+        }
+
+        .site-search button {
+            padding: 9px 13px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-left: 0;
+            border-radius: 0 5px 5px 0;
+            background: var(--accent);
+            color: #ffffff;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .search-results {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            left: 0;
+            z-index: 200;
+            max-height: min(65vh, 560px);
+            overflow-y: auto;
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-results[hidden] {
+            display: none;
+        }
+
+        .search-results-list {
+            margin: 0;
+            padding: 6px;
+            list-style: none;
+        }
+
+        .search-results-list a {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 2px 12px;
+            padding: 10px;
+            color: var(--text);
+            border-radius: 5px;
+        }
+
+        .search-results-list a:hover,
+        .search-results-list a:focus {
+            background: var(--surface-muted);
+            text-decoration: none;
+            outline: none;
+        }
+
+        .search-result-section {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .search-result-snippet {
+            grid-column: 1 / -1;
+            color: var(--text-muted);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 0.86rem;
+        }
+
+        .search-empty {
+            margin: 0;
+            padding: 16px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        .sidebar {
+            padding: 24px 18px;
+            background: var(--surface-muted);
+            border-right: 1px solid var(--border);
+        }
+
+        .sidebar-title {
+            margin: 0 0 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .sidebar-nav {
+            display: grid;
+            gap: 4px;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 7px 10px;
+            color: var(--text);
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.94rem;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a:focus {
+            background: var(--surface);
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .content-column {
+            width: 100%;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 28px 36px 48px;
+        }
+
+        .breadcrumbs {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.88rem;
+        }
+
+        .article-card {
+            padding: 34px 40px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        main h1,
+        main h2,
+        main h3,
+        main h4 {
+            line-height: 1.25;
+            color: var(--accent-dark);
+        }
+
+        main h1 {
+            margin-top: 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            font-size: 2.15rem;
+        }
+
+        main h2 {
+            margin-top: 2rem;
+            font-size: 1.55rem;
+        }
+
+        main h3 {
+            margin-top: 1.6rem;
+            font-size: 1.2rem;
+        }
+
+        main p {
+            margin: 0 0 1rem;
+        }
+
+        main ul,
+        main ol {
+            padding-left: 1.5rem;
+        }
+
+        main table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+            background: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.92rem;
+        }
+
+        main th,
+        main td {
+            padding: 9px 11px;
+            border: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        main th {
+            background: var(--surface-muted);
+            color: var(--accent-dark);
+        }
+
+        main tr:nth-child(even) td {
+            background: #faf9f6;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 12px 18px;
+            background: #f3efe7;
+            border-left: 4px solid var(--accent);
+        }
+
+        .page-navigation {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .page-navigation:empty {
+            display: none;
+        }
+
+        .page-navigation-link {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 14px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page-navigation-link:hover,
+        .page-navigation-link:focus {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .page-navigation-link.next {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .page-navigation-direction {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .site-footer {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 850px) {
+            .site-header {
+                position: static;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .site-search {
+                width: 100%;
+                max-width: none;
+            }
+
+            .layout {
+                display: block;
+            }
+
+            .sidebar {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .sidebar-nav {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .content-column {
+                padding: 22px 16px 36px;
+            }
+
+            .article-card {
+                padding: 24px 20px;
+            }
+
+            .page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .page-navigation-spacer {
+                display: none;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .header-links {
+                gap: 12px;
+            }
+
+            .sidebar-nav {
+                grid-template-columns: 1fr;
+            }
+
+            main h1 {
+                font-size: 1.75rem;
+            }
+
+            main table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <h1 class="site-title">
+        <a href="/">d20 SRD Hub</a>
+    </h1>
+
+    <form class="site-search" data-search-form role="search">
+        <div class="site-search-row">
+            <label class="visually-hidden" for="header-search">
+                Search the rules
+            </label>
+            <input
+                id="header-search"
+                data-search-input
+                type="search"
+                autocomplete="off"
+                placeholder="Search rules…"
+            >
+            <button type="submit">Search</button>
+        </div>
+        <div
+            class="search-results"
+            data-search-results
+            aria-live="polite"
+            hidden
+        ></div>
+    </form>
+
+    <nav class="header-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/classes/">Classes</a>
+        <a href="/combat/">Combat</a>
+        <a href="/spells/">Spells</a>
+        <a href="/monsters/">Monsters</a>
+        <a href="/legal/">Legal</a>
+    </nav>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <p class="sidebar-title">SRD Sections</p>
+
+        <nav class="sidebar-nav" aria-label="SRD sections">
+            <a href="/basics/">Basics</a>
+            <a href="/races/">Races</a>
+            <a href="/classes/">Classes</a>
+            <a href="/skills/">Skills</a>
+            <a href="/feats/">Feats</a>
+            <a href="/equipment/">Equipment</a>
+            <a href="/combat/">Combat</a>
+            <a href="/magic/">Magic</a>
+            <a href="/spells/">Spells</a>
+            <a href="/magic-items/">Magic Items</a>
+            <a href="/monsters/">Monsters</a>
+            <a href="/special-abilities/">Special Abilities</a>
+            <a href="/conditions/">Conditions</a>
+            <a href="/psionics/">Psionics</a>
+            <a href="/epic/">Epic Rules</a>
+            <a href="/variant/">Variant Rules</a>
+        </nav>
+    </aside>
+
+    <div class="content-column">
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/psionic/">Psionic</a> <span aria-hidden="true">›</span> <span>Powers</span>
+        </nav>
+
+        <main class="article-card">
+            <h1>Powers</h1>
+<p>Browse the rules pages in this section.</p>
+<ul class="section-index">
+  <li><a href="/psionic/powers/adapt-body/">Adapt Body</a></li>
+  <li><a href="/psionic/powers/affinity-field/">Affinity Field</a></li>
+  <li><a href="/psionic/powers/anchored-navigation/">Anchored Navigation</a></li>
+  <li><a href="/psionic/powers/animal-affinity/">Animal Affinity</a></li>
+  <li><a href="/psionic/powers/apopsi/">Apopsi</a></li>
+  <li><a href="/psionic/powers/assimilate/">Assimilate</a></li>
+  <li><a href="/psionic/powers/astral-caravan/">Astral Caravan</a></li>
+  <li><a href="/psionic/powers/astral-construct/">Astral Construct</a></li>
+  <li><a href="/psionic/powers/astral-seed/">Astral Seed</a></li>
+  <li><a href="/psionic/powers/astral-traveler/">Astral Traveler</a></li>
+  <li><a href="/psionic/powers/attraction/">Attraction</a></li>
+  <li><a href="/psionic/powers/aura-alteration/">Aura Alteration</a></li>
+  <li><a href="/psionic/powers/aura-sight/">Aura Sight</a></li>
+  <li><a href="/psionic/powers/aversion/">Aversion</a></li>
+  <li><a href="/psionic/powers/baleful-teleport/">Baleful Teleport</a></li>
+  <li><a href="/psionic/powers/banishment-psionic/">Banishment Psionic</a></li>
+  <li><a href="/psionic/powers/bend-reality/">Bend Reality</a></li>
+  <li><a href="/psionic/powers/bestow-power/">Bestow Power</a></li>
+  <li><a href="/psionic/powers/biofeedback/">Biofeedback</a></li>
+  <li><a href="/psionic/powers/biteofthe-wolf/">Biteofthe Wolf</a></li>
+  <li><a href="/psionic/powers/body-adjustment/">Body Adjustment</a></li>
+  <li><a href="/psionic/powers/body-equilibrium/">Body Equilibrium</a></li>
+  <li><a href="/psionic/powers/body-purification/">Body Purification</a></li>
+  <li><a href="/psionic/powers/bolt/">Bolt</a></li>
+  <li><a href="/psionic/powers/brain-lock/">Brain Lock</a></li>
+  <li><a href="/psionic/powers/breathofthe-black-dragon/">Breathofthe Black Dragon</a></li>
+  <li><a href="/psionic/powers/burst/">Burst</a></li>
+  <li><a href="/psionic/powers/call-weaponry/">Call Weaponry</a></li>
+  <li><a href="/psionic/powers/callto-mind/">Callto Mind</a></li>
+  <li><a href="/psionic/powers/catapsi/">Catapsi</a></li>
+  <li><a href="/psionic/powers/catfall/">Catfall</a></li>
+  <li><a href="/psionic/powers/chameleon/">Chameleon</a></li>
+  <li><a href="/psionic/powers/charm-psionic/">Charm Psionic</a></li>
+  <li><a href="/psionic/powers/clairtangent-hand/">Clairtangent Hand</a></li>
+  <li><a href="/psionic/powers/clairvoyant-sense/">Clairvoyant Sense</a></li>
+  <li><a href="/psionic/powers/clawof-energy/">Clawof Energy</a></li>
+  <li><a href="/psionic/powers/clawsofthe-beast/">Clawsofthe Beast</a></li>
+  <li><a href="/psionic/powers/clawsofthe-vampire/">Clawsofthe Vampire</a></li>
+  <li><a href="/psionic/powers/cloud-mind/">Cloud Mind</a></li>
+  <li><a href="/psionic/powers/cloud-mind-mass/">Cloud Mind Mass</a></li>
+  <li><a href="/psionic/powers/co-opt-concentration/">Co Opt Concentration</a></li>
+  <li><a href="/psionic/powers/compression/">Compression</a></li>
+  <li><a href="/psionic/powers/conceal-thoughts/">Conceal Thoughts</a></li>
+  <li><a href="/psionic/powers/concealing-amorpha/">Concealing Amorpha</a></li>
+  <li><a href="/psionic/powers/concealing-amorpha-greater/">Concealing Amorpha Greater</a></li>
+  <li><a href="/psionic/powers/concussion-blast/">Concussion Blast</a></li>
+  <li><a href="/psionic/powers/contingency-psionic/">Contingency Psionic</a></li>
+  <li><a href="/psionic/powers/control-air/">Control Air</a></li>
+  <li><a href="/psionic/powers/control-body/">Control Body</a></li>
+  <li><a href="/psionic/powers/control-flames/">Control Flames</a></li>
+  <li><a href="/psionic/powers/control-light/">Control Light</a></li>
+  <li><a href="/psionic/powers/control-object/">Control Object</a></li>
+  <li><a href="/psionic/powers/control-sound/">Control Sound</a></li>
+  <li><a href="/psionic/powers/correspond/">Correspond</a></li>
+  <li><a href="/psionic/powers/create-sound/">Create Sound</a></li>
+  <li><a href="/psionic/powers/crisisof-breath/">Crisisof Breath</a></li>
+  <li><a href="/psionic/powers/crisisof-life/">Crisisof Life</a></li>
+  <li><a href="/psionic/powers/crystal-shard/">Crystal Shard</a></li>
+  <li><a href="/psionic/powers/crystallize/">Crystallize</a></li>
+  <li><a href="/psionic/powers/danger-sense/">Danger Sense</a></li>
+  <li><a href="/psionic/powers/darkvision-psionic/">Darkvision Psionic</a></li>
+  <li><a href="/psionic/powers/daze-psionic/">Daze Psionic</a></li>
+  <li><a href="/psionic/powers/death-urge/">Death Urge</a></li>
+  <li><a href="/psionic/powers/deceleration/">Deceleration</a></li>
+  <li><a href="/psionic/powers/decerebrate/">Decerebrate</a></li>
+  <li><a href="/psionic/powers/deja-vu/">Deja Vu</a></li>
+  <li><a href="/psionic/powers/demoralize/">Demoralize</a></li>
+  <li><a href="/psionic/powers/destiny-dissonance/">Destiny Dissonance</a></li>
+  <li><a href="/psionic/powers/detect-hostile-intent/">Detect Hostile Intent</a></li>
+  <li><a href="/psionic/powers/detect-psionics/">Detect Psionics</a></li>
+  <li><a href="/psionic/powers/detect-remote-viewing/">Detect Remote Viewing</a></li>
+  <li><a href="/psionic/powers/detect-teleportation/">Detect Teleportation</a></li>
+  <li><a href="/psionic/powers/dimension-door-psionic/">Dimension Door Psionic</a></li>
+  <li><a href="/psionic/powers/dimension-slide/">Dimension Slide</a></li>
+  <li><a href="/psionic/powers/dimension-swap/">Dimension Swap</a></li>
+  <li><a href="/psionic/powers/dimensional-anchor-psionic/">Dimensional Anchor Psionic</a></li>
+  <li><a href="/psionic/powers/disable/">Disable</a></li>
+  <li><a href="/psionic/powers/disintegrate-psionic/">Disintegrate Psionic</a></li>
+  <li><a href="/psionic/powers/dismiss-ectoplasm/">Dismiss Ectoplasm</a></li>
+  <li><a href="/psionic/powers/dismissal-psionic/">Dismissal Psionic</a></li>
+  <li><a href="/psionic/powers/dispel-psionics/">Dispel Psionics</a></li>
+  <li><a href="/psionic/powers/dispelling-buffer/">Dispelling Buffer</a></li>
+  <li><a href="/psionic/powers/dissipating-touch/">Dissipating Touch</a></li>
+  <li><a href="/psionic/powers/dissolving-touch/">Dissolving Touch</a></li>
+  <li><a href="/psionic/powers/dissolving-weapon/">Dissolving Weapon</a></li>
+  <li><a href="/psionic/powers/distract/">Distract</a></li>
+  <li><a href="/psionic/powers/divert-teleport/">Divert Teleport</a></li>
+  <li><a href="/psionic/powers/divination-psionic/">Divination Psionic</a></li>
+  <li><a href="/psionic/powers/dominate-psionic/">Dominate Psionic</a></li>
+  <li><a href="/psionic/powers/dream-travel/">Dream Travel</a></li>
+  <li><a href="/psionic/powers/duodimensional-claw/">Duodimensional Claw</a></li>
+  <li><a href="/psionic/powers/ecto-protection/">Ecto Protection</a></li>
+  <li><a href="/psionic/powers/ectoplasmic-cocoon/">Ectoplasmic Cocoon</a></li>
+  <li><a href="/psionic/powers/ectoplasmic-cocoon-mass/">Ectoplasmic Cocoon Mass</a></li>
+  <li><a href="/psionic/powers/ectoplasmic-form/">Ectoplasmic Form</a></li>
+  <li><a href="/psionic/powers/ectoplasmic-shambler/">Ectoplasmic Shambler</a></li>
+  <li><a href="/psionic/powers/ego-whip/">Ego Whip</a></li>
+  <li><a href="/psionic/powers/elfsight/">Elfsight</a></li>
+  <li><a href="/psionic/powers/empathic-feedback/">Empathic Feedback</a></li>
+  <li><a href="/psionic/powers/empathic-transfer/">Empathic Transfer</a></li>
+  <li><a href="/psionic/powers/empathic-transfer-hostile/">Empathic Transfer Hostile</a></li>
+  <li><a href="/psionic/powers/empathy/">Empathy</a></li>
+  <li><a href="/psionic/powers/empty-mind/">Empty Mind</a></li>
+  <li><a href="/psionic/powers/energy-adaptation/">Energy Adaptation</a></li>
+  <li><a href="/psionic/powers/energy-adaptation-specified/">Energy Adaptation Specified</a></li>
+  <li><a href="/psionic/powers/energy-ball/">Energy Ball</a></li>
+  <li><a href="/psionic/powers/energy-bolt/">Energy Bolt</a></li>
+  <li><a href="/psionic/powers/energy-burst/">Energy Burst</a></li>
+  <li><a href="/psionic/powers/energy-cone/">Energy Cone</a></li>
+  <li><a href="/psionic/powers/energy-conversion/">Energy Conversion</a></li>
+  <li><a href="/psionic/powers/energy-current/">Energy Current</a></li>
+  <li><a href="/psionic/powers/energy-missile/">Energy Missile</a></li>
+  <li><a href="/psionic/powers/energy-push/">Energy Push</a></li>
+  <li><a href="/psionic/powers/energy-ray/">Energy Ray</a></li>
+  <li><a href="/psionic/powers/energy-retort/">Energy Retort</a></li>
+  <li><a href="/psionic/powers/energy-stun/">Energy Stun</a></li>
+  <li><a href="/psionic/powers/energy-wall/">Energy Wall</a></li>
+  <li><a href="/psionic/powers/energy-wave/">Energy Wave</a></li>
+  <li><a href="/psionic/powers/entangling-ectoplasm/">Entangling Ectoplasm</a></li>
+  <li><a href="/psionic/powers/eradicate-invisibility/">Eradicate Invisibility</a></li>
+  <li><a href="/psionic/powers/escape-detection/">Escape Detection</a></li>
+  <li><a href="/psionic/powers/ethereal-jaunt-psionic/">Ethereal Jaunt Psionic</a></li>
+  <li><a href="/psionic/powers/etherealness-psionic/">Etherealness Psionic</a></li>
+  <li><a href="/psionic/powers/evade-burst/">Evade Burst</a></li>
+  <li><a href="/psionic/powers/exhalationofthe-black-dragon/">Exhalationofthe Black Dragon</a></li>
+  <li><a href="/psionic/powers/expansion/">Expansion</a></li>
+  <li><a href="/psionic/powers/fabricate-greater-psionic/">Fabricate Greater Psionic</a></li>
+  <li><a href="/psionic/powers/fabricate-psionic/">Fabricate Psionic</a></li>
+  <li><a href="/psionic/powers/false-sensory-input/">False Sensory Input</a></li>
+  <li><a href="/psionic/powers/far-hand/">Far Hand</a></li>
+  <li><a href="/psionic/powers/fate-link/">Fate Link</a></li>
+  <li><a href="/psionic/powers/fateof-one/">Fateof One</a></li>
+  <li><a href="/psionic/powers/feat-leech/">Feat Leech</a></li>
+  <li><a href="/psionic/powers/fiery-discorporation/">Fiery Discorporation</a></li>
+  <li><a href="/psionic/powers/fission/">Fission</a></li>
+  <li><a href="/psionic/powers/float/">Float</a></li>
+  <li><a href="/psionic/powers/fly-psionic/">Fly Psionic</a></li>
+  <li><a href="/psionic/powers/force-screen/">Force Screen</a></li>
+  <li><a href="/psionic/powers/formof-doom/">Formof Doom</a></li>
+  <li><a href="/psionic/powers/freedomof-movement-psionic/">Freedomof Movement Psionic</a></li>
+  <li><a href="/psionic/powers/fuse-flesh/">Fuse Flesh</a></li>
+  <li><a href="/psionic/powers/fusion/">Fusion</a></li>
+  <li><a href="/psionic/powers/genesis/">Genesis</a></li>
+  <li><a href="/psionic/powers/graft-weapon/">Graft Weapon</a></li>
+  <li><a href="/psionic/powers/grease-psionic/">Grease Psionic</a></li>
+  <li><a href="/psionic/powers/gripof-iron/">Gripof Iron</a></li>
+  <li><a href="/psionic/powers/hailof-crystals/">Hailof Crystals</a></li>
+  <li><a href="/psionic/powers/hammer/">Hammer</a></li>
+  <li><a href="/psionic/powers/hustle/">Hustle</a></li>
+  <li><a href="/psionic/powers/hypercognition/">Hypercognition</a></li>
+  <li><a href="/psionic/powers/id-insinuation/">Id Insinuation</a></li>
+  <li><a href="/psionic/powers/identify-psionic/">Identify Psionic</a></li>
+  <li><a href="/psionic/powers/immovability/">Immovability</a></li>
+  <li><a href="/psionic/powers/incarnate/">Incarnate</a></li>
+  <li><a href="/psionic/powers/inertial-armor/">Inertial Armor</a></li>
+  <li><a href="/psionic/powers/inertial-barrier/">Inertial Barrier</a></li>
+  <li><a href="/psionic/powers/inflict-pain/">Inflict Pain</a></li>
+  <li><a href="/psionic/powers/insanity/">Insanity</a></li>
+  <li><a href="/psionic/powers/intellect-fortress/">Intellect Fortress</a></li>
+  <li><a href="/psionic/powers/iron-body-psionic/">Iron Body Psionic</a></li>
+  <li><a href="/psionic/powers/keen-edge-psionic/">Keen Edge Psionic</a></li>
+  <li><a href="/psionic/powers/knock-psionic/">Knock Psionic</a></li>
+  <li><a href="/psionic/powers/know-direction-and-location/">Know Direction And Location</a></li>
+  <li><a href="/psionic/powers/leech-field/">Leech Field</a></li>
+  <li><a href="/psionic/powers/levitate-psionic/">Levitate Psionic</a></li>
+  <li><a href="/psionic/powers/major-creation-psionic/">Major Creation Psionic</a></li>
+  <li><a href="/psionic/powers/matter-agitation/">Matter Agitation</a></li>
+  <li><a href="/psionic/powers/matter-manipulation/">Matter Manipulation</a></li>
+  <li><a href="/psionic/powers/mental-barrier/">Mental Barrier</a></li>
+  <li><a href="/psionic/powers/mental-disruption/">Mental Disruption</a></li>
+  <li><a href="/psionic/powers/metaconcert/">Metaconcert</a></li>
+  <li><a href="/psionic/powers/metafaculty/">Metafaculty</a></li>
+  <li><a href="/psionic/powers/metamorphosis/">Metamorphosis</a></li>
+  <li><a href="/psionic/powers/metamorphosis-greater/">Metamorphosis Greater</a></li>
+  <li><a href="/psionic/powers/metaphysical-claw/">Metaphysical Claw</a></li>
+  <li><a href="/psionic/powers/metaphysical-weapon/">Metaphysical Weapon</a></li>
+  <li><a href="/psionic/powers/microcosm/">Microcosm</a></li>
+  <li><a href="/psionic/powers/mind-blank-personal/">Mind Blank Personal</a></li>
+  <li><a href="/psionic/powers/mind-blank-psionic/">Mind Blank Psionic</a></li>
+  <li><a href="/psionic/powers/mind-probe/">Mind Probe</a></li>
+  <li><a href="/psionic/powers/mind-seed/">Mind Seed</a></li>
+  <li><a href="/psionic/powers/mind-switch/">Mind Switch</a></li>
+  <li><a href="/psionic/powers/mind-switch-true/">Mind Switch True</a></li>
+  <li><a href="/psionic/powers/mind-thrust/">Mind Thrust</a></li>
+  <li><a href="/psionic/powers/mind-trap/">Mind Trap</a></li>
+  <li><a href="/psionic/powers/mindlink/">Mindlink</a></li>
+  <li><a href="/psionic/powers/mindlink-thieving/">Mindlink Thieving</a></li>
+  <li><a href="/psionic/powers/mindwipe/">Mindwipe</a></li>
+  <li><a href="/psionic/powers/minor-creation-psionic/">Minor Creation Psionic</a></li>
+  <li><a href="/psionic/powers/missive/">Missive</a></li>
+  <li><a href="/psionic/powers/missive-mass/">Missive Mass</a></li>
+  <li><a href="/psionic/powers/modify-memory-psionic/">Modify Memory Psionic</a></li>
+  <li><a href="/psionic/powers/momentof-prescience-psionic/">Momentof Prescience Psionic</a></li>
+  <li><a href="/psionic/powers/my-light/">My Light</a></li>
+  <li><a href="/psionic/powers/null-psionics-field/">Null Psionics Field</a></li>
+  <li><a href="/psionic/powers/oak-body/">Oak Body</a></li>
+  <li><a href="/psionic/powers/object-reading/">Object Reading</a></li>
+  <li><a href="/psionic/powers/overl-and-flight-psionic/">Overl And Flight Psionic</a></li>
+  <li><a href="/psionic/powers/painful-strike/">Painful Strike</a></li>
+  <li><a href="/psionic/powers/personality-parasite/">Personality Parasite</a></li>
+  <li><a href="/psionic/powers/phase-door-psionic/">Phase Door Psionic</a></li>
+  <li><a href="/psionic/powers/plane-shift-psionic/">Plane Shift Psionic</a></li>
+  <li><a href="/psionic/powers/power-leech/">Power Leech</a></li>
+  <li><a href="/psionic/powers/power-resistance/">Power Resistance</a></li>
+  <li><a href="/psionic/powers/precognition/">Precognition</a></li>
+  <li><a href="/psionic/powers/precognition-defensive/">Precognition Defensive</a></li>
+  <li><a href="/psionic/powers/precognition-greater/">Precognition Greater</a></li>
+  <li><a href="/psionic/powers/precognition-offensive/">Precognition Offensive</a></li>
+  <li><a href="/psionic/powers/prescience-offensive/">Prescience Offensive</a></li>
+  <li><a href="/psionic/powers/prevenom/">Prevenom</a></li>
+  <li><a href="/psionic/powers/prevenom-weapon/">Prevenom Weapon</a></li>
+  <li><a href="/psionic/powers/prowess/">Prowess</a></li>
+  <li><a href="/psionic/powers/psionic-blast/">Psionic Blast</a></li>
+  <li><a href="/psionic/powers/psionic-lions-charge/">Psionic Lions Charge</a></li>
+  <li><a href="/psionic/powers/psionic-lock/">Psionic Lock</a></li>
+  <li><a href="/psionic/powers/psionic-repair-damage/">Psionic Repair Damage</a></li>
+  <li><a href="/psionic/powers/psionic-revivify/">Psionic Revivify</a></li>
+  <li><a href="/psionic/powers/psionic-scent/">Psionic Scent</a></li>
+  <li><a href="/psionic/powers/psychic-chirurgery/">Psychic Chirurgery</a></li>
+  <li><a href="/psionic/powers/psychic-crush/">Psychic Crush</a></li>
+  <li><a href="/psionic/powers/psychic-reformation/">Psychic Reformation</a></li>
+  <li><a href="/psionic/powers/psychic-vampire/">Psychic Vampire</a></li>
+  <li><a href="/psionic/powers/psychofeedback/">Psychofeedback</a></li>
+  <li><a href="/psionic/powers/quintessence/">Quintessence</a></li>
+  <li><a href="/psionic/powers/read-thoughts/">Read Thoughts</a></li>
+  <li><a href="/psionic/powers/reality-revision/">Reality Revision</a></li>
+  <li><a href="/psionic/powers/recall-agony/">Recall Agony</a></li>
+  <li><a href="/psionic/powers/recall-death/">Recall Death</a></li>
+  <li><a href="/psionic/powers/reddopsi/">Reddopsi</a></li>
+  <li><a href="/psionic/powers/remote-view-trap/">Remote View Trap</a></li>
+  <li><a href="/psionic/powers/remote-viewing/">Remote Viewing</a></li>
+  <li><a href="/psionic/powers/restoration-psionic/">Restoration Psionic</a></li>
+  <li><a href="/psionic/powers/restore-extremity/">Restore Extremity</a></li>
+  <li><a href="/psionic/powers/retrieve/">Retrieve</a></li>
+  <li><a href="/psionic/powers/schism/">Schism</a></li>
+  <li><a href="/psionic/powers/second-chance/">Second Chance</a></li>
+  <li><a href="/psionic/powers/sense-link/">Sense Link</a></li>
+  <li><a href="/psionic/powers/sense-link-forced/">Sense Link Forced</a></li>
+  <li><a href="/psionic/powers/sensitivityto-psychic-impressions/">Sensitivityto Psychic Impressions</a></li>
+  <li><a href="/psionic/powers/sequester-psionic/">Sequester Psionic</a></li>
+  <li><a href="/psionic/powers/shadow-body/">Shadow Body</a></li>
+  <li><a href="/psionic/powers/share-pain/">Share Pain</a></li>
+  <li><a href="/psionic/powers/share-pain-forced/">Share Pain Forced</a></li>
+  <li><a href="/psionic/powers/shatter-mind-blank/">Shatter Mind Blank</a></li>
+  <li><a href="/psionic/powers/skate/">Skate</a></li>
+  <li><a href="/psionic/powers/solicit-psicrystal/">Solicit Psicrystal</a></li>
+  <li><a href="/psionic/powers/steadfast-perception/">Steadfast Perception</a></li>
+  <li><a href="/psionic/powers/stomp/">Stomp</a></li>
+  <li><a href="/psionic/powers/strengthof-my-enemy/">Strengthof My Enemy</a></li>
+  <li><a href="/psionic/powers/suggestion-psionic/">Suggestion Psionic</a></li>
+  <li><a href="/psionic/powers/suspend-life/">Suspend Life</a></li>
+  <li><a href="/psionic/powers/sustenance/">Sustenance</a></li>
+  <li><a href="/psionic/powers/swarmof-crystals/">Swarmof Crystals</a></li>
+  <li><a href="/psionic/powers/synesthete/">Synesthete</a></li>
+  <li><a href="/psionic/powers/telekinetic-force/">Telekinetic Force</a></li>
+  <li><a href="/psionic/powers/telekinetic-maneuver/">Telekinetic Maneuver</a></li>
+  <li><a href="/psionic/powers/telekinetic-sphere-psionic/">Telekinetic Sphere Psionic</a></li>
+  <li><a href="/psionic/powers/telekinetic-thrust/">Telekinetic Thrust</a></li>
+  <li><a href="/psionic/powers/telempathic-projection/">Telempathic Projection</a></li>
+  <li><a href="/psionic/powers/teleport-psionic/">Teleport Psionic</a></li>
+  <li><a href="/psionic/powers/teleport-psionic-greater/">Teleport Psionic Greater</a></li>
+  <li><a href="/psionic/powers/teleport-trigger/">Teleport Trigger</a></li>
+  <li><a href="/psionic/powers/teleportation-circle-psionic/">Teleportation Circle Psionic</a></li>
+  <li><a href="/psionic/powers/temporal-acceleration/">Temporal Acceleration</a></li>
+  <li><a href="/psionic/powers/thicken-skin/">Thicken Skin</a></li>
+  <li><a href="/psionic/powers/thought-shield/">Thought Shield</a></li>
+  <li><a href="/psionic/powers/time-hop/">Time Hop</a></li>
+  <li><a href="/psionic/powers/time-hop-mass/">Time Hop Mass</a></li>
+  <li><a href="/psionic/powers/time-regression/">Time Regression</a></li>
+  <li><a href="/psionic/powers/timeless-body/">Timeless Body</a></li>
+  <li><a href="/psionic/powers/tongues-psionic/">Tongues Psionic</a></li>
+  <li><a href="/psionic/powers/tornado-blast/">Tornado Blast</a></li>
+  <li><a href="/psionic/powers/touchsight/">Touchsight</a></li>
+  <li><a href="/psionic/powers/towerof-iron-will/">Towerof Iron Will</a></li>
+  <li><a href="/psionic/powers/trace-teleport/">Trace Teleport</a></li>
+  <li><a href="/psionic/powers/true-creation/">True Creation</a></li>
+  <li><a href="/psionic/powers/true-metabolism/">True Metabolism</a></li>
+  <li><a href="/psionic/powers/true-seeing-psionic/">True Seeing Psionic</a></li>
+  <li><a href="/psionic/powers/truevenom/">Truevenom</a></li>
+  <li><a href="/psionic/powers/truevenom-weapon/">Truevenom Weapon</a></li>
+  <li><a href="/psionic/powers/ubiquitous-vision/">Ubiquitous Vision</a></li>
+  <li><a href="/psionic/powers/ultrablast/">Ultrablast</a></li>
+  <li><a href="/psionic/powers/vampiric-blade/">Vampiric Blade</a></li>
+  <li><a href="/psionic/powers/vigor/">Vigor</a></li>
+  <li><a href="/psionic/powers/wall-walker/">Wall Walker</a></li>
+  <li><a href="/psionic/powers/wallof-ectoplasm/">Wallof Ectoplasm</a></li>
+  <li><a href="/psionic/powers/weaponof-energy/">Weaponof Energy</a></li>
+</ul>
+        </main>
+
+        <nav class="page-navigation" aria-label="Previous and next pages">
+            <a class="page-navigation-link previous" href="/psionic/power-list/"><span class="page-navigation-direction">← Previous</span><span>Power List</span></a>
+<a class="page-navigation-link next" href="/psionic/psionic-feats/"><span class="page-navigation-direction">Next →</span><span>Psionic Feats</span></a>
+        </nav>
+
+        <footer class="site-footer">
+            <p>
+                Open Game Content used under the Open Game License Version 1.0a.
+                See <a href="/legal/">Legal</a>.
+            </p>
+        </footer>
+
+    </div>
+
+</div>
+
+<script src="/assets/search.js" defer></script>
+</body>
+</html>

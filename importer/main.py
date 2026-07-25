@@ -11,13 +11,13 @@ from importer.rewriter import rewrite_links
 from importer.logger import clear_error_log, log_error
 
 
-def import_page(url):
+def import_page(url, force=False):
     """Download, extract, and save one SRD page."""
 
     output_path = url_to_output_path(url)
     output_file = Path("public") / output_path / "index.html"
 
-    if output_file.exists():
+    if output_file.exists() and not force:
         print(f"Skipping: {output_path}")
         return
 
