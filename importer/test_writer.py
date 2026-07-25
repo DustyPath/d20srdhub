@@ -3,7 +3,11 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from importer.writer import build_breadcrumbs, write_page
+from importer.writer import (
+    build_breadcrumbs,
+    build_page_navigation,
+    write_page,
+)
 
 
 class BreadcrumbTests(unittest.TestCase):
@@ -49,7 +53,8 @@ class WriterTests(unittest.TestCase):
             (templates_dir / "page.html").write_text(
                 "<title>{{TITLE}}</title>"
                 "<nav>{{BREADCRUMBS}}</nav>"
-                "<main>{{ARTICLE}}</main>",
+                "<main>{{ARTICLE}}</main>"
+                "<nav>{{PAGE_NAVIGATION}}</nav>",
                 encoding="utf-8",
             )
 
@@ -67,6 +72,84 @@ class WriterTests(unittest.TestCase):
             self.assertIn("<span>Rogue</span>", generated)
             self.assertIn("<main><h1>Rogue</h1></main>", generated)
             self.assertNotIn("{{", generated)
+
+
+class PageNavigationTests(unittest.TestCase):
+    def test_navigation_is_built_before_current_page_is_written(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            public_dir = Path(temp_dir)
+
+            for slug in ["ranger", "sorcerer-wizard"]:
+                page_directory = public_dir / "classes" / slug
+                page_directory.mkdir(parents=True)
+                (page_directory / "index.html").write_text(
+                    f"<title>{slug.title()} | d20 SRD Hub</title>",
+                    encoding="utf-8",
+                )
+
+            with patch("importer.writer.PUBLIC_DIR", public_dir):
+                navigation = build_page_navigation("classes/rogue")
+
+            self.assertIn('href="/classes/ranger/"', navigation)
+            self.assertIn('href="/classes/sorcerer-wizard/"', navigation)
+
+    def test_middle_page_links_to_previous_and_next_siblings(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            public_dir = Path(temp_dir)
+
+            for slug, title in [
+                ("ranger", "Ranger"),
+                ("rogue", "Rogue"),
+                ("sorcerer-wizard", "Sorcerer/Wizard"),
+            ]:
+                page_directory = public_dir / "classes" / slug
+                page_directory.mkdir(parents=True)
+                (page_directory / "index.html").write_text(
+                    f"<title>{title} | d20 SRD Hub</title>",
+                    encoding="utf-8",
+                )
+
+            with patch("importer.writer.PUBLIC_DIR", public_dir):
+                navigation = build_page_navigation("classes/rogue")
+
+            self.assertIn('href="/classes/ranger/"', navigation)
+            self.assertIn(">Ranger</span>", navigation)
+            self.assertIn('href="/classes/sorcerer-wizard/"', navigation)
+            self.assertIn(">Sorcerer/Wizard</span>", navigation)
+
+    def test_first_page_only_has_next_link(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            public_dir = Path(temp_dir)
+
+            for slug in ["barbarian", "bard"]:
+                page_directory = public_dir / "classes" / slug
+                page_directory.mkdir(parents=True)
+                (page_directory / "index.html").write_text(
+                    f"<title>{slug.title()} | d20 SRD Hub</title>",
+                    encoding="utf-8",
+                )
+
+            with patch("importer.writer.PUBLIC_DIR", public_dir):
+                navigation = build_page_navigation("classes/barbarian")
+
+            self.assertNotIn("← Previous", navigation)
+            self.assertIn("Next →", navigation)
+            self.assertIn('href="/classes/bard/"', navigation)
+
+    def test_only_page_has_no_navigation(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            public_dir = Path(temp_dir)
+            page_directory = public_dir / "classes" / "rogue"
+            page_directory.mkdir(parents=True)
+            (page_directory / "index.html").write_text(
+                "<title>Rogue | d20 SRD Hub</title>",
+                encoding="utf-8",
+            )
+
+            with patch("importer.writer.PUBLIC_DIR", public_dir):
+                navigation = build_page_navigation("classes/rogue")
+
+            self.assertEqual(navigation, "")
 
 
 if __name__ == "__main__":

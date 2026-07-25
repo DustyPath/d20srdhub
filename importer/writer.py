@@ -1,6 +1,9 @@
-from html import escape
+import re
+from html import escape, unescape
 
 from importer.config import PROJECT_ROOT, PUBLIC_DIR
+
+TITLE_PATTERN = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)
 
 
 def build_breadcrumbs(output_path, title):
@@ -23,18 +26,92 @@ def build_breadcrumbs(output_path, title):
     return separator.join(breadcrumbs)
 
 
+def get_page_label(page_directory):
+    """Return a readable label for a generated page directory."""
+
+    page_file = page_directory / "index.html"
+
+    if page_file.exists():
+        match = TITLE_PATTERN.search(page_file.read_text(encoding="utf-8"))
+
+        if match:
+            title = unescape(match.group(1)).strip()
+            title = title.removesuffix(" | d20 SRD Hub").strip()
+            return title.removesuffix(" :: d20srd.org").strip()
+
+    return page_directory.name.replace("-", " ").title()
+
+
+def build_page_navigation(output_path):
+    """Create previous and next links for pages in the same section."""
+
+    relative_path = output_path.strip("/")
+    current_directory = PUBLIC_DIR / relative_path
+    section_directory = current_directory.parent
+
+    if not section_directory.exists():
+        return ""
+
+    existing_siblings = {
+        directory
+        for directory in section_directory.iterdir()
+        if directory.is_dir() and (directory / "index.html").exists()
+    }
+    siblings = sorted(existing_siblings | {current_directory})
+
+    try:
+        current_index = siblings.index(current_directory)
+    except ValueError:
+        return ""
+
+    links = []
+
+    if current_index > 0:
+        previous = siblings[current_index - 1]
+        previous_path = "/" + previous.relative_to(PUBLIC_DIR).as_posix() + "/"
+        links.append(
+            '<a class="page-navigation-link previous" '
+            f'href="{previous_path}">'
+            '<span class="page-navigation-direction">← Previous</span>'
+            f'<span>{escape(get_page_label(previous))}</span>'
+            "</a>"
+        )
+    else:
+        links.append('<span class="page-navigation-spacer"></span>')
+
+    if current_index < len(siblings) - 1:
+        next_page = siblings[current_index + 1]
+        next_path = "/" + next_page.relative_to(PUBLIC_DIR).as_posix() + "/"
+        links.append(
+            '<a class="page-navigation-link next" '
+            f'href="{next_path}">'
+            '<span class="page-navigation-direction">Next →</span>'
+            f'<span>{escape(get_page_label(next_page))}</span>'
+            "</a>"
+        )
+    else:
+        links.append('<span class="page-navigation-spacer"></span>')
+
+    if all("page-navigation-spacer" in link for link in links):
+        return ""
+
+    return "\n".join(links)
+
+
 def write_page(output_path, title, article_html):
     template_path = PROJECT_ROOT / "templates" / "page.html"
 
     template = template_path.read_text(encoding="utf-8")
 
     breadcrumbs = build_breadcrumbs(output_path, title)
+    page_navigation = build_page_navigation(output_path)
 
     page = (
         template
         .replace("{{TITLE}}", title)
         .replace("{{BREADCRUMBS}}", breadcrumbs)
         .replace("{{ARTICLE}}", article_html)
+        .replace("{{PAGE_NAVIGATION}}", page_navigation)
     )
 
     destination = PUBLIC_DIR / output_path / "index.html"

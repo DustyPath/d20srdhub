@@ -213,6 +213,47 @@
             border-left: 4px solid var(--accent);
         }
 
+        .page-navigation {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .page-navigation:empty {
+            display: none;
+        }
+
+        .page-navigation-link {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 14px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page-navigation-link:hover,
+        .page-navigation-link:focus {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .page-navigation-link.next {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .page-navigation-direction {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
         .site-footer {
             margin-top: 28px;
             padding-top: 20px;
@@ -248,6 +289,14 @@
 
             .article-card {
                 padding: 24px 20px;
+            }
+
+            .page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .page-navigation-spacer {
+                display: none;
             }
         }
 
@@ -491,6 +540,11 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2');
 </noscript>
 <script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
         </main>
+
+        <nav class="page-navigation" aria-label="Previous and next pages">
+            <a class="page-navigation-link previous" href="/classes/ranger/"><span class="page-navigation-direction">← Previous</span><span>Ranger</span></a>
+<a class="page-navigation-link next" href="/classes/sorcerer-wizard/"><span class="page-navigation-direction">Next →</span><span>Sorcerers &amp; Wizards</span></a>
+        </nav>
 
         <footer class="site-footer">
             <p>
