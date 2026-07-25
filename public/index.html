@@ -211,6 +211,63 @@
       background: var(--accent-hover);
     }
 
+    .search-panel {
+      position: relative;
+    }
+
+    .search-results {
+      margin-top: 10px;
+      max-height: 520px;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .search-results[hidden] {
+      display: none;
+    }
+
+    .search-results-list {
+      margin: 0;
+      padding: 6px;
+      list-style: none;
+    }
+
+    .search-results-list a {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 3px 12px;
+      padding: 11px;
+      color: var(--text);
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .search-results-list a:hover,
+    .search-results-list a:focus {
+      background: #f5efe4;
+    }
+
+    .search-result-section {
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .search-result-snippet {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .search-empty {
+      margin: 0;
+      padding: 16px;
+    }
+
     .category-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -347,7 +404,12 @@
         categories, search tools, and cross-references will be added over time.
       </p>
 
-      <section class="search-panel" aria-labelledby="search-heading">
+      <form
+        class="search-panel"
+        data-search-form
+        role="search"
+        aria-labelledby="search-heading"
+      >
         <label id="search-heading" for="site-search">
           Search the rules
         </label>
@@ -355,15 +417,21 @@
         <div class="search-row">
           <input
             id="site-search"
+            data-search-input
             type="search"
+            autocomplete="off"
             placeholder="Search spells, feats, monsters, classes..."
-            disabled
           >
-          <button type="button" disabled>Search</button>
+          <button type="submit">Search</button>
         </div>
 
-        <small>Full-site search is coming soon.</small>
-      </section>
+        <div
+          class="search-results"
+          data-search-results
+          aria-live="polite"
+          hidden
+        ></div>
+      </form>
 
       <section class="category-grid" aria-label="Featured rules categories">
         <a class="category-card" href="/classes/">
@@ -424,5 +492,6 @@
     <p><strong>d20 SRD Hub</strong></p>
     <p>An independent rules-reference project.</p>
   </footer>
+  <script src="/assets/search.js" defer></script>
 </body>
 </html>

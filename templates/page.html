@@ -26,6 +26,18 @@
             box-sizing: border-box;
         }
 
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -80,6 +92,99 @@
             gap: 18px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.95rem;
+        }
+
+        .site-search {
+            position: relative;
+            flex: 1;
+            max-width: 420px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .site-search-row {
+            display: flex;
+        }
+
+        .site-search input {
+            width: 100%;
+            min-width: 0;
+            padding: 9px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: 5px 0 0 5px;
+            background: #ffffff;
+            color: var(--text);
+            font: inherit;
+        }
+
+        .site-search button {
+            padding: 9px 13px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-left: 0;
+            border-radius: 0 5px 5px 0;
+            background: var(--accent);
+            color: #ffffff;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .search-results {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            left: 0;
+            z-index: 200;
+            max-height: min(65vh, 560px);
+            overflow-y: auto;
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-results[hidden] {
+            display: none;
+        }
+
+        .search-results-list {
+            margin: 0;
+            padding: 6px;
+            list-style: none;
+        }
+
+        .search-results-list a {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 2px 12px;
+            padding: 10px;
+            color: var(--text);
+            border-radius: 5px;
+        }
+
+        .search-results-list a:hover,
+        .search-results-list a:focus {
+            background: var(--surface-muted);
+            text-decoration: none;
+            outline: none;
+        }
+
+        .search-result-section {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .search-result-snippet {
+            grid-column: 1 / -1;
+            color: var(--text-muted);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 0.86rem;
+        }
+
+        .search-empty {
+            margin: 0;
+            padding: 16px;
         }
 
         .layout {
@@ -270,6 +375,11 @@
                 flex-direction: column;
             }
 
+            .site-search {
+                width: 100%;
+                max-width: none;
+            }
+
             .layout {
                 display: block;
             }
@@ -327,6 +437,28 @@
     <h1 class="site-title">
         <a href="/">d20 SRD Hub</a>
     </h1>
+
+    <form class="site-search" data-search-form role="search">
+        <div class="site-search-row">
+            <label class="visually-hidden" for="header-search">
+                Search the rules
+            </label>
+            <input
+                id="header-search"
+                data-search-input
+                type="search"
+                autocomplete="off"
+                placeholder="Search rules…"
+            >
+            <button type="submit">Search</button>
+        </div>
+        <div
+            class="search-results"
+            data-search-results
+            aria-live="polite"
+            hidden
+        ></div>
+    </form>
 
     <nav class="header-links" aria-label="Primary navigation">
         <a href="/">Home</a>
@@ -388,5 +520,6 @@
 
 </div>
 
+<script src="/assets/search.js" defer></script>
 </body>
 </html>
