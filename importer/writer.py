@@ -1,9 +1,37 @@
 import re
 from html import escape, unescape
 
+from bs4 import BeautifulSoup
+
 from importer.config import PROJECT_ROOT, PUBLIC_DIR
 
 TITLE_PATTERN = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)
+MAX_DESCRIPTION_LENGTH = 155
+
+
+def build_description(article_html, title):
+    """Build a concise plain-text description from an article."""
+
+    soup = BeautifulSoup(article_html, "html.parser")
+    paragraphs = soup.find_all("p")
+    source = next(
+        (
+            paragraph
+            for paragraph in paragraphs
+            if len(paragraph.get_text(" ", strip=True)) >= 50
+        ),
+        paragraphs[0] if paragraphs else soup,
+    )
+    text = " ".join(source.get_text(" ", strip=True).split())
+
+    if not text:
+        text = f"Rules reference for {title}."
+
+    if len(text) <= MAX_DESCRIPTION_LENGTH:
+        return text
+
+    shortened = text[: MAX_DESCRIPTION_LENGTH - 1].rsplit(" ", 1)[0]
+    return f"{shortened}…"
 
 
 def build_breadcrumbs(output_path, title):
@@ -105,10 +133,14 @@ def write_page(output_path, title, article_html):
 
     breadcrumbs = build_breadcrumbs(output_path, title)
     page_navigation = build_page_navigation(output_path)
+    description = build_description(article_html, title)
+    canonical_url = f"https://d20srdhub.com/{output_path.strip('/')}/"
 
     page = (
         template
-        .replace("{{TITLE}}", title)
+        .replace("{{TITLE}}", escape(title))
+        .replace("{{DESCRIPTION}}", escape(description, quote=True))
+        .replace("{{CANONICAL_URL}}", escape(canonical_url, quote=True))
         .replace("{{BREADCRUMBS}}", breadcrumbs)
         .replace("{{ARTICLE}}", article_html)
         .replace("{{PAGE_NAVIGATION}}", page_navigation)

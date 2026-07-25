@@ -5,6 +5,7 @@ from unittest.mock import patch
 
 from importer.writer import (
     build_breadcrumbs,
+    build_description,
     build_page_navigation,
     write_page,
 )
@@ -44,6 +45,17 @@ class BreadcrumbTests(unittest.TestCase):
 
 
 class WriterTests(unittest.TestCase):
+    def test_description_uses_first_paragraph_and_is_limited(self):
+        description = build_description(
+            "<h1>Fireball</h1><p>"
+            + ("A burst of magical flame deals damage. " * 10)
+            + "</p>",
+            "Fireball",
+        )
+
+        self.assertLessEqual(len(description), 155)
+        self.assertTrue(description.endswith("…"))
+
     def test_write_page_replaces_all_template_placeholders(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             project_root = Path(temp_dir)
@@ -52,6 +64,8 @@ class WriterTests(unittest.TestCase):
             templates_dir.mkdir()
             (templates_dir / "page.html").write_text(
                 "<title>{{TITLE}}</title>"
+                '<meta name="description" content="{{DESCRIPTION}}">'
+                '<link rel="canonical" href="{{CANONICAL_URL}}">'
                 "<nav>{{BREADCRUMBS}}</nav>"
                 "<main>{{ARTICLE}}</main>"
                 "<nav>{{PAGE_NAVIGATION}}</nav>",
@@ -71,6 +85,10 @@ class WriterTests(unittest.TestCase):
             self.assertIn('<a href="/classes/">Classes</a>', generated)
             self.assertIn("<span>Rogue</span>", generated)
             self.assertIn("<main><h1>Rogue</h1></main>", generated)
+            self.assertIn(
+                'href="https://d20srdhub.com/classes/rogue/"',
+                generated,
+            )
             self.assertNotIn("{{", generated)
 
 
