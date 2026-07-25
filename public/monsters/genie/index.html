@@ -4,26 +4,373 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Genie :: d20srd.org</title>
+    <title>Genie | d20 SRD Hub</title>
+
+    <style>
+        :root {
+            --background: #f5f3ee;
+            --surface: #ffffff;
+            --surface-muted: #ece8df;
+            --text: #25231f;
+            --text-muted: #676259;
+            --border: #d7d1c5;
+            --accent: #7a241f;
+            --accent-dark: #571713;
+            --link: #185b83;
+            --header-height: 64px;
+            --sidebar-width: 240px;
+            --content-width: 900px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.65;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            min-height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 12px 24px;
+            background: var(--accent-dark);
+            color: #ffffff;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .site-header a {
+            color: #ffffff;
+        }
+
+        .site-title {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.03em;
+        }
+
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        .sidebar {
+            padding: 24px 18px;
+            background: var(--surface-muted);
+            border-right: 1px solid var(--border);
+        }
+
+        .sidebar-title {
+            margin: 0 0 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .sidebar-nav {
+            display: grid;
+            gap: 4px;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 7px 10px;
+            color: var(--text);
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.94rem;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a:focus {
+            background: var(--surface);
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .content-column {
+            width: 100%;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 28px 36px 48px;
+        }
+
+        .breadcrumbs {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.88rem;
+        }
+
+        .article-card {
+            padding: 34px 40px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        main h1,
+        main h2,
+        main h3,
+        main h4 {
+            line-height: 1.25;
+            color: var(--accent-dark);
+        }
+
+        main h1 {
+            margin-top: 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            font-size: 2.15rem;
+        }
+
+        main h2 {
+            margin-top: 2rem;
+            font-size: 1.55rem;
+        }
+
+        main h3 {
+            margin-top: 1.6rem;
+            font-size: 1.2rem;
+        }
+
+        main p {
+            margin: 0 0 1rem;
+        }
+
+        main ul,
+        main ol {
+            padding-left: 1.5rem;
+        }
+
+        main table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+            background: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.92rem;
+        }
+
+        main th,
+        main td {
+            padding: 9px 11px;
+            border: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        main th {
+            background: var(--surface-muted);
+            color: var(--accent-dark);
+        }
+
+        main tr:nth-child(even) td {
+            background: #faf9f6;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 12px 18px;
+            background: #f3efe7;
+            border-left: 4px solid var(--accent);
+        }
+
+        .page-navigation {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .page-navigation:empty {
+            display: none;
+        }
+
+        .page-navigation-link {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 14px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page-navigation-link:hover,
+        .page-navigation-link:focus {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .page-navigation-link.next {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .page-navigation-direction {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .site-footer {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 850px) {
+            .site-header {
+                position: static;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .layout {
+                display: block;
+            }
+
+            .sidebar {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .sidebar-nav {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .content-column {
+                padding: 22px 16px 36px;
+            }
+
+            .article-card {
+                padding: 24px 20px;
+            }
+
+            .page-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .page-navigation-spacer {
+                display: none;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .header-links {
+                gap: 12px;
+            }
+
+            .sidebar-nav {
+                grid-template-columns: 1fr;
+            }
+
+            main h1 {
+                font-size: 1.75rem;
+            }
+
+            main table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>d20 SRD Hub</h1>
+<header class="site-header">
+    <h1 class="site-title">
+        <a href="/">d20 SRD Hub</a>
+    </h1>
+
+    <nav class="header-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/classes/">Classes</a>
+        <a href="/combat/">Combat</a>
+        <a href="/spells/">Spells</a>
+        <a href="/monsters/">Monsters</a>
+        <a href="/legal/">Legal</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/classes/">Classes</a>
-    <a href="/combat/">Combat</a>
-    <a href="/skills/">Skills</a>
-    <a href="/legal/">Legal</a>
-</nav>
+<div class="layout">
 
-<main>
+    <aside class="sidebar">
+        <p class="sidebar-title">SRD Sections</p>
 
-<h1>Genie</h1>
+        <nav class="sidebar-nav" aria-label="SRD sections">
+            <a href="/basics/">Basics</a>
+            <a href="/races/">Races</a>
+            <a href="/classes/">Classes</a>
+            <a href="/skills/">Skills</a>
+            <a href="/feats/">Feats</a>
+            <a href="/equipment/">Equipment</a>
+            <a href="/combat/">Combat</a>
+            <a href="/magic/">Magic</a>
+            <a href="/spells/">Spells</a>
+            <a href="/magic-items/">Magic Items</a>
+            <a href="/monsters/">Monsters</a>
+            <a href="/special-abilities/">Special Abilities</a>
+            <a href="/conditions/">Conditions</a>
+            <a href="/psionics/">Psionics</a>
+            <a href="/epic/">Epic Rules</a>
+            <a href="/variant/">Variant Rules</a>
+        </nav>
+    </aside>
+
+    <div class="content-column">
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/monsters/">Monsters</a> <span aria-hidden="true">›</span> <span>Genie</span>
+        </nav>
+
+        <main class="article-card">
+            <h1>Genie</h1>
 <p>
 	Genies are humanlike beings who dwell on the elemental planes. They are famous for their strength, guile, and skill with illusion magic.
 </p>
@@ -479,17 +826,23 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2');
 <div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
 </noscript>
 <script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
+        </main>
 
-</main>
+        <nav class="page-navigation" aria-label="Previous and next pages">
+            <a class="page-navigation-link previous" href="/monsters/gargoyle/"><span class="page-navigation-direction">← Previous</span><span>Gargoyle</span></a>
+<a class="page-navigation-link next" href="/monsters/ghaele/"><span class="page-navigation-direction">Next →</span><span>Ghaele</span></a>
+        </nav>
 
-<footer>
+        <footer class="site-footer">
+            <p>
+                Open Game Content used under the Open Game License Version 1.0a.
+                See <a href="/legal/">Legal</a>.
+            </p>
+        </footer>
 
-<p>
-Open Game Content used under the Open Game License Version 1.0a.
-See <a href="/legal/">Legal</a>.
-</p>
+    </div>
 
-</footer>
+</div>
 
 </body>
 </html>
