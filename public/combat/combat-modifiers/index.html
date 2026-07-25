@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Combat Modifiers :: d20srd.org</title>
+</head>
+
+<body>
+
+<header>
+    <h1>d20 SRD Hub</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/classes/">Classes</a>
+    <a href="/combat/">Combat</a>
+    <a href="/skills/">Skills</a>
+    <a href="/legal/">Legal</a>
+</nav>
+
+<main>
+
+<h1>Combat Modifiers</h1>
+<h2 id="favorableandUnfavorableConditions">Favorable and Unfavorable Conditions</h2>
+<table cellspacing="0" class="left" id="tableAttackRollModifiers">
+<caption>Table: <a href="/combat/combat-statistics/#attackRoll">Attack Roll</a> Modifiers</caption>
+<thead>
+<tr>
+<th align="left">Attacker is…</th>
+<th>Melee</th>
+<th>Ranged</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3">
+<ol>
+<li>An <a href="/condition-summary/#entangled">entangled</a> character also takes a -4 penalty to Dexterity, which may affect his <a href="/combat/combat-statistics/#attackRoll">attack roll</a>.</li>
+<li>The defender loses any Dexterity bonus to AC. This bonus doesn’t apply if the target is <a href="/condition-summary/#blinded">blinded</a>.</li>
+<li>Most ranged weapons can’t be used while the attacker is <a href="/condition-summary/#prone">prone</a>, but you can use a crossbow or <a href="/equipment/weapons/#shuriken">shuriken</a> while prone at no penalty.</li>
+</ol>
+</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td><a href="/condition-summary/#dazzled">Dazzled</a></td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#entangled">Entangled</a></td>
+<td align="center">-2<sup>1</sup></td>
+<td align="center">-2<sup>1</sup></td>
+</tr>
+<tr>
+<td><a href="/combat/combat-modifiers/#flanking">Flanking</a> defender</td>
+<td align="center">+2</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#invisible">Invisible</a></td>
+<td align="center">+2<sup>2</sup></td>
+<td align="center">+2<sup>2</sup></td>
+</tr>
+<tr>
+<td>On higher ground</td>
+<td align="center">+1</td>
+<td align="center">+0</td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#prone">Prone</a></td>
+<td align="center">-4</td>
+<td align="center">—<sup>3</sup></td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#shaken">Shaken</a> or <a href="/condition-summary/#frightened">frightened</a></td>
+<td align="center">-2</td>
+<td align="center">-2</td>
+</tr>
+<tr>
+<td>Squeezing through a space</td>
+<td align="center">-4</td>
+<td align="center">-4</td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" id="tableArmorClassModifiers">
+<caption>Table: Armor Class Modifiers</caption>
+<thead>
+<tr>
+<th align="left">Defender is…</th>
+<th>Melee</th>
+<th>Ranged</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3">
+<ol>
+<li>The defender loses any Dexterity bonus to AC.</li>
+<li>An <a href="/condition-summary/#entangled">entangled</a> character takes a -4 penalty to Dexterity.</li>
+<li>Roll randomly to see which grappling combatant you strike. That defender loses any Dexterity bonus to AC.</li>
+<li>Treat the defender’s Dexterity as 0 (-5 modifier). <a href="/classes/rogue/">Rogues</a> can sneak attack <a href="/condition-summary/#helpless">helpless</a> or <a href="/condition-summary/#pinned">pinned</a> defenders.</li>
+</ol>
+</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>Behind <a href="/combat/combat-modifiers/#cover">cover</a></td>
+<td align="center">+4</td>
+<td align="center">+4</td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#blinded">Blinded</a></td>
+<td align="center">-2<sup>1</sup></td>
+<td align="center">-2<sup>1</sup></td>
+</tr>
+<tr>
+<td><a href="#concealment">Concealed</a> or <a href="/condition-summary/#invisible">invisible</a></td>
+<td colspan="2">See <a href="/combat/combat-modifiers/#concealment">Concealment</a></td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#cowering">Cowering</a></td>
+<td align="center">-2<sup>1</sup></td>
+<td align="center">-2<sup>1</sup></td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#entangled">Entangled</a></td>
+<td align="center">+0<sup>2</sup></td>
+<td align="center">+0<sup>2</sup></td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#flatFooted">Flat-footed</a> (such as surprised, balancing, climbing)</td>
+<td align="center">+0<sup>1</sup></td>
+<td align="center">+0<sup>1</sup></td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#grappling">Grappling</a> (but attacker is not)</td>
+<td align="center">+0<sup>1</sup></td>
+<td align="center">+0<sup>1, 3</sup></td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#helpless">Helpless</a> (such as <a href="/condition-summary/#paralyzed">paralyzed</a>, sleeping, or bound)</td>
+<td align="center">-4<sup>4</sup></td>
+<td align="center">+0<sup>4</sup></td>
+</tr>
+<tr>
+<td>Kneeling or sitting</td>
+<td align="center">-2</td>
+<td align="center">+2</td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#pinned">Pinned</a></td>
+<td align="center">-4<sup>4</sup></td>
+<td align="center">+0<sup>4</sup></td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#prone">Prone</a></td>
+<td align="center">-4</td>
+<td align="center">+4</td>
+</tr>
+<tr>
+<td>Squeezing through a space</td>
+<td align="center">-4</td>
+<td align="center">-4</td>
+</tr>
+<tr>
+<td><a href="/condition-summary/#stunned">Stunned</a></td>
+<td align="center">-2<sup>1</sup></td>
+<td align="center">-2<sup>1</sup></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cover">Cover</h2>
+<p>
+	To determine whether your target has cover from your ranged attack, choose a corner of your square. If any line from this corner to any corner of the target’s square passes through a square or border that blocks line of effect or provides cover, or through a square occupied by a creature, the target has cover (+4 to AC).
+</p>
+<p>
+	When making a melee attack against an adjacent target, your target has cover if any line from your square to the target’s square goes through a wall (including a low wall). When making a melee attack against a target that isn’t adjacent to you (such as with a <a href="/equipment/weapons/#reachWeapons">reach weapon</a>), use the rules for determining cover from ranged attacks.
+</p>
+<h5 id="lowObstaclesandCover">Low Obstacles and Cover</h5>
+<p>
+	A low obstacle (such as a wall no higher than half your height) provides cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he’s closer to the obstacle than his target.
+</p>
+<h5 id="coverandAttacksofOpportunity">Cover and Attacks of Opportunity</h5>
+<p>
+	You can’t execute an <a href="/combat/attacks-of-opportunity/">attack of opportunity</a> against an opponent with cover relative to you.
+</p>
+<h5 id="coverandReflexSaves">Cover and <a href="/combat/combat-statistics/#reflex">Reflex Saves</a></h5>
+<p>
+	Cover grants you a +2 bonus on <a href="/combat/combat-statistics/#reflex">Reflex saves</a> against attacks that originate or burst out from a point on the other side of the cover from you. Note that spread effects can extend around corners and thus negate this cover bonus.
+</p>
+<h5 id="coverandHideChecks">Cover and Hide Checks</h5>
+<p>
+	You can use cover to make a <a href="/skills/hide/">Hide</a> check. Without cover, you usually need <a href="/combat/combat-modifiers/#concealment">concealment</a> to make a <a href="/skills/hide/">Hide</a> check.
+</p>
+<h5 id="softCover">Soft Cover</h5>
+<p>
+	Creatures, even your enemies, can provide you with cover against ranged attacks, giving you a +4 bonus to AC. However, such soft cover provides no bonus on <a href="/combat/combat-statistics/#reflex">Reflex saves</a>, nor does soft cover allow you to make a <a href="/skills/hide/">Hide</a> check.
+</p>
+<h5 id="bigCreaturesandCover">Big Creatures and Cover</h5>
+<p>
+	Any creature with a space larger than 5 feet (1 square) determines cover against melee attacks slightly differently than smaller creatures do. Such a creature can choose any square that it occupies to determine if an opponent has cover against its melee attacks. Similarly, when making a melee attack against such a creature, you can pick any of the squares it occupies to determine if it has cover against you.
+</p>
+<h5 id="totalCover">Total Cover</h5>
+<p>
+	If you don’t have line of effect to your target he is considered to have total cover from you. You can’t make an attack against a target that has total cover.
+</p>
+<h5 id="varyingDegreesofCover">Varying Degrees of Cover</h5>
+<p>
+	In some cases, cover may provide a greater bonus to AC and <a href="/combat/combat-statistics/#reflex">Reflex saves</a>. In such situations the normal cover bonuses to AC and Reflex saves can be doubled (to +8 and +4, respectively). A creature with this improved cover effectively gains improved evasion against any attack to which the Reflex save bonus applies. Furthermore, improved cover provides a +10 bonus on <a href="/skills/hide/">Hide</a> checks.
+</p>
+<h2 id="concealment">Concealment</h2>
+<p>
+	To determine whether your target has concealment from your ranged attack, choose a corner of your square. If any line from this corner to any corner of the target’s square passes through a square or border that provides concealment, the target has concealment.
+</p>
+<p>
+	When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment. When making a melee attack against a target that isn’t adjacent to you use the rules for determining concealment from ranged attacks.
+</p>
+<p>
+	In addition, some magical effects provide concealment against all attacks, regardless of whether any intervening concealment exists.
+</p>
+<h5 id="concealmentMissChance">Concealment Miss Chance</h5>
+<p>
+	Concealment gives the subject of a successful attack a 20% chance that the attacker missed because of the concealment. If the attacker hits, the defender must make a miss chance percentile roll to avoid being struck. Multiple concealment conditions do not stack.
+</p>
+<h5 id="concealmentandHideChecks">Concealment and Hide Checks</h5>
+<p>
+	You can use concealment to make a <a href="/skills/hide/">Hide</a> check. Without concealment, you usually need <a href="/combat/combat-modifiers/#cover">cover</a> to make a <a href="/skills/hide/">Hide</a> check.
+</p>
+<h5 id="totalConcealment">Total Concealment</h5>
+<p>
+	If you have line of effect to a target but not line of sight he is considered to have total concealment from you. You can’t attack an opponent that has total concealment, though you can attack into a square that you think he occupies. A successful attack into a square occupied by an enemy with total concealment has a 50% miss chance (instead of the normal 20% miss chance for an opponent with concealment).
+</p>
+<p>
+	You can’t execute an <a href="/combat/attacks-of-opportunity/">attack of opportunity</a> against an opponent with total concealment, even if you know what square or squares the opponent occupies.
+</p>
+<h5 id="ignoringConcealment">Ignoring Concealment</h5>
+<p>
+	Concealment isn’t always effective. A shadowy area or darkness doesn’t provide any concealment against an opponent with <a href="/special-abilities/#darkvision">darkvision</a>. Characters with <a href="/special-abilities/#lowLightVision">low-light vision</a> can see clearly for a greater distance with the same light source than other characters. Although <a href="/special-abilities/#invisibility">invisibility</a> provides <a href="/combat/combat-modifiers/#totalConcealment">total concealment</a>, sighted opponents may still make <a href="/skills/spot/">Spot</a> checks to notice the location of an <a href="/condition-summary/#invisible">invisible</a> character. An invisible character gains a +20 bonus on <a href="/skills/hide/">Hide</a> checks if moving, or a +40 bonus on <a href="/skills/hide/">Hide</a> checks when not moving (even though opponents can’t see you, they might be able to figure out where you are from other visual clues).
+</p>
+<h5 id="varyingDegreesofConcealment">Varying Degrees of Concealment</h5>
+<p>
+	Certain situations may provide more or less than typical concealment, and modify the miss chance accordingly.
+</p>
+<h2 id="flanking">Flanking</h2>
+<p>
+	When making a melee attack, you get a +2 flanking bonus if your opponent is threatened by a character or creature friendly to you on the opponent’s opposite border or opposite corner.
+</p>
+<p>
+	When in doubt about whether two friendly characters flank an opponent in the middle, trace an imaginary line between the two friendly characters’ centers. If the line passes through opposite borders of the opponent’s space (including corners of those borders), then the opponent is flanked.
+</p>
+<p>
+<em>Exception:</em> If a flanker takes up more than 1 square, it gets the flanking bonus if any square it occupies counts for flanking.
+</p>
+<p>
+	Only a creature or character that threatens the defender can help an attacker get a flanking bonus.
+</p>
+<p>
+	Creatures with a reach of 0 feet can’t flank an opponent.
+</p>
+<h2 id="helplessDefenders">Helpless Defenders</h2>
+<p>
+	A <a href="/condition-summary/#helpless">helpless</a> opponent is someone who is bound, sleeping, <a href="/condition-summary/#paralyzed">paralyzed</a>, <a href="/condition-summary/#unconscious">unconscious</a>, or otherwise at your mercy.
+</p>
+<h5 id="regularAttack">Regular Attack</h5>
+<p>
+	A helpless character takes a -4 penalty to AC against melee attacks, but no penalty to AC against ranged attacks.
+</p>
+<p>
+	A helpless defender can’t use any Dexterity bonus to AC. In fact, his Dexterity score is treated as if it were 0 and his Dexterity modifier to AC as if it were -5 (and a <a href="/classes/rogue/">rogue</a> can sneak attack him).
+</p>
+<h5 id="coupdeGrace">Coup de Grace</h5>
+<p>
+	As a <a href="/combat/actions-in-combat/#fullRoundActions">full-round action</a>, you can use a melee weapon to deliver a coup de grace to a helpless opponent. You can also use a bow or crossbow, provided you are adjacent to the target.
+</p>
+<p>
+	You automatically hit and score a <a href="/combat/actions-in-combat/#criticalHits">critical hit</a>. If the defender survives the damage, he must make a <a href="/combat/combat-statistics/#fortitude">Fortitude save</a> (DC 10 + damage dealt) or die. A <a href="/classes/rogue/">rogue</a> also gets her extra sneak attack damage against a helpless opponent when delivering a coup de grace.
+</p>
+<p>
+	Delivering a coup de grace provokes <a href="/combat/attacks-of-opportunity/">attacks of opportunity</a> from threatening opponents.
+</p>
+<p>
+	You can’t deliver a coup de grace against a creature that is immune to <a href="/combat/actions-in-combat/#criticalHits">critical hits</a>. You can deliver a coup de grace against a creature with <a href="/combat/combat-modifiers/#totalConcealment">total concealment</a>, but doing this requires two consecutive <a href="/combat/actions-in-combat/#fullRoundActions">full-round actions</a> (one to "find" the creature once you’ve determined what square it’s in, and one to deliver the coup de grace).
+</p>
+<h2 id="weaponArmorAndShieldProficiency">Weapon, Armor, and Shield Proficiency</h2>
+<p>
+	A character who uses a weapon with which he or she is not proficient takes a -4 penalty on <a href="/combat/combat-statistics/#attackRoll">attack rolls</a>.
+</p>
+<p>
+	A character who wears armor and/or uses a shield with which he or she is not proficient takes the armor’s (and/or shield’s) armor check penalty on <a href="/combat/combat-statistics/#attackRoll">attack rolls</a> and on all Strength-based and Dexterity-based ability and <a href="/skills/using-skills/#skillChecks">skill checks</a>. The penalty for nonproficiency with armor stacks with the penalty for nonproficiency with shields
+</p>
+<p>
+	Weapon, armor, or shield proficiency may be granted by the character's race, class or by the following feats:
+</p>
+<ul>
+<li><a href="/feats/#armorProficiencyLight">Armor Proficiency (Light)</a></li>
+<li><a href="/feats/#armorProficiencyMedium">Armor Proficiency (Medium)</a></li>
+<li><a href="/feats/#armorProficiencyHeavy">Armor Proficiency (Heavy)</a></li>
+<li><a href="/feats/#exoticWeaponProficiency">Exotic Weapon Proficiency</a></li>
+<li><a href="/feats/#martialWeaponProficiency">Martial Weapon Proficiency</a></li>
+<li><a href="/feats/#shieldProficiency">Shield Proficiency</a></li>
+<li><a href="/feats/#simpleWeaponProficiency">Simple Weapon Proficiency</a></li>
+<li><a href="/feats/#towerShieldProficiency">Tower Shield Proficiency</a></li>
+</ul>
+<div class="footer">
+<!--- GOOGLE 300x250 ADS --->
+<div align="center" style="display:inline-block;">
+<!--- LEFT --->
+<!-- /1004459/d20srd300x250-1 -->
+<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
+</script>
+</div>
+<!--- RIGHT --->
+<!-- /1004459/d20srd300x250-2 -->
+<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
+</script>
+</div>
+</div>
+<!--- END GOOGLE 300x250 ADS --->
+<p>
+		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
+	</p>
+<p class="legal">
+		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
+	</p>
+<p class="legal">
+		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
+	</p>
+<!-- removing standards place holder -->
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+  })();
+  _qevents.push({
+    qacct: "p-e3P2kHqpGAv2I"
+  });
+</script>
+<noscript>
+<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
+</noscript>
+<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
+
+</main>
+
+<footer>
+
+<p>
+Open Game Content used under the Open Game License Version 1.0a.
+See <a href="/legal/">Legal</a>.
+</p>
+
+</footer>
+
+</body>
+</html>

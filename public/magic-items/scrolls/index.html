@@ -1,0 +1,4151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scrolls :: d20srd.org</title>
+</head>
+
+<body>
+
+<header>
+    <h1>d20 SRD Hub</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/classes/">Classes</a>
+    <a href="/combat/">Combat</a>
+    <a href="/skills/">Skills</a>
+    <a href="/legal/">Legal</a>
+</nav>
+
+<main>
+
+<h1>Scrolls</h1>
+<table cellspacing="0" class="right" id="tableScrollTypes">
+<caption>Table: Scroll Types</caption>
+<tr>
+<th>d% roll</th>
+<th align="left">Scroll Type</th>
+</tr>
+<tr>
+<td align="center">01-70</td>
+<td>Arcane</td>
+</tr>
+<tr>
+<td align="center">71-100</td>
+<td>Divine</td>
+</tr>
+</table>
+<table cellspacing="0" class="right" id="tableNumberofSpellsonScroll">
+<caption>Table: Number of Spells on Scroll</caption>
+<tr>
+<th align="left">Scroll Type</th>
+<th align="left">Number of Spells</th>
+</tr>
+<tr>
+<td>Minor scroll</td>
+<td>1d3 spells</td>
+</tr>
+<tr>
+<td>Medium scroll</td>
+<td>1d4 spells</td>
+</tr>
+<tr>
+<td>Major scroll</td>
+<td>1d6 spells</td>
+</tr>
+</table>
+<table cellspacing="0" class="right" id="tableScrollSpellLevels">
+<caption>Table: Scroll Spell Levels</caption>
+<thead>
+<tr>
+<th>Minor</th>
+<th>Medium</th>
+<th>Major</th>
+<th>Spell<br/>Level</th>
+<th>Spell’s<br/>Caster Level<sup>1</sup></th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="5">
+<ol>
+<li>These numbers assume that the creator is a <a href="/classes/cleric/">cleric</a>, <a href="/classes/druid/">druid</a>, or wizard.</li>
+</ol>
+</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td align="center">01-05</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">0</td>
+<td align="center">1st</td>
+</tr>
+<tr>
+<td align="center">06-50</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">1st</td>
+<td align="center">1st</td>
+</tr>
+<tr>
+<td align="center">51-95</td>
+<td align="center">01-05</td>
+<td align="center">—</td>
+<td align="center">2nd</td>
+<td align="center">3rd</td>
+</tr>
+<tr>
+<td align="center">96-100</td>
+<td align="center">06-65</td>
+<td align="center">—</td>
+<td align="center">3rd</td>
+<td align="center">5th</td>
+</tr>
+<tr>
+<td align="center">—</td>
+<td align="center">66-95</td>
+<td align="center">01-05</td>
+<td align="center">4th</td>
+<td align="center">7th</td>
+</tr>
+<tr>
+<td align="center">—</td>
+<td align="center">96-100</td>
+<td align="center">06-50</td>
+<td align="center">5th</td>
+<td align="center">9th</td>
+</tr>
+<tr>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">51-70</td>
+<td align="center">6th</td>
+<td align="center">11th</td>
+</tr>
+<tr>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">71-85</td>
+<td align="center">7th</td>
+<td align="center">13th</td>
+</tr>
+<tr>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">86-95</td>
+<td align="center">8th</td>
+<td align="center">15th</td>
+</tr>
+<tr>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">95-100</td>
+<td align="center">9th</td>
+<td align="center">17th</td>
+</tr>
+</tbody>
+</table>
+<p>
+	A scroll is a spell (or collection of spells) that has been stored in written form. A spell on a scroll can be used only once. The writing vanishes from the scroll when the spell is activated. Using a scroll is basically like casting a spell.
+</p>
+<h5>Physical Description</h5>
+<p>
+	A scroll is a heavy sheet of fine vellum or high-quality paper. An area about 8 ½ inches wide and 11 inches long is sufficient to hold one spell. The sheet is reinforced at the top and bottom with strips of leather slightly longer than the sheet is wide. A scroll holding more than one spell has the same width (about 8 ½ inches) but is an extra foot or so long for each extra spell. Scrolls that hold three or more spells are usually fitted with reinforcing rods at each end rather than simple strips of leather. A scroll has AC 9, 1 hit point, <a href="/exploration/#hardness">hardness</a> 0, and a break DC of 8.
+</p>
+<p>
+	To protect it from wrinkling or tearing, a scroll is rolled up from both ends to form a double cylinder. (This also helps the user unroll the scroll quickly.) The scroll is placed in a tube of ivory, jade, leather, metal, or wood. Most scroll cases are inscribed with magic symbols which often identify the owner or the spells stored on the scrolls inside. The symbols often hide magic traps.
+</p>
+<h5>Activation</h5>
+<p>
+	To activate a scroll, a spellcaster must read the spell written on it. Doing so involves several steps and conditions.
+</p>
+<h5 id="deciphertheWriting">Decipher the Writing</h5>
+<p>
+	The writing on a scroll must be deciphered before a character can use it or know exactly what spell it contains. This requires a <a class="spell" href="/spells/read-magic/">read magic</a> spell or a successful <a href="/skills/spellcraft/">Spellcraft</a> check (DC 20 + spell level).
+</p>
+<p>
+	Deciphering a scroll to determine its contents does not activate its magic unless it is a specially prepared cursed scroll. A character can decipher the writing on a scroll in advance so that he or she can proceed directly to the next step when the time comes to use the scroll.
+</p>
+<h5 id="activatetheSpell">Activate the Spell</h5>
+<p>
+	Activating a scroll requires reading the spell from the scroll. The character must be able to see and read the writing on the scroll. Activating a scroll spell requires no material components or focus. (The creator of the scroll provided these when scribing the scroll.) Note that some spells are effective only when cast on an item or items. In such a case, the scroll user must provide the item when activating the spell. Activating a scroll spell is subject to disruption just as casting a normally prepared spell would be. Using a scroll is like casting a spell for purposes of arcane spell failure chance.
+</p>
+<p>
+	To have any chance of activating a scroll spell, the scroll user must meet the following requirements.
+</p>
+<ul>
+<li>The spell must be of the correct type (arcane or divine). Arcane spellcasters (<a href="/classes/sorcerer-wizard/#wizard">wizards</a>, <a href="/classes/sorcerer-wizard/#sorcerer">sorcerers</a>, and <a href="/classes/bard/">bards</a>) can only use scrolls containing arcane spells, and divine spellcasters (<a href="/classes/cleric/">clerics</a>, <a href="/classes/druid/">druids</a>, <a href="/classes/paladin/">paladins</a>, and <a href="/classes/ranger/">rangers</a>) can only use scrolls containing divine spells. (The type of scroll a character creates is also determined by his or her class.)</li>
+<li>The user must have the spell on his or her class list.</li>
+<li>The user must have the requisite ability score.</li>
+</ul>
+<p>
+	If the user meets all the requirements noted above, and her caster level is at least equal to the spell’s caster level, she can automatically activate the spell without a check. If she meets all three requirements but her own caster level is lower than the scroll spell’s caster level, then she has to make a <a href="/magic-overview/casting-spells/#casterLevelChecks">caster level check</a> (DC = scroll’s caster level + 1) to cast the spell successfully. If she fails, she must make a DC 5 Wisdom check to avoid a mishap (see <a href="#scrollMishaps">Scroll Mishaps</a>, below). A natural roll of 1 always fails, whatever the modifiers.
+</p>
+<h5 id="determineEffect">Determine Effect</h5>
+<p>
+	A spell successfully activated from a scroll works exactly like a spell prepared and cast the normal way. Assume the scroll spell’s caster level is always the minimum level required to cast the spell for the character who scribed the scroll (usually twice the spell’s level, minus 1), unless the caster specifically desires otherwise.
+</p>
+<p>
+	The writing for an activated spell disappears from the scroll.
+</p>
+<h5 id="scrollMishaps">Scroll Mishaps</h5>
+<p>
+	When a mishap occurs, the spell on the scroll has a reversed or harmful effect. Possible mishaps are given below.
+</p>
+<ul>
+<li>A surge of uncontrolled magical energy deals 1d6 points of damage per spell level to the scroll user.</li>
+<li>Spell strikes the scroll user or an ally instead of the intended target, or a random target nearby if the scroll user was the intended recipient.</li>
+<li>Spell takes effect at some random location within spell range.</li>
+<li>Spell’s effect on the target is contrary to the spell’s normal effect.</li>
+<li>The scroll user suffers some minor but bizarre effect related to the spell in some way. Most such effects should last only as long as the original spell’s duration, or 2d10 minutes for instantaneous spells.</li>
+<li>Some innocuous item or items appear in the spell’s area.</li>
+<li>Spell has delayed effect. Sometime within the next 1d12 hours, the spell activates. If the scroll user was the intended recipient, the spell takes effect normally. If the user was not the intended recipient, the spell goes off in the general direction of the original recipient or target, up to the spell’s maximum range, if the target has moved away.</li>
+</ul>
+<p>
+	Several arcane spells are different in level for <a href="/classes/sorcerer-wizard/#sorcerer">sorcerers</a> and <a href="/classes/sorcerer-wizard/#wizard">wizards</a> than they are for <a href="/classes/bard/">bards</a>. Such spells appear on the table at the level appropriate to a sorcerer or wizard (considered the default because bards typically don’t involve themselves in scribing scrolls).
+</p>
+<p>
+	Likewise, some divine spells are different in level for <a href="/classes/cleric/">clerics</a> and <a href="/classes/druid/">druids</a> than they are for <a href="/classes/paladin/">paladins</a> and <a href="/classes/ranger/">rangers</a>. Such spells appear at the level appropriate to a cleric or druid (considered the default because paladins and rangers typically don’t involve themselves in scribing scrolls).
+</p>
+<p>
+	If a divine spell is cast at different levels by <a href="/classes/cleric/">clerics</a> and <a href="/classes/druid/">druids</a>, it appears at the level appropriate to a cleric (considered the default choice between clerics and druids).
+</p>
+<p>
+	Many spells are either arcane or divine, depending on the class of the caster. Such spells appear on both lists at the level appropriate to the class of the arcane or divine caster.
+</p>
+<table cellspacing="0" class="left" id="tableArcaneSpellScrolls">
+<caption>Table: Arcane Spell Scrolls</caption>
+<thead>
+<tr>
+<th align="left" colspan="3">0-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3">
+<ol>
+<li>Includes experience point cost up to 2,000 XP.</li>
+<li>Assumes no material component in excess of 1,000 gp and no XP cost in excess of 300 XP.</li>
+<li>Assumes no XP cost in excess of 1,000 gp.</li>
+<li>Assumes a creature of 10 HD or less.</li>
+<li>Assumes no material component cost in excess of 10,000 gp and no XP cost in excess of 5,000 XP.</li>
+</ol>
+</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td align="center">01-04</td>
+<td><a class="spell" href="/spells/acid-splash/">acid splash</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">05-08</td>
+<td><a class="spell" href="/spells/arcane-mark/">arcane mark</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">09-13</td>
+<td><a class="spell" href="/spells/dancing-lights/">dancing lights</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">14-17</td>
+<td><a class="spell" href="/spells/daze/">daze</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">18-24</td>
+<td><a class="spell" href="/spells/detect-magic/">detect magic</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">25-28</td>
+<td><a class="spell" href="/spells/detect-poison/">detect poison</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">29-32</td>
+<td><a class="spell" href="/spells/disrupt-undead/">disrupt undead</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">33-37</td>
+<td><a class="spell" href="/spells/flare/">flare</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">38-42</td>
+<td><a class="spell" href="/spells/ghost-sound/">ghost sound</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">43-44</td>
+<td><a class="spell" href="/spells/know-direction/">know direction</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">45-50</td>
+<td><a class="spell" href="/spells/light/">light</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">51-52</td>
+<td><a class="spell" href="/spells/lullaby/">lullaby</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">53-57</td>
+<td><a class="spell" href="/spells/mage-hand/">mage hand</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">58-62</td>
+<td><a class="spell" href="/spells/mending/">mending</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">63-67</td>
+<td><a class="spell" href="/spells/message/">message</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">68-72</td>
+<td><a class="spell" href="/spells/open-close/">open/close</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">73-77</td>
+<td><a class="spell" href="/spells/prestidigitation/">prestidigitation</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">78-81</td>
+<td><a class="spell" href="/spells/ray-of-frost/">ray of frost</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">82-87</td>
+<td><a class="spell" href="/spells/read-magic/">read magic</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">88-94</td>
+<td><a class="spell" href="/spells/resistance/">resistance</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">95-96</td>
+<td><a class="spell" href="/spells/summon-instrument/">summon instrument</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">97-100</td>
+<td><a class="spell" href="/spells/touch-of-fatigue/">touch of fatigue</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">1st-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-03</td>
+<td><a class="spell" href="/spells/alarm/">alarm</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">04-05</td>
+<td><a class="spell" href="/spells/animate-rope/">animate rope</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">06-07</td>
+<td><a class="spell" href="/spells/burning-hands/">burning hands</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">08-09</td>
+<td><a class="spell" href="/spells/cause-fear/">cause fear</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">10-12</td>
+<td><a class="spell" href="/spells/charm-person/">charm person</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">13-14</td>
+<td><a class="spell" href="/spells/chill-touch/">chill touch</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">15-16</td>
+<td><a class="spell" href="/spells/color-spray/">color spray</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">17-19</td>
+<td><a class="spell" href="/spells/comprehend-languages/">comprehend languages</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td><a class="spell" href="/spells/confusion-lesser/">confusion, lesser</a></td>
+<td align="center">50 gp</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td><a class="spell" href="/spells/cure-light-wounds/">cure light wounds</a></td>
+<td align="center">50 gp</td>
+</tr>
+<tr>
+<td align="center">22-24</td>
+<td><a class="spell" href="/spells/detect-secret-doors/">detect secret doors</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">25-26</td>
+<td><a class="spell" href="/spells/detect-undead/">detect undead</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">27-29</td>
+<td><a class="spell" href="/spells/disguise-self/">disguise self</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">30-32</td>
+<td><a class="spell" href="/spells/endure-elements/">endure elements</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">33-35</td>
+<td><a class="spell" href="/spells/enlarge-person/">enlarge person</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">36-37</td>
+<td><a class="spell" href="/spells/erase/">erase</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">38-40</td>
+<td><a class="spell" href="/spells/expeditious-retreat/">expeditious retreat</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">41</td>
+<td><a class="spell" href="/spells/feather-fall/">feather fall</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">42-43</td>
+<td><a class="spell" href="/spells/grease/">grease</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">44-45</td>
+<td><a class="spell" href="/spells/hold-portal/">hold portal</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">46-47</td>
+<td><a class="spell" href="/spells/hypnotism/">hypnotism</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">48-49</td>
+<td><a class="spell" href="/spells/identify/">identify</a></td>
+<td align="center">125 gp</td>
+</tr>
+<tr>
+<td align="center">50-51</td>
+<td><a class="spell" href="/spells/jump/">jump</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">52-54</td>
+<td><a class="spell" href="/spells/mage-armor/">mage armor</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">55-56</td>
+<td><a class="spell" href="/spells/magic-missile/">magic missile</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">57-59</td>
+<td><a class="spell" href="/spells/magic-weapon/">magic weapon</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">60-62</td>
+<td><a class="spell" href="/spells/mount/">mount</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">63-64</td>
+<td><a class="spell" href="/spells/magic-aura/">magic aura</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">65-66</td>
+<td><a class="spell" href="/spells/obscuring-mist/">obscuring mist</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">67-74</td>
+<td><a class="spell" href="/spells/protection-from-chaos/">protection from chaos</a>/<a class="spell" href="/spells/protection-from-evil/">evil</a>/<a class="spell" href="/spells/protection-from-good/">good</a>/<a class="spell" href="/spells/protection-from-law/">law</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">75-76</td>
+<td><a class="spell" href="/spells/ray-of-enfeeblement/">ray of enfeeblement</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">77-78</td>
+<td><a class="spell" href="/spells/reduce-person/">reduce person</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">79-80</td>
+<td><a class="spell" href="/spells/remove-fear/">remove fear</a></td>
+<td align="center">50 gp</td>
+</tr>
+<tr>
+<td align="center">81-82</td>
+<td><a class="spell" href="/spells/shield/">shield</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">83-84</td>
+<td><a class="spell" href="/spells/shocking-grasp/">shocking grasp</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">85-86</td>
+<td><a class="spell" href="/spells/silent-image/">silent image</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">87-88</td>
+<td><a class="spell" href="/spells/sleep/">sleep</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">89-90</td>
+<td><a class="spell" href="/spells/summon-monster-i/">summon monster I</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">91-93</td>
+<td><a class="spell" href="/spells/floating-disk/">floating disk</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">94-95</td>
+<td><a class="spell" href="/spells/true-strike/">true strike</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">96</td>
+<td><a class="spell" href="/spells/undetectable-alignment/">undetectable alignment</a></td>
+<td align="center">50 gp</td>
+</tr>
+<tr>
+<td align="center">97-98</td>
+<td><a class="spell" href="/spells/unseen-servant/">unseen servant</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">99-100</td>
+<td><a class="spell" href="/spells/ventriloquism/">ventriloquism</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">2nd-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01</td>
+<td><a class="spell" href="/spells/animal-messenger/">animal messenger</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td><a class="spell" href="/spells/animal-trance/">animal trance</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">03</td>
+<td><a class="spell" href="/spells/arcane-lock/">arcane lock</a></td>
+<td align="center">175 gp</td>
+</tr>
+<tr>
+<td align="center">04-06</td>
+<td><a class="spell" href="/spells/bears-endurance/">bear’s endurance</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">07-08</td>
+<td><a class="spell" href="/spells/blindness-deafness/">blindness/deafness</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">09-10</td>
+<td><a class="spell" href="/spells/blur/">blur</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">11-13</td>
+<td><a class="spell" href="/spells/bulls-strength/">bull’s strength</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td><a class="spell" href="/spells/calm-emotions/">calm emotions</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">15-17</td>
+<td><a class="spell" href="/spells/cats-grace/">cat’s grace</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">18-19</td>
+<td><a class="spell" href="/spells/comm-and-undead/">command undead</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td><a class="spell" href="/spells/continual-flame/">continual flame</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td><a class="spell" href="/spells/cure-moderate-wounds/">cure moderate wounds</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">22</td>
+<td><a class="spell" href="/spells/darkness/">darkness</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">23-25</td>
+<td><a class="spell" href="/spells/darkvision/">darkvision</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">26</td>
+<td><a class="spell" href="/spells/daze-monster/">daze monster</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">27</td>
+<td><a class="spell" href="/spells/delay-poison/">delay poison</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">28-29</td>
+<td><a class="spell" href="/spells/detect-thoughts/">detect thoughts</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">30-31</td>
+<td><a class="spell" href="/spells/disguise-self/">disguise self</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">32-34</td>
+<td><a class="spell" href="/spells/eagles-splendor/">eagle’s splendor</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">35</td>
+<td><a class="spell" href="/spells/enthrall/">enthrall</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">36-37</td>
+<td><a class="spell" href="/spells/false-life/">false life</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">38-39</td>
+<td><a class="spell" href="/spells/flaming-sphere/">flaming sphere</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">40</td>
+<td><a class="spell" href="/spells/fog-cloud/">fog cloud</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">41-43</td>
+<td><a class="spell" href="/spells/foxs-cunning/">fox’s cunning</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">44</td>
+<td><a class="spell" href="/spells/ghoul-touch/">ghoul touch</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">45-46</td>
+<td><a class="spell" href="/spells/glitterdust/">glitterdust</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">47</td>
+<td><a class="spell" href="/spells/gust-of-wind/">gust of wind</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">48-49</td>
+<td><a class="spell" href="/spells/hypnotic-pattern/">hypnotic pattern</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">50-52</td>
+<td><a class="spell" href="/spells/invisibility/">invisibility</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">53-55</td>
+<td><a class="spell" href="/spells/knock/">knock</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">56</td>
+<td><a class="spell" href="/spells/phantom-trap/">phantom trap</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">57-58</td>
+<td><a class="spell" href="/spells/levitate/">levitate</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">59</td>
+<td><a class="spell" href="/spells/locate-object/">locate object</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">60</td>
+<td><a class="spell" href="/spells/magic-mouth/">magic mouth</a></td>
+<td align="center">160 gp</td>
+</tr>
+<tr>
+<td align="center">61-62</td>
+<td><a class="spell" href="/spells/acid-arrow/">acid arrow</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">63</td>
+<td><a class="spell" href="/spells/minor-image/">minor image</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">64-65</td>
+<td><a class="spell" href="/spells/mirror-image/">mirror image</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">66</td>
+<td><a class="spell" href="/spells/misdirection/">misdirection</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">67</td>
+<td><a class="spell" href="/spells/obscure-object/">obscure object</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">68-70</td>
+<td><a class="spell" href="/spells/owls-wisdom/">owl’s wisdom</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">71-73</td>
+<td><a class="spell" href="/spells/protection-from-arrows/">protection from arrows</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">74-75</td>
+<td><a class="spell" href="/spells/pyrotechnics/">pyrotechnics</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">76-78</td>
+<td><a class="spell" href="/spells/resist-energy/">resist energy</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">79</td>
+<td><a class="spell" href="/spells/rope-trick/">rope trick</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">80</td>
+<td><a class="spell" href="/spells/scare/">scare</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">81-82</td>
+<td><a class="spell" href="/spells/scorching-ray/">scorching ray</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">83-85</td>
+<td><a class="spell" href="/spells/see-invisibility/">see invisibility</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">86</td>
+<td><a class="spell" href="/spells/shatter/">shatter</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">87</td>
+<td><a class="spell" href="/spells/silence/">silence</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">88</td>
+<td><a class="spell" href="/spells/sound-burst/">sound burst</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">89</td>
+<td><a class="spell" href="/spells/spectral-hand/">spectral hand</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">90-91</td>
+<td><a class="spell" href="/spells/spider-climb/">spider climb</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">92-93</td>
+<td><a class="spell" href="/spells/summon-monster-ii/">summon monster II</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">94-95</td>
+<td><a class="spell" href="/spells/summon-swarm/">summon swarm</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">96</td>
+<td><a class="spell" href="/spells/hideous-laughter/">hideous laughter</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">97</td>
+<td><a class="spell" href="/spells/touch-of-idiocy/">touch of idiocy</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">98-99</td>
+<td><a class="spell" href="/spells/web/">web</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td><a class="spell" href="/spells/whispering-wind/">whispering wind</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">3rd-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-02</td>
+<td><a class="spell" href="/spells/arcane-sight/">arcane sight</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">03-04</td>
+<td><a class="spell" href="/spells/blink/">blink</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">05-06</td>
+<td><a class="spell" href="/spells/clairaudience-clairvoyance/">clairaudience/clairvoyance</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">07</td>
+<td><a class="spell" href="/spells/cure-serious-wounds/">cure serious wounds</a></td>
+<td align="center">525 gp</td>
+</tr>
+<tr>
+<td align="center">08-10</td>
+<td><a class="spell" href="/spells/daylight/">daylight</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">11-12</td>
+<td><a class="spell" href="/spells/deep-slumber/">deep slumber</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">13-15</td>
+<td><a class="spell" href="/spells/dispel-magic/">dispel magic</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">16-17</td>
+<td><a class="spell" href="/spells/displacement/">displacement</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td><a class="spell" href="/spells/explosive-runes/">explosive runes</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">19-20</td>
+<td><a class="spell" href="/spells/fireball/">fireball</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">21-22</td>
+<td><a class="spell" href="/spells/flame-arrow/">flame arrow</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">23-25</td>
+<td><a class="spell" href="/spells/fly/">fly</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">26-27</td>
+<td><a class="spell" href="/spells/gaseous-form/">gaseous form</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">28-29</td>
+<td><a class="spell" href="/spells/gentle-repose/">gentle repose</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">30</td>
+<td><a class="spell" href="/spells/glibness/">glibness</a></td>
+<td align="center">525 gp</td>
+</tr>
+<tr>
+<td align="center">31</td>
+<td><a class="spell" href="/spells/good-hope/">good hope</a></td>
+<td align="center">525 gp</td>
+</tr>
+<tr>
+<td align="center">32-33</td>
+<td><a class="spell" href="/spells/halt-undead/">halt undead</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">34-36</td>
+<td><a class="spell" href="/spells/haste/">haste</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">37-38</td>
+<td><a class="spell" href="/spells/heroism/">heroism</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">39-40</td>
+<td><a class="spell" href="/spells/hold-person/">hold person</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">41</td>
+<td><a class="spell" href="/spells/illusory-script/">illusory script</a></td>
+<td align="center">425 gp</td>
+</tr>
+<tr>
+<td align="center">42-44</td>
+<td><a class="spell" href="/spells/invisibility-sphere/">invisibility sphere</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">45-47</td>
+<td><a class="spell" href="/spells/keen-edge/">keen edge</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">48-49</td>
+<td><a class="spell" href="/spells/tiny-hut/">tiny hut</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">50-51</td>
+<td><a class="spell" href="/spells/lightning-bolt/">lightning bolt</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">52-59</td>
+<td><a class="spell" href="/spells/magic-circle-against-chaos/">magic circle against chaos</a>/<a class="spell" href="/spells/magic-circle-against-evil/">evil</a>/<a class="spell" href="/spells/magic-circle-against-good/">good</a>/<a class="spell" href="/spells/magic-circle-against-law/">law</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">60-62</td>
+<td><a class="spell" href="/spells/magic-weapon-greater/">magic weapon, greater</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">63-64</td>
+<td><a class="spell" href="/spells/major-image/">major image</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">65-66</td>
+<td><a class="spell" href="/spells/nondetection/">nondetection</a></td>
+<td align="center">425 gp</td>
+</tr>
+<tr>
+<td align="center">67-68</td>
+<td><a class="spell" href="/spells/phantom-steed/">phantom steed</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">69-71</td>
+<td><a class="spell" href="/spells/protection-from-energy/">protection from energy</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">72-73</td>
+<td><a class="spell" href="/spells/rage/">rage</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">74-75</td>
+<td><a class="spell" href="/spells/ray-of-exhaustion/">ray of exhaustion</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">76</td>
+<td><a class="spell" href="/spells/sculpt-sound/">sculpt sound</a></td>
+<td align="center">525 gp</td>
+</tr>
+<tr>
+<td align="center">77</td>
+<td><a class="spell" href="/spells/secret-page/">secret page</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">78</td>
+<td><a class="spell" href="/spells/sepia-snake-sigil/">sepia snake sigil</a></td>
+<td align="center">875 gp</td>
+</tr>
+<tr>
+<td align="center">79</td>
+<td><a class="spell" href="/spells/shrink-item/">shrink item</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">80-81</td>
+<td><a class="spell" href="/spells/sleet-storm/">sleet storm</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">82-83</td>
+<td><a class="spell" href="/spells/slow/">slow</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">84</td>
+<td><a class="spell" href="/spells/speak-with-animals/">speak with animals</a></td>
+<td align="center">525 gp</td>
+</tr>
+<tr>
+<td align="center">85-86</td>
+<td><a class="spell" href="/spells/stinking-cloud/">stinking cloud</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">87-88</td>
+<td><a class="spell" href="/spells/suggestion/">suggestion</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">89-90</td>
+<td><a class="spell" href="/spells/summon-monster-iii/">summon monster III</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">91-93</td>
+<td><a class="spell" href="/spells/tongues/">tongues</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">94-95</td>
+<td><a class="spell" href="/spells/vampiric-touch/">vampiric touch</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">96-98</td>
+<td><a class="spell" href="/spells/water-breathing/">water breathing</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">99-100</td>
+<td><a class="spell" href="/spells/wind-wall/">wind wall</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">4th-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-02</td>
+<td><a class="spell" href="/spells/animate-dead/">animate dead</a></td>
+<td align="center">1,050 gp</td>
+</tr>
+<tr>
+<td align="center">03-05</td>
+<td><a class="spell" href="/spells/arcane-eye/">arcane eye</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">06-07</td>
+<td><a class="spell" href="/spells/bestow-curse/">bestow curse</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">08-10</td>
+<td><a class="spell" href="/spells/charm-monster/">charm monster</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">11-13</td>
+<td><a class="spell" href="/spells/confusion/">confusion</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">14-15</td>
+<td><a class="spell" href="/spells/contagion/">contagion</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">16-17</td>
+<td><a class="spell" href="/spells/crushing-despair/">crushing despair</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td><a class="spell" href="/spells/cure-critical-wounds/">cure critical wounds</a></td>
+<td align="center">1,000 gp</td>
+</tr>
+<tr>
+<td align="center">19</td>
+<td><a class="spell" href="/spells/detect-scrying/">detect scrying</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">20-23</td>
+<td><a class="spell" href="/spells/dimension-door/">dimension door</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">24-26</td>
+<td><a class="spell" href="/spells/dimensional-anchor/">dimensional anchor</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">27-28</td>
+<td><a class="spell" href="/spells/enervation/">enervation</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">29-30</td>
+<td><a class="spell" href="/spells/enlarge-person-mass/">enlarge person, mass</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">31-32</td>
+<td><a class="spell" href="/spells/black-tentacles/">black tentacles</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">33-34</td>
+<td><a class="spell" href="/spells/fear/">fear</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">35-37</td>
+<td><a class="spell" href="/spells/fire-shield/">fire shield</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">38-39</td>
+<td><a class="spell" href="/spells/fire-trap/">fire trap</a></td>
+<td align="center">725 gp</td>
+</tr>
+<tr>
+<td align="center">40-42</td>
+<td><a class="spell" href="/spells/freedom-of-movement/">freedom of movement</a></td>
+<td align="center">1,000 gp</td>
+</tr>
+<tr>
+<td align="center">43</td>
+<td><a class="spell" href="/spells/geas-lesser/">geas, lesser</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">44-46</td>
+<td><a class="spell" href="/spells/globe-of-invulnerability-lesser/">globe of invulnerability, lesser</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">47-48</td>
+<td><a class="spell" href="/spells/hallucinatory-terrain/">hallucinatory terrain</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">49-50</td>
+<td><a class="spell" href="/spells/ice-storm/">ice storm</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">51-52</td>
+<td><a class="spell" href="/spells/illusory-wall/">illusory wall</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">53-55</td>
+<td><a class="spell" href="/spells/invisibility-greater/">invisibility, greater</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">56-57</td>
+<td><a class="spell" href="/spells/secure-shelter/">secure shelter</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">58</td>
+<td><a class="spell" href="/spells/locate-creature/">locate creature</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">59-60</td>
+<td><a class="spell" href="/spells/minor-creation/">minor creation</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">61</td>
+<td><a class="spell" href="/spells/modify-memory/">modify memory</a></td>
+<td align="center">1,000 gp</td>
+</tr>
+<tr>
+<td align="center">62</td>
+<td><a class="spell" href="/spells/neutralize-poison/">neutralize poison</a></td>
+<td align="center">1,000 gp</td>
+</tr>
+<tr>
+<td align="center">63-64</td>
+<td><a class="spell" href="/spells/resilient-sphere/">resilient sphere</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">65-66</td>
+<td><a class="spell" href="/spells/phantasmal-killer/">phantasmal killer</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">67-68</td>
+<td><a class="spell" href="/spells/polymorph/">polymorph</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">69-70</td>
+<td><a class="spell" href="/spells/rainbow-pattern/">rainbow pattern</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">71</td>
+<td><a class="spell" href="/spells/mnemonic-enhancer/">mnemonic enhancer</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">72-73</td>
+<td><a class="spell" href="/spells/reduce-person-mass/">reduce person, mass</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">74-76</td>
+<td><a class="spell" href="/spells/remove-curse/">remove curse</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">77</td>
+<td><a class="spell" href="/spells/repel-vermin/">repel vermin</a></td>
+<td align="center">1,000 gp</td>
+</tr>
+<tr>
+<td align="center">78-79</td>
+<td><a class="spell" href="/spells/scrying/">scrying</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">80-81</td>
+<td><a class="spell" href="/spells/shadow-conjuration/">shadow conjuration</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">82-83</td>
+<td><a class="spell" href="/spells/shout/">shout</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">84-85</td>
+<td><a class="spell" href="/spells/solid-fog/">solid fog</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">86</td>
+<td><a class="spell" href="/spells/speak-with-plants/">speak with plants</a></td>
+<td align="center">1,000 gp</td>
+</tr>
+<tr>
+<td align="center">87-88</td>
+<td><a class="spell" href="/spells/stone-shape/">stone shape</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">89-91</td>
+<td><a class="spell" href="/spells/stoneskin/">stoneskin</a></td>
+<td align="center">950 gp</td>
+</tr>
+<tr>
+<td align="center">92-93</td>
+<td><a class="spell" href="/spells/summon-monster-iv/">summon monster IV</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">94-96</td>
+<td><a class="spell" href="/spells/wall-of-fire/">wall of fire</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">97-99</td>
+<td><a class="spell" href="/spells/wall-of-ice/">wall of ice</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td><a class="spell" href="/spells/zone-of-silence/">zone of silence</a></td>
+<td align="center">1,000 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">5th-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-02</td>
+<td><a class="spell" href="/spells/animal-growth/">animal growth</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">03-05</td>
+<td><a class="spell" href="/spells/baleful-polymorph/">baleful polymorph</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">06-07</td>
+<td><a class="spell" href="/spells/interposing-hand/">interposing hand</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">08-09</td>
+<td><a class="spell" href="/spells/blight/">blight</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">10-12</td>
+<td><a class="spell" href="/spells/break-enchantment/">break enchantment</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">13-14</td>
+<td><a class="spell" href="/spells/cloudkill/">cloudkill</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">15-17</td>
+<td><a class="spell" href="/spells/cone-of-cold/">cone of cold</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">18-19</td>
+<td><a class="spell" href="/spells/contact-other-plane/">contact other plane</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td><a class="spell" href="/spells/cure-light-wounds-mass/">cure light wounds, mass</a></td>
+<td align="center">1,625 gp</td>
+</tr>
+<tr>
+<td align="center">21-23</td>
+<td><a class="spell" href="/spells/dismissal/">dismissal</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">24-26</td>
+<td><a class="spell" href="/spells/dispel-magic-greater/">dispel magic, greater</a></td>
+<td align="center">1,625 gp</td>
+</tr>
+<tr>
+<td align="center">27-28</td>
+<td><a class="spell" href="/spells/dominate-person/">dominate person</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">29</td>
+<td><a class="spell" href="/spells/dream/">dream</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">30-31</td>
+<td><a class="spell" href="/spells/fabricate/">fabricate</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">32-33</td>
+<td><a class="spell" href="/spells/false-vision/">false vision</a></td>
+<td align="center">1,375 gp</td>
+</tr>
+<tr>
+<td align="center">34-35</td>
+<td><a class="spell" href="/spells/feeblemind/">feeblemind</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">36-39</td>
+<td><a class="spell" href="/spells/hold-monster/">hold monster</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">40</td>
+<td><a class="spell" href="/spells/secret-chest/">secret chest</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">41</td>
+<td><a class="spell" href="/spells/magic-jar/">magic jar</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">42-43</td>
+<td><a class="spell" href="/spells/major-creation/">major creation</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">44-45</td>
+<td><a class="spell" href="/spells/mind-fog/">mind fog</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">46-47</td>
+<td><a class="spell" href="/spells/mirage-arcana/">mirage arcana</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">48-49</td>
+<td><a class="spell" href="/spells/mages-faithful-hound/">mage’s faithful hound</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">50-51</td>
+<td><a class="spell" href="/spells/mages-private-sanctum/">mage’s private sanctum</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">52-53</td>
+<td><a class="spell" href="/spells/nightmare/">nightmare</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">54-57</td>
+<td><a class="spell" href="/spells/overl-and-flight/">overland flight</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">58-60</td>
+<td><a class="spell" href="/spells/passwall/">passwall</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">61</td>
+<td><a class="spell" href="/spells/permanency/">permanency</a></td>
+<td align="center">10,125 gp<sup>1</sup></td>
+</tr>
+<tr>
+<td align="center">62-63</td>
+<td><a class="spell" href="/spells/persistent-image/">persistent image</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">64-65</td>
+<td><a class="spell" href="/spells/planar-binding-lesser/">planar binding, lesser</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">66-67</td>
+<td><a class="spell" href="/spells/prying-eyes/">prying eyes</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">68-69</td>
+<td><a class="spell" href="/spells/telepathic-bond/">telepathic bond</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">70-71</td>
+<td><a class="spell" href="/spells/seeming/">seeming</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">72-74</td>
+<td><a class="spell" href="/spells/sending/">sending</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">75-76</td>
+<td><a class="spell" href="/spells/shadow-evocation/">shadow evocation</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">77</td>
+<td><a class="spell" href="/spells/song-of-discord/">song of discord</a></td>
+<td align="center">1,625 gp</td>
+</tr>
+<tr>
+<td align="center">78-79</td>
+<td><a class="spell" href="/spells/summon-monster-v/">summon monster V</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">80</td>
+<td><a class="spell" href="/spells/symbol-of-pain/">symbol of pain</a></td>
+<td align="center">2,125 gp</td>
+</tr>
+<tr>
+<td align="center">81</td>
+<td><a class="spell" href="/spells/symbol-of-sleep/">symbol of sleep</a></td>
+<td align="center">2,125 gp</td>
+</tr>
+<tr>
+<td align="center">82-83</td>
+<td><a class="spell" href="/spells/telekinesis/">telekinesis</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">84-88</td>
+<td><a class="spell" href="/spells/teleport/">teleport</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">89-90</td>
+<td><a class="spell" href="/spells/transmute-mud-to-rock/">transmute mud to rock</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">91-92</td>
+<td><a class="spell" href="/spells/transmute-rock-to-mud/">transmute rock to mud</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">93-95</td>
+<td><a class="spell" href="/spells/wall-of-force/">wall of force</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">96-98</td>
+<td><a class="spell" href="/spells/wall-of-stone/">wall of stone</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">99-100</td>
+<td><a class="spell" href="/spells/waves-of-fatigue/">waves of fatigue</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">6th-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-02</td>
+<td><a class="spell" href="/spells/acid-fog/">acid fog</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">03-05</td>
+<td><a class="spell" href="/spells/analyze-dweomer/">analyze dweomer</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">06</td>
+<td><a class="spell" href="/spells/animate-objects/">animate objects</a></td>
+<td align="center">2,400 gp</td>
+</tr>
+<tr>
+<td align="center">07-09</td>
+<td><a class="spell" href="/spells/antimagic-field/">antimagic field</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">10-12</td>
+<td><a class="spell" href="/spells/bears-endurance-mass/">bear’s endurance, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">13-14</td>
+<td><a class="spell" href="/spells/forceful-hand/">forceful hand</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">15-17</td>
+<td><a class="spell" href="/spells/bulls-strength-mass/">bull’s strength, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">18-20</td>
+<td><a class="spell" href="/spells/cats-grace-mass/">cat’s grace, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">21-23</td>
+<td><a class="spell" href="/spells/chain-lightning/">chain lightning</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">24-25</td>
+<td><a class="spell" href="/spells/circle-of-death/">circle of death</a></td>
+<td align="center">2,150 gp</td>
+</tr>
+<tr>
+<td align="center">26</td>
+<td><a class="spell" href="/spells/contingency/">contingency</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">27-28</td>
+<td><a class="spell" href="/spells/control-water/">control water</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">29</td>
+<td><a class="spell" href="/spells/create-undead/">create undead</a></td>
+<td align="center">2,350 gp</td>
+</tr>
+<tr>
+<td align="center">30</td>
+<td><a class="spell" href="/spells/cure-moderate-wounds-mass/">cure moderate wounds, mass</a></td>
+<td align="center">2,400 gp</td>
+</tr>
+<tr>
+<td align="center">31-33</td>
+<td><a class="spell" href="/spells/disintegrate/">disintegrate</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">34-37</td>
+<td><a class="spell" href="/spells/dispel-magic-greater/">dispel magic, greater</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">38-40</td>
+<td><a class="spell" href="/spells/eagles-splendor-mass/">eagle’s splendor, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">41-42</td>
+<td><a class="spell" href="/spells/eyebite/">eyebite</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">43</td>
+<td><a class="spell" href="/spells/find-the-path/">find the path</a></td>
+<td align="center">2,400 gp</td>
+</tr>
+<tr>
+<td align="center">44-45</td>
+<td><a class="spell" href="/spells/flesh-to-stone/">flesh to stone</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">46-48</td>
+<td><a class="spell" href="/spells/foxs-cunning-mass/">fox’s cunning, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">49</td>
+<td><a class="spell" href="/spells/geas-quest/">geas/quest</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">50-52</td>
+<td><a class="spell" href="/spells/globe-of-invulnerability/">globe of invulnerability</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">53</td>
+<td><a class="spell" href="/spells/guards-and-wards/">guards and wards</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">54</td>
+<td><a class="spell" href="/spells/heroes-feast/">heroes’ feast</a></td>
+<td align="center">2,400 gp</td>
+</tr>
+<tr>
+<td align="center">55-56</td>
+<td><a class="spell" href="/spells/heroism-greater/">heroism, greater</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">57</td>
+<td><a class="spell" href="/spells/legend-lore/">legend lore</a></td>
+<td align="center">1,900 gp</td>
+</tr>
+<tr>
+<td align="center">58-59</td>
+<td><a class="spell" href="/spells/mislead/">mislead</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">60</td>
+<td><a class="spell" href="/spells/mages-lucubration/">mage’s lucubration</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">61-62</td>
+<td><a class="spell" href="/spells/move-earth/">move earth</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">63-64</td>
+<td><a class="spell" href="/spells/freezing-sphere/">freezing sphere</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">65-67</td>
+<td><a class="spell" href="/spells/owls-wisdom-mass/">owl’s wisdom, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">68-69</td>
+<td><a class="spell" href="/spells/permanent-image/">permanent image</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">70-71</td>
+<td><a class="spell" href="/spells/planar-binding/">planar binding</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">72-73</td>
+<td><a class="spell" href="/spells/programmed-image/">programmed image</a></td>
+<td align="center">1,675 gp</td>
+</tr>
+<tr>
+<td align="center">74-75</td>
+<td><a class="spell" href="/spells/repulsion/">repulsion</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">76-78</td>
+<td><a class="spell" href="/spells/shadow-walk/">shadow walk</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">79-81</td>
+<td><a class="spell" href="/spells/stone-to-flesh/">stone to flesh</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">82-83</td>
+<td><a class="spell" href="/spells/suggestion-mass/">suggestion, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">84-85</td>
+<td><a class="spell" href="/spells/summon-monster-vi/">summon monster VI</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">86</td>
+<td><a class="spell" href="/spells/symbol-of-fear/">symbol of fear</a></td>
+<td align="center">2,650 gp</td>
+</tr>
+<tr>
+<td align="center">87</td>
+<td><a class="spell" href="/spells/symbol-of-persuasion/">symbol of persuasion</a></td>
+<td align="center">6,650 gp</td>
+</tr>
+<tr>
+<td align="center">88</td>
+<td><a class="spell" href="/spells/sympathetic-vibration/">sympathetic vibration</a></td>
+<td align="center">2,400 gp</td>
+</tr>
+<tr>
+<td align="center">89-90</td>
+<td><a class="spell" href="/spells/transformation/">transformation</a></td>
+<td align="center">1,950 gp</td>
+</tr>
+<tr>
+<td align="center">91-93</td>
+<td><a class="spell" href="/spells/true-seeing/">true seeing</a></td>
+<td align="center">1,900 gp</td>
+</tr>
+<tr>
+<td align="center">94-95</td>
+<td><a class="spell" href="/spells/undeath-to-death/">undeath to death</a></td>
+<td align="center">2,150 gp</td>
+</tr>
+<tr>
+<td align="center">96-97</td>
+<td><a class="spell" href="/spells/veil/">veil</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">98-100</td>
+<td><a class="spell" href="/spells/wall-of-iron/">wall of iron</a></td>
+<td align="center">1,700 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">7th-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-03</td>
+<td><a class="spell" href="/spells/arcane-sight-greater/">arcane sight, greater</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">04-07</td>
+<td><a class="spell" href="/spells/banishment/">banishment</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">08-10</td>
+<td><a class="spell" href="/spells/grasping-hand/">grasping hand</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">11-13</td>
+<td><a class="spell" href="/spells/control-undead/">control undead</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">14-16</td>
+<td><a class="spell" href="/spells/control-weather/">control weather</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">17-19</td>
+<td><a class="spell" href="/spells/delayed-blast-fireball/">delayed blast fireball</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">20-21</td>
+<td><a class="spell" href="/spells/instant-summons/">instant summons</a></td>
+<td align="center">3,275 gp</td>
+</tr>
+<tr>
+<td align="center">22-25</td>
+<td><a class="spell" href="/spells/ethereal-jaunt/">ethereal jaunt</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">26-28</td>
+<td><a class="spell" href="/spells/finger-of-death/">finger of death</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">29-31</td>
+<td><a class="spell" href="/spells/forcecage/">forcecage</a></td>
+<td align="center">3,775 gp</td>
+</tr>
+<tr>
+<td align="center">32-35</td>
+<td><a class="spell" href="/spells/hold-person-mass/">hold person, mass</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">36-38</td>
+<td><a class="spell" href="/spells/insanity/">insanity</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">39-42</td>
+<td><a class="spell" href="/spells/invisibility-mass/">invisibility, mass</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">43</td>
+<td><a class="spell" href="/spells/limited-wish/">limited wish</a></td>
+<td align="center">3,775 gp<sup>2</sup></td>
+</tr>
+<tr>
+<td align="center">44-45</td>
+<td><a class="spell" href="/spells/mages-magnificent-mansion/">mage’s magnificent mansion</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">46-48</td>
+<td><a class="spell" href="/spells/mages-sword/">mage’s sword</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">49-51</td>
+<td><a class="spell" href="/spells/phase-door/">phase door</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">52-54</td>
+<td><a class="spell" href="/spells/plane-shift/">plane shift</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">55-57</td>
+<td><a class="spell" href="/spells/power-word-blind/">power word blind</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">58-61</td>
+<td><a class="spell" href="/spells/prismatic-spray/">prismatic spray</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">62-64</td>
+<td><a class="spell" href="/spells/project-image/">project image</a></td>
+<td align="center">2,280 gp</td>
+</tr>
+<tr>
+<td align="center">65-67</td>
+<td><a class="spell" href="/spells/reverse-gravity/">reverse gravity</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">68-70</td>
+<td><a class="spell" href="/spells/scrying-greater/">scrying, greater</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">71-73</td>
+<td><a class="spell" href="/spells/sequester/">sequester</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">74-76</td>
+<td><a class="spell" href="/spells/shadow-conjuration-greater/">shadow conjuration, greater</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">77</td>
+<td><a class="spell" href="/spells/simulacrum/">simulacrum</a></td>
+<td align="center">7,275 gp<sup>3</sup></td>
+</tr>
+<tr>
+<td align="center">78-80</td>
+<td><a class="spell" href="/spells/spell-turning/">spell turning</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">81-82</td>
+<td><a class="spell" href="/spells/statue/">statue</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">83-85</td>
+<td><a class="spell" href="/spells/summon-monster-vii/">summon monster VII</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">86</td>
+<td><a class="spell" href="/spells/symbol-of-stunning/">symbol of stunning</a></td>
+<td align="center">7,275 gp</td>
+</tr>
+<tr>
+<td align="center">87</td>
+<td><a class="spell" href="/spells/symbol-of-weakness/">symbol of weakness</a></td>
+<td align="center">7,275 gp</td>
+</tr>
+<tr>
+<td align="center">88-90</td>
+<td><a class="spell" href="/spells/teleport-object/">teleport object</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">91-95</td>
+<td><a class="spell" href="/spells/teleport-greater/">teleport, greater</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">96-97</td>
+<td><a class="spell" href="/spells/vision/">vision</a></td>
+<td align="center">2,775 gp</td>
+</tr>
+<tr>
+<td align="center">98-100</td>
+<td><a class="spell" href="/spells/waves-of-exhaustion/">waves of exhaustion</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">8th-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-02</td>
+<td><a class="spell" href="/spells/antipathy/">antipathy</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">03-05</td>
+<td><a class="spell" href="/spells/clenched-fist/">clenched fist</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">06-08</td>
+<td><a class="spell" href="/spells/binding/">binding</a></td>
+<td align="center">8,500 gp1</td>
+</tr>
+<tr>
+<td align="center">09-12</td>
+<td><a class="spell" href="/spells/charm-monster-mass/">charm monster, mass</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td><a class="spell" href="/spells/clone/">clone</a></td>
+<td align="center">4,000 gp</td>
+</tr>
+<tr>
+<td align="center">14-16</td>
+<td><a class="spell" href="/spells/create-greater-undead/">create greater undead</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">17-19</td>
+<td><a class="spell" href="/spells/demand/">demand</a></td>
+<td align="center">3,600 gp</td>
+</tr>
+<tr>
+<td align="center">20-22</td>
+<td><a class="spell" href="/spells/dimensional-lock/">dimensional lock</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">23-26</td>
+<td><a class="spell" href="/spells/discern-location/">discern location</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">27-29</td>
+<td><a class="spell" href="/spells/horrid-wilting/">horrid wilting</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">30-32</td>
+<td><a class="spell" href="/spells/incendiary-cloud/">incendiary cloud</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">33-35</td>
+<td><a class="spell" href="/spells/iron-body/">iron body</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">36-38</td>
+<td><a class="spell" href="/spells/maze/">maze</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">39-41</td>
+<td><a class="spell" href="/spells/mind-blank/">mind blank</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">42-44</td>
+<td><a class="spell" href="/spells/moment-of-prescience/">moment of prescience</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">45-48</td>
+<td><a class="spell" href="/spells/telekinetic-sphere/">telekinetic sphere</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">49-51</td>
+<td><a class="spell" href="/spells/irresistible-dance/">irresistible dance</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">52-54</td>
+<td><a class="spell" href="/spells/planar-binding-greater/">planar binding, greater</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">55-57</td>
+<td><a class="spell" href="/spells/polar-ray/">polar ray</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">58-60</td>
+<td><a class="spell" href="/spells/polymorph-any-object/">polymorph any object</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">61-63</td>
+<td><a class="spell" href="/spells/power-word-stun/">power word stun</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">64-66</td>
+<td><a class="spell" href="/spells/prismatic-wall/">prismatic wall</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">67-70</td>
+<td><a class="spell" href="/spells/protection-from-spells/">protection from spells</a></td>
+<td align="center">3,500 gp</td>
+</tr>
+<tr>
+<td align="center">71-73</td>
+<td><a class="spell" href="/spells/prying-eyes-greater/">prying eyes, greater</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">74-76</td>
+<td><a class="spell" href="/spells/scintillating-pattern/">scintillating pattern</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">77-78</td>
+<td><a class="spell" href="/spells/screen/">screen</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">79-81</td>
+<td><a class="spell" href="/spells/shadow-evocation-greater/">shadow evocation, greater</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">82-84</td>
+<td><a class="spell" href="/spells/shout-greater/">shout, greater</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">85-87</td>
+<td><a class="spell" href="/spells/summon-monster-viii/">summon monster VIII</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">88-90</td>
+<td><a class="spell" href="/spells/sunburst/">sunburst</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">91</td>
+<td><a class="spell" href="/spells/symbol-of-death/">symbol of death</a></td>
+<td align="center">8,000 gp</td>
+</tr>
+<tr>
+<td align="center">92</td>
+<td><a class="spell" href="/spells/symbol-of-insanity/">symbol of insanity</a></td>
+<td align="center">8,000 gp</td>
+</tr>
+<tr>
+<td align="center">93-94</td>
+<td><a class="spell" href="/spells/sympathy/">sympathy</a></td>
+<td align="center">4,500 gp</td>
+</tr>
+<tr>
+<td align="center">95-98</td>
+<td><a class="spell" href="/spells/temporal-stasis/">temporal stasis</a></td>
+<td align="center">3,500 gp</td>
+</tr>
+<tr>
+<td align="center">99-100</td>
+<td><a class="spell" href="/spells/trap-the-soul/">trap the soul</a></td>
+<td align="center">13,000 gp<sup>4</sup></td>
+</tr>
+<tr>
+<th align="left" colspan="3">9th-Level Arcane Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-03</td>
+<td><a class="spell" href="/spells/astral-projection/">astral projection</a></td>
+<td align="center">4,870 gp</td>
+</tr>
+<tr>
+<td align="center">04-07</td>
+<td><a class="spell" href="/spells/crushing-hand/">crushing hand</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">08-12</td>
+<td><a class="spell" href="/spells/dominate-monster/">dominate monster</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">13-16</td>
+<td><a class="spell" href="/spells/energy-drain/">energy drain</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">17-21</td>
+<td><a class="spell" href="/spells/etherealness/">etherealness</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">22-25</td>
+<td><a class="spell" href="/spells/foresight/">foresight</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">26-31</td>
+<td><a class="spell" href="/spells/freedom/">freedom</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">32-36</td>
+<td><a class="spell" href="/spells/gate/">gate</a></td>
+<td align="center">8,825 gp</td>
+</tr>
+<tr>
+<td align="center">37-40</td>
+<td><a class="spell" href="/spells/hold-monster-mass/">hold monster, mass</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">41-44</td>
+<td><a class="spell" href="/spells/imprisonment/">imprisonment</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">45-49</td>
+<td><a class="spell" href="/spells/meteor-swarm/">meteor swarm</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">50-53</td>
+<td><a class="spell" href="/spells/mages-disjunction/">mage’s disjunction</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">54-58</td>
+<td><a class="spell" href="/spells/power-word-kill/">power word kill</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">59-62</td>
+<td><a class="spell" href="/spells/prismatic-sphere/">prismatic sphere</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">63-66</td>
+<td><a class="spell" href="/spells/refuge/">refuge</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">67-70</td>
+<td><a class="spell" href="/spells/shades/">shades</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">71-76</td>
+<td><a class="spell" href="/spells/shapechange/">shapechange</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">77-79</td>
+<td><a class="spell" href="/spells/soul-bind/">soul bind</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">80-83</td>
+<td><a class="spell" href="/spells/summon-monster-ix/">summon monster IX</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">84-86</td>
+<td><a class="spell" href="/spells/teleportation-circle/">teleportation circle</a></td>
+<td align="center">4,825 gp</td>
+</tr>
+<tr>
+<td align="center">87-91</td>
+<td><a class="spell" href="/spells/time-stop/">time stop</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">92-95</td>
+<td><a class="spell" href="/spells/wail-of-the-banshee/">wail of the banshee</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">96-99</td>
+<td><a class="spell" href="/spells/weird/">weird</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td><a class="spell" href="/spells/wish/">wish</a></td>
+<td align="center">28,825 gp<sup>5</sup></td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" id="tableDivineSpellScrolls">
+<caption>Table: Divine Spell Scrolls</caption>
+<thead>
+<tr>
+<th align="left" colspan="3">0-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3">
+<ol>
+<li>Allows for a spell of up to 4th level to be tied to the hallowed or unhallowed area.</li>
+<li>Assumes an area equivalent to one 60-foot cube.</li>
+<li>Assumes powerful request but no expensive material components in excess of 100 gp and no additional XP cost.</li>
+</ol>
+</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td align="center">01-07</td>
+<td><a class="spell" href="/spells/create-water/">create water</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">08-14</td>
+<td><a class="spell" href="/spells/cure-minor-wounds/">cure minor wounds</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">15-22</td>
+<td><a class="spell" href="/spells/detect-magic/">detect magic</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">23-29</td>
+<td><a class="spell" href="/spells/detect-poison/">detect poison</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">30-36</td>
+<td><a class="spell" href="/spells/flare/">flare</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">37-43</td>
+<td><a class="spell" href="/spells/guidance/">guidance</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">44-50</td>
+<td><a class="spell" href="/spells/inflict-minor-wounds/">inflict minor wounds</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">51-57</td>
+<td><a class="spell" href="/spells/know-direction/">know direction</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">58-65</td>
+<td><a class="spell" href="/spells/light/">light</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">66-72</td>
+<td><a class="spell" href="/spells/mending/">mending</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">73-79</td>
+<td><a class="spell" href="/spells/purify-food-and-drink/">purify food and drink</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">80-86</td>
+<td><a class="spell" href="/spells/read-magic/">read magic</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">87-93</td>
+<td><a class="spell" href="/spells/resistance/">resistance</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<td align="center">94-100</td>
+<td><a class="spell" href="/spells/virtue/">virtue</a></td>
+<td align="center">12 gp 5 sp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">1st-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01</td>
+<td><a class="spell" href="/spells/alarm/">alarm</a></td>
+<td align="center">100 gp</td>
+</tr>
+<tr>
+<td align="center">02-03</td>
+<td><a class="spell" href="/spells/bane/">bane</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">04-06</td>
+<td><a class="spell" href="/spells/bless/">bless</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">07-09</td>
+<td><a class="spell" href="/spells/bless-water/">bless water</a></td>
+<td align="center">50 gp</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td><a class="spell" href="/spells/bless-weapon/">bless weapon</a></td>
+<td align="center">100 gp</td>
+</tr>
+<tr>
+<td align="center">11-12</td>
+<td><a class="spell" href="/spells/calm-animals/">calm animals</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">13-14</td>
+<td><a class="spell" href="/spells/cause-fear/">cause fear</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">15-16</td>
+<td><a class="spell" href="/spells/charm-animal/">charm animal</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">17-19</td>
+<td><a class="spell" href="/spells/command/">command</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">20-21</td>
+<td><a class="spell" href="/spells/comprehend-languages/">comprehend languages</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">22-26</td>
+<td><a class="spell" href="/spells/cure-light-wounds/">cure light wounds</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">27-28</td>
+<td><a class="spell" href="/spells/curse-water/">curse water</a></td>
+<td align="center">50 gp</td>
+</tr>
+<tr>
+<td align="center">29-30</td>
+<td><a class="spell" href="/spells/deathwatch/">deathwatch</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">31-32</td>
+<td><a class="spell" href="/spells/detect-animals-or-plants/">detect animals or plants</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">33-35</td>
+<td><a class="spell" href="/spells/detect-chaos/">detect chaos</a>/<a class="spell" href="/spells/detect-evil/">evil</a>/<a class="spell" href="/spells/detect-good/">good</a>/<a class="spell" href="/spells/detect-law/">law</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">36-37</td>
+<td><a class="spell" href="/spells/detect-snares-and-pits/">detect snares and pits</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">38-39</td>
+<td><a class="spell" href="/spells/detect-undead/">detect undead</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">40-41</td>
+<td><a class="spell" href="/spells/divine-favor/">divine favor</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">42-43</td>
+<td><a class="spell" href="/spells/doom/">doom</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">44-48</td>
+<td><a class="spell" href="/spells/endure-elements/">endure elements</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">49-50</td>
+<td><a class="spell" href="/spells/entangle/">entangle</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">51-52</td>
+<td><a class="spell" href="/spells/entropic-shield/">entropic shield</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">53-54</td>
+<td><a class="spell" href="/spells/faerie-fire/">faerie fire</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">55-56</td>
+<td><a class="spell" href="/spells/goodberry/">goodberry</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">57-58</td>
+<td><a class="spell" href="/spells/hide-from-animals/">hide from animals</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">59-60</td>
+<td><a class="spell" href="/spells/hide-from-undead/">hide from undead</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">61-62</td>
+<td><a class="spell" href="/spells/inflict-light-wounds/">inflict light wounds</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">63-64</td>
+<td><a class="spell" href="/spells/jump/">jump</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">65-66</td>
+<td><a class="spell" href="/spells/longstrider/">longstrider</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">67-68</td>
+<td><a class="spell" href="/spells/magic-fang/">magic fang</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">69-72</td>
+<td><a class="spell" href="/spells/magic-stone/">magic stone</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">73-74</td>
+<td><a class="spell" href="/spells/magic-weapon/">magic weapon</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">75-78</td>
+<td><a class="spell" href="/spells/obscuring-mist/">obscuring mist</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">79-80</td>
+<td><a class="spell" href="/spells/pass-without-trace/">pass without trace</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">81-82</td>
+<td><a class="spell" href="/spells/produce-flame/">produce flame</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">83-86</td>
+<td><a class="spell" href="/spells/protection-from-chaos/">protection from chaos</a>/<a class="spell" href="/spells/protection-from-evil/">evil</a>/<a class="spell" href="/spells/protection-from-good/">good</a>/<a class="spell" href="/spells/protection-from-law/">law</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">87-88</td>
+<td><a class="spell" href="/spells/remove-fear/">remove fear</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">89-90</td>
+<td><a class="spell" href="/spells/sanctuary/">sanctuary</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">91-92</td>
+<td><a class="spell" href="/spells/shield-of-faith/">shield of faith</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">93-94</td>
+<td><a class="spell" href="/spells/shillelagh/">shillelagh</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">95-96</td>
+<td><a class="spell" href="/spells/speak-with-animals/">speak with animals</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">97-98</td>
+<td><a class="spell" href="/spells/summon-monster-i/">summon monster I</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<td align="center">99-100</td>
+<td><a class="spell" href="/spells/summon-natures-ally-i/">summon nature’s ally I</a></td>
+<td align="center">25 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">2nd-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01</td>
+<td><a class="spell" href="/spells/animal-messenger/">animal messenger</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td><a class="spell" href="/spells/animal-trance/">animal trance</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">03-04</td>
+<td><a class="spell" href="/spells/augury/">augury</a></td>
+<td align="center">175 gp</td>
+</tr>
+<tr>
+<td align="center">05-06</td>
+<td><a class="spell" href="/spells/barkskin/">barkskin</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">07-09</td>
+<td><a class="spell" href="/spells/bears-endurance/">bear’s endurance</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">10-12</td>
+<td><a class="spell" href="/spells/bulls-strength/">bull’s strength</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">13-14</td>
+<td><a class="spell" href="/spells/calm-emotions/">calm emotions</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">15-17</td>
+<td><a class="spell" href="/spells/cats-grace/">cat’s grace</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td><a class="spell" href="/spells/chill-metal/">chill metal</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">19-20</td>
+<td><a class="spell" href="/spells/consecrate/">consecrate</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">21-24</td>
+<td><a class="spell" href="/spells/cure-moderate-wounds/">cure moderate wounds</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">25-26</td>
+<td><a class="spell" href="/spells/darkness/">darkness</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">27</td>
+<td><a class="spell" href="/spells/death-knell/">death knell</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">28-30</td>
+<td><a class="spell" href="/spells/delay-poison/">delay poison</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">31-32</td>
+<td><a class="spell" href="/spells/desecrate/">desecrate</a></td>
+<td align="center">200 gp</td>
+</tr>
+<tr>
+<td align="center">33-35</td>
+<td><a class="spell" href="/spells/eagles-splendor/">eagle’s splendor</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">36-37</td>
+<td><a class="spell" href="/spells/enthrall/">enthrall</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">38-39</td>
+<td><a class="spell" href="/spells/find-traps/">find traps</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">40</td>
+<td><a class="spell" href="/spells/fire-trap/">fire trap</a></td>
+<td align="center">175 gp</td>
+</tr>
+<tr>
+<td align="center">41-42</td>
+<td><a class="spell" href="/spells/flame-blade/">flame blade</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">43-44</td>
+<td><a class="spell" href="/spells/flaming-sphere/">flaming sphere</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">45-46</td>
+<td><a class="spell" href="/spells/fog-cloud/">fog cloud</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">47</td>
+<td><a class="spell" href="/spells/gentle-repose/">gentle repose</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">48</td>
+<td><a class="spell" href="/spells/gust-of-wind/">gust of wind</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">49</td>
+<td><a class="spell" href="/spells/heat-metal/">heat metal</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">50-51</td>
+<td><a class="spell" href="/spells/hold-animal/">hold animal</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">52-54</td>
+<td><a class="spell" href="/spells/hold-person/">hold person</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">55-56</td>
+<td><a class="spell" href="/spells/inflict-moderate-wounds/">inflict moderate wounds</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">57-58</td>
+<td><a class="spell" href="/spells/make-whole/">make whole</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">59-61</td>
+<td><a class="spell" href="/spells/owls-wisdom/">owl’s wisdom</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">62</td>
+<td><a class="spell" href="/spells/reduce-animal/">reduce animal</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">63-64</td>
+<td><a class="spell" href="/spells/remove-paralysis/">remove paralysis</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">65-67</td>
+<td><a class="spell" href="/spells/resist-energy/">resist energy</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">68-70</td>
+<td><a class="spell" href="/spells/restoration-lesser/">restoration, lesser</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">71-72</td>
+<td><a class="spell" href="/spells/shatter/">shatter</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">73-74</td>
+<td><a class="spell" href="/spells/shield-other/">shield other</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">75-76</td>
+<td><a class="spell" href="/spells/silence/">silence</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">77</td>
+<td><a class="spell" href="/spells/snare/">snare</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">78</td>
+<td><a class="spell" href="/spells/soften-earth-and-stone/">soften earth and stone</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">79-80</td>
+<td><a class="spell" href="/spells/sound-burst/">sound burst</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">81</td>
+<td><a class="spell" href="/spells/speak-with-plants/">speak with plants</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">82-83</td>
+<td><a class="spell" href="/spells/spider-climb/">spider climb</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">84-85</td>
+<td><a class="spell" href="/spells/spiritual-weapon/">spiritual weapon</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">86</td>
+<td><a class="spell" href="/spells/status/">status</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">87-88</td>
+<td><a class="spell" href="/spells/summon-monster-ii/">summon monster II</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">89-90</td>
+<td><a class="spell" href="/spells/summon-natures-ally-ii/">summon nature’s ally II</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">91-92</td>
+<td><a class="spell" href="/spells/summon-swarm/">summon swarm</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">93</td>
+<td><a class="spell" href="/spells/tree-shape/">tree shape</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">94-95</td>
+<td><a class="spell" href="/spells/undetectable-alignment/">undetectable alignment</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">96-97</td>
+<td><a class="spell" href="/spells/warp-wood/">warp wood</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">98</td>
+<td><a class="spell" href="/spells/wood-shape/">wood shape</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<td align="center">99-100</td>
+<td><a class="spell" href="/spells/zone-of-truth/">zone of truth</a></td>
+<td align="center">150 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">3rd-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-02</td>
+<td><a class="spell" href="/spells/animate-dead/">animate dead</a></td>
+<td align="center">625 gp</td>
+</tr>
+<tr>
+<td align="center">03-04</td>
+<td><a class="spell" href="/spells/bestow-curse/">bestow curse</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">05-06</td>
+<td><a class="spell" href="/spells/blindness-deafness/">blindness/deafness</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">07-08</td>
+<td><a class="spell" href="/spells/call-lightning/">call lightning</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">09-10</td>
+<td><a class="spell" href="/spells/contagion/">contagion</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">11-12</td>
+<td><a class="spell" href="/spells/continual-flame/">continual flame</a></td>
+<td align="center">425 gp</td>
+</tr>
+<tr>
+<td align="center">13-14</td>
+<td><a class="spell" href="/spells/create-food-and-water/">create food and water</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">15-18</td>
+<td><a class="spell" href="/spells/cure-serious-wounds/">cure serious wounds</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">19</td>
+<td><a class="spell" href="/spells/darkvision/">darkvision</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">20-21</td>
+<td><a class="spell" href="/spells/daylight/">daylight</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">22-23</td>
+<td><a class="spell" href="/spells/deeper-darkness/">deeper darkness</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">24-25</td>
+<td><a class="spell" href="/spells/diminish-plants/">diminish plants</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">26-27</td>
+<td><a class="spell" href="/spells/dispel-magic/">dispel magic</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">28-29</td>
+<td><a class="spell" href="/spells/dominate-animal/">dominate animal</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">30-31</td>
+<td><a class="spell" href="/spells/glyph-of-warding/">glyph of warding</a></td>
+<td align="center">575 gp</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td><a class="spell" href="/spells/heal-mount/">heal mount</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">33-34</td>
+<td><a class="spell" href="/spells/helping-hand/">helping hand</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">35-36</td>
+<td><a class="spell" href="/spells/inflict-serious-wounds/">inflict serious wounds</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">37-38</td>
+<td><a class="spell" href="/spells/invisibility-purge/">invisibility purge</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">39-40</td>
+<td><a class="spell" href="/spells/locate-object/">locate object</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">41-46</td>
+<td><a class="spell" href="/spells/magic-circle-against-chaos/">magic circle against chaos</a>/<a class="spell" href="/spells/magic-circle-against-evil/">evil</a>/<a class="spell" href="/spells/magic-circle-against-good/">good</a>/<a class="spell" href="/spells/magic-circle-against-law/">law</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">47-48</td>
+<td><a class="spell" href="/spells/magic-fang-greater/">magic fang, greater</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">49-50</td>
+<td><a class="spell" href="/spells/magic-vestment/">magic vestment</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">51-52</td>
+<td><a class="spell" href="/spells/meld-into-stone/">meld into stone</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">53-55</td>
+<td><a class="spell" href="/spells/neutralize-poison/">neutralize poison</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">56-57</td>
+<td><a class="spell" href="/spells/obscure-object/">obscure object</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">58-59</td>
+<td><a class="spell" href="/spells/plant-growth/">plant growth</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">60-62</td>
+<td><a class="spell" href="/spells/prayer/">prayer</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">63-64</td>
+<td><a class="spell" href="/spells/protection-from-energy/">protection from energy</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">65-66</td>
+<td><a class="spell" href="/spells/quench/">quench</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">67-69</td>
+<td><a class="spell" href="/spells/remove-blindness-deafness/">remove blindness/deafness</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">70-71</td>
+<td><a class="spell" href="/spells/remove-curse/">remove curse</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">72-73</td>
+<td><a class="spell" href="/spells/remove-disease/">remove disease</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">74-76</td>
+<td><a class="spell" href="/spells/searing-light/">searing light</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">77-78</td>
+<td><a class="spell" href="/spells/sleet-storm/">sleet storm</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">79-80</td>
+<td><a class="spell" href="/spells/snare/">snare</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">81-83</td>
+<td><a class="spell" href="/spells/speak-with-dead/">speak with dead</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">84-85</td>
+<td><a class="spell" href="/spells/speak-with-plants/">speak with plants</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">86-87</td>
+<td><a class="spell" href="/spells/spike-growth/">spike growth</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">88-89</td>
+<td><a class="spell" href="/spells/stone-shape/">stone shape</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">90-91</td>
+<td><a class="spell" href="/spells/summon-monster-iii/">summon monster III</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">92-93</td>
+<td><a class="spell" href="/spells/summon-natures-ally-iii/">summon nature’s ally III</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">94-96</td>
+<td><a class="spell" href="/spells/water-breathing/">water breathing</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">97-98</td>
+<td><a class="spell" href="/spells/water-walk/">water walk</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<td align="center">99-100</td>
+<td><a class="spell" href="/spells/wind-wall/">wind wall</a></td>
+<td align="center">375 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">4th-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-05</td>
+<td><a class="spell" href="/spells/air-walk/">air walk</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">06-07</td>
+<td><a class="spell" href="/spells/antiplant-shell/">antiplant shell</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">08-09</td>
+<td><a class="spell" href="/spells/blight/">blight</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">10-11</td>
+<td><a class="spell" href="/spells/break-enchantment/">break enchantment</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">12-13</td>
+<td><a class="spell" href="/spells/comm-and-plants/">command plants</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">14-15</td>
+<td><a class="spell" href="/spells/control-water/">control water</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">16-21</td>
+<td><a class="spell" href="/spells/cure-critical-wounds/">cure critical wounds</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">22-26</td>
+<td><a class="spell" href="/spells/death-ward/">death ward</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">27-31</td>
+<td><a class="spell" href="/spells/dimensional-anchor/">dimensional anchor</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">32-34</td>
+<td><a class="spell" href="/spells/discern-lies/">discern lies</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">35-37</td>
+<td><a class="spell" href="/spells/dismissal/">dismissal</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">38-39</td>
+<td><a class="spell" href="/spells/divination/">divination</a></td>
+<td align="center">725 gp</td>
+</tr>
+<tr>
+<td align="center">40-42</td>
+<td><a class="spell" href="/spells/divine-power/">divine power</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">43-47</td>
+<td><a class="spell" href="/spells/freedom-of-movement/">freedom of movement</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">48-49</td>
+<td><a class="spell" href="/spells/giant-vermin/">giant vermin</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">50-51</td>
+<td><a class="spell" href="/spells/holy-sword/">holy sword</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">52-54</td>
+<td><a class="spell" href="/spells/imbue-with-spell-ability/">imbue with spell ability</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">55-57</td>
+<td><a class="spell" href="/spells/inflict-critical-wounds/">inflict critical wounds</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">58-60</td>
+<td><a class="spell" href="/spells/magic-weapon-greater/">magic weapon, greater</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">61-62</td>
+<td><a class="spell" href="/spells/nondetection/">nondetection</a></td>
+<td align="center">750 gp</td>
+</tr>
+<tr>
+<td align="center">63-64</td>
+<td><a class="spell" href="/spells/planar-ally-lesser/">planar ally, lesser</a></td>
+<td align="center">1,200 gp</td>
+</tr>
+<tr>
+<td align="center">65-67</td>
+<td><a class="spell" href="/spells/poison/">poison</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">68-69</td>
+<td><a class="spell" href="/spells/reincarnate/">reincarnate</a></td>
+<td align="center">1,700 gp</td>
+</tr>
+<tr>
+<td align="center">70-71</td>
+<td><a class="spell" href="/spells/repel-vermin/">repel vermin</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">72-76</td>
+<td><a class="spell" href="/spells/restoration/">restoration</a></td>
+<td align="center">800 gp</td>
+</tr>
+<tr>
+<td align="center">77-78</td>
+<td><a class="spell" href="/spells/rusting-grasp/">rusting grasp</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">79-81</td>
+<td><a class="spell" href="/spells/sending/">sending</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">82-85</td>
+<td><a class="spell" href="/spells/spell-immunity/">spell immunity</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">86-87</td>
+<td><a class="spell" href="/spells/spike-stones/">spike stones</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">88-90</td>
+<td><a class="spell" href="/spells/summon-monster-iv/">summon monster IV</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">91-93</td>
+<td><a class="spell" href="/spells/summon-natures-ally-iv/">summon nature’s ally IV</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">94-98</td>
+<td><a class="spell" href="/spells/tongues/">tongues</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<td align="center">99-100</td>
+<td><a class="spell" href="/spells/tree-stride/">tree stride</a></td>
+<td align="center">700 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">5th-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-03</td>
+<td><a class="spell" href="/spells/animal-growth/">animal growth</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">04-05</td>
+<td><a class="spell" href="/spells/atonement/">atonement</a></td>
+<td align="center">3,625 gp</td>
+</tr>
+<tr>
+<td align="center">06</td>
+<td><a class="spell" href="/spells/awaken/">awaken</a></td>
+<td align="center">2,375 gp</td>
+</tr>
+<tr>
+<td align="center">07-09</td>
+<td><a class="spell" href="/spells/baleful-polymorph/">baleful polymorph</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">10-13</td>
+<td><a class="spell" href="/spells/break-enchantment/">break enchantment</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">14-16</td>
+<td><a class="spell" href="/spells/call-lightning-storm/">call lightning storm</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">17-20</td>
+<td><a class="spell" href="/spells/comm-and-greater/">command, greater</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td><a class="spell" href="/spells/commune/">commune</a></td>
+<td align="center">1,625 gp</td>
+</tr>
+<tr>
+<td align="center">22</td>
+<td><a class="spell" href="/spells/commune-with-nature/">commune with nature</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">23-24</td>
+<td><a class="spell" href="/spells/control-winds/">control winds</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">25-30</td>
+<td><a class="spell" href="/spells/cure-light-wounds-mass/">cure light wounds, mass</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">31-34</td>
+<td><a class="spell" href="/spells/dispel-chaos/">dispel chaos</a>/<a class="spell" href="/spells/dispel-evil/">evil</a>/<a class="spell" href="/spells/dispel-good/">good</a>/<a class="spell" href="/spells/dispel-law/">law</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">35-38</td>
+<td><a class="spell" href="/spells/disrupting-weapon/">disrupting weapon</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">39-41</td>
+<td><a class="spell" href="/spells/flame-strike/">flame strike</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">42-43</td>
+<td><a class="spell" href="/spells/hallow/">hallow</a></td>
+<td align="center">6,125 gp<sup>1</sup></td>
+</tr>
+<tr>
+<td align="center">44-46</td>
+<td><a class="spell" href="/spells/ice-storm/">ice storm</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">47-49</td>
+<td><a class="spell" href="/spells/inflict-light-wounds-mass/">inflict light wounds, mass</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">50-52</td>
+<td><a class="spell" href="/spells/insect-plague/">insect plague</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">53</td>
+<td><a class="spell" href="/spells/mark-of-justice/">mark of justice</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">54-56</td>
+<td><a class="spell" href="/spells/plane-shift/">plane shift</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">57-58</td>
+<td><a class="spell" href="/spells/raise-dead/">raise dead</a></td>
+<td align="center">6,125 gp</td>
+</tr>
+<tr>
+<td align="center">59-61</td>
+<td><a class="spell" href="/spells/righteous-might/">righteous might</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">62-63</td>
+<td><a class="spell" href="/spells/scrying/">scrying</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">64-66</td>
+<td><a class="spell" href="/spells/slay-living/">slay living</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">67-69</td>
+<td><a class="spell" href="/spells/spell-resistance/">spell resistance</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">70-71</td>
+<td><a class="spell" href="/spells/stoneskin/">stoneskin</a></td>
+<td align="center">1,375 gp</td>
+</tr>
+<tr>
+<td align="center">72-74</td>
+<td><a class="spell" href="/spells/summon-monster-v/">summon monster V</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">75-77</td>
+<td><a class="spell" href="/spells/summon-natures-ally-v/">summon nature’s ally V</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">78</td>
+<td><a class="spell" href="/spells/symbol-of-pain/">symbol of pain</a></td>
+<td align="center">2,125 gp</td>
+</tr>
+<tr>
+<td align="center">79</td>
+<td><a class="spell" href="/spells/symbol-of-sleep/">symbol of sleep</a></td>
+<td align="center">2,125 gp</td>
+</tr>
+<tr>
+<td align="center">80-82</td>
+<td><a class="spell" href="/spells/transmute-mud-to-rock/">transmute mud to rock</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">83-85</td>
+<td><a class="spell" href="/spells/transmute-rock-to-mud/">transmute rock to mud</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">86-89</td>
+<td><a class="spell" href="/spells/true-seeing/">true seeing</a></td>
+<td align="center">1,375 gp</td>
+</tr>
+<tr>
+<td align="center">90-91</td>
+<td><a class="spell" href="/spells/unhallow/">unhallow</a></td>
+<td align="center">6,125 gp1</td>
+</tr>
+<tr>
+<td align="center">92-94</td>
+<td><a class="spell" href="/spells/wall-of-fire/">wall of fire</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">95-97</td>
+<td><a class="spell" href="/spells/wall-of-stone/">wall of stone</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<td align="center">98-100</td>
+<td><a class="spell" href="/spells/wall-of-thorns/">wall of thorns</a></td>
+<td align="center">1,125 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">6th-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-03</td>
+<td><a class="spell" href="/spells/animate-objects/">animate objects</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">04-06</td>
+<td><a class="spell" href="/spells/antilife-shell/">antilife shell</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">07-09</td>
+<td><a class="spell" href="/spells/banishment/">banishment</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">10-13</td>
+<td><a class="spell" href="/spells/bears-endurance-mass/">bear’s endurance, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">14-16</td>
+<td><a class="spell" href="/spells/blade-barrier/">blade barrier</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">17-20</td>
+<td><a class="spell" href="/spells/bulls-strength-mass/">bull’s strength, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">21-24</td>
+<td><a class="spell" href="/spells/cats-grace-mass/">cat’s grace, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">25</td>
+<td><a class="spell" href="/spells/create-undead/">create undead</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">26-29</td>
+<td><a class="spell" href="/spells/cure-moderate-wounds-mass/">cure moderate wounds, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">30-33</td>
+<td><a class="spell" href="/spells/dispel-magic-greater/">dispel magic, greater</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">34-37</td>
+<td><a class="spell" href="/spells/eagles-splendor-mass/">eagle’s splendor, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">38-40</td>
+<td><a class="spell" href="/spells/find-the-path/">find the path</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">41-43</td>
+<td><a class="spell" href="/spells/fire-seeds/">fire seeds</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">44</td>
+<td><a class="spell" href="/spells/forbiddance/">forbiddance</a></td>
+<td align="center">4,650 gp<sup>2</sup></td>
+</tr>
+<tr>
+<td align="center">45</td>
+<td><a class="spell" href="/spells/geas-quest/">geas/quest</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">46</td>
+<td><a class="spell" href="/spells/glyph-of-warding-greater/">glyph of warding, greater</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">47-49</td>
+<td><a class="spell" href="/spells/harm/">harm</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">50-52</td>
+<td><a class="spell" href="/spells/heal/">heal</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">53-55</td>
+<td><a class="spell" href="/spells/heroes-feast/">heroes’ feast</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">56-58</td>
+<td><a class="spell" href="/spells/inflict-moderate-wounds-mass/">inflict moderate wounds, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">59-61</td>
+<td><a class="spell" href="/spells/ironwood/">ironwood</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">62</td>
+<td><a class="spell" href="/spells/liveoak/">liveoak</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">63-65</td>
+<td><a class="spell" href="/spells/move-earth/">move earth</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">66-69</td>
+<td><a class="spell" href="/spells/owls-wisdom-mass/">owl’s wisdom, mass</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">70-71</td>
+<td><a class="spell" href="/spells/planar-ally/">planar ally</a></td>
+<td align="center">2,400 gp</td>
+</tr>
+<tr>
+<td align="center">72-74</td>
+<td><a class="spell" href="/spells/repel-wood/">repel wood</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">75-77</td>
+<td><a class="spell" href="/spells/spellstaff/">spellstaff</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">78-80</td>
+<td><a class="spell" href="/spells/stone-tell/">stone tell</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">81-83</td>
+<td><a class="spell" href="/spells/summon-monster-vi/">summon monster VI</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">84-86</td>
+<td><a class="spell" href="/spells/summon-natures-ally-vi/">summon nature’s ally VI</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">87</td>
+<td><a class="spell" href="/spells/symbol-of-fear/">symbol of fear</a></td>
+<td align="center">2,650 gp</td>
+</tr>
+<tr>
+<td align="center">88</td>
+<td><a class="spell" href="/spells/symbol-of-persuasion/">symbol of persuasion</a></td>
+<td align="center">6,650 gp</td>
+</tr>
+<tr>
+<td align="center">89-91</td>
+<td><a class="spell" href="/spells/transport-via-plants/">transport via plants</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">92-94</td>
+<td><a class="spell" href="/spells/undeath-to-death/">undeath to death</a></td>
+<td align="center">2,150 gp</td>
+</tr>
+<tr>
+<td align="center">95-97</td>
+<td><a class="spell" href="/spells/wind-walk/">wind walk</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<td align="center">98-100</td>
+<td><a class="spell" href="/spells/word-of-recall/">word of recall</a></td>
+<td align="center">1,650 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">7th-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-05</td>
+<td><a class="spell" href="/spells/animate-plants/">animate plants</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">06-09</td>
+<td><a class="spell" href="/spells/blasphemy/">blasphemy</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">10-14</td>
+<td><a class="spell" href="/spells/changestaff/">changestaff</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">15-16</td>
+<td><a class="spell" href="/spells/control-weather/">control weather</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">17-21</td>
+<td><a class="spell" href="/spells/creeping-doom/">creeping doom</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">22-27</td>
+<td><a class="spell" href="/spells/cure-serious-wounds-mass/">cure serious wounds, mass</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">28-32</td>
+<td><a class="spell" href="/spells/destruction/">destruction</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">33-36</td>
+<td><a class="spell" href="/spells/dictum/">dictum</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">37-41</td>
+<td><a class="spell" href="/spells/ethereal-jaunt/">ethereal jaunt</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">42-45</td>
+<td><a class="spell" href="/spells/holy-word/">holy word</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">46-50</td>
+<td><a class="spell" href="/spells/inflict-serious-wounds-mass/">inflict serious wounds, mass</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">51-55</td>
+<td><a class="spell" href="/spells/refuge/">refuge</a></td>
+<td align="center">3,775 gp</td>
+</tr>
+<tr>
+<td align="center">56-60</td>
+<td><a class="spell" href="/spells/regenerate/">regenerate</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">61-65</td>
+<td><a class="spell" href="/spells/repulsion/">repulsion</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">66-69</td>
+<td><a class="spell" href="/spells/restoration-greater/">restoration, greater</a></td>
+<td align="center">4,775 gp</td>
+</tr>
+<tr>
+<td align="center">70-71</td>
+<td><a class="spell" href="/spells/resurrection/">resurrection</a></td>
+<td align="center">12,275 gp</td>
+</tr>
+<tr>
+<td align="center">72-76</td>
+<td><a class="spell" href="/spells/scrying-greater/">scrying, greater</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">77-81</td>
+<td><a class="spell" href="/spells/summon-monster-vii/">summon monster VII</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">82-85</td>
+<td><a class="spell" href="/spells/summon-natures-ally-vii/">summon nature’s ally VII</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">86-90</td>
+<td><a class="spell" href="/spells/sunbeam/">sunbeam</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">91</td>
+<td><a class="spell" href="/spells/symbol-of-stunning/">symbol of stunning</a></td>
+<td align="center">7,275 gp</td>
+</tr>
+<tr>
+<td align="center">92</td>
+<td><a class="spell" href="/spells/symbol-of-weakness/">symbol of weakness</a></td>
+<td align="center">7,275 gp</td>
+</tr>
+<tr>
+<td align="center">93-97</td>
+<td><a class="spell" href="/spells/transmute-metal-to-wood/">transmute metal to wood</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<td align="center">98-100</td>
+<td><a class="spell" href="/spells/word-of-chaos/">word of chaos</a></td>
+<td align="center">2,275 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">8th-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-04</td>
+<td><a class="spell" href="/spells/animal-shapes/">animal shapes</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">05-10</td>
+<td><a class="spell" href="/spells/antimagic-field/">antimagic field</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">11-13</td>
+<td><a class="spell" href="/spells/cloak-of-chaos/">cloak of chaos</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">14-17</td>
+<td><a class="spell" href="/spells/control-plants/">control plants</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">18-20</td>
+<td><a class="spell" href="/spells/create-greater-undead/">create greater undead</a></td>
+<td align="center">3,600 gp</td>
+</tr>
+<tr>
+<td align="center">21-27</td>
+<td><a class="spell" href="/spells/cure-critical-wounds-mass/">cure critical wounds, mass</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">28-32</td>
+<td><a class="spell" href="/spells/dimensional-lock/">dimensional lock</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">33-36</td>
+<td><a class="spell" href="/spells/discern-location/">discern location</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">37-41</td>
+<td><a class="spell" href="/spells/earthquake/">earthquake</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">42-45</td>
+<td><a class="spell" href="/spells/finger-of-death/">finger of death</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">46-49</td>
+<td><a class="spell" href="/spells/fire-storm/">fire storm</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">50-52</td>
+<td><a class="spell" href="/spells/holy-aura/">holy aura</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">53-56</td>
+<td><a class="spell" href="/spells/inflict-critical-wounds-mass/">inflict critical wounds, mass</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">57-60</td>
+<td><a class="spell" href="/spells/planar-ally-greater/">planar ally, greater</a></td>
+<td align="center">5,500 gp</td>
+</tr>
+<tr>
+<td align="center">61-65</td>
+<td><a class="spell" href="/spells/repel-metal-or-stone/">repel metal or stone</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">66-69</td>
+<td><a class="spell" href="/spells/reverse-gravity/">reverse gravity</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">70-72</td>
+<td><a class="spell" href="/spells/shield-of-law/">shield of law</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">73-76</td>
+<td><a class="spell" href="/spells/spell-immunity-greater/">spell immunity, greater</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">77-80</td>
+<td><a class="spell" href="/spells/summon-monster-viii/">summon monster VIII</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">81-84</td>
+<td><a class="spell" href="/spells/summon-natures-ally-viii/">summon nature’s ally VIII</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">85-89</td>
+<td><a class="spell" href="/spells/sunburst/">sunburst</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">90-91</td>
+<td><a class="spell" href="/spells/symbol-of-death/">symbol of death</a></td>
+<td align="center">8,000 gp</td>
+</tr>
+<tr>
+<td align="center">92-93</td>
+<td><a class="spell" href="/spells/symbol-of-insanity/">symbol of insanity</a></td>
+<td align="center">8,000 gp</td>
+</tr>
+<tr>
+<td align="center">94-96</td>
+<td><a class="spell" href="/spells/unholy-aura/">unholy aura</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<td align="center">97-100</td>
+<td><a class="spell" href="/spells/whirlwind/">whirlwind</a></td>
+<td align="center">3,000 gp</td>
+</tr>
+<tr>
+<th align="left" colspan="3">9th-Level Divine Spells</th>
+</tr>
+<tr>
+<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th align="left">Spell</th>
+<th>Market Price</th>
+</tr>
+<tr>
+<td align="center">01-04</td>
+<td><a class="spell" href="/spells/antipathy/">antipathy</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">05-07</td>
+<td><a class="spell" href="/spells/astral-projection/">astral projection</a></td>
+<td align="center">4,870 gp</td>
+</tr>
+<tr>
+<td align="center">08-13</td>
+<td><a class="spell" href="/spells/elemental-swarm/">elemental swarm</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">14-19</td>
+<td><a class="spell" href="/spells/energy-drain/">energy drain</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">20-25</td>
+<td><a class="spell" href="/spells/etherealness/">etherealness</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">26-31</td>
+<td><a class="spell" href="/spells/foresight/">foresight</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">32-37</td>
+<td><a class="spell" href="/spells/gate/">gate</a></td>
+<td align="center">8,825 gp</td>
+</tr>
+<tr>
+<td align="center">38-46</td>
+<td><a class="spell" href="/spells/heal-mass/">heal, mass</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">47-53</td>
+<td><a class="spell" href="/spells/implosion/">implosion</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">54-55</td>
+<td><a class="spell" href="/spells/miracle/">miracle</a></td>
+<td align="center">28,825 gp<sup>3</sup></td>
+</tr>
+<tr>
+<td align="center">56-61</td>
+<td><a class="spell" href="/spells/regenerate/">regenerate</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">62-66</td>
+<td><a class="spell" href="/spells/shambler/">shambler</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">67-72</td>
+<td><a class="spell" href="/spells/shapechange/">shapechange</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">73-77</td>
+<td><a class="spell" href="/spells/soul-bind/">soul bind</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">78-83</td>
+<td><a class="spell" href="/spells/storm-of-vengeance/">storm of vengeance</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">84-89</td>
+<td><a class="spell" href="/spells/summon-monster-ix/">summon monster IX</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">90-95</td>
+<td><a class="spell" href="/spells/summon-natures-ally-ix/">summon nature’s ally IX</a></td>
+<td align="center">3,825 gp</td>
+</tr>
+<tr>
+<td align="center">96-99</td>
+<td><a class="spell" href="/spells/sympathy/">sympathy</a></td>
+<td align="center">5,325 gp</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td><a class="spell" href="/spells/true-resurrection/">true resurrection</a></td>
+<td align="center">28,825 gp</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<!--- GOOGLE 300x250 ADS --->
+<div align="center" style="display:inline-block;">
+<!--- LEFT --->
+<!-- /1004459/d20srd300x250-1 -->
+<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
+</script>
+</div>
+<!--- RIGHT --->
+<!-- /1004459/d20srd300x250-2 -->
+<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
+</script>
+</div>
+</div>
+<!--- END GOOGLE 300x250 ADS --->
+<p>
+		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
+	</p>
+<p class="legal">
+		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
+	</p>
+<p class="legal">
+		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
+	</p>
+<!-- removing standards place holder -->
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+  })();
+  _qevents.push({
+    qacct: "p-e3P2kHqpGAv2I"
+  });
+</script>
+<noscript>
+<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
+</noscript>
+<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
+
+</main>
+
+<footer>
+
+<p>
+Open Game Content used under the Open Game License Version 1.0a.
+See <a href="/legal/">Legal</a>.
+</p>
+
+</footer>
+
+</body>
+</html>

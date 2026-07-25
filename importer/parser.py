@@ -8,8 +8,29 @@ def parse_html(html):
 
 
 def get_page_title(soup):
-    """Return the page title text."""
+    """Return the page heading, falling back to the HTML title."""
 
+    heading = soup.find("h1")
+
+    if heading:
+        title = heading.get_text(" ", strip=True)
+
+        if title:
+            return title
+
+    page_title = soup.find("title")
+
+    if page_title:
+        title = page_title.get_text(" ", strip=True)
+
+        # Convert "Rogue :: d20srd.org" into "Rogue".
+        if "::" in title:
+            title = title.split("::", 1)[0].strip()
+
+        if title:
+            return title
+
+    raise ValueError("No H1 heading or HTML title found.")
     if soup.title is None:
         return "Untitled Page"
 

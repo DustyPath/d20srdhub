@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wilder :: d20srd.org</title>
+</head>
+
+<body>
+
+<header>
+    <h1>d20 SRD Hub</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/classes/">Classes</a>
+    <a href="/combat/">Combat</a>
+    <a href="/skills/">Skills</a>
+    <a href="/legal/">Legal</a>
+</nav>
+
+<main>
+
+<h1>Wilder</h1>
+<h5>Alignment</h5>
+<p>
+	Any.
+</p>
+<h5>Hit Die</h5>
+<p>
+	d6.
+</p>
+<h4>Class Skills</h4>
+<p>
+	The wilder’s class skills (and the key ability for each skill) are <a href="/psionic/skills/autohypnosis/">Autohypnosis</a>* (Wis), <a href="/skills/balance/">Balance</a> (Dex), <a href="/skills/bluff/">Bluff</a> (Cha), <a href="/skills/climb/">Climb</a> (Str), <a href="/psionic/skills/concentration/">Concentration</a>* (Con), <a href="/skills/craft/">Craft</a> (Int), <a href="/skills/escape-artist/">Escape Artist</a> (Dex), <a href="/skills/intimidate/">Intimidate</a> (Cha), <a href="/skills/jump/">Jump</a> (Str), <a href="/psionic/skills/knowledge-psionics/">Knowledge (psionics)</a>* (Int), <a href="/skills/listen/">Listen</a> (Wis), <a href="/skills/profession/">Profession</a> (Wis), <a href="/psionic/skills/psicraft/">Psicraft</a>* (Int), <a href="/skills/sense-motive/">Sense Motive</a> (Wis), <a href="/skills/spot/">Spot</a> (Wis), <a href="/skills/swim/">Swim</a> (Str), and <a href="/skills/tumble/">Tumble</a> (Dex).
+</p>
+<p>
+	*New skill or expanded use of existing skill.
+</p>
+<h5>Skill Points at 1st Level</h5>
+<p>
+	(4 + Int modifier) ×4.
+</p>
+<h5>Skill Points at Each Additional Level</h5>
+<p>
+	4 + Int modifier.
+</p>
+<table cellspacing="0" id="tableTheWilder">
+<caption>Table: The Wilder</caption>
+<tr>
+<th>Level</th>
+<th align="left">Base<br/>Attack Bonus</th>
+<th>Fort<br/>Save</th>
+<th>Ref<br/>Save</th>
+<th>Will<br/>Save</th>
+<th align="left">Special</th>
+<th>Power Points/<br/>Day</th>
+<th>Powers<br/>Known</th>
+<th>Maximum Power<br/>Level Known</th>
+</tr>
+<tr>
+<td align="center">1st</td>
+<td>+0</td>
+<td align="center">+0</td>
+<td align="center">+0</td>
+<td align="center">+2</td>
+<td><a href="#wildSurge">Wild surge</a> +1, <a href="#psychicEnervation">psychic enervation</a></td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1st</td>
+</tr>
+<tr>
+<td align="center">2nd</td>
+<td>+1</td>
+<td align="center">+0</td>
+<td align="center">+0</td>
+<td align="center">+3</td>
+<td><a href="#eludeTouch">Elude touch</a></td>
+<td align="center">6</td>
+<td align="center">2</td>
+<td align="center">1st</td>
+</tr>
+<tr>
+<td align="center">3rd</td>
+<td>+2</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+3</td>
+<td><a href="#wildSurge">Wild surge</a> +2</td>
+<td align="center">11</td>
+<td align="center">2</td>
+<td align="center">1st</td>
+</tr>
+<tr>
+<td align="center">4th</td>
+<td>+3</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td><a href="#surgingEuphoria">Surging euphoria</a> +1</td>
+<td align="center">17</td>
+<td align="center">3</td>
+<td align="center">2nd</td>
+</tr>
+<tr>
+<td align="center">5th</td>
+<td>+3</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td><a href="#volatileMind">Volatile mind</a> (1 power point)</td>
+<td align="center">25</td>
+<td align="center">3</td>
+<td align="center">2nd</td>
+</tr>
+<tr>
+<td align="center">6th</td>
+<td>+4</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td align="center"></td>
+<td align="center">35</td>
+<td align="center">4</td>
+<td align="center">3rd</td>
+</tr>
+<tr>
+<td align="center">7th</td>
+<td>+5</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td><a href="#wildSurge">Wild surge</a> +3</td>
+<td align="center">46</td>
+<td align="center">4</td>
+<td align="center">3rd</td>
+</tr>
+<tr>
+<td align="center">8th</td>
+<td>+6/+1</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+6</td>
+<td align="center"></td>
+<td align="center">58</td>
+<td align="center">5</td>
+<td align="center">4th</td>
+</tr>
+<tr>
+<td align="center">9th</td>
+<td>+6/+1</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td align="center">+6</td>
+<td><a href="#volatileMind">Volatile mind</a> (2 power points)</td>
+<td align="center">72</td>
+<td align="center">5</td>
+<td align="center">4th</td>
+</tr>
+<tr>
+<td align="center">10th</td>
+<td>+7/+2</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td align="center">+7</td>
+<td align="center"></td>
+<td align="center">88</td>
+<td align="center">6</td>
+<td align="center">5th</td>
+</tr>
+<tr>
+<td align="center">11th</td>
+<td>+8/+3</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td align="center">+7</td>
+<td><a href="#wildSurge">Wild surge</a> +4</td>
+<td align="center">106</td>
+<td align="center">6</td>
+<td align="center">5th</td>
+</tr>
+<tr>
+<td align="center">12th</td>
+<td>+9/+4</td>
+<td align="center">+4</td>
+<td align="center">+4</td>
+<td align="center">+8</td>
+<td><a href="#surgingEuphoria">Surging euphoria</a> +2</td>
+<td align="center">126</td>
+<td align="center">7</td>
+<td align="center">6th</td>
+</tr>
+<tr>
+<td align="center">13th</td>
+<td>+9/+4</td>
+<td align="center">+4</td>
+<td align="center">+4</td>
+<td align="center">+8</td>
+<td><a href="#volatileMind">Volatile mind</a> (3 power points)</td>
+<td align="center">147</td>
+<td align="center">7</td>
+<td align="center">6th</td>
+</tr>
+<tr>
+<td align="center">14th</td>
+<td>+10/+5</td>
+<td align="center">+4</td>
+<td align="center">+4</td>
+<td align="center">+9</td>
+<td align="center"></td>
+<td align="center">170</td>
+<td align="center">8</td>
+<td align="center">7th</td>
+</tr>
+<tr>
+<td align="center">15th</td>
+<td>+11/+6/+1</td>
+<td align="center">+5</td>
+<td align="center">+5</td>
+<td align="center">+9</td>
+<td><a href="#wildSurge">Wild surge</a> +5</td>
+<td align="center">195</td>
+<td align="center">8</td>
+<td align="center">7th</td>
+</tr>
+<tr>
+<td align="center">16th</td>
+<td>+12/+7/+2</td>
+<td align="center">+5</td>
+<td align="center">+5</td>
+<td align="center">+10</td>
+<td align="center"></td>
+<td align="center">221</td>
+<td align="center">9</td>
+<td align="center">8th</td>
+</tr>
+<tr>
+<td align="center">17th</td>
+<td>+12/+7/+2</td>
+<td align="center">+5</td>
+<td align="center">+5</td>
+<td align="center">+10</td>
+<td><a href="#volatileMind">Volatile mind</a> (4 power points)</td>
+<td align="center">250</td>
+<td align="center">9</td>
+<td align="center">8th</td>
+</tr>
+<tr>
+<td align="center">18th</td>
+<td>+13/+8/+3</td>
+<td align="center">+6</td>
+<td align="center">+6</td>
+<td align="center">+11</td>
+<td align="center"></td>
+<td align="center">280</td>
+<td align="center">10</td>
+<td align="center">9th</td>
+</tr>
+<tr>
+<td align="center">19th</td>
+<td>+14/+9/+4</td>
+<td align="center">+6</td>
+<td align="center">+6</td>
+<td align="center">+11</td>
+<td><a href="#wildSurge">Wild surge</a> +6</td>
+<td align="center">311</td>
+<td align="center">10</td>
+<td align="center">9th</td>
+</tr>
+<tr>
+<td align="center">20th</td>
+<td>+15/+10/+5</td>
+<td align="center">+6</td>
+<td align="center">+6</td>
+<td align="center">+12</td>
+<td><a href="#surgingEuphoria">Surging euphoria</a> +3</td>
+<td align="center">343</td>
+<td align="center">11</td>
+<td align="center">9th</td>
+</tr>
+</table>
+<h4>Class Features</h4>
+<p>
+	All the following are class features of the wilder.
+</p>
+<h5>Weapon and Armor Proficiency</h5>
+<p>
+	Wilders are <a href="/combat/combat-modifiers/#weaponArmorAndShieldProficiency">proficient</a> with all <a href="/equipment/weapons/#simpleMartialandExoticWeapons">simple weapons</a>, with light armor, and with shields (except tower shields).
+</p>
+<h5>Power Points/Day</h5>
+<p>
+	A wilder’s ability to manifest powers is limited by the power points she has available. Her base daily allotment of power points is given on <a href="#tableTheWilder">Table: The Wilder</a>. In addition, she receives bonus power points per day if she has a high Charisma score (see <a href="/psionic/classes/index/#tableAbilityModifiersandBonusPowerPoints">Table: Ability Modifiers and Bonus Power Points</a>). Her race may also provide bonus power points per day, as may certain feats and items.
+</p>
+<h5>Powers Known</h5>
+<p>
+	A wilder begins play knowing one wilder power of your choice. At every even-numbered class level after 1st, she unlocks the knowledge of new powers.
+</p>
+<p>
+	Choose the powers known from the wilder power list. (Exception: The feats <a href="/psionic/psionic-feats/#expandedKnowledge">Expanded Knowledge</a> and Epic Expanded Knowledge do allow a wilder to learn powers from the lists of other classes.) A wilder can manifest any power that has a power point cost equal to or lower than her manifester level.
+</p>
+<p>
+	The total number of powers a wilder can manifest in a day is limited only by her daily power points.
+</p>
+<p>
+	A wilder simply knows her powers; they are ingrained in her mind. She does not need to prepare them (in the way that some spellcasters prepare their spells), though she must get a good night’s sleep each day to regain all her spent power points.
+</p>
+<p>
+	The Difficulty Class for <a href="/combat/combat-statistics/#savingThrows">saving throws</a> against wilder powers is 10 + the power’s level + the wilder’s Charisma modifier.
+</p>
+<h5>Maximum Power Level Known</h5>
+<p>
+	A wilder begins play with the ability to learn 1st-level powers. As she attains higher levels, she may gain the ability to master more complex powers.
+</p>
+<p>
+	To learn or manifest a power, a wilder must have a Charisma score of at least 10 + the power’s level.
+</p>
+<h5 id="wildSurge">Wild Surge (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	A wilder can let her passion and emotion rise to the surface in a wild surge when she manifests a power. During a wild surge, a wilder gains phenomenal psionic strength, but may harm herself by the reckless use of her power (see <a href="#psychicEnervation">Psychic Enervation</a>, below).
+</p>
+<p>
+	A wilder can choose to invoke a wild surge whenever she manifests a power. When she does so, she gains +1 to her manifester level with that manifestation of the power. The manifester level boost gives her the ability to augment her powers to a higher degree than she otherwise could; however, she pays no extra power point for this wild surge. Instead, the additional 1 power point that would normally be required to augment the power is effectively supplied by the wild surge.
+</p>
+<p>
+	Level-dependent power effects are also improved, depending on the power a wilder manifests with her wild surge.
+</p>
+<p>
+	This improvement in manifester level does not grant her any other benefits (<a href="/psionic/classes/psion/#psicrystals">psicrystal</a> abilities do not advance, she does not gain higher-level class abilities, and so on).
+</p>
+<p>
+	She cannot use the <a href="/psionic/psionic-feats/#overchannel">Overchannel</a> psionic feat and invoke her wild surge at the same time.
+</p>
+<p>
+	At 3rd level, a wilder can choose to boost her manifester level by two instead of one. At 7th level, she can boost her manifester level by up to three; at 11th level, by up to four; at 15th level, by up to five; and at 19th level, by up to six.
+</p>
+<p>
+	In all cases, the wild surge effectively pays the extra power point cost that is normally required to augment the power; only the unaugmented power point cost is subtracted from the wilder’s power point reserve.
+</p>
+<h5 id="psychicEnervation">Psychic Enervation (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	Pushing oneself by invoking a wild surge is dangerous. Immediately following each wild surge, a wilder may be overcome by the strain of her effort. The chance of suffering psychic enervation is equal to 5% per manifester level added with the wild surge.
+</p>
+<p>
+	A wilder who is overcome by psychic enervation is <a href="/condition-summary/#dazed">dazed</a> until the end of her next turn and loses a number of power points equal to her wilder level.
+</p>
+<h5 id="eludeTouch">Elude Touch (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	Starting at 2nd level, a wilder’s intuition supersedes her intellect, alerting her to danger from <a href="/combat/combat-statistics/#touchAttacks">touch attacks</a> (including rays). She gains a bonus to Armor Class against all touch attacks equal to her Charisma bonus; however, her touch AC can never exceed her Armor Class against normal attacks.
+</p>
+<h5 id="surgingEuphoria">Surging Euphoria (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	Starting at 4th level, when a wilder uses her wild surge ability, she gains a +1 <a href="/the-basics/#moraleModifier">morale bonus</a> on <a href="/combat/combat-statistics/#attackRoll">attack rolls</a>, damage rolls, and <a href="/combat/combat-statistics/#savingThrows">saving throws</a> for a number of rounds equal to the intensity of her wild surge.
+</p>
+<p>
+	If a wilder is overcome by <a href="#psychicEnervation">psychic enervation</a> following her wild surge, she does not gain the <a href="/the-basics/#moraleModifier">morale bonus</a> for this use of her wild surge ability.
+</p>
+<p>
+	At 12th level, the <a href="/the-basics/#moraleModifier">morale bonus</a> on a wilder’s <a href="/combat/combat-statistics/#attackRoll">attack rolls</a>, damage rolls, and <a href="/combat/combat-statistics/#savingThrows">saving throws</a> increases to +2. At 20th level, the bonus increases to +3.
+</p>
+<h5 id="volatileMind">Volatile Mind (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	A wilder’s temperamental mind is hard to encompass with the discipline of telepathy. When any telepathy power is manifested on a wilder of 5th level or higher, the manifester of the power must pay 1 power point more than he otherwise would have spent.
+</p>
+<p>
+	The extra cost is not a natural part of that power’s cost. It does not augment the power; it is simply a wasted power point. The wilder’s volatile mind can force the manifester of the telepathy power to exceed the normal power point limit of 1 point per manifester level. If the extra cost raises the telepathy power’s cost to more points than the manifester has remaining in his reserve, the power simply fails, and the manifester exhausts the rest of his power points.
+</p>
+<p>
+	At 9th level, the penalty assessed against telepathy powers manifested on a wilder is increased to 2 power points. At 13th level, the penalty increases to 3 power points, and at 17th level it increases to 4 power points.
+</p>
+<p>
+	As a <a href="/combat/actions-in-combat/#standardActions">standard action</a>, a wilder can choose to lower this effect for 1 round.
+</p>
+<div class="footer">
+<!--- GOOGLE 300x250 ADS --->
+<div align="center" style="display:inline-block;">
+<!--- LEFT --->
+<!-- /1004459/d20srd300x250-1 -->
+<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
+</script>
+</div>
+<!--- RIGHT --->
+<!-- /1004459/d20srd300x250-2 -->
+<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
+</script>
+</div>
+</div>
+<!--- END GOOGLE 300x250 ADS --->
+<p>
+		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
+	</p>
+<p class="legal">
+		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
+	</p>
+<p class="legal">
+		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
+	</p>
+<!-- removing standards place holder -->
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+  })();
+  _qevents.push({
+    qacct: "p-e3P2kHqpGAv2I"
+  });
+</script>
+<noscript>
+<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
+</noscript>
+<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
+
+</main>
+
+<footer>
+
+<p>
+Open Game Content used under the Open Game License Version 1.0a.
+See <a href="/legal/">Legal</a>.
+</p>
+
+</footer>
+
+</body>
+</html>

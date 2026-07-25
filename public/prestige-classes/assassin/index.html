@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assassin :: d20srd.org</title>
+</head>
+
+<body>
+
+<header>
+    <h1>d20 SRD Hub</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/classes/">Classes</a>
+    <a href="/combat/">Combat</a>
+    <a href="/skills/">Skills</a>
+    <a href="/legal/">Legal</a>
+</nav>
+
+<main>
+
+<h1>Assassin</h1>
+<h5>Hit Die</h5>
+<p>
+	d6.
+</p>
+<h4>Requirements</h4>
+<p>
+	To qualify to become an assassin, a character must fulfill all the following criteria.
+</p>
+<h5>Alignment</h5>
+<p>
+	Any evil.
+</p>
+<h5>Skills</h5>
+<p>
+<a href="/skills/disguise/">Disguise</a> 4 ranks, <a href="/skills/hide/">Hide</a> 8 ranks, <a href="/skills/move-silently/">Move Silently</a> 8 ranks.
+</p>
+<h5>Special</h5>
+<p>
+	The character must kill someone for no other reason than to join the assassins.
+</p>
+<h4>Class Skills</h4>
+<p>
+	The assassin’s class skills (and the key ability for each skill) are <a href="/skills/balance/">Balance</a> (Dex), <a href="/skills/bluff/">Bluff</a> (Cha), <a href="/skills/climb/">Climb</a> (Str), <a href="/skills/craft/">Craft</a> (Int), <a href="/skills/decipher-script/">Decipher Script</a> (Int), <a href="/skills/diplomacy/">Diplomacy</a> (Cha), <a href="/skills/disable-device/">Disable Device</a> (Int), <a href="/skills/disguise/">Disguise</a> (Cha), <a href="/skills/escape-artist/">Escape Artist</a> (Dex), <a href="/skills/forgery/">Forgery</a> (Int), <a href="/skills/gather-information/">Gather Information</a> (Cha), <a href="/skills/hide/">Hide</a> (Dex), <a href="/skills/intimidate/">Intimidate</a> (Cha), <a href="/skills/jump/">Jump</a> (Str), <a href="/skills/listen/">Listen</a> (Wis), <a href="/skills/move-silently/">Move Silently</a> (Dex), <a href="/skills/open-lock/">Open Lock</a> (Dex), <a href="/skills/search/">Search</a> (Int), <a href="/skills/sense-motive/">Sense Motive</a> (Wis), <a href="/skills/sleight-of-hand/">Sleight of Hand</a> (Dex), <a href="/skills/spot/">Spot</a> (Wis), <a href="/skills/swim/">Swim</a> (Str), <a href="/skills/tumble/">Tumble</a> (Dex), <a href="/skills/use-magic-device/">Use Magic Device</a> (Cha), and <a href="/skills/use-rope/">Use Rope</a> (Dex).
+</p>
+<h5>Skill Points at Each Level</h5>
+<p>
+	4 + Int modifier.
+</p>
+<table cellspacing="0" id="tableTheAssassin">
+<caption>Table: The Assassin</caption>
+<tr>
+<th rowspan="2">Level</th>
+<th rowspan="2">Base<br/>Attack Bonus</th>
+<th rowspan="2">Fort<br/>Save</th>
+<th rowspan="2">Ref<br/>Save</th>
+<th rowspan="2">Will<br/>Save</th>
+<th align="left" rowspan="2">Special</th>
+<th colspan="4">Spells per Day</th>
+</tr>
+<tr>
+<th>1st</th>
+<th>2nd</th>
+<th>3rd</th>
+<th>4th</th>
+</tr>
+<tr>
+<td align="center">1st</td>
+<td align="center">+0</td>
+<td align="center">+0</td>
+<td align="center">+2</td>
+<td align="center">+0</td>
+<td><a href="#sneakAttack">Sneak attack</a> +1d6, <a href="#deathAttack">death attack</a>, <a href="#assassinPoisonUse">poison use</a>, <a href="#spells">spells</a></td>
+<td align="center">0</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">2nd</td>
+<td align="center">+1</td>
+<td align="center">+0</td>
+<td align="center">+3</td>
+<td align="center">+0</td>
+<td>+1 <a href="#saveBonusagainstPoison">save against poison</a>, <a href="#assassinUncannyDodge">uncanny dodge</a></td>
+<td align="center">1</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">3rd</td>
+<td align="center">+2</td>
+<td align="center">+1</td>
+<td align="center">+3</td>
+<td align="center">+1</td>
+<td><a href="#sneakAttack">Sneak attack</a> +2d6</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">4th</td>
+<td align="center">+3</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td align="center">+1</td>
+<td>+2 <a href="#saveBonusagainstPoison">save against poison</a></td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">5th</td>
+<td align="center">+3</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td align="center">+1</td>
+<td><a href="#assassinImprovedUncannyDodge">Improved uncanny dodge</a>, <a href="#sneakAttack">sneak attack</a> +3d6</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">6th</td>
+<td align="center">+4</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td align="center">+2</td>
+<td>+3 <a href="#saveBonusagainstPoison">save against poison</a></td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">7th</td>
+<td align="center">+5</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td align="center">+2</td>
+<td><a href="#sneakAttack">Sneak attack</a> +4d6</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">8th</td>
+<td align="center">+6</td>
+<td align="center">+2</td>
+<td align="center">+6</td>
+<td align="center">+2</td>
+<td>+4 <a href="#saveBonusagainstPoison">save against poison</a>, <a href="#assassinHideinPlainSight">hide in plain sight</a></td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">9th</td>
+<td align="center">+6</td>
+<td align="center">+3</td>
+<td align="center">+6</td>
+<td align="center">+3</td>
+<td><a href="#sneakAttack">Sneak attack</a> +5d6</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">10th</td>
+<td align="center">+7</td>
+<td align="center">+3</td>
+<td align="center">+7</td>
+<td align="center">+3</td>
+<td>+5 <a href="#saveBonusagainstPoison">save against poison</a></td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+</tr>
+</table>
+<h4>Class Features</h4>
+<p>
+	All of the following are Class Features of the assassin prestige class.
+</p>
+<h5>Weapon and Armor Proficiency</h5>
+<p>
+	Assassins are <a href="/combat/combat-modifiers/#weaponArmorAndShieldProficiency">proficient</a> with the crossbow (hand, light, or heavy), dagger (any type), dart, <a href="/equipment/weapons/#rapier">rapier</a>, sap, <a href="/equipment/weapons/#shortbow">shortbow</a> (normal and composite), and short sword. Assassins are proficient with light armor but not with shields.
+</p>
+<h5 id="sneakAttack">Sneak Attack</h5>
+<p>
+	This is exactly like the <a href="/classes/rogue/">rogue</a> ability of the same name. The extra damage dealt increases by +1d6 every other level (1st, 3rd, 5th, 7th, and 9th). If an assassin gets a sneak attack bonus from another source the bonuses on damage stack.
+</p>
+<h5 id="deathAttack">Death Attack</h5>
+<p>
+	If an assassin studies his victim for 3 rounds and then makes a sneak attack with a melee weapon that successfully deals damage, the sneak attack has the additional effect of possibly either paralyzing or killing the target (assassin’s choice). While studying the victim, the assassin can undertake other actions so long as his attention stays focused on the target and the target does not detect the assassin or recognize the assassin as an enemy. If the victim of such an attack fails a <a href="/combat/combat-statistics/#fortitude">Fortitude save</a> (DC 10 + the assassin’s class level + the assassin’s Int modifier) against the kill effect, she dies. If the <a href="/combat/combat-statistics/#savingThrows">saving throw</a> fails against the <a href="/special-abilities/#paralysis">paralysis</a> effect, the victim is rendered <a href="/condition-summary/#helpless">helpless</a> and unable to act for 1d6 rounds plus 1 round per level of the assassin. If the victim’s saving throw succeeds, the attack is just a normal sneak attack. Once the assassin has completed the 3 rounds of study, he must make the death attack within the next 3 rounds.
+</p>
+<p>
+	If a death attack is attempted and fails (the victim makes her save) or if the assassin does not launch the attack within 3 rounds of completing the study, 3 new rounds of study are required before he can attempt another death attack.
+</p>
+<h5 id="assassinPoisonUse">Poison Use</h5>
+<p>
+	Assassins are trained in the use of <a href="/special-abilities/#poison">poison</a> and never risk accidentally poisoning themselves when applying <a href="/special-abilities/#poison">poison</a> to a blade.
+</p>
+<table cellspacing="0" class="right" id="tableAssassinSpellsKnown">
+<caption>Table: Assassin Spells Known</caption>
+<thead>
+<tr>
+<th rowspan="2">Level</th>
+<th colspan="4">Spells Known</th>
+</tr>
+<tr>
+<th>1st</th>
+<th>2nd</th>
+<th>3rd</th>
+<th>4th</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="5">
+<ol>
+<li>Provided the assassin has sufficient Intelligence to have a bonus spell of this level.</li>
+</ol>
+</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td align="center">1st</td>
+<td align="center">2<sup>1</sup></td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">2nd</td>
+<td align="center">3</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">3rd</td>
+<td align="center">3</td>
+<td align="center">2<sup>1</sup></td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">4th</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">5th</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">2<sup>1</sup></td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">6th</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">7th</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">2<sup>1</sup></td>
+</tr>
+<tr>
+<td align="center">8th</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">9th</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">10th</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
+<h5 id="spells">Spells</h5>
+<p>
+	Beginning at 1st level, an assassin gains the ability to cast a number of arcane spells. To cast a spell, an assassin must have an Intelligence score of at least 10 + the spell’s level, so an assassin with an Intelligence of 10 or lower cannot cast these spells. Assassin bonus spells are based on Intelligence, and <a href="/combat/combat-statistics/#savingThrows">saving throws</a> against these spells have a DC of 10 + spell level + the assassin’s Intelligence bonus. When the assassin gets 0 spells per day of a given spell level he gains only the bonus spells he would be entitled to based on his Intelligence score for that spell level.
+</p>
+<p>
+	The assassin’s spell list appears below. An assassin casts spells just as a <a href="/classes/bard/">bard</a> does.
+</p>
+<p>
+	Upon reaching 6th level, at every even-numbered level after that (8th and 10th), an assassin can choose to learn a new spell in place of one he already knows. The new spell’s level must be the same as that of the spell being exchanged, and it must be at least two levels lower than the highest-level assassin spell the assassin can cast. An assassin may swap only a single spell at any given level, and must choose whether or not to swap the spell at the same time that he gains new spells known for that level.
+</p>
+<h5 id="saveBonusagainstPoison">Save Bonus against Poison</h5>
+<p>
+	The assassin gains a natural <a href="/combat/combat-statistics/#savingThrows">saving throw</a> bonus to all <a href="/special-abilities/#poison">poisons</a> gained at 2nd level that increases by +1 for every two additional levels the assassin gains.
+</p>
+<h5 id="assassinUncannyDodge">Uncanny Dodge (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	Starting at 2nd level, an assassin retains his Dexterity bonus to AC (if any) regardless of being caught <a href="/condition-summary/#flatFooted">flat-footed</a> or struck by an <a href="/condition-summary/#invisible">invisible</a> attacker. (He still loses any Dexterity bonus to AC if immobilized.)
+</p>
+<p>
+	If a character gains uncanny dodge from a second class the character automatically gains improved uncanny dodge (see below).
+</p>
+<h5 id="assassinImprovedUncannyDodge">Improved Uncanny Dodge (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	At 5th level, an assassin can no longer be <a href="/combat/combat-modifiers/#flanking">flanked</a>, since he can react to opponents on opposite sides of him as easily as he can react to a single attacker. This defense denies <a href="/classes/rogue/">rogues</a> the ability to use flank attacks to sneak attack the assassin. The exception to this defense is that a rogue at least four levels higher than the assassin can flank him (and thus sneak attack him).
+</p>
+<p>
+	If a character gains uncanny dodge (see above) from a second class the character automatically gains improved uncanny dodge, and the levels from those classes stack to determine the minimum <a href="/classes/rogue/">rogue</a> level required to <a href="/combat/combat-modifiers/#flanking">flank</a> the character.
+</p>
+<h5 id="assassinHideinPlainSight">Hide in Plain Sight (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	At 8th level, an assassin can use the <a href="/skills/hide/">Hide</a> skill even while being observed. As long as he is within 10 feet of some sort of shadow, an assassin can hide himself from view in the open without having anything to actually hide behind. He cannot, however, hide in his own shadow.
+</p>
+<h4 id="assassinSpellList">Assassin Spell List</h4>
+<p>
+	Assassins choose their spells from the following list:
+</p>
+<h5>1st Level</h5>
+<p>
+<a class="spell" href="/spells/disguise-self/">disguise self</a>, <a class="spell" href="/spells/detect-poison/">detect poison</a>, <a class="spell" href="/spells/feather-fall/">feather fall</a>, <a class="spell" href="/spells/ghost-sound/">ghost sound</a>, <a class="spell" href="/spells/jump/">jump</a>, <a class="spell" href="/spells/obscuring-mist/">obscuring mist</a>, <a class="spell" href="/spells/sleep/">sleep</a>, <a class="spell" href="/spells/true-strike/">true strike</a>.
+</p>
+<h5>2nd Level</h5>
+<p>
+<a class="spell" href="/spells/alter-self/">alter self</a>, <a class="spell" href="/spells/cats-grace/">cat’s grace</a>, <a class="spell" href="/spells/darkness/">darkness</a>, <a class="spell" href="/spells/foxs-cunning/">fox’s cunning</a>, <a class="spell" href="/spells/illusory-script/">illusory script</a>, <a class="spell" href="/spells/invisibility/">invisibility</a>, <a class="spell" href="/spells/pass-without-trace/">pass without trace</a>, <a class="spell" href="/spells/spider-climb/">spider climb</a>, <a class="spell" href="/spells/undetectable-alignment/">undetectable alignment</a>.
+</p>
+<h5>3rd Level</h5>
+<p>
+<a class="spell" href="/spells/deep-slumber/">deep slumber</a>, <a class="spell" href="/spells/deeper-darkness/">deeper darkness</a>, <a class="spell" href="/spells/false-life/">false life</a>, <a class="spell" href="/spells/magic-circle-against-good/">magic circle against good</a>, <a class="spell" href="/spells/misdirection/">misdirection</a>, <a class="spell" href="/spells/nondetection/">nondetection</a>.
+</p>
+<h5>4th Level</h5>
+<p>
+<a class="spell" href="/spells/clairaudience-clairvoyance/">clairaudience/clairvoyance</a>, <a class="spell" href="/spells/dimension-door/">dimension door</a>, <a class="spell" href="/spells/freedom-of-movement/">freedom of movement</a>, <a class="spell" href="/spells/glibness/">glibness</a>, <a class="spell" href="/spells/invisibility-greater/">greater invisibility</a>, <a class="spell" href="/spells/locate-creature/">locate creature</a>, <a class="spell" href="/spells/modify-memory/">modify memory</a>, <a class="spell" href="/spells/poison/">poison</a>.
+</p>
+<div class="footer">
+<!--- GOOGLE 300x250 ADS --->
+<div align="center" style="display:inline-block;">
+<!--- LEFT --->
+<!-- /1004459/d20srd300x250-1 -->
+<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
+</script>
+</div>
+<!--- RIGHT --->
+<!-- /1004459/d20srd300x250-2 -->
+<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
+</script>
+</div>
+</div>
+<!--- END GOOGLE 300x250 ADS --->
+<p>
+		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
+	</p>
+<p class="legal">
+		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
+	</p>
+<p class="legal">
+		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
+	</p>
+<!-- removing standards place holder -->
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+  })();
+  _qevents.push({
+    qacct: "p-e3P2kHqpGAv2I"
+  });
+</script>
+<noscript>
+<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
+</noscript>
+<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
+
+</main>
+
+<footer>
+
+<p>
+Open Game Content used under the Open Game License Version 1.0a.
+See <a href="/legal/">Legal</a>.
+</p>
+
+</footer>
+
+</body>
+</html>

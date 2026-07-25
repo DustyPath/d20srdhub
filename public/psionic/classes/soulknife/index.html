@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soulknife :: d20srd.org</title>
+</head>
+
+<body>
+
+<header>
+    <h1>d20 SRD Hub</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/classes/">Classes</a>
+    <a href="/combat/">Combat</a>
+    <a href="/skills/">Skills</a>
+    <a href="/legal/">Legal</a>
+</nav>
+
+<main>
+
+<h1>Soulknife</h1>
+<table cellspacing="0" class="right" id="tableTheSoulknife">
+<caption>Table: The Soulknife</caption>
+<tr>
+<th>Level</th>
+<th align="left">Base<br/>Attack<br/>Bonus</th>
+<th>Fort<br/>Save</th>
+<th>Ref<br/>Save</th>
+<th>Will<br/>Save</th>
+<th align="left">Special</th>
+</tr>
+<tr>
+<td align="center">1st</td>
+<td>+0</td>
+<td align="center">+0</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td><a href="#mindBlade">Mind blade</a>, <a href="#weaponFocusMindBlade">Weapon Focus (mind blade)</a>, <a href="#wildTalent">Wild Talent</a></td>
+</tr>
+<tr>
+<td align="center">2nd</td>
+<td>+1</td>
+<td align="center">+0</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td><a href="#throwMindBlade">Throw mind blade</a></td>
+</tr>
+<tr>
+<td align="center">3rd</td>
+<td>+2</td>
+<td align="center">+1</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td><a href="#psychicStrike">Psychic strike</a> +1d8</td>
+</tr>
+<tr>
+<td align="center">4th</td>
+<td>+3</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td align="center">+4</td>
+<td>+1 <a href="#mindBlade">mind blade</a></td>
+</tr>
+<tr>
+<td align="center">5th</td>
+<td>+3</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td align="center">+4</td>
+<td><a href="#freeDraw">Free draw</a>, <a href="#shapeMindBlade">shape mind blade</a></td>
+</tr>
+<tr>
+<td align="center">6th</td>
+<td>+4</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td align="center">+5</td>
+<td><a href="#mindBladeEnhancement">Mind blade enhancement</a> +1, <a href="#speedofThought">Speed of Thought</a></td>
+</tr>
+<tr>
+<td align="center">7th</td>
+<td>+5</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td align="center">+5</td>
+<td><a href="#psychicStrike">Psychic strike</a> +2d8</td>
+</tr>
+<tr>
+<td align="center">8th</td>
+<td>+6/+1</td>
+<td align="center">+2</td>
+<td align="center">+6</td>
+<td align="center">+6</td>
+<td>+2 <a href="#mindBlade">mind blade</a></td>
+</tr>
+<tr>
+<td align="center">9th</td>
+<td>+6/+1</td>
+<td align="center">+3</td>
+<td align="center">+6</td>
+<td align="center">+6</td>
+<td><a href="#bladewind">Bladewind</a>, <a href="#greaterWeaponFocusMindBlade">Greater Weapon Focus (mind blade)</a></td>
+</tr>
+<tr>
+<td align="center">10th</td>
+<td>+7/+2</td>
+<td align="center">+3</td>
+<td align="center">+7</td>
+<td align="center">+7</td>
+<td><a href="#mindBladeEnhancement">Mind blade enhancement</a> +2</td>
+</tr>
+<tr>
+<td align="center">11th</td>
+<td>+8/+3</td>
+<td align="center">+3</td>
+<td align="center">+7</td>
+<td align="center">+7</td>
+<td><a href="#psychicStrike">Psychic strike</a> +3d8</td>
+</tr>
+<tr>
+<td align="center">12th</td>
+<td>+9/+4</td>
+<td align="center">+4</td>
+<td align="center">+8</td>
+<td align="center">+8</td>
+<td>+3 <a href="#mindBlade">mind blade</a></td>
+</tr>
+<tr>
+<td align="center">13th</td>
+<td>+9/+4</td>
+<td align="center">+4</td>
+<td align="center">+8</td>
+<td align="center">+8</td>
+<td><a href="#knifetotheSoul">Knife to the soul</a></td>
+</tr>
+<tr>
+<td align="center">14th</td>
+<td>+10/+5</td>
+<td align="center">+4</td>
+<td align="center">+9</td>
+<td align="center">+9</td>
+<td><a href="#mindBladeEnhancement">Mind blade enhancement</a> +3</td>
+</tr>
+<tr>
+<td align="center">15th</td>
+<td>+11/+6/+1</td>
+<td align="center">+5</td>
+<td align="center">+9</td>
+<td align="center">+9</td>
+<td><a href="#psychicStrike">Psychic strike</a> +4d8</td>
+</tr>
+<tr>
+<td align="center">16th</td>
+<td>+12/+7/+2</td>
+<td align="center">+5</td>
+<td align="center">+10</td>
+<td align="center">+10</td>
+<td>+4 <a href="#mindBlade">mind blade</a></td>
+</tr>
+<tr>
+<td align="center">17th</td>
+<td>+12/+7/+2</td>
+<td align="center">+5</td>
+<td align="center">+10</td>
+<td align="center">+10</td>
+<td><a href="#multipleThrow">Multiple throw</a></td>
+</tr>
+<tr>
+<td align="center">18th</td>
+<td>+13/+8/+3</td>
+<td align="center">+6</td>
+<td align="center">+11</td>
+<td align="center">+11</td>
+<td><a href="#mindBladeEnhancement">Mind blade enhancement</a> +4</td>
+</tr>
+<tr>
+<td align="center">19th</td>
+<td>+14/+9/+4</td>
+<td align="center">+6</td>
+<td align="center">+11</td>
+<td align="center">+11</td>
+<td><a href="#psychicStrike">Psychic strike</a> +5d8</td>
+</tr>
+<tr>
+<td align="center">20th</td>
+<td>+15/+10/+5</td>
+<td align="center">+6</td>
+<td align="center">+12</td>
+<td align="center">+12</td>
+<td>+5 <a href="#mindBlade">mind blade</a></td>
+</tr>
+</table>
+<h5>Alignment</h5>
+<p>
+	Any.
+</p>
+<h5>Hit Die</h5>
+<p>
+	d10.
+</p>
+<h4>Class Skills</h4>
+<p>
+	The soulknife’s class skills (and the key ability for each skill) are <a href="/psionic/skills/autohypnosis/">Autohypnosis</a>* (Wis), <a href="/skills/climb/">Climb</a> (Str), <a href="/psionic/skills/concentration/">Concentration</a>* (Con), <a href="/skills/craft/">Craft</a> (Int), <a href="/skills/hide/">Hide</a> (Dex), <a href="/skills/jump/">Jump</a> (Str), <a href="/psionic/skills/knowledge-psionics/">Knowledge (psionics)</a>* (Int), <a href="/skills/listen/">Listen</a> (Wis), <a href="/skills/move-silently/">Move Silently</a> (Dex), <a href="/skills/profession/">Profession</a> (Wis), <a href="/skills/spot/">Spot</a> (Wis), and <a href="/skills/tumble/">Tumble</a> (Dex).
+</p>
+<p>
+	*New skill or expanded use of existing skill.
+</p>
+<h5>Skill Points at 1st Level</h5>
+<p>
+	(4 + Int modifier) ×4.
+</p>
+<h5>Skill Points at Each Additional Level</h5>
+<p>
+	4 + Int modifier.
+</p>
+<h4>Class Features</h4>
+<p>
+	All the following are class features of the soulknife.
+</p>
+<h5>Weapon and Armor Proficiency</h5>
+<p>
+	Soulknives are <a href="/combat/combat-modifiers/#weaponArmorAndShieldProficiency">proficient</a> with all <a href="/equipment/weapons/#simpleMartialandExoticWeapons">simple weapons</a>, with their own mind blades, and with light armor and shields (except tower shields).
+</p>
+<h5 id="mindBlade">Mind Blade (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	As a <a href="/combat/actions-in-combat/#moveActions">move action</a>, a soulknife can create a semisolid blade composed of psychic energy distilled from his own mind. The blade is identical in all ways (except visually) to a short sword of a size appropriate for its wielder. For instance, a Medium soulknife materializes a Medium mind blade that he can wield as a light weapon, and the blade deals 1d6 points of damage (crit 19-20/×2). Soulknives who are smaller or larger than Medium create mind blades identical to short swords appropriate for their size, with a corresponding change to the blade’s damage. The wielder of a mind blade gains the usual benefits to his <a href="/combat/combat-statistics/#attackRoll">attack roll</a> and damage roll from a high Strength bonus.
+</p>
+<p>
+	The blade can be broken (it has <a href="/exploration/#hardness">hardness</a> 10 and 10 hit points); however, a soulknife can simply create another on his next <a href="/combat/actions-in-combat/#moveActions">move action</a>. The moment he relinquishes his grip on his blade, it dissipates (unless he intends to throw it; see below). A mind blade is considered a magic weapon for the purpose of overcoming <a href="/special-abilities/#damageReduction">damage reduction</a>.
+</p>
+<p>
+	A soulknife can use feats such as <a href="/feats/#powerAttack">Power Attack</a> or <a href="/feats/#combatExpertise">Combat Expertise</a> in conjunction with the mind blade just as if it were a normal weapon. He can also choose mind blade for feats requiring a specific weapon choice, such as <a href="/feats/#weaponSpecialization">Weapon Specialization</a>. Powers or spells that upgrade weapons can be used on a mind blade.
+</p>
+<p>
+	A soulknife’s mind blade improves as the character gains higher levels. At 4th level and every four levels thereafter, the mind blade gains a cumulative +1 <a href="/the-basics/#enhancementBonus">enhancement bonus</a> on <a href="/combat/combat-statistics/#attackRoll">attack rolls</a> and damage rolls (+2 at 8th level, +3 at 12th level, +4 at 16th level, and +5 at 20th level).
+</p>
+<p>
+	Even in places where psionic effects do not normally function (such as within a <a class="psionicPower" href="/psionic/powers/null-psionics-field/">null psionics field</a>), a soulknife can attempt to sustain his mind blade by making a DC 20 <a href="/combat/combat-statistics/#will">Will save</a>. On a successful save, the soulknife maintains his mind blade for a number of rounds equal to his class level before he needs to check again. On an unsuccessful attempt, the mind blade vanishes. As a <a href="/combat/actions-in-combat/#moveActions">move action</a> on his turn, the soulknife can attempt a new Will save to rematerialize his mind blade while he remains within the psionics negating effect.
+</p>
+<h5 id="weaponFocusMindBlade">Weapon Focus (Mind Blade)</h5>
+<p>
+	A soulknife gains <a href="/feats/#weaponFocus">Weapon Focus</a> (mind blade) as a bonus feat.
+</p>
+<h5 id="wildTalent">Wild Talent</h5>
+<p>
+	A soulknife gains <a href="/psionic/psionic-feats/#wildTalent">Wild Talent</a> as a bonus feat. (This class feature provides the character with the psionic power he needs to materialize his mind blade, if he has no power points otherwise.)
+</p>
+<h5 id="throwMindBlade">Throw Mind Blade (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	A soul knife of 2nd level or higher can throw his mind blade as a ranged weapon with a range increment of 30 feet.
+</p>
+<p>
+	Whether or not the attack hits, a thrown mind blade then dissipates. A soulknife of 3rd level or higher can make a psychic strike (see below) with a thrown mind blade and can use the blade in conjunction with other special abilities (such as Knife to the Soul; see below).
+</p>
+<h5 id="psychicStrike">Psychic Strike (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	As a <a href="/combat/actions-in-combat/#moveActions">move action</a>, a soulknife of 3rd level or higher can imbue his mind blade with destructive psychic energy. This effect deals an extra 1d8 points of damage to the next living, nonmindless target he successfully hits with a melee attack (or ranged attack, if he is using the throw mind blade ability). Creatures immune to mind-affecting effects are immune to psychic strike damage. (Unlike the <a href="/classes/rogue/">rogue’s</a> sneak attack, the psychic strike is not precision damage and can affect creatures otherwise immune to extra damage from <a href="/combat/actions-in-combat/#criticalHits">critical hits</a> or more than 30 feet away, provided they are living, nonmindless creatures not immune to mind-affecting effects.)
+</p>
+<p>
+	A mind blade deals this extra damage only once when this ability is called upon, but a soulknife can imbue his mind blade with psychic energy again by taking another <a href="/combat/actions-in-combat/#moveActions">move action</a>.
+</p>
+<p>
+	Once a soulknife has prepared his blade for a psychic strike, it holds the extra energy until it is used. Even if the soulknife drops the mind blade (or it otherwise dissipates, such as when it is thrown and misses), it is still imbued with psychic energy when the soulknife next materializes it.
+</p>
+<p>
+	At every four levels beyond 3rd (7th, 11th, 15th, and 19th), the extra damage from a soulknife’s psychic strike increases as shown on the Table above.
+</p>
+<h5 id="freeDraw">Free Draw (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	At 5th level, a soulknife becomes able to materialize his mind blade as a <a href="/combat/actions-in-combat/#freeActions">free action</a> instead of a <a href="/combat/actions-in-combat/#moveActions">move action</a>. He can make only one attempt to materialize the mind blade per round, however.
+</p>
+<h5 id="shapeMindBlade">Shape Mind Blade (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	At 5th level, a soulknife gains the ability to change the form of his mind blade. As a fullround action, he can change his mind blade to replicate a longsword (damage 1d8 for a Medium weapon wielded as a one-handed weapon) or a <a href="/equipment/weapons/#swordBastard">bastard sword</a> (damage 1d10 for a Medium weapon, but he must wield it as a two-handed weapon unless he knows the <a href="/feats/#exoticWeaponProficiency">Exotic Weapon Proficiency</a> (bastard sword) feat). If a soulknife shapes his mind blade into the form of a bastard sword and wields it two-handed, he adds 1½ times his Strength bonus to his damage rolls, just like when using any other two-handed weapon.
+</p>
+<p>
+	Alternatively, a soulknife can split his mind blade into two identical short swords, suitable for fighting with a weapon in each hand. (The normal penalties for fighting with two weapons apply.) However, both mind blades have an <a href="/the-basics/#enhancementBonus">enhancement bonus</a> 1 lower than the soulknife would otherwise create with a single mind blade.
+</p>
+<table cellspacing="0" class="right">
+<thead>
+<tr>
+<th align="left">Weapon Special Ability</th>
+<th>Enhancement<br/>Bonus<br/>Value</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="2">
+<ol>
+<li>New special abilities</li>
+</ol>
+</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td><a href="/magic-items/magic-weapons/#defending">Defending</a></td>
+<td align="center">+1</td>
+</tr>
+<tr>
+<td><a href="/magic-items/magic-weapons/#keen">Keen</a></td>
+<td align="center">+1</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#lucky">Lucky</a><sup>1</sup></td>
+<td align="center">+1</td>
+</tr>
+<tr>
+<td><a href="/magic-items/magic-weapons/#mightyCleaving">Mighty cleaving</a></td>
+<td align="center">+1</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#psychokinetic">Psychokinetic</a><sup>1</sup></td>
+<td align="center">+1</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#sundering">Sundering</a><sup>1</sup></td>
+<td align="center">+1</td>
+</tr>
+<tr>
+<td><a href="/magic-items/magic-weapons/#vicious">Vicious</a></td>
+<td align="center">+1</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#collision">Collision</a><sup>1</sup></td>
+<td align="center">+2</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#mindcrusher">Mindcrusher</a><sup>1</sup></td>
+<td align="center">+2</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#psychokineticBurst">Psychokinetic burst</a><sup>1</sup></td>
+<td align="center">+2</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#suppression">Suppression</a><sup>1</sup></td>
+<td align="center">+2</td>
+</tr>
+<tr>
+<td><a href="/magic-items/magic-weapons/#wounding">Wounding</a></td>
+<td align="center">+2</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#bodyfeeder">Bodyfeeder</a><sup>1</sup></td>
+<td align="center">+3</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#mindfeeder">Mindfeeder</a><sup>1</sup></td>
+<td align="center">+3</td>
+</tr>
+<tr>
+<td><a href="/psionic/items/weapons/#soulbreaker">Soulbreaker</a><sup>1</sup></td>
+<td align="center">+3</td>
+</tr>
+</tbody>
+</table>
+<h5 id="mindBladeEnhancement">Mind Blade Enhancement (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	At 6th level, a soulknife gains the ability to enhance his mind blade. He can add any one of the weapon special abilities on the table below that has an <a href="/the-basics/#enhancementBonus">enhancement bonus</a> value of +1.
+</p>
+<p>
+	At every four levels beyond 6th (10th, 14th, and 18th), the value of the enhancement a soulknife can add to his weapon improves to +2, +3, and +4, respectively. A soulknife can choose any combination of weapon special abilities that does not exceed the total allowed by the soulknife’s level.
+</p>
+<p>
+	The weapon ability or abilities remain the same every time the soulknife materializes his mind blade (unless he decides to reassign its abilities; see below). The ability or abilities apply to any form the mind blade takes, including the use of the shape mind blade or bladewind class abilities.
+</p>
+<p>
+	A soulknife can reassign the ability or abilities he has added to his mind blade. To do so, he must first spend 8 hours in concentration. After that period, the mind blade materializes with the new ability or abilities selected by the soulknife.
+</p>
+<h5 id="speedofThought">Speed of Thought</h5>
+<p>
+	A soulknife gains <a href="/psionic/psionic-feats/#speedOfThought">Speed of Thought</a> as a bonus feat at 6th level.
+</p>
+<h5 id="bladewind">Bladewind (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	At 9th level, a soulknife gains the ability to momentarily fragment his mind blade into numerous identical blades, each of which strikes at a nearby opponent.
+</p>
+<p>
+	As a <a href="/combat/actions-in-combat/#fullAttack">full attack</a>, when wielding his mind blade, a soulknife can give up his regular attacks and instead fragment his mind blade to make one melee attack at his full base attack bonus against each opponent within reach. Each fragment functions identically to the soulknife’s regular mind blade.
+</p>
+<p>
+	When using bladewind, a soulknife forfeits any bonus or extra attacks granted by other feats or abilities (such as the <a href="/feats/#cleave">Cleave</a> feat or the <a class="spell" href="/spells/haste/">haste</a> spell).
+</p>
+<p>
+	The mind blade immediately reverts to its previous form after the bladewind attack.
+</p>
+<h5 id="greaterWeaponFocusMindBlade">Greater Weapon Focus (Mind Blade)</h5>
+<p>
+	A soulknife gains <a href="/feats/#greaterWeaponFocus">Greater Weapon Focus</a> (mind blade) as a bonus feat at 9th level.
+</p>
+<h5 id="knifetotheSoul">Knife to the Soul (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	Beginning at 13th level, when a soulknife executes a psychic strike, he can choose to substitute Intelligence, Wisdom, or Charisma damage (his choice) for extra dice of damage. For each die of extra damage he gives up, he deals 1 point of damage to the ability score he chooses. A soulknife can combine extra dice of damage and <a href="/special-abilities/#abilityDamage">ability damage</a> in any combination.
+</p>
+<p>
+	The soulknife decides which ability score his psychic strike damages and the division of <a href="/special-abilities/#abilityDamage">ability damage</a> and extra dice of damage when he imbues his mind blade with the psychic strike energy.
+</p>
+<h5 id="multipleThrow">Multiple Throw (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	At 17th level and higher, a soulknife can throw a number of mind blades per round equal to the number of melee attacks he could make.
+</p>
+<div class="footer">
+<!--- GOOGLE 300x250 ADS --->
+<div align="center" style="display:inline-block;">
+<!--- LEFT --->
+<!-- /1004459/d20srd300x250-1 -->
+<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
+</script>
+</div>
+<!--- RIGHT --->
+<!-- /1004459/d20srd300x250-2 -->
+<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
+</script>
+</div>
+</div>
+<!--- END GOOGLE 300x250 ADS --->
+<p>
+		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
+	</p>
+<p class="legal">
+		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
+	</p>
+<p class="legal">
+		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
+	</p>
+<!-- removing standards place holder -->
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+  })();
+  _qevents.push({
+    qacct: "p-e3P2kHqpGAv2I"
+  });
+</script>
+<noscript>
+<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
+</noscript>
+<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
+
+</main>
+
+<footer>
+
+<p>
+Open Game Content used under the Open Game License Version 1.0a.
+See <a href="/legal/">Legal</a>.
+</p>
+
+</footer>
+
+</body>
+</html>

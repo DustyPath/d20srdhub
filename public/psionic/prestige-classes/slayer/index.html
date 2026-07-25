@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Slayer :: d20srd.org</title>
+</head>
+
+<body>
+
+<header>
+    <h1>d20 SRD Hub</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/classes/">Classes</a>
+    <a href="/combat/">Combat</a>
+    <a href="/skills/">Skills</a>
+    <a href="/legal/">Legal</a>
+</nav>
+
+<main>
+
+<h1>Slayer</h1>
+<h5>Hit Die</h5>
+<p>
+	d8.
+</p>
+<h4>Requirements</h4>
+<p>
+	To qualify to become a slayer, a character must fulfill all the following criteria.
+</p>
+<h5>Base Attack Bonus</h5>
+<p>
+	+4.
+</p>
+<h5>Skill</h5>
+<p>
+<a href="/skills/knowledge/">Knowledge</a> (dungeoneering) 4 ranks.
+</p>
+<h5>Feat</h5>
+<p>
+<a href="/feats/#track">Track</a>.
+</p>
+<h5>Psionics</h5>
+<p>
+	Must have a power point reserve of at least 1 power point.
+</p>
+<h4>Class Skills</h4>
+<p>
+	The slayer’s class skills (and the key ability for each skill) are <a href="/skills/bluff/">Bluff</a> (Cha), <a href="/psionic/skills/concentration/">Concentration</a> (Con), <a href="/skills/knowledge/">Knowledge</a> (dungeoneering) (Int), <a href="/skills/listen/">Listen</a> (Wis), <a href="/psionic/skills/psicraft/">Psicraft</a> (Int), <a href="/skills/sense-motive/">Sense Motive</a> (Wis), <a href="/skills/spot/">Spot</a> (Wis), and <a href="/skills/survival/">Survival</a> (Wis).
+</p>
+<h5>Skill Points at Each Level</h5>
+<p>
+	4 + Int modifier.
+</p>
+<table cellspacing="0" id="tableTheSlayer">
+<caption>Table: The Slayer</caption>
+<tr>
+<th>Level</th>
+<th>Base<br/>Attack Bonus</th>
+<th>Fort Save</th>
+<th>Ref Save</th>
+<th>Will Save</th>
+<th align="left">Special</th>
+<th align="left">Powers Known</th>
+</tr>
+<tr>
+<td align="center">1st</td>
+<td align="center">+1</td>
+<td align="center">+0</td>
+<td align="center">+0</td>
+<td align="center">+2</td>
+<td><a href="#favoredEnemy">Favored enemy</a> +2, <a href="#enemySense">enemy sense</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td align="center">2nd</td>
+<td align="center">+2</td>
+<td align="center">+0</td>
+<td align="center">+0</td>
+<td align="center">+3</td>
+<td><a href="#brainNausea">Brain nausea</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">3rd</td>
+<td align="center">+3</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+3</td>
+<td><a href="#lucidBuffer">Lucid buffer</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">4th</td>
+<td align="center">+4</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td><a href="#favoredEnemy">Favored enemy</a> +4</td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">5th</td>
+<td align="center">+5</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td>—</td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">6th</td>
+<td align="center">+6</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td><a href="#cerebralBlind">Cerebral blind</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">7th</td>
+<td align="center">+7</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td><a href="#favoredEnemy">Favored enemy</a> +6</td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">8th</td>
+<td align="center">+8</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+6</td>
+<td><a href="#breachPowerResistance">Breach power resistance</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">9th</td>
+<td align="center">+9</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td align="center">+6</td>
+<td><a href="#cerebralImmunity">Cerebral immunity</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">10th</td>
+<td align="center">+10</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td align="center">+7</td>
+<td><a href="#blastFeedback">Blast feedback</a>, <a href="#favoredEnemy">favored enemy</a> +8</td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+</table>
+<h4>Class Features</h4>
+<p>
+	All the following are class features of the slayer prestige class.
+</p>
+<h5>Weapon and Armor Proficiency</h5>
+<p>
+	Slayers are <a href="/combat/combat-modifiers/#weaponArmorAndShieldProficiency">proficient</a> with all <a href="/equipment/weapons/#simpleMartialandExoticWeapons">simple and martial weapons</a> and with all types of armor.
+</p>
+<h5>Powers Known</h5>
+<p>
+	Beginning at 2nd level, a slayer gains additional power points per day and access to new powers as if she had also gained a level in whatever manifesting class she belonged to before she added the prestige class. She does not, however, gain any other benefit a character of that class would have gained (bonus feats, metapsionic or item creation feats, <a href="/psionic/classes/psion/#psicrystals">psicrystal</a> special abilities, and so on). This essentially means that she adds the level of slayer to the level of whatever manifesting class the character has, then determines power points per day, powers known, and manifester level accordingly.
+</p>
+<p>
+	If a character had more than one manifesting class before she became a slayer, she must decide to which class she adds the new level of slayer for the purpose of determining power points per day, powers known, and manifester level.
+</p>
+<p>
+	If the character did not belong to a manifesting class before taking this prestige class, she does not gain manifesting levels.
+</p>
+<h5 id="favoredEnemy">Favored Enemy (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	When she enters the class, a slayer formally declares a type of psionic creature as the enemy she detests above all others. Due to her extensive study of her foes and training in the proper techniques for combating them, she gains a +2 bonus on <a href="/skills/bluff/">Bluff</a>, <a href="/skills/listen/">Listen</a>, <a href="/skills/sense-motive/">Sense Motive</a>, <a href="/skills/spot/">Spot</a>, and <a href="/skills/survival/">Survival</a> checks when using these skills against her favored enemy.
+</p>
+<p>
+	Likewise, she gets a +2 bonus on weapon damage rolls against creatures of this kind. At 4th level the bonuses increase to +4, at 7th level to +6, and at 10th level to +8.
+</p>
+<h5 id="enemySense">Enemy Sense (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	A slayer can sense the presence of her favored enemy within 60 feet of herself, even if they are hidden by darkness or walls, but she cannot discern their exact location.
+</p>
+<h5 id="brainNausea">Brain Nausea (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	At 2nd level, a slayer gains a constant defensive ability somewhat similar to the <a class="psionicPower" href="/psionic/powers/aversion/">aversion</a> power. Any creature that attempts to eat the slayer’s brain must succeed on a <a href="/combat/combat-statistics/#will">Will save</a> (DC 15 + slayer’s class level) or become disinclined to do so for 24 hours thereafter. A creature that fails this save may take any action it desires except extracting the slayer’s brain (but does not realize it is being so affected). This ability is active even if the slayer is <a href="/condition-summary/#unconscious">unconscious</a>, <a href="/condition-summary/#stunned">stunned</a>, or otherwise <a href="/condition-summary/#helpless">helpless</a>.
+</p>
+<h5 id="lucidBuffer">Lucid Buffer (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	At 3rd level, a slayer becomes especially skilled at resisting mental attacks. She gains a +4 <a href="/the-basics/#competenceModifier">competence bonus</a> on <a href="/combat/combat-statistics/#savingThrows">saving throws</a> against all <a href="/special-abilities/#charmAndCompulsion">compulsions</a> and mind-affecting effects. This ability is active even if the slayer is <a href="/condition-summary/#unconscious">unconscious</a>, <a href="/condition-summary/#stunned">stunned</a>, or otherwise <a href="/condition-summary/#helpless">helpless</a>.
+</p>
+<h5 id="cerebralBlind">Cerebral Blind (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	After reaching 6th level, a slayer is protected from all devices, powers, and spells that reveal location. This ability protects against information gathering by clairsentience powers or effects that reveal location.
+</p>
+<p>
+	The ability even foils <a class="psionicPower" href="/psionic/powers/bend-reality/">bend reality</a>, <a class="spell" href="/spells/limited-wish/">limited wish</a>, <a class="spell" href="/spells/miracle/">miracle</a>, <a class="psionicPower" href="/psionic/powers/reality-revision/">reality revision</a>, and <a class="spell" href="/spells/wish/">wish</a> when they are used to gain information about the slayer’s location (however, <a class="psionicPower" href="/psionic/powers/metafaculty/">metafaculty</a> can pierce this protective barrier). In the case of <a class="psionicPower" href="/psionic/powers/remote-viewing/">remote viewing</a> or scrying that scans an area a slayer is in, the effect works, but the slayer simply isn’t detected. Remote viewing or scrying attempts that are targeted specifically at a slayer do not work. This ability is active as long as the slayer is <a href="/psionic/skills/concentration/#gainPsionicFocus">psionically focused</a>.
+</p>
+<h5 id="breachPowerResistance">Breach Power Resistance (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	A slayer of 8th level or higher can enhance her weapon with psionic might. Each successful melee attack (or ranged attack if the target is within 30 feet) she makes with her weapon against a creature with power resistance temporarily reduces its power resistance by 1. Unless the creature is slain, its lost power resistance returns all at once 12 hours later. This ability is active as long as the slayer is <a href="/psionic/skills/concentration/#gainPsionicFocus">psionically focused</a>.
+</p>
+<h5 id="cerebralImmunity">Cerebral Immunity (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	On reaching 9th level, a slayer gains protection from all devices, powers, and spells that influence the mind. This ability shields her against almost all mind-affecting powers and effects (though the slayer can selectively allow powers or spells to affect her). The ability even foils <a class="psionicPower" href="/psionic/powers/bend-reality/">bend reality</a>, <a class="spell" href="/spells/limited-wish/">limited wish</a>, <a class="spell" href="/spells/miracle/">miracle</a>, <a class="psionicPower" href="/psionic/powers/reality-revision/">reality revision</a>, and <a class="spell" href="/spells/wish/">wish</a> when they are used to mentally influence a slayer. This ability is active as long as the slayer is <a href="/psionic/skills/concentration/#gainPsionicFocus">psionically focused</a>.
+</p>
+<h5 id="blastFeedback">Blast Feedback (<a href="/special-abilities/#supernaturalAbilities">Su</a>)</h5>
+<p>
+	At 10th level, if a slayer makes her <a href="/combat/combat-statistics/#savingThrows">saving throw</a> when attacked with mind blast, the mind blast rebounds upon the attacker. Only the original attacker is targeted in the rebound effect. If the original attacker fails a Will saving throw (DC equal to that of the original attack), the attacker is affected normally by the mind blast.
+</p>
+<div class="footer">
+<!--- GOOGLE 300x250 ADS --->
+<div align="center" style="display:inline-block;">
+<!--- LEFT --->
+<!-- /1004459/d20srd300x250-1 -->
+<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
+</script>
+</div>
+<!--- RIGHT --->
+<!-- /1004459/d20srd300x250-2 -->
+<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
+</script>
+</div>
+</div>
+<!--- END GOOGLE 300x250 ADS --->
+<p>
+		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
+	</p>
+<p class="legal">
+		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
+	</p>
+<p class="legal">
+		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
+	</p>
+<!-- removing standards place holder -->
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+  })();
+  _qevents.push({
+    qacct: "p-e3P2kHqpGAv2I"
+  });
+</script>
+<noscript>
+<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
+</noscript>
+<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
+
+</main>
+
+<footer>
+
+<p>
+Open Game Content used under the Open Game License Version 1.0a.
+See <a href="/legal/">Legal</a>.
+</p>
+
+</footer>
+
+</body>
+</html>

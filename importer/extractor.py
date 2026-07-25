@@ -11,13 +11,18 @@ def find_main_heading(soup):
 
 def extract_article(soup):
     """
-    Extract everything from the H1 until the next horizontal rule.
+    Extract the main article from the page.
     """
 
     heading = find_main_heading(soup)
 
+    # Some SRD pages (such as Rogue) don't have an H1.
+    # In that case, begin at the first H2.
     if heading is None:
-        raise ValueError("No H1 heading found.")
+        heading = soup.find("h2")
+
+    if heading is None:
+        raise ValueError("No H1 or H2 heading found.")
 
     article = []
 

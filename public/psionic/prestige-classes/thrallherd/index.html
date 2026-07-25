@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thrallherd :: d20srd.org</title>
+</head>
+
+<body>
+
+<header>
+    <h1>d20 SRD Hub</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/classes/">Classes</a>
+    <a href="/combat/">Combat</a>
+    <a href="/skills/">Skills</a>
+    <a href="/legal/">Legal</a>
+</nav>
+
+<main>
+
+<h1>Thrallherd</h1>
+<h5>Hit Die</h5>
+<p>
+	d4.
+</p>
+<h4>Requirements</h4>
+<p>
+	To qualify to become a thrallherd, a character must fulfill all the following criteria.
+</p>
+<h5>Skills</h5>
+<p>
+<a href="/skills/diplomacy/">Diplomacy</a> 4 ranks, <a href="/psionic/skills/knowledge-psionics/">Knowledge (psionics)</a> 8 ranks.
+</p>
+<h5>Feat</h5>
+<p>
+<a href="/psionic/psionic-feats/#inquisitor">Inquisitor</a>.
+</p>
+<h5>Psionics</h5>
+<p>
+	Manifester level 5th and able to manifest <a class="psionicPower" href="/psionic/powers/mindlink/">mindlink</a>.
+</p>
+<h4>Class Skills</h4>
+<p>
+	The thrallherd’s class skills are <a href="/psionic/skills/autohypnosis/">Autohypnosis</a> (Wis), <a href="/skills/bluff/">Bluff</a> (Cha), <a href="/psionic/skills/concentration/">Concentration</a> (Con), <a href="/skills/craft/">Craft</a> (any) (Int), <a href="/skills/diplomacy/">Diplomacy</a> (Cha), <a href="/psionic/skills/knowledge-psionics/">Knowledge (psionics)</a>, <a href="/psionic/skills/psicraft/">Psicraft</a> (Int), and <a href="/skills/sense-motive/">Sense Motive</a> (Wis).
+</p>
+<h5>Skill Points at Each Level</h5>
+<p>
+	2 + Int modifier.
+</p>
+<table cellspacing="0" id="tableTheThrallherd">
+<caption>Table: The Thrallherd</caption>
+<tr>
+<th>Level</th>
+<th>Base<br/>Attack Bonus</th>
+<th>Fort Save</th>
+<th>Ref Save</th>
+<th>Will Save</th>
+<th align="left">Special</th>
+<th align="left">Powers Known</th>
+</tr>
+<tr>
+<td align="center">1st</td>
+<td align="center">+0</td>
+<td align="center">+0</td>
+<td align="center">+0</td>
+<td align="center">+2</td>
+<td><a href="#thrallherd">Thrallherd</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td align="center">2nd</td>
+<td align="center">+1</td>
+<td align="center">+0</td>
+<td align="center">+0</td>
+<td align="center">+3</td>
+<td>—</td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">3rd</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+3</td>
+<td><a href="#psionicCharm">Psionic charm</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">4th</td>
+<td align="center">+2</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td>—</td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">5th</td>
+<td align="center">+2</td>
+<td align="center">+1</td>
+<td align="center">+1</td>
+<td align="center">+4</td>
+<td><a href="#psionicDominate">Psionic dominate</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">6th</td>
+<td align="center">+3</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td>—</td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">7th</td>
+<td align="center">+3</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+5</td>
+<td><a href="#greaterDominate">Greater dominate</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">8th</td>
+<td align="center">+4</td>
+<td align="center">+2</td>
+<td align="center">+2</td>
+<td align="center">+6</td>
+<td>—</td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">9th</td>
+<td align="center">+4</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td align="center">+6</td>
+<td><a href="#superiorDominate">Superior dominate</a></td>
+<td>+1 level of existing manifesting class</td>
+</tr>
+<tr>
+<td align="center">10th</td>
+<td align="center">+5</td>
+<td align="center">+3</td>
+<td align="center">+3</td>
+<td align="center">+7</td>
+<td><a href="#twofoldMaster">Twofold master</a></td>
+<td>—</td>
+</tr>
+</table>
+<h4>Class Features</h4>
+<p>
+	All the following are class features of the thrallherd prestige class.
+</p>
+<h5>Weapon and Armor Proficiency</h5>
+<p>
+	Thrallherds gain no <a href="/combat/combat-modifiers/#weaponArmorAndShieldProficiency">proficiency</a> with any weapon or armor.
+</p>
+<h5>Powers Known</h5>
+<p>
+	At every level from 2nd through 9th, a thrallherd gains additional power points per day and access to new powers as if she had also gained a level in whatever manifesting class she belonged to before she added the prestige class. She does not, however, gain any other benefit a character of that class would have gained (bonus feats, metapsionic or item creation feats, <a href="/psionic/classes/psion/#psicrystals">psicrystal</a> special abilities, and so on). This essentially means that she adds the level of thrallherd to the level of whatever manifesting class the character has, then determines power points per day, powers known, and manifester level accordingly.
+</p>
+<p>
+	If a character had more than one manifesting class before she became a thrallherd, she must decide to which class she adds the new level of thrallherd for the purpose of determining power points per day, powers known, and manifester level.
+</p>
+<table cellspacing="0" class="right">
+<tr>
+<th rowspan="2">Leadership<br/>Score</th>
+<th rowspan="2">Thrall<br/>Level</th>
+<th colspan="6">Number of Believers by Level</th>
+</tr>
+<tr>
+<th>1st</th>
+<th>2nd</th>
+<th>3rd</th>
+<th>4th</th>
+<th>5th</th>
+<th>6th</th>
+</tr>
+<tr>
+<td align="center">1 or lower</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">1st</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">2nd</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">3rd</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">3rd</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">4th</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">5th</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">5th</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">6th</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">7th</td>
+<td align="center">5</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">7th</td>
+<td align="center">6</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">8th</td>
+<td align="center">8</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">9th</td>
+<td align="center">10</td>
+<td align="center">1</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">10th</td>
+<td align="center">15</td>
+<td align="center">1</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">10th</td>
+<td align="center">20</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">11th</td>
+<td align="center">25</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">—</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">12th</td>
+<td align="center">30</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">12th</td>
+<td align="center">35</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">—</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">19</td>
+<td align="center">13th</td>
+<td align="center">40</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">14th</td>
+<td align="center">50</td>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td align="center">15th</td>
+<td align="center">60</td>
+<td align="center">6</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">22</td>
+<td align="center">15th</td>
+<td align="center">75</td>
+<td align="center">7</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">23</td>
+<td align="center">16th</td>
+<td align="center">90</td>
+<td align="center">9</td>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">24</td>
+<td align="center">17th</td>
+<td align="center">110</td>
+<td align="center">11</td>
+<td align="center">6</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">25 or higher</td>
+<td align="center">17th</td>
+<td align="center">135</td>
+<td align="center">13</td>
+<td align="center">7</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+</table>
+<h5 id="thrallherd">Thrallherd (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	A thrallherd who has just entered the class sends out a subtle psychic call for servants, and that call is answered. Essentially, the character gains something akin to the <a href="/feats/#leadership">Leadership</a> feat, but with some important differences.
+</p>
+<p>
+	Those who answer a thrallherd’s call are not referred to as cohorts and followers, but rather as thralls and believers, respectively. They do not appear because they admire the character and want to serve her, but because a hidden psychic resonance connects the thrallherd and her servants.
+</p>
+<p>
+	As with the Leadership feat, a thrallherd has a Leadership score that determines the highest-level thrall and believers she can attract. A thrallherd’s Leadership score is equal to her character level + her Cha modifier + her thrallherd level. (Note that her thrallherd level is counted twice.) This score is not affected by any of the modifiers mentioned in the Leadership feat.
+</p>
+<p>
+	As with the Leadership feat, the called thrall’s level is limited, even if the character’s Leadership score would indicate a higher-level thrall. Unlike with the Leadership feat, the level limit of a thrall is equal to the character’s total level minus 1 (not level minus 2, as is true for cohorts).
+</p>
+<p>
+	A thrallherd cannot take the Leadership feat; if the character already has it, the feat is lost and replaced by this ability; those who were previously cohorts and followers go their separate ways, and those who are more mentally pliable show up later to take up roles as thralls and believers. A thrallherd’s first thrall and believers arrive within 24 hours of her entry into this class; likewise, lost thralls and believers are replaced within 24 hours.
+</p>
+<p>
+	Use this table instead of the one with the Leadership feat to determine the level of a thrallherd’s thrall and the number of believers of various levels a thrallherd can attract.
+</p>
+<h5 id="psionicCharm">Psionic Charm (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	At 3rd level, a thrallherd adds <a class="psionicPower" href="/psionic/powers/charm-psionic/">psionic charm</a> to her powers known (if she doesn’t already know it). Once per day, she can manifest psionic charm at a reduced power point cost. The cost of psionic charm is reduced by the thrallherd’s level, to a minimum of 1 power point. The effect of this power is still restricted by the thrallherd’s manifester level.
+</p>
+<h5 id="psionicDominate">Psionic Dominate (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	At 5th level, a thrallherd adds <a class="psionicPower" href="/psionic/powers/dominate-psionic/">psionic dominate</a> to her powers known (if she doesn’t already know it) Once per day, she can manifest psionic dominate at a reduced power point cost. The cost of psionic dominate is reduced by the thrallherd’s level, to a minimum of 1 power point. The effect of this power is still restricted by the thrallherd’s manifester level.
+</p>
+<h5 id="greaterDominate">Greater Dominate (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	At 7th level and higher, a thrallherd does not have to pay 2 additional power points when she augments <a class="psionicPower" href="/psionic/powers/dominate-psionic/">psionic dominate</a> to affect <a href="/types-subtypes/#animalType">animals</a>, <a href="/types-subtypes/#feyType">fey</a>, <a href="/types-subtypes/#giantType">giants</a>, <a href="/types-subtypes/#magicalBeastType">magical beasts</a>, and <a href="/types-subtypes/#monstrousHumanoidType">monstrous humanoids</a>. This reduced point cost does not increase the save DC of the power as if she had spent the additional power points.
+</p>
+<h5 id="superiorDominate">Superior Dominate (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	At 9th level, a thrallherd does not have to pay 4 additional power points when she augments <a class="psionicPower" href="/psionic/powers/dominate-psionic/">psionic dominate</a> to affect <a href="/types-subtypes/#aberrationType">aberrations</a>, <a href="/types-subtypes/#dragonType">dragons</a>, <a href="/types-subtypes/#elementalType">elementals</a>, and <a href="/types-subtypes/#outsiderType">outsiders</a> (in addition to the creature types mentioned in the greater dominate ability). This reduced point cost does not increase the save DC of the power as if she had spent the additional power points.
+</p>
+<h5 id="twofoldMaster">Twofold Master (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
+<p>
+	At 10th level, a thrallherd can add a second thrall to her herd. This second thrall’s maximum level is equal to the thrallherd’s level minus 2, even if her Leadership score would indicate a higher-level thrall.
+</p>
+<div class="footer">
+<!--- GOOGLE 300x250 ADS --->
+<div align="center" style="display:inline-block;">
+<!--- LEFT --->
+<!-- /1004459/d20srd300x250-1 -->
+<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
+</script>
+</div>
+<!--- RIGHT --->
+<!-- /1004459/d20srd300x250-2 -->
+<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
+</script>
+</div>
+</div>
+<!--- END GOOGLE 300x250 ADS --->
+<p>
+		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
+	</p>
+<p class="legal">
+		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
+	</p>
+<p class="legal">
+		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
+	</p>
+<!-- removing standards place holder -->
+</div>
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+  (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+  })();
+  _qevents.push({
+    qacct: "p-e3P2kHqpGAv2I"
+  });
+</script>
+<noscript>
+<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
+</noscript>
+<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
+
+</main>
+
+<footer>
+
+<p>
+Open Game Content used under the Open Game License Version 1.0a.
+See <a href="/legal/">Legal</a>.
+</p>
+
+</footer>
+
+</body>
+</html>
