@@ -1,0 +1,12 @@
+{
+  "name": "d20srdhub-private-library",
+  "main": "./worker.mjs",
+  "compatibility_date": "2026-07-20",
+  "r2_buckets": [
+    {
+      "binding": "PRIVATE_LIBRARY",
+      "bucket_name": "d20srdhub-private-library"
+    }
+  ]
+}
+
