@@ -10,12 +10,17 @@ CANONICAL_LINK = re.compile(
     r'(<link\b(?=[^>]*\brel=["\']canonical["\'])[^>]*>)',
     re.IGNORECASE | re.DOTALL,
 )
+ARTICLE_CARD_OPEN = re.compile(
+    r'(?P<indent>^[ \t]*)<main class="article-card">',
+    re.MULTILINE,
+)
 SHARED_STYLESHEET = '<link rel="stylesheet" href="/assets/site.css">'
 LEGACY_SEARCH_SCRIPT = '<script src="/assets/search.js" defer></script>'
 SEARCH_SCRIPT = '<script src="/assets/search.js?v=2" defer></script>'
 TOC_SCRIPT = '<script src="/assets/toc.js?v=1" defer></script>'
 THEME_SCRIPT = '<script src="/assets/theme.js?v=1" defer></script>'
 NAVIGATION_SCRIPT = '<script src="/assets/navigation.js?v=1" defer></script>'
+PRINT_SCRIPT = '<script src="/assets/print.js?v=1" defer></script>'
 THEME_INIT = (
     '<script data-theme-init>(function(){try{var t=localStorage.getItem'
     '("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)")'
@@ -39,6 +44,13 @@ SIDEBAR_NAV_WITH_ID = (
     '<nav id="sidebar-navigation" class="sidebar-nav" '
     'aria-label="SRD sections">'
 )
+PRINT_TOOLS = (
+    '<div class="article-tools" aria-label="Page tools">\n'
+    '            <button class="print-button" data-print-page type="button">\n'
+    "                Print / Save PDF\n"
+    "            </button>\n"
+    "        </div>"
+)
 
 
 def migrate_html(html):
@@ -49,6 +61,7 @@ def migrate_html(html):
     has_sidebar_navigation = (
         SIDEBAR_NAV in migrated or SIDEBAR_NAV_WITH_ID in migrated
     )
+    has_article = 'class="article-card"' in migrated
 
     if SEARCH_SCRIPT in migrated and TOC_SCRIPT not in migrated:
         migrated = migrated.replace(
@@ -72,6 +85,18 @@ def migrate_html(html):
         migrated = migrated.replace(
             THEME_SCRIPT,
             f"{THEME_SCRIPT}\n{NAVIGATION_SCRIPT}",
+            1,
+        )
+
+    if SEARCH_SCRIPT in migrated and has_article and PRINT_SCRIPT not in migrated:
+        script_anchor = (
+            NAVIGATION_SCRIPT
+            if NAVIGATION_SCRIPT in migrated
+            else THEME_SCRIPT
+        )
+        migrated = migrated.replace(
+            script_anchor,
+            f"{script_anchor}\n{PRINT_SCRIPT}",
             1,
         )
 
@@ -118,6 +143,20 @@ def migrate_html(html):
             SIDEBAR_NAV,
             SIDEBAR_NAV_WITH_ID,
             1,
+        )
+
+    if (
+        SEARCH_SCRIPT in migrated
+        and has_article
+        and "data-print-page" not in migrated
+    ):
+        migrated = ARTICLE_CARD_OPEN.sub(
+            lambda match: (
+                f"{match.group('indent')}{PRINT_TOOLS}\n\n"
+                f'{match.group("indent")}<main class="article-card">'
+            ),
+            migrated,
+            count=1,
         )
 
     if SEARCH_SCRIPT not in migrated or not STYLE_BLOCK.search(migrated):
@@ -221,10 +260,14 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
             if 'id="sidebar-navigation"' not in html:
                 problems.append((page_file, "sidebar navigation id is missing"))
 
+        if 'class="article-card"' in html:
+            if PRINT_SCRIPT not in html or "data-print-page" not in html:
+                problems.append((page_file, "print support is missing"))
+
         script_audit_html = html.replace(THEME_INIT, "")
         other_scripts = re.findall(
             r"<script\b(?![^>]*\bsrc=[\"']/assets/"
-            r"(?:search|toc|theme|navigation)\.js(?:\?v=\d+)?[\"'])",
+            r"(?:search|toc|theme|navigation|print)\.js(?:\?v=\d+)?[\"'])",
             script_audit_html,
             re.IGNORECASE,
         )

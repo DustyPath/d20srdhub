@@ -5,6 +5,8 @@ from pathlib import Path
 from importer.performance import (
     LEGACY_SEARCH_SCRIPT,
     NAVIGATION_SCRIPT,
+    PRINT_SCRIPT,
+    PRINT_TOOLS,
     SEARCH_SCRIPT,
     SHARED_STYLESHEET,
     TOC_SCRIPT,
@@ -51,6 +53,20 @@ class PerformanceTests(unittest.TestCase):
         self.assertIn(NAVIGATION_SCRIPT, migrated)
         self.assertIn(SIDEBAR_TOGGLE, migrated)
         self.assertIn(SIDEBAR_NAV_WITH_ID, migrated)
+
+    def test_migrate_html_adds_print_support(self):
+        html = (
+            "<html><head></head><body><header></header>"
+            '<nav class="breadcrumbs"></nav>\n\n'
+            '<main class="article-card"></main>'
+            f"{SEARCH_SCRIPT}{TOC_SCRIPT}{THEME_SCRIPT}"
+            f"{NAVIGATION_SCRIPT}</body></html>"
+        )
+
+        migrated = migrate_html(html)
+
+        self.assertIn(PRINT_SCRIPT, migrated)
+        self.assertIn(PRINT_TOOLS, migrated)
 
     def test_migrate_html_extracts_only_shared_template_style(self):
         html = (
