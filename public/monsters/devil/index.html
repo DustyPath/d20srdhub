@@ -7,430 +7,7 @@
     <title>Devil | d20 SRD Hub</title>
     <meta name="description" content="Devils are fiends from lawful evil-aligned planes.">
     <link rel="canonical" href="https://d20srdhub.com/monsters/devil/">
-
-    <style>
-        :root {
-            --background: #f5f3ee;
-            --surface: #ffffff;
-            --surface-muted: #ece8df;
-            --text: #25231f;
-            --text-muted: #676259;
-            --border: #d7d1c5;
-            --accent: #7a241f;
-            --accent-dark: #571713;
-            --link: #185b83;
-            --header-height: 64px;
-            --sidebar-width: 240px;
-            --content-width: 900px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            background: var(--background);
-            color: var(--text);
-            font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.65;
-        }
-
-        a {
-            color: var(--link);
-            text-decoration: none;
-        }
-
-        a:hover,
-        a:focus {
-            text-decoration: underline;
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            min-height: var(--header-height);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            padding: 12px 24px;
-            background: var(--accent-dark);
-            color: #ffffff;
-            border-bottom: 3px solid var(--accent);
-        }
-
-        .site-header a {
-            color: #ffffff;
-        }
-
-        .site-title {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.35rem;
-            letter-spacing: 0.03em;
-        }
-
-        .header-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .site-search {
-            position: relative;
-            flex: 1;
-            max-width: 420px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .site-search-row {
-            display: flex;
-        }
-
-        .site-search input {
-            width: 100%;
-            min-width: 0;
-            padding: 9px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            border-radius: 5px 0 0 5px;
-            background: #ffffff;
-            color: var(--text);
-            font: inherit;
-        }
-
-        .site-search button {
-            padding: 9px 13px;
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            border-left: 0;
-            border-radius: 0 5px 5px 0;
-            background: var(--accent);
-            color: #ffffff;
-            cursor: pointer;
-            font-weight: 700;
-        }
-
-        .search-results {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
-            left: 0;
-            z-index: 200;
-            max-height: min(65vh, 560px);
-            overflow-y: auto;
-            background: var(--surface);
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .search-results[hidden] {
-            display: none;
-        }
-
-        .search-results-list {
-            margin: 0;
-            padding: 6px;
-            list-style: none;
-        }
-
-        .search-results-list a {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            gap: 2px 12px;
-            padding: 10px;
-            color: var(--text);
-            border-radius: 5px;
-        }
-
-        .search-results-list a:hover,
-        .search-results-list a:focus {
-            background: var(--surface-muted);
-            text-decoration: none;
-            outline: none;
-        }
-
-        .search-result-section {
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .search-result-snippet {
-            grid-column: 1 / -1;
-            color: var(--text-muted);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 0.86rem;
-        }
-
-        .search-empty {
-            margin: 0;
-            padding: 16px;
-        }
-
-        .layout {
-            display: grid;
-            grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-            min-height: calc(100vh - var(--header-height));
-        }
-
-        .sidebar {
-            padding: 24px 18px;
-            background: var(--surface-muted);
-            border-right: 1px solid var(--border);
-        }
-
-        .sidebar-title {
-            margin: 0 0 14px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .sidebar-nav {
-            display: grid;
-            gap: 4px;
-        }
-
-        .sidebar-nav a {
-            display: block;
-            padding: 7px 10px;
-            color: var(--text);
-            border-radius: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.94rem;
-        }
-
-        .sidebar-nav a:hover,
-        .sidebar-nav a:focus {
-            background: var(--surface);
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .content-column {
-            width: 100%;
-            max-width: var(--content-width);
-            margin: 0 auto;
-            padding: 28px 36px 48px;
-        }
-
-        .breadcrumbs {
-            margin-bottom: 16px;
-            color: var(--text-muted);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.88rem;
-        }
-
-        .article-card {
-            padding: 34px 40px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        main h1,
-        main h2,
-        main h3,
-        main h4 {
-            line-height: 1.25;
-            color: var(--accent-dark);
-        }
-
-        main h1 {
-            margin-top: 0;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border);
-            font-size: 2.15rem;
-        }
-
-        main h2 {
-            margin-top: 2rem;
-            font-size: 1.55rem;
-        }
-
-        main h3 {
-            margin-top: 1.6rem;
-            font-size: 1.2rem;
-        }
-
-        main p {
-            margin: 0 0 1rem;
-        }
-
-        main ul,
-        main ol {
-            padding-left: 1.5rem;
-        }
-
-        main table {
-            width: 100%;
-            margin: 1.5rem 0;
-            border-collapse: collapse;
-            background: #ffffff;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.92rem;
-        }
-
-        main th,
-        main td {
-            padding: 9px 11px;
-            border: 1px solid var(--border);
-            text-align: left;
-            vertical-align: top;
-        }
-
-        main th {
-            background: var(--surface-muted);
-            color: var(--accent-dark);
-        }
-
-        main tr:nth-child(even) td {
-            background: #faf9f6;
-        }
-
-        blockquote {
-            margin: 1.5rem 0;
-            padding: 12px 18px;
-            background: #f3efe7;
-            border-left: 4px solid var(--accent);
-        }
-
-        .page-navigation {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .page-navigation:empty {
-            display: none;
-        }
-
-        .page-navigation-link {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-            padding: 14px 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .page-navigation-link:hover,
-        .page-navigation-link:focus {
-            border-color: var(--accent);
-            text-decoration: none;
-        }
-
-        .page-navigation-link.next {
-            align-items: flex-end;
-            text-align: right;
-        }
-
-        .page-navigation-direction {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .site-footer {
-            margin-top: 28px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 850px) {
-            .site-header {
-                position: static;
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .site-search {
-                width: 100%;
-                max-width: none;
-            }
-
-            .layout {
-                display: block;
-            }
-
-            .sidebar {
-                border-right: 0;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .sidebar-nav {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .content-column {
-                padding: 22px 16px 36px;
-            }
-
-            .article-card {
-                padding: 24px 20px;
-            }
-
-            .page-navigation {
-                grid-template-columns: 1fr;
-            }
-
-            .page-navigation-spacer {
-                display: none;
-            }
-        }
-
-        @media (max-width: 520px) {
-            .header-links {
-                gap: 12px;
-            }
-
-            .sidebar-nav {
-                grid-template-columns: 1fr;
-            }
-
-            main h1 {
-                font-size: 1.75rem;
-            }
-
-            main table {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/site.css">
 </head>
 
 <body>
@@ -533,11 +110,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','12d8+72');" title="Roll the dice!">12d8+72</a> (126 hp)</td>
+<td>12d8+72 (126 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+6');" title="Roll the dice!">+6</a></td>
+<td>+6</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -549,15 +126,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+12');" title="Roll the dice!">+12</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+22');" title="Roll the dice!">+22</a></td>
+<td>+12/+22</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td><a href="/special-abilities/#claworTalon">Claw</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+18');" title="Roll the dice!">+18</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+6');" title="Roll the dice!">2d8+6</a> plus fear)</td>
+<td><a href="/special-abilities/#claworTalon">Claw</a> +18 melee (2d8+6 plus fear)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td>2 <a href="/special-abilities/#claworTalon">claws</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+18');" title="Roll the dice!">+18</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+6');" title="Roll the dice!">2d8+6</a> plus fear)</td>
+<td>2 <a href="/special-abilities/#claworTalon">claws</a> +18 melee (2d8+6 plus fear)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -565,7 +142,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#specialAttacksAndSpecialQualities">Special Attacks</a>:</th>
-<td>Fear, <a href="/special-abilities/#improvedGrab">improved grab</a>, impale <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','3d8+9');" title="Roll the dice!">3d8+9</a>, <a href="/special-abilities/#summon">summon</a> devil</td>
+<td>Fear, <a href="/special-abilities/#improvedGrab">improved grab</a>, impale 3d8+9, <a href="/special-abilities/#summon">summon</a> devil</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#specialAttacksAndSpecialQualities">Special Qualities</a>:</th>
@@ -573,7 +150,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+14');" title="Roll the dice!">+14</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+14');" title="Roll the dice!">+14</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+12');" title="Roll the dice!">+12</a></td>
+<td>Fort +14, Ref +14, Will +12</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -581,7 +158,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/concentration/">Concentration</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Concentration Check','1d20+21');" title="Roll the dice!">+21</a>, <a href="/skills/diplomacy/">Diplomacy</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Diplomacy Check','1d20+6');" title="Roll the dice!">+6</a>, <a href="/skills/hide/">Hide</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hide Check','1d20+21');" title="Roll the dice!">+21</a>, <a href="/skills/intimidate/">Intimidate</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Intimidate Check','1d20+19');" title="Roll the dice!">+19</a>, <a href="/skills/knowledge/">Knowledge</a> (any one) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+16');" title="Roll the dice!">+16</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+19');" title="Roll the dice!">+19</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+21');" title="Roll the dice!">+21</a>, <a href="/skills/search/">Search</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Search','1d20+16');" title="Roll the dice!">+16</a>, <a href="/skills/sense-motive/">Sense Motive</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Sense Motive','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+19');" title="Roll the dice!">+19</a>, <a href="/skills/survival/">Survival</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival','1d20+2');" title="Roll the dice!">+2</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival Check','1d20+4');" title="Roll the dice!">+4</a> following tracks)</td>
+<td><a href="/skills/concentration/">Concentration</a> +21, <a href="/skills/diplomacy/">Diplomacy</a> +6, <a href="/skills/hide/">Hide</a> +21, <a href="/skills/intimidate/">Intimidate</a> +19, <a href="/skills/knowledge/">Knowledge</a> (any one) +16, <a href="/skills/listen/">Listen</a> +19, <a href="/skills/move-silently/">Move Silently</a> +21, <a href="/skills/search/">Search</a> +16, <a href="/skills/sense-motive/">Sense Motive</a> +17, <a href="/skills/spot/">Spot</a> +19, <a href="/skills/survival/">Survival</a> +2 (+4 following tracks)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -661,11 +238,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','6d8+18');" title="Roll the dice!">6d8+18</a> (45 hp)</td>
+<td>6d8+18 (45 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+6');" title="Roll the dice!">+6</a></td>
+<td>+6</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -677,15 +254,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+6');" title="Roll the dice!">+6</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+8');" title="Roll the dice!">+8</a></td>
+<td>+6/+8</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td><a href="/equipment/weapons/#glaive">Glaive</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+9');" title="Roll the dice!">+9</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d10+3');" title="Roll the dice!">1d10+3</a> plus infernal wound) or <a href="/special-abilities/#claworTalon">claw</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+8');" title="Roll the dice!">+8</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d6+2');" title="Roll the dice!">1d6+2</a>)</td>
+<td><a href="/equipment/weapons/#glaive">Glaive</a> +9 melee (1d10+3 plus infernal wound) or <a href="/special-abilities/#claworTalon">claw</a> +8 melee (1d6+2)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td><a href="/equipment/weapons/#glaive">Glaive</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+9');" title="Roll the dice!">+9</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+4');" title="Roll the dice!">+4</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d10+3');" title="Roll the dice!">1d10+3</a> plus infernal wound) or 2 <a href="/special-abilities/#claworTalon">claws</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+8');" title="Roll the dice!">+8</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d6+2');" title="Roll the dice!">1d6+2</a>)</td>
+<td><a href="/equipment/weapons/#glaive">Glaive</a> +9/+4 melee (1d10+3 plus infernal wound) or 2 <a href="/special-abilities/#claworTalon">claws</a> +8 melee (1d6+2)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -701,7 +278,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+8');" title="Roll the dice!">+8</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+7');" title="Roll the dice!">+7</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+5');" title="Roll the dice!">+5</a></td>
+<td>Fort +8, Ref +7, Will +5</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -709,7 +286,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/climb/">Climb</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Climb Check','1d20+11');" title="Roll the dice!">+11</a>, <a href="/skills/diplomacy/">Diplomacy</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Diplomacy Check','1d20+2');" title="Roll the dice!">+2</a>, <a href="/skills/hide/">Hide</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hide Check','1d20+11');" title="Roll the dice!">+11</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+9');" title="Roll the dice!">+9</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+9');" title="Roll the dice!">+9</a>, <a href="/skills/sense-motive/">Sense Motive</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Sense Motive','1d20+9');" title="Roll the dice!">+9</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+9');" title="Roll the dice!">+9</a></td>
+<td><a href="/skills/climb/">Climb</a> +11, <a href="/skills/diplomacy/">Diplomacy</a> +2, <a href="/skills/hide/">Hide</a> +11, <a href="/skills/listen/">Listen</a> +9, <a href="/skills/move-silently/">Move Silently</a> +9, <a href="/skills/sense-motive/">Sense Motive</a> +9, <a href="/skills/spot/">Spot</a> +9</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -788,11 +365,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','10d8+50');" title="Roll the dice!">10d8+50</a> (95 hp)</td>
+<td>10d8+50 (95 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+9');" title="Roll the dice!">+9</a></td>
+<td>+9</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -804,15 +381,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+10');" title="Roll the dice!">+10</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+19');" title="Roll the dice!">+19</a></td>
+<td>+10/+19</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td><a href="/special-abilities/#bite">Bite</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+5');" title="Roll the dice!">1d8+5</a>)</td>
+<td><a href="/special-abilities/#bite">Bite</a> +14 melee (1d8+5)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td><a href="/special-abilities/#bite">Bite</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+5');" title="Roll the dice!">1d8+5</a>) and 2 <a href="/special-abilities/#claworTalon">claws</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+12');" title="Roll the dice!">+12</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d4+2');" title="Roll the dice!">1d4+2</a>) and <a href="/special-abilities/#sting">sting</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+12');" title="Roll the dice!">+12</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','3d4+2');" title="Roll the dice!">3d4+2</a> plus <a href="/special-abilities/#poison">poison</a>)</td>
+<td><a href="/special-abilities/#bite">Bite</a> +14 melee (1d8+5) and 2 <a href="/special-abilities/#claworTalon">claws</a> +12 melee (1d4+2) and <a href="/special-abilities/#sting">sting</a> +12 melee (3d4+2 plus <a href="/special-abilities/#poison">poison</a>)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -828,7 +405,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+12');" title="Roll the dice!">+12</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+12');" title="Roll the dice!">+12</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+11');" title="Roll the dice!">+11</a></td>
+<td>Fort +12, Ref +12, Will +11</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -836,7 +413,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/bluff/">Bluff</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Bluff Check','1d20+15');" title="Roll the dice!">+15</a>, <a href="/skills/concentration/">Concentration</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Concentration Check','1d20+18');" title="Roll the dice!">+18</a>, <a href="/skills/diplomacy/">Diplomacy</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Diplomacy Check','1d20+6');" title="Roll the dice!">+6</a>, <a href="/skills/disguise/">Disguise</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Disguise Check','1d20+2');" title="Roll the dice!">+2</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Disguise Check','1d20+4');" title="Roll the dice!">+4</a> acting), <a href="/skills/hide/">Hide</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hide Check','1d20+14');" title="Roll the dice!">+14</a>, <a href="/skills/intimidate/">Intimidate</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Intimidate Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/knowledge/">Knowledge</a> (any one) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+15');" title="Roll the dice!">+15</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+18');" title="Roll the dice!">+18</a>, <a href="/skills/search/">Search</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Search','1d20+15');" title="Roll the dice!">+15</a>, <a href="/skills/sense-motive/">Sense Motive</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Sense Motive','1d20+15');" title="Roll the dice!">+15</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/survival/">Survival</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival','1d20+2');" title="Roll the dice!">+2</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival Check','1d20+4');" title="Roll the dice!">+4</a> following tracks)</td>
+<td><a href="/skills/bluff/">Bluff</a> +15, <a href="/skills/concentration/">Concentration</a> +18, <a href="/skills/diplomacy/">Diplomacy</a> +6, <a href="/skills/disguise/">Disguise</a> +2 (+4 acting), <a href="/skills/hide/">Hide</a> +14, <a href="/skills/intimidate/">Intimidate</a> +17, <a href="/skills/knowledge/">Knowledge</a> (any one) +15, <a href="/skills/listen/">Listen</a> +17, <a href="/skills/move-silently/">Move Silently</a> +18, <a href="/skills/search/">Search</a> +15, <a href="/skills/sense-motive/">Sense Motive</a> +15, <a href="/skills/spot/">Spot</a> +17, <a href="/skills/survival/">Survival</a> +2 (+4 following tracks)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -905,11 +482,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','8d8+16');" title="Roll the dice!">8d8+16</a> (52 hp)</td>
+<td>8d8+16 (52 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+6');" title="Roll the dice!">+6</a></td>
+<td>+6</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -921,15 +498,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+8');" title="Roll the dice!">+8</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+10');" title="Roll the dice!">+10</a></td>
+<td>+8/+10</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td>Chain <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+10');" title="Roll the dice!">+10</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d4+2');" title="Roll the dice!">2d4+2</a>/19-20)</td>
+<td>Chain +10 melee (2d4+2/19-20)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td>2 chains <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+10');" title="Roll the dice!">+10</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d4+2');" title="Roll the dice!">2d4+2</a>/19-20)</td>
+<td>2 chains +10 melee (2d4+2/19-20)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -945,7 +522,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+8');" title="Roll the dice!">+8</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+8');" title="Roll the dice!">+8</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+6');" title="Roll the dice!">+6</a></td>
+<td>Fort +8, Ref +8, Will +6</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -953,7 +530,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/climb/">Climb</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Climb Check','1d20+13');" title="Roll the dice!">+13</a>, <a href="/skills/craft/">Craft</a> (blacksmithing) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Craft Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/escape-artist/">Escape Artist</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Escape Artist Check','1d20+13');" title="Roll the dice!">+13</a>, <a href="/skills/intimidate/">Intimidate</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Intimidate Check','1d20+12');" title="Roll the dice!">+12</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+13');" title="Roll the dice!">+13</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+13');" title="Roll the dice!">+13</a>, <a href="/skills/use-rope/">Use Rope</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Use Rope','1d20+2');" title="Roll the dice!">+2</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Use Rope Check','1d20+4');" title="Roll the dice!">+4</a> with bindings)</td>
+<td><a href="/skills/climb/">Climb</a> +13, <a href="/skills/craft/">Craft</a> (blacksmithing) +17, <a href="/skills/escape-artist/">Escape Artist</a> +13, <a href="/skills/intimidate/">Intimidate</a> +12, <a href="/skills/listen/">Listen</a> +13, <a href="/skills/spot/">Spot</a> +13, <a href="/skills/use-rope/">Use Rope</a> +2 (+4 with bindings)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -1028,11 +605,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','9d8+45');" title="Roll the dice!">9d8+45</a> (85 hp)</td>
+<td>9d8+45 (85 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+5');" title="Roll the dice!">+5</a></td>
+<td>+5</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -1044,15 +621,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+9');" title="Roll the dice!">+9</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+14');" title="Roll the dice!">+14</a></td>
+<td>+9/+14</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td>Longsword <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+5');" title="Roll the dice!">1d8+5</a>/19-20) or +1 flaming composite longbow (+5 Str bonus) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+15');" title="Roll the dice!">+15</a> ranged (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+6');" title="Roll the dice!">1d8+6</a>/×3 plus <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d6');" title="Roll the dice!">1d6</a> fire) or rope <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> ranged (entangle)</td>
+<td>Longsword +14 melee (1d8+5/19-20) or +1 flaming composite longbow (+5 Str bonus) +15 ranged (1d8+6/×3 plus 1d6 fire) or rope +14 ranged (entangle)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td>Longsword <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+9');" title="Roll the dice!">+9</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+5');" title="Roll the dice!">1d8+5</a>/19-20) or +1 flaming composite longbow (+5 Str bonus) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+15');" title="Roll the dice!">+15</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+10');" title="Roll the dice!">+10</a> ranged (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+6');" title="Roll the dice!">1d8+6</a>/×3 plus <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d6');" title="Roll the dice!">1d6</a> fire) or rope <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> ranged (entangle)</td>
+<td>Longsword +14/+9 melee (1d8+5/19-20) or +1 flaming composite longbow (+5 Str bonus) +15/+10 ranged (1d8+6/×3 plus 1d6 fire) or rope +14 ranged (entangle)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -1068,7 +645,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+11');" title="Roll the dice!">+11</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+11');" title="Roll the dice!">+11</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+10');" title="Roll the dice!">+10</a></td>
+<td>Fort +11, Ref +11, Will +10</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -1076,7 +653,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/concentration/">Concentration</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Concentration Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/diplomacy/">Diplomacy</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Diplomacy Check','1d20+7');" title="Roll the dice!">+7</a>, <a href="/skills/escape-artist/">Escape Artist</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Escape Artist Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/hide/">Hide</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hide Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/knowledge/">Knowledge</a> (any two) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+14');" title="Roll the dice!">+14</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+16');" title="Roll the dice!">+16</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/search/">Search</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Search','1d20+14');" title="Roll the dice!">+14</a>, <a href="/skills/sense-motive/">Sense Motive</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Sense Motive','1d20+16');" title="Roll the dice!">+16</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+16');" title="Roll the dice!">+16</a>, <a href="/skills/survival/">Survival</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival','1d20+4');" title="Roll the dice!">+4</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival Check','1d20+6');" title="Roll the dice!">+6</a> following tracks), <a href="/skills/use-rope/">Use Rope</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Use Rope','1d20+5');" title="Roll the dice!">+5</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Use Rope Check','1d20+7');" title="Roll the dice!">+7</a> with bindings)</td>
+<td><a href="/skills/concentration/">Concentration</a> +17, <a href="/skills/diplomacy/">Diplomacy</a> +7, <a href="/skills/escape-artist/">Escape Artist</a> +17, <a href="/skills/hide/">Hide</a> +17, <a href="/skills/knowledge/">Knowledge</a> (any two) +14, <a href="/skills/listen/">Listen</a> +16, <a href="/skills/move-silently/">Move Silently</a> +17, <a href="/skills/search/">Search</a> +14, <a href="/skills/sense-motive/">Sense Motive</a> +16, <a href="/skills/spot/">Spot</a> +16, <a href="/skills/survival/">Survival</a> +4 (+6 following tracks), <a href="/skills/use-rope/">Use Rope</a> +5 (+7 with bindings)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -1148,11 +725,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','8d8+24');" title="Roll the dice!">8d8+24</a> (60 hp)</td>
+<td>8d8+24 (60 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+9');" title="Roll the dice!">+9</a></td>
+<td>+9</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -1164,15 +741,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+8');" title="Roll the dice!">+8</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+18');" title="Roll the dice!">+18</a></td>
+<td>+8/+18</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td><a href="/special-abilities/#claworTalon">Claw</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+13');" title="Roll the dice!">+13</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+6');" title="Roll the dice!">1d8+6</a>)</td>
+<td><a href="/special-abilities/#claworTalon">Claw</a> +13 melee (1d8+6)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td>2 <a href="/special-abilities/#claworTalon">claws</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+13');" title="Roll the dice!">+13</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+6');" title="Roll the dice!">1d8+6</a>) and <a href="/special-abilities/#bite">bite</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+8');" title="Roll the dice!">+8</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+3');" title="Roll the dice!">2d8+3</a>)</td>
+<td>2 <a href="/special-abilities/#claworTalon">claws</a> +13 melee (1d8+6) and <a href="/special-abilities/#bite">bite</a> +8 melee (2d8+3)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -1180,7 +757,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#specialAttacksAndSpecialQualities">Special Attacks</a>:</th>
-<td><a href="/special-abilities/#improvedGrab">Improved grab</a>, <a href="/special-abilities/#pounce">pounce</a>, <a href="/special-abilities/#rake">rake</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+3');" title="Roll the dice!">1d8+3</a></td>
+<td><a href="/special-abilities/#improvedGrab">Improved grab</a>, <a href="/special-abilities/#pounce">pounce</a>, <a href="/special-abilities/#rake">rake</a> 1d8+3</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#specialAttacksAndSpecialQualities">Special Qualities</a>:</th>
@@ -1188,7 +765,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+9');" title="Roll the dice!">+9</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+11');" title="Roll the dice!">+11</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+8');" title="Roll the dice!">+8</a></td>
+<td>Fort +9, Ref +11, Will +8</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -1196,7 +773,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/balance/">Balance</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Balance Check','1d20+16');" title="Roll the dice!">+16</a>, <a href="/skills/climb/">Climb</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Climb Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/hide/">Hide</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hide Check','1d20+13');" title="Roll the dice!">+13</a>, <a href="/skills/jump/">Jump</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Jump Check','1d20+21');" title="Roll the dice!">+21</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+20');" title="Roll the dice!">+20</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+13');" title="Roll the dice!">+13</a>, <a href="/skills/swim/">Swim</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Swim','1d20+17');" title="Roll the dice!">+17</a></td>
+<td><a href="/skills/balance/">Balance</a> +16, <a href="/skills/climb/">Climb</a> +17, <a href="/skills/hide/">Hide</a> +13, <a href="/skills/jump/">Jump</a> +21, <a href="/skills/listen/">Listen</a> +17, <a href="/skills/move-silently/">Move Silently</a> +20, <a href="/skills/spot/">Spot</a> +13, <a href="/skills/swim/">Swim</a> +17</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -1254,7 +831,7 @@
 </p>
 <h5><a href="/special-abilities/#rake">Rake</a> (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
 <p>
-	Attack bonus +13 melee, damage <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d8+3');" title="Roll the dice!">1d8+3</a>.
+	Attack bonus +13 melee, damage 1d8+3.
 </p>
 <h5>Invisible in Light (<a href="/special-abilities/#extraordinaryAbilities">Ex</a>)</h5>
 <p>
@@ -1272,11 +849,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','15d8+105');" title="Roll the dice!">15d8+105</a> (172 hp)</td>
+<td>15d8+105 (172 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+7');" title="Roll the dice!">+7</a></td>
+<td>+7</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -1288,15 +865,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+15');" title="Roll the dice!">+15</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+29');" title="Roll the dice!">+29</a></td>
+<td>+15/+29</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td>Spiked chain <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+25');" title="Roll the dice!">+25</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+15');" title="Roll the dice!">2d6+15</a> plus stun) or <a href="/special-abilities/#claworTalon">claw</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+24');" title="Roll the dice!">+24</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+10');" title="Roll the dice!">2d6+10</a>) or tail <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+24');" title="Roll the dice!">+24</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+10');" title="Roll the dice!">2d6+10</a> plus infernal wound)</td>
+<td>Spiked chain +25 melee (2d6+15 plus stun) or <a href="/special-abilities/#claworTalon">claw</a> +24 melee (2d6+10) or tail +24 melee (2d6+10 plus infernal wound)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td>Spiked chain <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+25');" title="Roll the dice!">+25</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+20');" title="Roll the dice!">+20</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+15');" title="Roll the dice!">+15</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+15');" title="Roll the dice!">2d6+15</a> plus stun) and <a href="/special-abilities/#bite">bite</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+22');" title="Roll the dice!">+22</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+5');" title="Roll the dice!">2d8+5</a>) and tail <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+22');" title="Roll the dice!">+22</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+5');" title="Roll the dice!">2d6+5</a> plus infernal wound); or 2 <a href="/special-abilities/#claworTalon">claws</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+24');" title="Roll the dice!">+24</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+10');" title="Roll the dice!">2d6+10</a>) and <a href="/special-abilities/#bite">bite</a> + 22 melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+5');" title="Roll the dice!">2d8+5</a>) and tail <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+22');" title="Roll the dice!">+22</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+5');" title="Roll the dice!">2d6+5</a> plus infernal wound)</td>
+<td>Spiked chain +25/+20/+15 melee (2d6+15 plus stun) and <a href="/special-abilities/#bite">bite</a> +22 melee (2d8+5) and tail +22 melee (2d6+5 plus infernal wound); or 2 <a href="/special-abilities/#claworTalon">claws</a> +24 melee (2d6+10) and <a href="/special-abilities/#bite">bite</a> + 22 melee (2d8+5) and tail +22 melee (2d6+5 plus infernal wound)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -1312,7 +889,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+16');" title="Roll the dice!">+16</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+16');" title="Roll the dice!">+16</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+15');" title="Roll the dice!">+15</a></td>
+<td>Fort +16, Ref +16, Will +15</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -1320,7 +897,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/bluff/">Bluff</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Bluff Check','1d20+24');" title="Roll the dice!">+24</a>, <a href="/skills/climb/">Climb</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Climb Check','1d20+28');" title="Roll the dice!">+28</a>, <a href="/skills/concentration/">Concentration</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Concentration Check','1d20+24');" title="Roll the dice!">+24</a>, <a href="/skills/diplomacy/">Diplomacy</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Diplomacy Check','1d20+10');" title="Roll the dice!">+10</a>, <a href="/skills/disguise/">Disguise</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Disguise Check','1d20+6');" title="Roll the dice!">+6</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Disguise Check','1d20+8');" title="Roll the dice!">+8</a> acting), <a href="/skills/hide/">Hide</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hide Check','1d20+21');" title="Roll the dice!">+21</a>, <a href="/skills/intimidate/">Intimidate</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Intimidate Check','1d20+26');" title="Roll the dice!">+26</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+22');" title="Roll the dice!">+22</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+23');" title="Roll the dice!">+23</a>, <a href="/skills/search/">Search</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Search','1d20+20');" title="Roll the dice!">+20</a>, <a href="/skills/sense-motive/">Sense Motive</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Sense Motive','1d20+22');" title="Roll the dice!">+22</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+22');" title="Roll the dice!">+22</a>, <a href="/skills/survival/">Survival</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival','1d20+4');" title="Roll the dice!">+4</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival Check','1d20+6');" title="Roll the dice!">+6</a> following tracks)</td>
+<td><a href="/skills/bluff/">Bluff</a> +24, <a href="/skills/climb/">Climb</a> +28, <a href="/skills/concentration/">Concentration</a> +24, <a href="/skills/diplomacy/">Diplomacy</a> +10, <a href="/skills/disguise/">Disguise</a> +6 (+8 acting), <a href="/skills/hide/">Hide</a> +21, <a href="/skills/intimidate/">Intimidate</a> +26, <a href="/skills/listen/">Listen</a> +22, <a href="/skills/move-silently/">Move Silently</a> +23, <a href="/skills/search/">Search</a> +20, <a href="/skills/sense-motive/">Sense Motive</a> +22, <a href="/skills/spot/">Spot</a> +22, <a href="/skills/survival/">Survival</a> +4 (+6 following tracks)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -1397,11 +974,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','14d8+84');" title="Roll the dice!">14d8+84</a> (147 hp)</td>
+<td>14d8+84 (147 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+5');" title="Roll the dice!">+5</a></td>
+<td>+5</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -1413,15 +990,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+14');" title="Roll the dice!">+14</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+24');" title="Roll the dice!">+24</a></td>
+<td>+14/+24</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td>Spear <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+20');" title="Roll the dice!">+20</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+9');" title="Roll the dice!">2d6+9</a>/×3 plus slow) or <a href="/special-abilities/#claworTalon">claw</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+19');" title="Roll the dice!">+19</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d10+6');" title="Roll the dice!">1d10+6</a>)</td>
+<td>Spear +20 melee (2d6+9/×3 plus slow) or <a href="/special-abilities/#claworTalon">claw</a> +19 melee (1d10+6)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td>Spear <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+20');" title="Roll the dice!">+20</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+15');" title="Roll the dice!">+15</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+10');" title="Roll the dice!">+10</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+9');" title="Roll the dice!">2d6+9</a>/×3 plus slow) and <a href="/special-abilities/#bite">bite</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+3');" title="Roll the dice!">2d6+3</a>) and tail <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','3d6+3');" title="Roll the dice!">3d6+3</a> plus slow); or 2 <a href="/special-abilities/#claworTalon">claws</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+19');" title="Roll the dice!">+19</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d10+6');" title="Roll the dice!">1d10+6</a>) and <a href="/special-abilities/#bite">bite</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+3');" title="Roll the dice!">2d6+3</a>) and tail <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+14');" title="Roll the dice!">+14</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','3d6+3');" title="Roll the dice!">3d6+3</a> plus slow)</td>
+<td>Spear +20/+15/+10 melee (2d6+9/×3 plus slow) and <a href="/special-abilities/#bite">bite</a> +14 melee (2d6+3) and tail +14 melee (3d6+3 plus slow); or 2 <a href="/special-abilities/#claworTalon">claws</a> +19 melee (1d10+6) and <a href="/special-abilities/#bite">bite</a> +14 melee (2d6+3) and tail +14 melee (3d6+3 plus slow)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -1437,7 +1014,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+15');" title="Roll the dice!">+15</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+14');" title="Roll the dice!">+14</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+15');" title="Roll the dice!">+15</a></td>
+<td>Fort +15, Ref +14, Will +15</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -1445,7 +1022,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/bluff/">Bluff</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Bluff Check','1d20+22');" title="Roll the dice!">+22</a>, <a href="/skills/climb/">Climb</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Climb Check','1d20+23');" title="Roll the dice!">+23</a>, <a href="/skills/concentration/">Concentration</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Concentration Check','1d20+23');" title="Roll the dice!">+23</a>, <a href="/skills/diplomacy/">Diplomacy</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Diplomacy Check','1d20+9');" title="Roll the dice!">+9</a>, <a href="/skills/disguise/">Disguise</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Disguise Check','1d20+5');" title="Roll the dice!">+5</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Disguise Check','1d20+7');" title="Roll the dice!">+7</a> acting), <a href="/skills/intimidate/">Intimidate</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Intimidate Check','1d20+24');" title="Roll the dice!">+24</a>, <a href="/skills/jump/">Jump</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Jump Check','1d20+27');" title="Roll the dice!">+27</a>, <a href="/skills/knowledge/">Knowledge</a> (any three) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+23');" title="Roll the dice!">+23</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+25');" title="Roll the dice!">+25</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+22');" title="Roll the dice!">+22</a>, <a href="/skills/search/">Search</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Search','1d20+23');" title="Roll the dice!">+23</a>, <a href="/skills/sense-motive/">Sense Motive</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Sense Motive','1d20+23');" title="Roll the dice!">+23</a>, <a href="/skills/spellcraft/">Spellcraft</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spellcraft','1d20+23');" title="Roll the dice!">+23</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+25');" title="Roll the dice!">+25</a>, <a href="/skills/survival/">Survival</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival','1d20+6');" title="Roll the dice!">+6</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival Check','1d20+8');" title="Roll the dice!">+8</a> following tracks)</td>
+<td><a href="/skills/bluff/">Bluff</a> +22, <a href="/skills/climb/">Climb</a> +23, <a href="/skills/concentration/">Concentration</a> +23, <a href="/skills/diplomacy/">Diplomacy</a> +9, <a href="/skills/disguise/">Disguise</a> +5 (+7 acting), <a href="/skills/intimidate/">Intimidate</a> +24, <a href="/skills/jump/">Jump</a> +27, <a href="/skills/knowledge/">Knowledge</a> (any three) +23, <a href="/skills/listen/">Listen</a> +25, <a href="/skills/move-silently/">Move Silently</a> +22, <a href="/skills/search/">Search</a> +23, <a href="/skills/sense-motive/">Sense Motive</a> +23, <a href="/skills/spellcraft/">Spellcraft</a> +23, <a href="/skills/spot/">Spot</a> +25, <a href="/skills/survival/">Survival</a> +6 (+8 following tracks)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -1518,11 +1095,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','3d8');" title="Roll the dice!">3d8</a> (13 hp)</td>
+<td>3d8 (13 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+3');" title="Roll the dice!">+3</a></td>
+<td>+3</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -1534,15 +1111,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+3');" title="Roll the dice!">+3</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20-5');" title="Roll the dice!">-5</a></td>
+<td>+3/-5</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td><a href="/special-abilities/#sting">Sting</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+8');" title="Roll the dice!">+8</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d4');" title="Roll the dice!">1d4</a> plus <a href="/special-abilities/#poison">poison</a>)</td>
+<td><a href="/special-abilities/#sting">Sting</a> +8 melee (1d4 plus <a href="/special-abilities/#poison">poison</a>)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td><a href="/special-abilities/#sting">Sting</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+8');" title="Roll the dice!">+8</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d4');" title="Roll the dice!">1d4</a> plus <a href="/special-abilities/#poison">poison</a>)</td>
+<td><a href="/special-abilities/#sting">Sting</a> +8 melee (1d4 plus <a href="/special-abilities/#poison">poison</a>)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -1558,7 +1135,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+3');" title="Roll the dice!">+3</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+6');" title="Roll the dice!">+6</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+4');" title="Roll the dice!">+4</a></td>
+<td>Fort +3, Ref +6, Will +4</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -1566,7 +1143,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/diplomacy/">Diplomacy</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Diplomacy Check','1d20+8');" title="Roll the dice!">+8</a>, <a href="/skills/hide/">Hide</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hide Check','1d20+17');" title="Roll the dice!">+17</a>, <a href="/skills/knowledge/">Knowledge</a> (any one) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+6');" title="Roll the dice!">+6</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+7');" title="Roll the dice!">+7</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+9');" title="Roll the dice!">+9</a>, <a href="/skills/search/">Search</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Search','1d20+6');" title="Roll the dice!">+6</a>, <a href="/skills/spellcraft/">Spellcraft</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spellcraft','1d20+6');" title="Roll the dice!">+6</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+7');" title="Roll the dice!">+7</a>, <a href="/skills/survival/">Survival</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival','1d20+1');" title="Roll the dice!">+1</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival Check','1d20+3');" title="Roll the dice!">+3</a> following tracks)</td>
+<td><a href="/skills/diplomacy/">Diplomacy</a> +8, <a href="/skills/hide/">Hide</a> +17, <a href="/skills/knowledge/">Knowledge</a> (any one) +6, <a href="/skills/listen/">Listen</a> +7, <a href="/skills/move-silently/">Move Silently</a> +9, <a href="/skills/search/">Search</a> +6, <a href="/skills/spellcraft/">Spellcraft</a> +6, <a href="/skills/spot/">Spot</a> +7, <a href="/skills/survival/">Survival</a> +1 (+3 following tracks)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -1634,11 +1211,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','2d8');" title="Roll the dice!">2d8</a> (9 hp)</td>
+<td>2d8 (9 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+0');" title="Roll the dice!">+0</a></td>
+<td>+0</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -1650,15 +1227,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+2');" title="Roll the dice!">+2</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+2');" title="Roll the dice!">+2</a></td>
+<td>+2/+2</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td><a href="/special-abilities/#claworTalon">Claw</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+2');" title="Roll the dice!">+2</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d4');" title="Roll the dice!">1d4</a>)</td>
+<td><a href="/special-abilities/#claworTalon">Claw</a> +2 melee (1d4)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td>2 <a href="/special-abilities/#claworTalon">claws</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+2');" title="Roll the dice!">+2</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','1d4');" title="Roll the dice!">1d4</a>)</td>
+<td>2 <a href="/special-abilities/#claworTalon">claws</a> +2 melee (1d4)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -1674,7 +1251,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+3');" title="Roll the dice!">+3</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+3');" title="Roll the dice!">+3</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+3');" title="Roll the dice!">+3</a></td>
+<td>Fort +3, Ref +3, Will +3</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -1734,11 +1311,11 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#hitDice">Hit Dice</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hit Points','18d8+144');" title="Roll the dice!">18d8+144</a> (225 hp)</td>
+<td>18d8+144 (225 hp)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#initiative">Initiative</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Initiative','1d20+12');" title="Roll the dice!">+12</a></td>
+<td>+12</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#speed">Speed</a>:</th>
@@ -1750,15 +1327,15 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#baseAttackGrapple">Base Attack/Grapple</a>:</th>
-<td><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Base Attack','1d20+18');" title="Roll the dice!">+18</a>/<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Grapple check','1d20+35');" title="Roll the dice!">+35</a></td>
+<td>+18/+35</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#attack">Attack</a>:</th>
-<td><a href="/special-abilities/#claworTalon">Claw</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+30');" title="Roll the dice!">+30</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+13');" title="Roll the dice!">2d8+13</a>)</td>
+<td><a href="/special-abilities/#claworTalon">Claw</a> +30 melee (2d8+13)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#fullAttack">Full Attack</a>:</th>
-<td>2 <a href="/special-abilities/#claworTalon">claws</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+30');" title="Roll the dice!">+30</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+13');" title="Roll the dice!">2d8+13</a>) and 2 wings <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+28');" title="Roll the dice!">+28</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d6+6');" title="Roll the dice!">2d6+6</a>) and <a href="/special-abilities/#bite">bite</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+28');" title="Roll the dice!">+28</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','4d6+6');" title="Roll the dice!">4d6+6</a> plus <a href="/special-abilities/#poison">poison</a> plus disease) and tail <a href="/special-abilities/#slaporSlam">slap</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Attack','1d20+28');" title="Roll the dice!">+28</a> melee (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+6');" title="Roll the dice!">2d8+6</a>)</td>
+<td>2 <a href="/special-abilities/#claworTalon">claws</a> +30 melee (2d8+13) and 2 wings +28 melee (2d6+6) and <a href="/special-abilities/#bite">bite</a> +28 melee (4d6+6 plus <a href="/special-abilities/#poison">poison</a> plus disease) and tail <a href="/special-abilities/#slaporSlam">slap</a> +28 melee (2d8+6)</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#spaceReach">Space/Reach</a>:</th>
@@ -1766,7 +1343,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#specialAttacksAndSpecialQualities">Special Attacks</a>:</th>
-<td><a href="/special-abilities/#constrict">Constrict</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Damage','2d8+26');" title="Roll the dice!">2d8+26</a>, <a href="/special-abilities/#fearAura">fear aura</a>, <a href="/special-abilities/#improvedGrab">improved grab</a>, <a href="/special-abilities/#spellLikeAbilities">spell-like abilities</a>, <a href="/special-abilities/#summon">summon</a> devil</td>
+<td><a href="/special-abilities/#constrict">Constrict</a> 2d8+26, <a href="/special-abilities/#fearAura">fear aura</a>, <a href="/special-abilities/#improvedGrab">improved grab</a>, <a href="/special-abilities/#spellLikeAbilities">spell-like abilities</a>, <a href="/special-abilities/#summon">summon</a> devil</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#specialAttacksAndSpecialQualities">Special Qualities</a>:</th>
@@ -1774,7 +1351,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#saves">Saves</a>:</th>
-<td>Fort <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Fortitude Save','1d20+19');" title="Roll the dice!">+19</a>, Ref <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Reflex Save','1d20+19');" title="Roll the dice!">+19</a>, Will <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Will Save','1d20+21');" title="Roll the dice!">+21</a></td>
+<td>Fort +19, Ref +19, Will +21</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#abilities">Abilities</a>:</th>
@@ -1782,7 +1359,7 @@
 </tr>
 <tr>
 <th><a href="/monsters/intro/#skills">Skills</a>:</th>
-<td><a href="/skills/balance/">Balance</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Balance Check','1d20+10');" title="Roll the dice!">+10</a>, <a href="/skills/bluff/">Bluff</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Bluff Check','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/climb/">Climb</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Climb Check','1d20+34');" title="Roll the dice!">+34</a>, <a href="/skills/concentration/">Concentration</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Concentration Check','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/diplomacy/">Diplomacy</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Diplomacy Check','1d20+10');" title="Roll the dice!">+10</a>, <a href="/skills/disguise/">Disguise</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Disguise Check','1d20+29');" title="Roll the dice!">+29</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Disguise Check','1d20+31');" title="Roll the dice!">+31</a> acting), <a href="/skills/hide/">Hide</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Hide Check','1d20+25');" title="Roll the dice!">+25</a>, <a href="/skills/intimidate/">Intimidate</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Intimidate Check','1d20+31');" title="Roll the dice!">+31</a>, <a href="/skills/jump/">Jump</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Jump Check','1d20+40');" title="Roll the dice!">+40</a>, <a href="/skills/knowledge/">Knowledge</a> (arcana) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/knowledge/">Knowledge</a> (nature) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+10');" title="Roll the dice!">+10</a>, <a href="/skills/knowledge/">Knowledge</a> (the planes) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/knowledge/">Knowledge</a> (religion) <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Knowledge Check','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/listen/">Listen</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Listen Check','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/move-silently/">Move Silently</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Move Silently Check','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/search/">Search</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Search','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/spellcraft/">Spellcraft</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spellcraft','1d20+31');" title="Roll the dice!">+31</a>, <a href="/skills/spot/">Spot</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Spot Check','1d20+29');" title="Roll the dice!">+29</a>, <a href="/skills/survival/">Survival</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival','1d20+8');" title="Roll the dice!">+8</a> (<a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival Check','1d20+10');" title="Roll the dice!">+10</a> on other planes, <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Survival Check','1d20+10');" title="Roll the dice!">+10</a> when tracking), <a href="/skills/tumble/">Tumble</a> <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Tumble','1d20+31');" title="Roll the dice!">+31</a></td>
+<td><a href="/skills/balance/">Balance</a> +10, <a href="/skills/bluff/">Bluff</a> +29, <a href="/skills/climb/">Climb</a> +34, <a href="/skills/concentration/">Concentration</a> +29, <a href="/skills/diplomacy/">Diplomacy</a> +10, <a href="/skills/disguise/">Disguise</a> +29 (+31 acting), <a href="/skills/hide/">Hide</a> +25, <a href="/skills/intimidate/">Intimidate</a> +31, <a href="/skills/jump/">Jump</a> +40, <a href="/skills/knowledge/">Knowledge</a> (arcana) +29, <a href="/skills/knowledge/">Knowledge</a> (nature) +10, <a href="/skills/knowledge/">Knowledge</a> (the planes) +29, <a href="/skills/knowledge/">Knowledge</a> (religion) +29, <a href="/skills/listen/">Listen</a> +29, <a href="/skills/move-silently/">Move Silently</a> +29, <a href="/skills/search/">Search</a> +29, <a href="/skills/spellcraft/">Spellcraft</a> +31, <a href="/skills/spot/">Spot</a> +29, <a href="/skills/survival/">Survival</a> +8 (+10 on other planes, +10 when tracking), <a href="/skills/tumble/">Tumble</a> +31</td>
 </tr>
 <tr>
 <th><a href="/monsters/intro/#feats">Feats</a>:</th>
@@ -1879,56 +1456,7 @@
 <li><em>Round 3:</em> <a href="/combat/actions-in-combat/#fullAttack">Full attack</a> against injured enemy.</li>
 <li><em>Round 4:</em> Continue melee against injured enemy, or <a class="spell" href="/spells/power-word-stun/">power word stun</a> against annoying spellcaster.</li>
 <li><em>Round 5:</em> Repeat from round 1, or <a class="spell" href="/spells/teleport-greater/">greater teleport</a> to safety if endangered.</li>
-</ul>
-<div class="footer">
-<!--- GOOGLE 300x250 ADS --->
-<div align="center" style="display:inline-block;">
-<!--- LEFT --->
-<!-- /1004459/d20srd300x250-1 -->
-<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
-<script type="text/javascript">
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
-</script>
-</div>
-<!--- RIGHT --->
-<!-- /1004459/d20srd300x250-2 -->
-<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
-<script type="text/javascript">
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
-</script>
-</div>
-</div>
-<!--- END GOOGLE 300x250 ADS --->
-<p>
-		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
-	</p>
-<p class="legal">
-		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
-	</p>
-<p class="legal">
-		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
-	</p>
-<!-- removing standards place holder -->
-</div>
-<script type="text/javascript">
-  var _qevents = _qevents || [];
-  (function() {
-    var elem = document.createElement('script');
-    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
-    elem.async = true;
-    elem.type = "text/javascript";
-    var scpt = document.getElementsByTagName('script')[0];
-    scpt.parentNode.insertBefore(elem, scpt);
-  })();
-  _qevents.push({
-    qacct: "p-e3P2kHqpGAv2I"
-  });
-</script>
-<noscript>
-<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
-</noscript>
-<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
-        </main>
+</ul></main>
 
         <nav class="page-navigation" aria-label="Previous and next pages">
             <a class="page-navigation-link previous" href="/monsters/destrachan/"><span class="page-navigation-direction">← Previous</span><span>Destrachan</span></a>

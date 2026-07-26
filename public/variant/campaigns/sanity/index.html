@@ -7,430 +7,7 @@
     <title>Sanity | d20 SRD Hub</title>
     <meta name="description" content="This variant system allows you to introduce an element of dark horror into your d20 game. In campaigns using these rules, characters gain a new attribute…">
     <link rel="canonical" href="https://d20srdhub.com/variant/campaigns/sanity/">
-
-    <style>
-        :root {
-            --background: #f5f3ee;
-            --surface: #ffffff;
-            --surface-muted: #ece8df;
-            --text: #25231f;
-            --text-muted: #676259;
-            --border: #d7d1c5;
-            --accent: #7a241f;
-            --accent-dark: #571713;
-            --link: #185b83;
-            --header-height: 64px;
-            --sidebar-width: 240px;
-            --content-width: 900px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            background: var(--background);
-            color: var(--text);
-            font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.65;
-        }
-
-        a {
-            color: var(--link);
-            text-decoration: none;
-        }
-
-        a:hover,
-        a:focus {
-            text-decoration: underline;
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            min-height: var(--header-height);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            padding: 12px 24px;
-            background: var(--accent-dark);
-            color: #ffffff;
-            border-bottom: 3px solid var(--accent);
-        }
-
-        .site-header a {
-            color: #ffffff;
-        }
-
-        .site-title {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.35rem;
-            letter-spacing: 0.03em;
-        }
-
-        .header-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .site-search {
-            position: relative;
-            flex: 1;
-            max-width: 420px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .site-search-row {
-            display: flex;
-        }
-
-        .site-search input {
-            width: 100%;
-            min-width: 0;
-            padding: 9px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            border-radius: 5px 0 0 5px;
-            background: #ffffff;
-            color: var(--text);
-            font: inherit;
-        }
-
-        .site-search button {
-            padding: 9px 13px;
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            border-left: 0;
-            border-radius: 0 5px 5px 0;
-            background: var(--accent);
-            color: #ffffff;
-            cursor: pointer;
-            font-weight: 700;
-        }
-
-        .search-results {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
-            left: 0;
-            z-index: 200;
-            max-height: min(65vh, 560px);
-            overflow-y: auto;
-            background: var(--surface);
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .search-results[hidden] {
-            display: none;
-        }
-
-        .search-results-list {
-            margin: 0;
-            padding: 6px;
-            list-style: none;
-        }
-
-        .search-results-list a {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            gap: 2px 12px;
-            padding: 10px;
-            color: var(--text);
-            border-radius: 5px;
-        }
-
-        .search-results-list a:hover,
-        .search-results-list a:focus {
-            background: var(--surface-muted);
-            text-decoration: none;
-            outline: none;
-        }
-
-        .search-result-section {
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .search-result-snippet {
-            grid-column: 1 / -1;
-            color: var(--text-muted);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 0.86rem;
-        }
-
-        .search-empty {
-            margin: 0;
-            padding: 16px;
-        }
-
-        .layout {
-            display: grid;
-            grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-            min-height: calc(100vh - var(--header-height));
-        }
-
-        .sidebar {
-            padding: 24px 18px;
-            background: var(--surface-muted);
-            border-right: 1px solid var(--border);
-        }
-
-        .sidebar-title {
-            margin: 0 0 14px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .sidebar-nav {
-            display: grid;
-            gap: 4px;
-        }
-
-        .sidebar-nav a {
-            display: block;
-            padding: 7px 10px;
-            color: var(--text);
-            border-radius: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.94rem;
-        }
-
-        .sidebar-nav a:hover,
-        .sidebar-nav a:focus {
-            background: var(--surface);
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .content-column {
-            width: 100%;
-            max-width: var(--content-width);
-            margin: 0 auto;
-            padding: 28px 36px 48px;
-        }
-
-        .breadcrumbs {
-            margin-bottom: 16px;
-            color: var(--text-muted);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.88rem;
-        }
-
-        .article-card {
-            padding: 34px 40px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        main h1,
-        main h2,
-        main h3,
-        main h4 {
-            line-height: 1.25;
-            color: var(--accent-dark);
-        }
-
-        main h1 {
-            margin-top: 0;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border);
-            font-size: 2.15rem;
-        }
-
-        main h2 {
-            margin-top: 2rem;
-            font-size: 1.55rem;
-        }
-
-        main h3 {
-            margin-top: 1.6rem;
-            font-size: 1.2rem;
-        }
-
-        main p {
-            margin: 0 0 1rem;
-        }
-
-        main ul,
-        main ol {
-            padding-left: 1.5rem;
-        }
-
-        main table {
-            width: 100%;
-            margin: 1.5rem 0;
-            border-collapse: collapse;
-            background: #ffffff;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.92rem;
-        }
-
-        main th,
-        main td {
-            padding: 9px 11px;
-            border: 1px solid var(--border);
-            text-align: left;
-            vertical-align: top;
-        }
-
-        main th {
-            background: var(--surface-muted);
-            color: var(--accent-dark);
-        }
-
-        main tr:nth-child(even) td {
-            background: #faf9f6;
-        }
-
-        blockquote {
-            margin: 1.5rem 0;
-            padding: 12px 18px;
-            background: #f3efe7;
-            border-left: 4px solid var(--accent);
-        }
-
-        .page-navigation {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .page-navigation:empty {
-            display: none;
-        }
-
-        .page-navigation-link {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-            padding: 14px 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .page-navigation-link:hover,
-        .page-navigation-link:focus {
-            border-color: var(--accent);
-            text-decoration: none;
-        }
-
-        .page-navigation-link.next {
-            align-items: flex-end;
-            text-align: right;
-        }
-
-        .page-navigation-direction {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .site-footer {
-            margin-top: 28px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 850px) {
-            .site-header {
-                position: static;
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .site-search {
-                width: 100%;
-                max-width: none;
-            }
-
-            .layout {
-                display: block;
-            }
-
-            .sidebar {
-                border-right: 0;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .sidebar-nav {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .content-column {
-                padding: 22px 16px 36px;
-            }
-
-            .article-card {
-                padding: 24px 20px;
-            }
-
-            .page-navigation {
-                grid-template-columns: 1fr;
-            }
-
-            .page-navigation-spacer {
-                display: none;
-            }
-        }
-
-        @media (max-width: 520px) {
-            .header-links {
-                gap: 12px;
-            }
-
-            .sidebar-nav {
-                grid-template-columns: 1fr;
-            }
-
-            main h1 {
-                font-size: 1.75rem;
-            }
-
-            main table {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/site.css">
 </head>
 
 <body>
@@ -1155,7 +732,7 @@
 	Temporary insanity might last for a few minutes or a few days. Perhaps the character acquires a phobia or fetish befitting the situation, faints, becomes hysterical, or suffers nervous twitches, but she can still respond rationally enough to run away or hide from a threat.
 </p>
 <p>
-	A character suffering from temporary insanity remains in this state for either a number of rounds or a number of hours; roll <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a> and consult Table 6-8: Duration of Temporary Insanity to see whether the insanity is short-term or long-term. After determining the duration of the insanity, roll <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a> and consult either Table 6-9 or 6-10 to identify the specific effect of the insanity. The GM must describe the effect so that the player can roleplay it accordingly.
+	A character suffering from temporary insanity remains in this state for either a number of rounds or a number of hours; roll d% and consult Table 6-8: Duration of Temporary Insanity to see whether the insanity is short-term or long-term. After determining the duration of the insanity, roll d% and consult either Table 6-9 or 6-10 to identify the specific effect of the insanity. The GM must describe the effect so that the player can roleplay it accordingly.
 </p>
 <p>
 	Successful application of the Heal skill (see The Heal Skill and Mental Treatment, below) may alleviate or erase temporary insanity.
@@ -1172,7 +749,7 @@
 <table cellspacing="0" id="table68DurationofTemporaryInsanity">
 <caption>Table 6-8: Duration of Temporary Insanity</caption>
 <tr>
-<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th>d%</th>
 <th>Temporary Insanity Type</th>
 <th>Duration</th>
 </tr>
@@ -1190,7 +767,7 @@
 <table cellspacing="0" id="table69ShortTermTemporaryInsanityEffects" style="width:auto">
 <caption>Table 6-9: Short-Term Temporary Insanity Effects</caption>
 <tr>
-<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th>d%</th>
 <th>Effect</th>
 </tr>
 <tr>
@@ -1249,7 +826,7 @@
 <table cellspacing="0" id="table610LongTermTemporaryInsanityEffects" style="width:auto">
 <caption>Table 6-10: Long-Term Temporary Insanity Effects</caption>
 <tr>
-<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th>d%</th>
 <th>Effect</th>
 </tr>
 <tr>
@@ -1305,7 +882,7 @@
 <table cellspacing="0" class="right" id="table611RandomIndefiniteInsanity">
 <caption>Table 6-11: Random Indefinite Insanity</caption>
 <tr>
-<th><a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a></th>
+<th>d%</th>
 <th align="left">Mental Disorder Type</th>
 </tr>
 <tr>
@@ -1744,7 +1321,7 @@
 	The best care available is at home or in some friendly place (perhaps a small church or the home of a wealthy friend) where nursing can be tender, considerate, and undistracted by the needs of competing patients.
 </p>
 <p>
-	If mental healing or alchemical medications are available, roll <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a> for each game month that one or the other is used. A result of 01-95 is a success: Add 1d3 Sanity points for either mental therapy or alchemical medications, whichever is used (a charac ter cannot benefit from both in the same month). On a result of 96-100, the healer fumbles the diagnosis or the character rejects the alchemical treatments. She loses 1d6 Sanity points, and no progress is made that month.
+	If mental healing or alchemical medications are available, roll d% for each game month that one or the other is used. A result of 01-95 is a success: Add 1d3 Sanity points for either mental therapy or alchemical medications, whichever is used (a charac ter cannot benefit from both in the same month). On a result of 96-100, the healer fumbles the diagnosis or the character rejects the alchemical treatments. She loses 1d6 Sanity points, and no progress is made that month.
 </p>
 <h4 id="institutionalization">Institutionalization</h4>
 <p>
@@ -1757,7 +1334,7 @@
 	Therapy using the Heal skill is usually the only treatment available, but in most cases, primitive institutions offer no treatment at all. Sometimes an institution can convey an uncaring sense that undermines the useful effects of alchemical medications, leaving the character with a sense of anger and loss. He is likely to be distrustful of the organization and its motives. Escape attempts are common by inmates, even in the most enlightened fantasy settings.
 </p>
 <p>
-	Roll <a class="diceRoller" href="javascript:void(0);" onclick="rollValue('Total','1d100');" title="Roll the dice!">d%</a> for each game month a character is in the care of an institution. A result of 01-95 is a success; add 1d3 Sanity points if therapy with the Heal skill was available, or 1 Sanity point if no treatment was present. On a result of 96-100, the character rebels against the environment. He loses 1d6 Sanity points, and no progress can be made that month.
+	Roll d% for each game month a character is in the care of an institution. A result of 01-95 is a success; add 1d3 Sanity points if therapy with the Heal skill was available, or 1 Sanity point if no treatment was present. On a result of 96-100, the character rebels against the environment. He loses 1d6 Sanity points, and no progress can be made that month.
 </p>
 <h4 id="wanderingandHomeless">Wandering and Homeless</h4>
 <p>
@@ -2504,56 +2081,7 @@
 <h5 id="tranceDefinition">Trance</h5>
 <p>
 	Focused attention and altered consciousness, usually seen in hypnosis, dissociative disorders, and ecstatic religious experiences.
-</p>
-<div class="footer">
-<!--- GOOGLE 300x250 ADS --->
-<div align="center" style="display:inline-block;">
-<!--- LEFT --->
-<!-- /1004459/d20srd300x250-1 -->
-<div id="div-gpt-ad-1462389232009-1" style="height:250px; width:300px; margin-left:5px; float:right;">
-<script type="text/javascript">
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-1'); });
-</script>
-</div>
-<!--- RIGHT --->
-<!-- /1004459/d20srd300x250-2 -->
-<div id="div-gpt-ad-1462389232009-2" style="height:250px; width:300px; margin-right:5px; float:left;">
-<script type="text/javascript">
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462389232009-2'); });
-</script>
-</div>
-</div>
-<!--- END GOOGLE 300x250 ADS --->
-<p>
-		The Hypertext d20 SRD<sup>TM</sup> is owned by <a href="http://www.bolsinteractive.com/">BoLS Interactive LLC</a>.
-	</p>
-<p class="legal">
-		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
-	</p>
-<p class="legal">
-		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br/>and are used according to the terms of the d20 System License version 6.0.<br/>A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
-	</p>
-<!-- removing standards place holder -->
-</div>
-<script type="text/javascript">
-  var _qevents = _qevents || [];
-  (function() {
-    var elem = document.createElement('script');
-    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
-    elem.async = true;
-    elem.type = "text/javascript";
-    var scpt = document.getElementsByTagName('script')[0];
-    scpt.parentNode.insertBefore(elem, scpt);
-  })();
-  _qevents.push({
-    qacct: "p-e3P2kHqpGAv2I"
-  });
-</script>
-<noscript>
-<div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-e3P2kHqpGAv2I.gif" width="1"/></div>
-</noscript>
-<script async="true" class="teads" src="//a.teads.tv/page/86489/tag" type="text/javascript"></script>
-        </main>
+</p></main>
 
         <nav class="page-navigation" aria-label="Previous and next pages">
             <a class="page-navigation-link previous" href="/variant/campaigns/reputation/"><span class="page-navigation-direction">← Previous</span><span>Reputation</span></a>

@@ -2,6 +2,7 @@
 
 from bs4 import BeautifulSoup
 
+from importer.cleaner import strip_source_artifacts
 from importer.config import PUBLIC_DIR
 from importer.paths import url_to_output_path
 from importer.queue import load_queue
@@ -41,6 +42,8 @@ def extract_page_data(page_file):
         raise ValueError("No page title found.")
 
     article_html = article.decode_contents().strip()
+
+    article_html = strip_source_artifacts(article_html)
 
     return title, rewrite_legacy_site_links(article_html)
 

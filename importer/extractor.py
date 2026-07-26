@@ -33,6 +33,12 @@ def extract_article(soup):
         if getattr(current, "name", None) == "hr":
             break
 
+        if (
+            isinstance(current, Tag)
+            and "footer" in current.get("class", [])
+        ):
+            break
+
         if isinstance(current, Tag):
             article.append(str(current))
 
