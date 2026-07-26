@@ -552,7 +552,9 @@
         }
 
         .combat-category-grid,
-        .combat-page-grid {
+        .combat-page-grid,
+        .class-category-grid,
+        .class-page-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 14px;
@@ -560,7 +562,9 @@
         }
 
         .combat-category-card,
-        .combat-page-card {
+        .combat-page-card,
+        .class-category-card,
+        .class-page-card {
             display: block;
             padding: 18px;
             color: var(--text);
@@ -573,12 +577,17 @@
         .combat-category-card:hover,
         .combat-category-card:focus,
         .combat-page-card:hover,
-        .combat-page-card:focus {
+        .combat-page-card:focus,
+        .class-category-card:hover,
+        .class-category-card:focus,
+        .class-page-card:hover,
+        .class-page-card:focus {
             border-color: var(--accent);
             text-decoration: none;
         }
 
-        .combat-category-title {
+        .combat-category-title,
+        .class-category-title {
             display: block;
             margin: 0 0 7px;
             color: var(--accent-dark);
@@ -586,24 +595,42 @@
             font-size: 1.25rem;
         }
 
-        .combat-category-card p {
+        .combat-category-card p,
+        .class-category-card p {
             margin: 0;
             color: var(--text-muted);
         }
 
         .combat-page-card strong,
-        .combat-page-card span {
+        .combat-page-card span,
+        .class-page-card strong,
+        .class-page-card span {
             display: block;
         }
 
         .combat-page-card span,
-        .combat-directory-meta {
+        .combat-directory-meta,
+        .class-page-card span,
+        .class-directory-meta {
             margin-top: 3px;
             color: var(--text-muted);
             font-size: 0.82rem;
         }
 
-        .combat-filters {
+        .class-reference-title {
+            display: block;
+            margin: 1.8rem 0 0.75rem;
+            padding-bottom: 5px;
+            color: var(--accent-dark);
+            border-bottom: 1px solid var(--border);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.35rem;
+            font-variant: small-caps;
+            letter-spacing: 0.025em;
+        }
+
+        .combat-filters,
+        .class-filters {
             display: grid;
             grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
             gap: 12px;
@@ -615,7 +642,8 @@
             border-radius: 5px;
         }
 
-        .combat-filters label {
+        .combat-filters label,
+        .class-filters label {
             display: grid;
             gap: 5px;
             color: var(--text-muted);
@@ -625,7 +653,9 @@
         }
 
         .combat-filters input,
-        .combat-filters select {
+        .combat-filters select,
+        .class-filters input,
+        .class-filters select {
             width: 100%;
             padding: 9px 10px;
             border: 1px solid var(--border);
@@ -636,7 +666,8 @@
             text-transform: none;
         }
 
-        .combat-result-count {
+        .combat-result-count,
+        .class-result-count {
             grid-column: 1 / -1;
             margin: 0;
             color: var(--text-muted);
@@ -644,11 +675,14 @@
         }
 
         .combat-reference-group[hidden],
-        .combat-directory-list li[hidden] {
+        .combat-directory-list li[hidden],
+        .class-reference-group[hidden],
+        .class-directory-list li[hidden] {
             display: none;
         }
 
-        .combat-directory-list {
+        .combat-directory-list,
+        .class-directory-list {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 7px 14px;
@@ -656,7 +690,8 @@
             list-style: none;
         }
 
-        .combat-directory-list a {
+        .combat-directory-list a,
+        .class-directory-list a {
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -666,7 +701,9 @@
         }
 
         .combat-directory-list a:hover,
-        .combat-directory-list a:focus {
+        .combat-directory-list a:focus,
+        .class-directory-list a:hover,
+        .class-directory-list a:focus {
             background: var(--surface-muted);
             text-decoration: none;
         }
@@ -919,7 +956,11 @@
             .combat-category-grid,
             .combat-page-grid,
             .combat-filters,
-            .combat-directory-list {
+            .combat-directory-list,
+            .class-category-grid,
+            .class-page-grid,
+            .class-filters,
+            .class-directory-list {
                 grid-template-columns: 1fr;
             }
         }
@@ -1208,7 +1249,9 @@ body::before {
 .equipment-filters input,
 .equipment-filters select,
 .combat-filters input,
-.combat-filters select {
+.combat-filters select,
+.class-filters input,
+.class-filters select {
     border: 1px solid #725c38;
     border-radius: 2px;
     background:
@@ -1226,7 +1269,9 @@ body::before {
 :root[data-theme="dark"] .equipment-filters input,
 :root[data-theme="dark"] .equipment-filters select,
 :root[data-theme="dark"] .combat-filters input,
-:root[data-theme="dark"] .combat-filters select {
+:root[data-theme="dark"] .combat-filters select,
+:root[data-theme="dark"] .class-filters input,
+:root[data-theme="dark"] .class-filters select {
     background: linear-gradient(#2f291f, #211c16);
     color: var(--text);
 }
@@ -1436,9 +1481,12 @@ blockquote,
 .equipment-category-card,
 .combat-category-card,
 .combat-page-card,
+.class-category-card,
+.class-page-card,
 .spell-directory-list a,
 .equipment-directory-list a,
 .combat-directory-list a,
+.class-directory-list a,
 .page-navigation-link {
     border: 1px solid #8e6f3f;
     border-top: 3px solid var(--accent);
@@ -1512,9 +1560,12 @@ blockquote,
 .equipment-category-card:hover,
 .combat-category-card:hover,
 .combat-page-card:hover,
+.class-category-card:hover,
+.class-page-card:hover,
 .spell-directory-list a:hover,
 .equipment-directory-list a:hover,
 .combat-directory-list a:hover,
+.class-directory-list a:hover,
 .page-navigation-link:hover {
     border-color: var(--gold);
     border-top-color: var(--gold);
