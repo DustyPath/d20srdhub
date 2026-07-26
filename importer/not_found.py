@@ -11,6 +11,7 @@ def render_not_found():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-theme-init>(function(){try{var t=localStorage.getItem("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){}}())</script>
     <meta name="robots" content="noindex">
     <title>Page Not Found | d20 SRD Hub</title>
     <meta name="description" content="Find the d20 System rule you were looking for.">
@@ -49,6 +50,9 @@ def render_not_found():
         <a href="/spells/">Spells</a>
         <a href="/monsters/">Monsters</a>
     </nav>
+    <button class="theme-toggle" data-theme-toggle type="button">
+        ☾ Dark
+    </button>
 </header>
 
 <div class="content-column">
@@ -77,6 +81,7 @@ def render_not_found():
 </div>
 
 <script src="/assets/search.js?v=2" defer></script>
+<script src="/assets/theme.js?v=1" defer></script>
 </body>
 </html>
 """

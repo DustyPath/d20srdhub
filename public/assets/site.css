@@ -1,7 +1,11 @@
 :root {
+            color-scheme: light;
             --background: #f5f3ee;
             --surface: #ffffff;
             --surface-muted: #ece8df;
+            --input-background: #ffffff;
+            --table-stripe: #faf9f6;
+            --quote-background: #f3efe7;
             --text: #25231f;
             --text-muted: #676259;
             --border: #d7d1c5;
@@ -11,6 +15,22 @@
             --header-height: 64px;
             --sidebar-width: 240px;
             --content-width: 900px;
+        }
+
+        :root[data-theme="dark"] {
+            color-scheme: dark;
+            --background: #171614;
+            --surface: #24221f;
+            --surface-muted: #302d29;
+            --input-background: #ffffff;
+            --table-stripe: #2b2925;
+            --quote-background: #302b26;
+            --text: #eeeae2;
+            --text-muted: #b9b2a7;
+            --border: #4e4941;
+            --accent: #d07a70;
+            --accent-dark: #f0aaa1;
+            --link: #79bde5;
         }
 
         * {
@@ -85,6 +105,22 @@
             font-size: 0.95rem;
         }
 
+        .theme-toggle {
+            flex: 0 0 auto;
+            padding: 7px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 5px;
+            background: transparent;
+            color: #ffffff;
+            cursor: pointer;
+            font: 700 0.85rem Arial, Helvetica, sans-serif;
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:focus {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
         .site-search {
             position: relative;
             flex: 1;
@@ -102,7 +138,7 @@
             padding: 9px 12px;
             border: 1px solid rgba(255, 255, 255, 0.45);
             border-radius: 5px 0 0 5px;
-            background: #ffffff;
+            background: var(--input-background);
             color: var(--text);
             font: inherit;
         }
@@ -318,7 +354,7 @@
             width: 100%;
             margin: 1.5rem 0;
             border-collapse: collapse;
-            background: #ffffff;
+            background: var(--surface);
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.92rem;
         }
@@ -337,13 +373,13 @@
         }
 
         main tr:nth-child(even) td {
-            background: #faf9f6;
+            background: var(--table-stripe);
         }
 
         blockquote {
             margin: 1.5rem 0;
             padding: 12px 18px;
-            background: #f3efe7;
+            background: var(--quote-background);
             border-left: 4px solid var(--accent);
         }
 

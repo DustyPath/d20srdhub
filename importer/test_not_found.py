@@ -19,11 +19,11 @@ class NotFoundTests(unittest.TestCase):
             soup.find("link", attrs={"rel": "stylesheet"})["href"],
             "/assets/site.css",
         )
-        self.assertEqual(
-            soup.find("script", src=True)["src"],
-            "/assets/search.js?v=2",
-        )
+        scripts = [script["src"] for script in soup.find_all("script", src=True)]
+        self.assertIn("/assets/search.js?v=2", scripts)
+        self.assertIn("/assets/theme.js?v=1", scripts)
         self.assertIsNotNone(soup.find(attrs={"data-search-input": True}))
+        self.assertIsNotNone(soup.find(attrs={"data-theme-toggle": True}))
 
     def test_writer_creates_404_page(self):
         with tempfile.TemporaryDirectory() as temp_dir:

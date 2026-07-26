@@ -14,6 +14,18 @@ SHARED_STYLESHEET = '<link rel="stylesheet" href="/assets/site.css">'
 LEGACY_SEARCH_SCRIPT = '<script src="/assets/search.js" defer></script>'
 SEARCH_SCRIPT = '<script src="/assets/search.js?v=2" defer></script>'
 TOC_SCRIPT = '<script src="/assets/toc.js?v=1" defer></script>'
+THEME_SCRIPT = '<script src="/assets/theme.js?v=1" defer></script>'
+THEME_INIT = (
+    '<script data-theme-init>(function(){try{var t=localStorage.getItem'
+    '("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)")'
+    '.matches?"dark":"light"}document.documentElement.dataset.theme=t}'
+    'catch(e){}}())</script>'
+)
+THEME_BUTTON = (
+    '<button class="theme-toggle" data-theme-toggle type="button">\n'
+    "        ☾ Dark\n"
+    "    </button>"
+)
 
 
 def migrate_html(html):
@@ -28,6 +40,41 @@ def migrate_html(html):
             f"{SEARCH_SCRIPT}\n{TOC_SCRIPT}",
             1,
         )
+
+    if SEARCH_SCRIPT in migrated and THEME_SCRIPT not in migrated:
+        migrated = migrated.replace(
+            TOC_SCRIPT,
+            f"{TOC_SCRIPT}\n{THEME_SCRIPT}",
+            1,
+        )
+
+    if SEARCH_SCRIPT in migrated and THEME_INIT not in migrated:
+        if SHARED_STYLESHEET in migrated:
+            migrated = migrated.replace(
+                SHARED_STYLESHEET,
+                f"{THEME_INIT}\n    {SHARED_STYLESHEET}",
+                1,
+            )
+        else:
+            migrated = migrated.replace(
+                "</head>",
+                f"    {THEME_INIT}\n</head>",
+                1,
+            )
+
+    if SEARCH_SCRIPT in migrated and "data-theme-toggle" not in migrated:
+        if "</header>" in migrated:
+            migrated = migrated.replace(
+                "</header>",
+                f"    {THEME_BUTTON}\n</header>",
+                1,
+            )
+        else:
+            migrated = migrated.replace(
+                "<body>",
+                f"<body>\n    {THEME_BUTTON}",
+                1,
+            )
 
     if SEARCH_SCRIPT not in migrated or not STYLE_BLOCK.search(migrated):
         return migrated
@@ -117,10 +164,17 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
         if TOC_SCRIPT not in html:
             problems.append((page_file, "table-of-contents script is missing"))
 
+        if THEME_SCRIPT not in html or THEME_INIT not in html:
+            problems.append((page_file, "theme support is missing"))
+
+        if "data-theme-toggle" not in html:
+            problems.append((page_file, "theme toggle is missing"))
+
+        script_audit_html = html.replace(THEME_INIT, "")
         other_scripts = re.findall(
             r"<script\b(?![^>]*\bsrc=[\"']/assets/"
-            r"(?:search|toc)\.js(?:\?v=\d+)?[\"'])",
-            html,
+            r"(?:search|toc|theme)\.js(?:\?v=\d+)?[\"'])",
+            script_audit_html,
             re.IGNORECASE,
         )
 

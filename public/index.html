@@ -8,6 +8,7 @@
 
   <meta name="description" content="Explore an organized, mobile-friendly reference for open d20 System rules. The library is under active development, and additional categories, search…">
     <link rel="canonical" href="https://d20srdhub.com/">
+    <script data-theme-init>(function(){try{var t=localStorage.getItem("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){}}())</script>
     <link rel="stylesheet" href="/assets/site.css">
 </head>
 
@@ -30,7 +31,10 @@
         <li><a href="/equipment/">Equipment</a></li>
       </ul>
     </nav>
-  </header>
+      <button class="theme-toggle" data-theme-toggle type="button">
+        ☾ Dark
+    </button>
+</header>
 
   <div class="page-layout">
     <aside class="sidebar">
@@ -150,5 +154,6 @@
   </footer>
   <script src="/assets/search.js?v=2" defer></script>
 <script src="/assets/toc.js?v=1" defer></script>
+<script src="/assets/theme.js?v=1" defer></script>
 </body>
 </html>
