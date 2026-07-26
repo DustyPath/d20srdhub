@@ -3,7 +3,11 @@ import unittest
 from pathlib import Path
 
 from importer.performance import (
+    ARTICLE_TOOLS,
+    BOOKMARKS_LINK,
+    BOOKMARKS_SCRIPT,
     LEGACY_SEARCH_SCRIPT,
+    LEGAL_LINK,
     NAVIGATION_SCRIPT,
     PRINT_SCRIPT,
     PRINT_TOOLS,
@@ -66,7 +70,22 @@ class PerformanceTests(unittest.TestCase):
         migrated = migrate_html(html)
 
         self.assertIn(PRINT_SCRIPT, migrated)
-        self.assertIn(PRINT_TOOLS, migrated)
+        self.assertIn("data-print-page", migrated)
+
+    def test_migrate_html_adds_bookmark_support(self):
+        html = (
+            "<html><head></head><body><header>"
+            f"{LEGAL_LINK}</header>"
+            f"{PRINT_TOOLS}<main class=\"article-card\"></main>"
+            f"{SEARCH_SCRIPT}{TOC_SCRIPT}{THEME_SCRIPT}"
+            f"{NAVIGATION_SCRIPT}{PRINT_SCRIPT}</body></html>"
+        )
+
+        migrated = migrate_html(html)
+
+        self.assertIn(ARTICLE_TOOLS, migrated)
+        self.assertIn(BOOKMARKS_SCRIPT, migrated)
+        self.assertIn(BOOKMARKS_LINK, migrated)
 
     def test_migrate_html_extracts_only_shared_template_style(self):
         html = (

@@ -294,11 +294,13 @@
 
         .article-tools {
             display: flex;
+            gap: 8px;
             justify-content: flex-end;
             margin: -4px 0 12px;
         }
 
-        .print-button {
+        .print-button,
+        .bookmark-button {
             padding: 7px 11px;
             border: 1px solid var(--border);
             border-radius: 5px;
@@ -309,9 +311,50 @@
         }
 
         .print-button:hover,
-        .print-button:focus {
+        .print-button:focus,
+        .bookmark-button:hover,
+        .bookmark-button:focus,
+        .bookmark-button[aria-pressed="true"] {
             border-color: var(--accent);
             color: var(--accent);
+        }
+
+        .bookmarks-list {
+            display: grid;
+            gap: 8px;
+            margin: 24px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .bookmarks-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 14px;
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .bookmarks-list a {
+            font-weight: 700;
+        }
+
+        .bookmarks-list button {
+            border: 0;
+            background: transparent;
+            color: var(--accent);
+            cursor: pointer;
+            font: 700 0.8rem Arial, Helvetica, sans-serif;
+        }
+
+        .bookmarks-empty {
+            margin-top: 24px;
+            padding: 18px;
+            background: var(--surface-muted);
+            border-left: 4px solid var(--accent);
         }
 
         .article-card {

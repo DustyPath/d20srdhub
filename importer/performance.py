@@ -21,6 +21,7 @@ TOC_SCRIPT = '<script src="/assets/toc.js?v=1" defer></script>'
 THEME_SCRIPT = '<script src="/assets/theme.js?v=1" defer></script>'
 NAVIGATION_SCRIPT = '<script src="/assets/navigation.js?v=1" defer></script>'
 PRINT_SCRIPT = '<script src="/assets/print.js?v=1" defer></script>'
+BOOKMARKS_SCRIPT = '<script src="/assets/bookmarks.js?v=1" defer></script>'
 THEME_INIT = (
     '<script data-theme-init>(function(){try{var t=localStorage.getItem'
     '("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)")'
@@ -51,6 +52,19 @@ PRINT_TOOLS = (
     "            </button>\n"
     "        </div>"
 )
+ARTICLE_TOOLS = (
+    '<div class="article-tools" aria-label="Page tools">\n'
+    '            <button class="bookmark-button" data-bookmark-page '
+    'type="button">\n'
+    "                ☆ Save rule\n"
+    "            </button>\n"
+    '            <button class="print-button" data-print-page type="button">\n'
+    "                Print / Save PDF\n"
+    "            </button>\n"
+    "        </div>"
+)
+LEGAL_LINK = '<a href="/legal/">Legal</a>'
+BOOKMARKS_LINK = '<a href="/bookmarks/">Bookmarks</a>'
 
 
 def migrate_html(html):
@@ -97,6 +111,13 @@ def migrate_html(html):
         migrated = migrated.replace(
             script_anchor,
             f"{script_anchor}\n{PRINT_SCRIPT}",
+            1,
+        )
+
+    if SEARCH_SCRIPT in migrated and has_article and BOOKMARKS_SCRIPT not in migrated:
+        migrated = migrated.replace(
+            PRINT_SCRIPT,
+            f"{PRINT_SCRIPT}\n{BOOKMARKS_SCRIPT}",
             1,
         )
 
@@ -157,6 +178,16 @@ def migrate_html(html):
             ),
             migrated,
             count=1,
+        )
+
+    if has_article and "data-bookmark-page" not in migrated:
+        migrated = migrated.replace(PRINT_TOOLS, ARTICLE_TOOLS, 1)
+
+    if LEGAL_LINK in migrated and BOOKMARKS_LINK not in migrated:
+        migrated = migrated.replace(
+            LEGAL_LINK,
+            f"{BOOKMARKS_LINK}\n        {LEGAL_LINK}",
+            1,
         )
 
     if SEARCH_SCRIPT not in migrated or not STYLE_BLOCK.search(migrated):
@@ -263,11 +294,14 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
         if 'class="article-card"' in html:
             if PRINT_SCRIPT not in html or "data-print-page" not in html:
                 problems.append((page_file, "print support is missing"))
+            if BOOKMARKS_SCRIPT not in html or "data-bookmark-page" not in html:
+                problems.append((page_file, "bookmark support is missing"))
 
         script_audit_html = html.replace(THEME_INIT, "")
         other_scripts = re.findall(
             r"<script\b(?![^>]*\bsrc=[\"']/assets/"
-            r"(?:search|toc|theme|navigation|print)\.js(?:\?v=\d+)?[\"'])",
+            r"(?:search|toc|theme|navigation|print|bookmarks)"
+            r"\.js(?:\?v=\d+)?[\"'])",
             script_audit_html,
             re.IGNORECASE,
         )
