@@ -13,6 +13,7 @@ CANONICAL_LINK = re.compile(
 SHARED_STYLESHEET = '<link rel="stylesheet" href="/assets/site.css">'
 LEGACY_SEARCH_SCRIPT = '<script src="/assets/search.js" defer></script>'
 SEARCH_SCRIPT = '<script src="/assets/search.js?v=2" defer></script>'
+TOC_SCRIPT = '<script src="/assets/toc.js?v=1" defer></script>'
 
 
 def migrate_html(html):
@@ -20,6 +21,13 @@ def migrate_html(html):
 
     migrated = strip_source_artifacts(html)
     migrated = migrated.replace(LEGACY_SEARCH_SCRIPT, SEARCH_SCRIPT)
+
+    if SEARCH_SCRIPT in migrated and TOC_SCRIPT not in migrated:
+        migrated = migrated.replace(
+            SEARCH_SCRIPT,
+            f"{SEARCH_SCRIPT}\n{TOC_SCRIPT}",
+            1,
+        )
 
     if SEARCH_SCRIPT not in migrated or not STYLE_BLOCK.search(migrated):
         return migrated
@@ -106,8 +114,12 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
         if SHARED_STYLESHEET not in html:
             problems.append((page_file, "shared stylesheet is missing"))
 
+        if TOC_SCRIPT not in html:
+            problems.append((page_file, "table-of-contents script is missing"))
+
         other_scripts = re.findall(
-            r"<script\b(?![^>]*\bsrc=[\"']/assets/search\.js(?:\?v=\d+)?[\"'])",
+            r"<script\b(?![^>]*\bsrc=[\"']/assets/"
+            r"(?:search|toc)\.js(?:\?v=\d+)?[\"'])",
             html,
             re.IGNORECASE,
         )

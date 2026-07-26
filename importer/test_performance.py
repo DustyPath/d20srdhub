@@ -6,6 +6,7 @@ from importer.performance import (
     LEGACY_SEARCH_SCRIPT,
     SEARCH_SCRIPT,
     SHARED_STYLESHEET,
+    TOC_SCRIPT,
     audit_shared_styles,
     extract_template_css,
     migrate_generated_pages,
@@ -21,6 +22,7 @@ class PerformanceTests(unittest.TestCase):
 
         self.assertNotIn(LEGACY_SEARCH_SCRIPT, migrated)
         self.assertIn(SEARCH_SCRIPT, migrated)
+        self.assertIn(TOC_SCRIPT, migrated)
 
     def test_migrate_html_extracts_only_shared_template_style(self):
         html = (
