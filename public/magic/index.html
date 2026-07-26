@@ -1,116 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magic | d20 SRD Hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-theme-init>(function(){try{var t=localStorage.getItem("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){}}())</script>
+
+    <title>Magic | d20 SRD Hub</title>
     <meta name="description" content="General spellcasting rules, schools, components, and effects.">
     <link rel="canonical" href="https://d20srdhub.com/magic/">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: #eee8da;
-      color: #26211d;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 28px 20px;
-      background: #542020;
-      color: white;
-      text-align: center;
-      border-bottom: 5px solid #341313;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 3.5rem);
-    }
-
-    nav {
-      padding: 12px 20px;
-      background: #341313;
-      text-align: center;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 5px 10px;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    main {
-      max-width: 950px;
-      min-height: 420px;
-      margin: 36px auto;
-      padding: 38px;
-      background: #fffdf8;
-      border: 1px solid #c9bda9;
-      box-shadow: 0 8px 24px rgb(49 34 23 / 12%);
-    }
-
-    main h2 {
-      margin-top: 0;
-      color: #542020;
-      font-size: 2rem;
-    }
-
-    .notice {
-      margin-top: 28px;
-      padding: 16px 20px;
-      background: #f5efe4;
-      border-left: 5px solid #7a2e2e;
-    }
-
-    footer {
-      padding: 25px;
-      background: #341313;
-      color: white;
-      text-align: center;
-    }
-  </style>
+    <link rel="stylesheet" href="/assets/site.css">
+    <meta property="og:title" content="Magic | d20 SRD Hub">
+    <meta property="og:description" content="General spellcasting rules, schools, components, and effects.">
+    <meta property="og:url" content="https://d20srdhub.com/magic/">
+    <meta property="og:type" content="article">
 </head>
 
 <body>
-  <header>
-    <h1>d20 SRD Hub</h1>
-    <p>An independent tabletop roleplaying rules reference</p>
-  </header>
 
-  <nav aria-label="Primary navigation">
-    <a href="/">Home</a>
-    <a href="/classes/">Classes</a>
-    <a href="/races/">Races</a>
-    <a href="/skills/">Skills</a>
-    <a href="/feats/">Feats</a>
-    <a href="/spells/">Spells</a>
-    <a href="/monsters/">Monsters</a>
-    <a href="/equipment/">Equipment</a>
-  </nav>
+<header class="site-header">
+    <h1 class="site-title">
+        <a href="/">d20 SRD Hub</a>
+    </h1>
 
-  <main>
-    <h2>Magic</h2>
+    <form class="site-search" data-search-form role="search">
+        <div class="site-search-row">
+            <label class="visually-hidden" for="header-search">
+                Search the rules
+            </label>
+            <input
+                id="header-search"
+                data-search-input
+                type="search"
+                autocomplete="off"
+                placeholder="Search rules…"
+            >
+            <button type="submit">Search</button>
+        </div>
+        <div
+            class="search-results"
+            data-search-results
+            aria-live="polite"
+            hidden
+        ></div>
+    </form>
 
-    <p>General spellcasting rules, schools, components, and effects.</p>
+    <nav class="header-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/classes/">Classes</a>
+        <a href="/combat/">Combat</a>
+        <a href="/spells/">Spells</a>
+        <a href="/monsters/">Monsters</a>
+        <a href="/bookmarks/">Bookmarks</a>
+        <a href="/legal/">Legal</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle type="button">
+        ☾ Dark
+    </button>
+</header>
 
-    <div class="notice">
-      <strong>Section status:</strong>
+<div class="layout">
+
+    <aside class="sidebar">
+        <p class="sidebar-title">SRD Sections</p>
+        <button
+            class="sidebar-toggle"
+            data-sidebar-toggle
+            type="button"
+            aria-controls="sidebar-navigation"
+            aria-expanded="false"
+        >
+            Browse sections
+        </button>
+
+        <nav
+            id="sidebar-navigation"
+            class="sidebar-nav"
+            aria-label="SRD sections"
+        >
+            <a href="/basics/">Basics</a>
+            <a href="/races/">Races</a>
+            <a href="/classes/">Classes</a>
+            <a href="/skills/">Skills</a>
+            <a href="/feats/">Feats</a>
+            <a href="/equipment/">Equipment</a>
+            <a href="/combat/">Combat</a>
+            <a href="/magic/">Magic</a>
+            <a href="/spells/">Spells</a>
+            <a href="/magic-items/">Magic Items</a>
+            <a href="/monsters/">Monsters</a>
+            <a href="/special-abilities/">Special Abilities</a>
+            <a href="/conditions/">Conditions</a>
+            <a href="/psionics/">Psionics</a>
+            <a href="/epic/">Epic Rules</a>
+            <a href="/variant/">Variant Rules</a>
+        </nav>
+    </aside>
+
+    <div class="content-column">
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Magic</span>
+        </nav>
+
+        <div class="article-tools" aria-label="Page tools">
+            <button class="bookmark-button" data-bookmark-page type="button">
+                ☆ Save rule
+            </button>
+            <button class="print-button" data-print-page type="button">
+                Print / Save PDF
+            </button>
+        </div>
+
+        <main class="article-card">
+            <h1>Magic</h1>
+<p>General spellcasting rules, schools, components, and effects.</p>
+<div class="notice">
+<strong>Section status:</strong>
       This section has been created and is ready for properly licensed rules
       content.
     </div>
-  </main>
+        </main>
 
-  <footer>
-    d20 SRD Hub
-  </footer>
+        <nav class="page-navigation" aria-label="Previous and next pages">
+            <a class="page-navigation-link previous" href="/legal/"><span class="page-navigation-direction">← Previous</span><span>Legal and Licensing</span></a>
+<a class="page-navigation-link next" href="/magic-items/"><span class="page-navigation-direction">Next →</span><span>Magic Items</span></a>
+        </nav>
+
+        <footer class="site-footer">
+            <p>
+                Open Game Content used under the Open Game License Version 1.0a.
+                See <a href="/legal/">Legal</a>.
+            </p>
+        </footer>
+
+    </div>
+
+</div>
+
+<script src="/assets/search.js?v=2" defer></script>
+<script src="/assets/toc.js?v=2" defer></script>
+<script src="/assets/theme.js?v=1" defer></script>
+<script src="/assets/navigation.js?v=1" defer></script>
+<script src="/assets/print.js?v=1" defer></script>
+<script src="/assets/bookmarks.js?v=1" defer></script>
 </body>
 </html>

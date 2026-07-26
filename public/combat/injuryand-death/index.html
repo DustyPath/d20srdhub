@@ -3,30 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-theme-init>(function(){try{var t=localStorage.getItem("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){}}())</script>
 
-    <title>Injury and Death :: d20srd.org</title>
+    <title>Injury and Death | d20 SRD Hub</title>
     <meta name="description" content="Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn’t hindered in any way until your hit points…">
     <link rel="canonical" href="https://d20srdhub.com/combat/injuryand-death/">
+    <link rel="stylesheet" href="/assets/site.css">
+    <meta property="og:title" content="Injury and Death | d20 SRD Hub">
+    <meta property="og:description" content="Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn’t hindered in any way until your hit points…">
+    <meta property="og:url" content="https://d20srdhub.com/combat/injuryand-death/">
+    <meta property="og:type" content="article">
 </head>
 
 <body>
 
-<header>
-    <h1>d20 SRD Hub</h1>
+<header class="site-header">
+    <h1 class="site-title">
+        <a href="/">d20 SRD Hub</a>
+    </h1>
+
+    <form class="site-search" data-search-form role="search">
+        <div class="site-search-row">
+            <label class="visually-hidden" for="header-search">
+                Search the rules
+            </label>
+            <input
+                id="header-search"
+                data-search-input
+                type="search"
+                autocomplete="off"
+                placeholder="Search rules…"
+            >
+            <button type="submit">Search</button>
+        </div>
+        <div
+            class="search-results"
+            data-search-results
+            aria-live="polite"
+            hidden
+        ></div>
+    </form>
+
+    <nav class="header-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/classes/">Classes</a>
+        <a href="/combat/">Combat</a>
+        <a href="/spells/">Spells</a>
+        <a href="/monsters/">Monsters</a>
+        <a href="/bookmarks/">Bookmarks</a>
+        <a href="/legal/">Legal</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle type="button">
+        ☾ Dark
+    </button>
 </header>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/classes/">Classes</a>
-    <a href="/combat/">Combat</a>
-    <a href="/skills/">Skills</a>
-    <a href="/bookmarks/">Bookmarks</a>
-        <a href="/legal/">Legal</a>
-</nav>
+<div class="layout">
 
-<main>
+    <aside class="sidebar">
+        <p class="sidebar-title">SRD Sections</p>
+        <button
+            class="sidebar-toggle"
+            data-sidebar-toggle
+            type="button"
+            aria-controls="sidebar-navigation"
+            aria-expanded="false"
+        >
+            Browse sections
+        </button>
 
-<h1>Injury and Death</h1>
+        <nav
+            id="sidebar-navigation"
+            class="sidebar-nav"
+            aria-label="SRD sections"
+        >
+            <a href="/basics/">Basics</a>
+            <a href="/races/">Races</a>
+            <a href="/classes/">Classes</a>
+            <a href="/skills/">Skills</a>
+            <a href="/feats/">Feats</a>
+            <a href="/equipment/">Equipment</a>
+            <a href="/combat/">Combat</a>
+            <a href="/magic/">Magic</a>
+            <a href="/spells/">Spells</a>
+            <a href="/magic-items/">Magic Items</a>
+            <a href="/monsters/">Monsters</a>
+            <a href="/special-abilities/">Special Abilities</a>
+            <a href="/conditions/">Conditions</a>
+            <a href="/psionics/">Psionics</a>
+            <a href="/epic/">Epic Rules</a>
+            <a href="/variant/">Variant Rules</a>
+        </nav>
+    </aside>
+
+    <div class="content-column">
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/combat/">Combat</a> <span aria-hidden="true">›</span> <span>Injury and Death</span>
+        </nav>
+
+        <div class="article-tools" aria-label="Page tools">
+            <button class="bookmark-button" data-bookmark-page type="button">
+                ☆ Save rule
+            </button>
+            <button class="print-button" data-print-page type="button">
+                Print / Save PDF
+            </button>
+        </div>
+
+        <main class="article-card">
+            <h1>Injury and Death</h1>
 <p>
 	Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn’t hindered in any way until your hit points drop to 0 or lower.
 </p>
@@ -178,16 +264,30 @@
 </p>
 <p>
 	When a spell or a magical power cures hit point damage, it also removes an equal amount of nonlethal damage.
-</p></main>
-
-<footer>
-
-<p>
-Open Game Content used under the Open Game License Version 1.0a.
-See <a href="/legal/">Legal</a>.
 </p>
+        </main>
 
-</footer>
+        <nav class="page-navigation" aria-label="Previous and next pages">
+            <a class="page-navigation-link previous" href="/combat/injury-and-death/"><span class="page-navigation-direction">← Previous</span><span>Injury and Death</span></a>
+<a class="page-navigation-link next" href="/combat/movement-position-and-distance/"><span class="page-navigation-direction">Next →</span><span>Movement, Position, and Distance</span></a>
+        </nav>
 
+        <footer class="site-footer">
+            <p>
+                Open Game Content used under the Open Game License Version 1.0a.
+                See <a href="/legal/">Legal</a>.
+            </p>
+        </footer>
+
+    </div>
+
+</div>
+
+<script src="/assets/search.js?v=2" defer></script>
+<script src="/assets/toc.js?v=2" defer></script>
+<script src="/assets/theme.js?v=1" defer></script>
+<script src="/assets/navigation.js?v=1" defer></script>
+<script src="/assets/print.js?v=1" defer></script>
+<script src="/assets/bookmarks.js?v=1" defer></script>
 </body>
 </html>

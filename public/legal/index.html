@@ -1,168 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-theme-init>(function(){try{var t=localStorage.getItem("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){}}())</script>
 
-  <title>Legal and Licensing | d20 SRD Hub</title>
+    <title>Legal and Licensing | d20 SRD Hub</title>
     <meta name="description" content="The rules text reproduced from the 3.5 System Reference Document is Open Game Content and is used under the Open Game License Version 1.0a. Unless a page…">
     <link rel="canonical" href="https://d20srdhub.com/legal/">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: #eee8da;
-      color: #26211d;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.65;
-    }
-
-    header {
-      padding: 30px 20px;
-      background: #542020;
-      color: white;
-      text-align: center;
-      border-bottom: 5px solid #341313;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-    }
-
-    nav {
-      padding: 12px 20px;
-      background: #341313;
-      text-align: center;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 6px 12px;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 36px auto;
-      padding: 40px;
-      background: #fffdf8;
-      border: 1px solid #c9bda9;
-      box-shadow: 0 8px 24px rgb(49 34 23 / 12%);
-    }
-
-    h2 {
-      margin-top: 2rem;
-      color: #542020;
-    }
-
-    .notice {
-      padding: 16px 20px;
-      background: #f5efe4;
-      border-left: 5px solid #7a2e2e;
-    }
-
-    .license-text {
-      margin-top: 20px;
-      padding: 24px;
-      background: white;
-      border: 1px solid #c9bda9;
-      white-space: pre-wrap;
-    }
-
-    .license-text p {
-      margin: 0 0 1.25rem;
-    }
-
-    .license-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    footer {
-      padding: 25px;
-      background: #341313;
-      color: white;
-      text-align: center;
-    }
-
-    @media (max-width: 700px) {
-      main {
-        margin: 18px;
-        padding: 24px;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="/assets/site.css">
+    <meta property="og:title" content="Legal and Licensing | d20 SRD Hub">
+    <meta property="og:description" content="The rules text reproduced from the 3.5 System Reference Document is Open Game Content and is used under the Open Game License Version 1.0a. Unless a page…">
+    <meta property="og:url" content="https://d20srdhub.com/legal/">
+    <meta property="og:type" content="article">
 </head>
 
 <body>
-  <header>
-    <h1>d20 SRD Hub</h1>
-    <p>An independent tabletop roleplaying rules reference</p>
-  </header>
 
-  <nav aria-label="Primary navigation">
-    <a href="/">Home</a>
-    <a href="/classes/">Classes</a>
-    <a href="/skills/">Skills</a>
-    <a href="/spells/">Spells</a>
-    <a href="/monsters/">Monsters</a>
-    <a href="/bookmarks/">Bookmarks</a>
+<header class="site-header">
+    <h1 class="site-title">
+        <a href="/">d20 SRD Hub</a>
+    </h1>
+
+    <form class="site-search" data-search-form role="search">
+        <div class="site-search-row">
+            <label class="visually-hidden" for="header-search">
+                Search the rules
+            </label>
+            <input
+                id="header-search"
+                data-search-input
+                type="search"
+                autocomplete="off"
+                placeholder="Search rules…"
+            >
+            <button type="submit">Search</button>
+        </div>
+        <div
+            class="search-results"
+            data-search-results
+            aria-live="polite"
+            hidden
+        ></div>
+    </form>
+
+    <nav class="header-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/classes/">Classes</a>
+        <a href="/combat/">Combat</a>
+        <a href="/spells/">Spells</a>
+        <a href="/monsters/">Monsters</a>
+        <a href="/bookmarks/">Bookmarks</a>
         <a href="/legal/">Legal</a>
-  </nav>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle type="button">
+        ☾ Dark
+    </button>
+</header>
 
-  <main>
-    <h2>Legal and Licensing</h2>
+<div class="layout">
 
-    <div class="notice">
-      <strong>Important:</strong>
+    <aside class="sidebar">
+        <p class="sidebar-title">SRD Sections</p>
+        <button
+            class="sidebar-toggle"
+            data-sidebar-toggle
+            type="button"
+            aria-controls="sidebar-navigation"
+            aria-expanded="false"
+        >
+            Browse sections
+        </button>
+
+        <nav
+            id="sidebar-navigation"
+            class="sidebar-nav"
+            aria-label="SRD sections"
+        >
+            <a href="/basics/">Basics</a>
+            <a href="/races/">Races</a>
+            <a href="/classes/">Classes</a>
+            <a href="/skills/">Skills</a>
+            <a href="/feats/">Feats</a>
+            <a href="/equipment/">Equipment</a>
+            <a href="/combat/">Combat</a>
+            <a href="/magic/">Magic</a>
+            <a href="/spells/">Spells</a>
+            <a href="/magic-items/">Magic Items</a>
+            <a href="/monsters/">Monsters</a>
+            <a href="/special-abilities/">Special Abilities</a>
+            <a href="/conditions/">Conditions</a>
+            <a href="/psionics/">Psionics</a>
+            <a href="/epic/">Epic Rules</a>
+            <a href="/variant/">Variant Rules</a>
+        </nav>
+    </aside>
+
+    <div class="content-column">
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Legal and Licensing</span>
+        </nav>
+
+        <div class="article-tools" aria-label="Page tools">
+            <button class="bookmark-button" data-bookmark-page type="button">
+                ☆ Save rule
+            </button>
+            <button class="print-button" data-print-page type="button">
+                Print / Save PDF
+            </button>
+        </div>
+
+        <main class="article-card">
+            <h1>Legal and Licensing</h1>
+<div class="notice">
+<strong>Important:</strong>
       d20 SRD Hub is an independent reference project and is not affiliated
       with, endorsed, sponsored, or approved by Wizards of the Coast or
       BoLS Interactive.
     </div>
-
-    <h2>Open Game Content</h2>
-
-    <p>
+<h2>Open Game Content</h2>
+<p>
       The rules text reproduced from the 3.5 System Reference Document is
       Open Game Content and is used under the Open Game License Version 1.0a.
       Unless a page expressly states otherwise, that reproduced rules text is
       designated as Open Game Content.
     </p>
-
-    <p>
+<p>
       The d20 SRD Hub name, original site design, navigation, software,
       programming code, page templates, organization, explanatory material,
       and original editorial content are not designated as Open Game Content.
     </p>
-
-    <h2>Trademarks</h2>
-
-    <p>
+<h2>Trademarks</h2>
+<p>
       Product names and trademarks belong to their respective owners. Use of
       a trademark does not imply sponsorship or endorsement.
     </p>
-
-    <h2>Section 15 Copyright Notice</h2>
-
-    <div class="license-text">Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.
+<h2>Section 15 Copyright Notice</h2>
+<div class="license-text">Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.
 
 System Reference Document Copyright 2000-2003, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James Wyatt, based on original material by E. Gary Gygax and Dave Arneson.
 
 d20 SRD Hub Copyright 2026, Thomas Padden.</div>
-
-    <h2>Open Game License Version 1.0a</h2>
-
-    <div class="license-text">
-      <p>The following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc ("Wizards"). All Rights Reserved.</p>
-
-      <p>1. Definitions:
+<h2>Open Game License Version 1.0a</h2>
+<div class="license-text">
+<p>The following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc ("Wizards"). All Rights Reserved.</p>
+<p>1. Definitions:
       (a) "Contributors" means the copyright and/or trademark owners who have contributed Open Game Content;
       (b) "Derivative Material" means copyrighted material including derivative works and translations (including into other computer languages), potation, modification, correction, addition, extension, upgrade, improvement, compilation, abridgment or other form in which an existing work may be recast, transformed or adapted;
       (c) "Distribute" means to reproduce, license, rent, lease, sell, broadcast, publicly display, transmit or otherwise distribute;
@@ -171,58 +154,60 @@ d20 SRD Hub Copyright 2026, Thomas Padden.</div>
       (f) "Trademark" means the logos, names, mark, sign, motto, designs that are used by a Contributor to identify itself or its products or the associated products contributed to the Open Game License by the Contributor
       (g) "Use", "Used" or "Using" means to use, Distribute, copy, edit, format, modify, translate and otherwise create Derivative Material of Open Game Content.
       (h) "You" or "Your" means the licensee in terms of this agreement.</p>
-
-      <p>2. The License:
+<p>2. The License:
       This License applies to any Open Game Content that contains a notice indicating that the Open Game Content may only be Used under and in terms of this License. You must affix such a notice to any Open Game Content that you Use. No terms may be added to or subtracted from this License except as described by the License itself. No other terms or conditions may be applied to any Open Game Content distributed using this License.</p>
-
-      <p>3. Offer and Acceptance:
+<p>3. Offer and Acceptance:
       By Using the Open Game Content You indicate Your acceptance of the terms of this License.</p>
-
-      <p>4. Grant and Consideration:
+<p>4. Grant and Consideration:
       In consideration for agreeing to use this License, the Contributors grant You a perpetual, worldwide, royalty-free, non-exclusive license with the exact terms of this License to Use, the Open Game Content.</p>
-
-      <p>5. Representation of Authority to Contribute:
+<p>5. Representation of Authority to Contribute:
       If You are contributing original material as Open Game Content, You represent that Your Contributions are Your original creation and/or You have sufficient rights to grant the rights conveyed by this License.</p>
-
-      <p>6. Notice of License Copyright:
+<p>6. Notice of License Copyright:
       You must update the COPYRIGHT NOTICE portion of this License to include the exact text of the COPYRIGHT NOTICE of any Open Game Content You are copying, modifying or distributing, and You must add the title, the copyright date, and the copyright holder's name to the COPYRIGHT NOTICE of any original Open Game Content you Distribute.</p>
-
-      <p>7. Use of Product Identity:
+<p>7. Use of Product Identity:
       You agree not to Use any Product Identity, including as an indication as to compatibility, except as expressly licensed in another, independent Agreement with the owner of each element of that Product Identity. You agree not to indicate compatibility or co-adaptability with any Trademark or Registered Trademark in conjunction with a work containing Open Game Content except as expressly licensed in another, independent Agreement with the owner of such Trademark or Registered Trademark. The use of any Product Identity in Open Game Content does not constitute a challenge to the ownership of that Product Identity. The owner of any Product Identity used in Open Game Content shall retain all rights, title and interest in and to that Product Identity.</p>
-
-      <p>8. Identification:
+<p>8. Identification:
       If you distribute Open Game Content You must clearly indicate which portions of the work that you are distributing are Open Game Content.</p>
-
-      <p>9. Updating the License:
+<p>9. Updating the License:
       Wizards or its designated Agents may publish updated versions of this License. You may use any authorized version of this License to copy, modify and distribute any Open Game Content originally distributed under any version of this License.</p>
-
-      <p>10. Copy of this License:
+<p>10. Copy of this License:
       You MUST include a copy of this License with every copy of the Open Game Content You Distribute.</p>
-
-      <p>11. Use of Contributor Credits:
+<p>11. Use of Contributor Credits:
       You may not market or advertise the Open Game Content using the name of any Contributor unless You have written permission from the Contributor to do so.</p>
-
-      <p>12. Inability to Comply:
+<p>12. Inability to Comply:
       If it is impossible for You to comply with any of the terms of this License with respect to some or all of the Open Game Content due to statute, judicial order, or governmental regulation then You may not Use any Open Game Material so affected.</p>
-
-      <p>13. Termination:
+<p>13. Termination:
       This License will terminate automatically if You fail to comply with all terms herein and fail to cure such breach within 30 days of becoming aware of the breach. All sublicenses shall survive the termination of this License.</p>
-
-      <p>14. Reformation:
+<p>14. Reformation:
       If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable.</p>
+<p>15. COPYRIGHT NOTICE</p>
+<p>Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.</p>
+<p>System Reference Document Copyright 2000-2003, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James Wyatt, based on original material by E. Gary Gygax and Dave Arneson.</p>
+<p>d20 SRD Hub Copyright 2026, Thomas Padden.</p>
+</div>
+        </main>
 
-      <p>15. COPYRIGHT NOTICE</p>
+        <nav class="page-navigation" aria-label="Previous and next pages">
+            <a class="page-navigation-link previous" href="/improving-monsters/"><span class="page-navigation-direction">← Previous</span><span>Improving Monsters</span></a>
+<a class="page-navigation-link next" href="/magic/"><span class="page-navigation-direction">Next →</span><span>Magic</span></a>
+        </nav>
 
-      <p>Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.</p>
+        <footer class="site-footer">
+            <p>
+                Open Game Content used under the Open Game License Version 1.0a.
+                See <a href="/legal/">Legal</a>.
+            </p>
+        </footer>
 
-      <p>System Reference Document Copyright 2000-2003, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James Wyatt, based on original material by E. Gary Gygax and Dave Arneson.</p>
-
-      <p>d20 SRD Hub Copyright 2026, Thomas Padden.</p>
     </div>
-  </main>
 
-  <footer>
-    d20 SRD Hub
-  </footer>
+</div>
+
+<script src="/assets/search.js?v=2" defer></script>
+<script src="/assets/toc.js?v=2" defer></script>
+<script src="/assets/theme.js?v=1" defer></script>
+<script src="/assets/navigation.js?v=1" defer></script>
+<script src="/assets/print.js?v=1" defer></script>
+<script src="/assets/bookmarks.js?v=1" defer></script>
 </body>
 </html>
