@@ -14,10 +14,15 @@ ARTICLE_CARD_OPEN = re.compile(
     r'(?P<indent>^[ \t]*)<main class="article-card">',
     re.MULTILINE,
 )
+SIDEBAR_NAV_PATTERN = re.compile(
+    r'<nav\b(?=[^>]*\bclass=["\']sidebar-nav["\'])',
+    re.IGNORECASE | re.DOTALL,
+)
 SHARED_STYLESHEET = '<link rel="stylesheet" href="/assets/site.css">'
 LEGACY_SEARCH_SCRIPT = '<script src="/assets/search.js" defer></script>'
 SEARCH_SCRIPT = '<script src="/assets/search.js?v=2" defer></script>'
-TOC_SCRIPT = '<script src="/assets/toc.js?v=1" defer></script>'
+LEGACY_TOC_SCRIPT = '<script src="/assets/toc.js?v=1" defer></script>'
+TOC_SCRIPT = '<script src="/assets/toc.js?v=2" defer></script>'
 THEME_SCRIPT = '<script src="/assets/theme.js?v=1" defer></script>'
 NAVIGATION_SCRIPT = '<script src="/assets/navigation.js?v=1" defer></script>'
 PRINT_SCRIPT = '<script src="/assets/print.js?v=1" defer></script>'
@@ -72,9 +77,8 @@ def migrate_html(html):
 
     migrated = strip_source_artifacts(html)
     migrated = migrated.replace(LEGACY_SEARCH_SCRIPT, SEARCH_SCRIPT)
-    has_sidebar_navigation = (
-        SIDEBAR_NAV in migrated or SIDEBAR_NAV_WITH_ID in migrated
-    )
+    migrated = migrated.replace(LEGACY_TOC_SCRIPT, TOC_SCRIPT)
+    has_sidebar_navigation = SIDEBAR_NAV_PATTERN.search(migrated) is not None
     has_article = 'class="article-card"' in migrated
 
     if SEARCH_SCRIPT in migrated and TOC_SCRIPT not in migrated:
@@ -300,7 +304,7 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
         script_audit_html = html.replace(THEME_INIT, "")
         other_scripts = re.findall(
             r"<script\b(?![^>]*\bsrc=[\"']/assets/"
-            r"(?:search|toc|theme|navigation|print|bookmarks)"
+            r"(?:search|toc|theme|navigation|print|bookmarks|spell-directory)"
             r"\.js(?:\?v=\d+)?[\"'])",
             script_audit_html,
             re.IGNORECASE,

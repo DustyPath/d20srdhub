@@ -1,116 +1,830 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spells | d20 SRD Hub</title>
-    <meta name="description" content="Spell lists, schools, components, durations, and descriptions.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-theme-init>(function(){try{var t=localStorage.getItem("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){}}())</script>
+
+    <title>Spells | d20 SRD Hub</title>
+    <meta name="description" content="Browse 608 spells from the d20 System Reference Document by class, name, school, or spell level.">
     <link rel="canonical" href="https://d20srdhub.com/spells/">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: #eee8da;
-      color: #26211d;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 28px 20px;
-      background: #542020;
-      color: white;
-      text-align: center;
-      border-bottom: 5px solid #341313;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 3.5rem);
-    }
-
-    nav {
-      padding: 12px 20px;
-      background: #341313;
-      text-align: center;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 5px 10px;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    main {
-      max-width: 950px;
-      min-height: 420px;
-      margin: 36px auto;
-      padding: 38px;
-      background: #fffdf8;
-      border: 1px solid #c9bda9;
-      box-shadow: 0 8px 24px rgb(49 34 23 / 12%);
-    }
-
-    main h2 {
-      margin-top: 0;
-      color: #542020;
-      font-size: 2rem;
-    }
-
-    .notice {
-      margin-top: 28px;
-      padding: 16px 20px;
-      background: #f5efe4;
-      border-left: 5px solid #7a2e2e;
-    }
-
-    footer {
-      padding: 25px;
-      background: #341313;
-      color: white;
-      text-align: center;
-    }
-  </style>
+    <link rel="stylesheet" href="/assets/site.css">
+    <meta property="og:title" content="Spells | d20 SRD Hub">
+    <meta property="og:description" content="Browse 608 spells from the d20 System Reference Document by class, name, school, or spell level.">
+    <meta property="og:url" content="https://d20srdhub.com/spells/">
+    <meta property="og:type" content="article">
 </head>
 
 <body>
-  <header>
-    <h1>d20 SRD Hub</h1>
-    <p>An independent tabletop roleplaying rules reference</p>
-  </header>
 
-  <nav aria-label="Primary navigation">
-    <a href="/">Home</a>
-    <a href="/classes/">Classes</a>
-    <a href="/races/">Races</a>
-    <a href="/skills/">Skills</a>
-    <a href="/feats/">Feats</a>
-    <a href="/spells/">Spells</a>
-    <a href="/monsters/">Monsters</a>
-    <a href="/equipment/">Equipment</a>
-  </nav>
+<header class="site-header">
+    <h1 class="site-title">
+        <a href="/">d20 SRD Hub</a>
+    </h1>
 
-  <main>
-    <h2>Spells</h2>
+    <form class="site-search" data-search-form role="search">
+        <div class="site-search-row">
+            <label class="visually-hidden" for="header-search">
+                Search the rules
+            </label>
+            <input
+                id="header-search"
+                data-search-input
+                type="search"
+                autocomplete="off"
+                placeholder="Search rules…"
+            >
+            <button type="submit">Search</button>
+        </div>
+        <div
+            class="search-results"
+            data-search-results
+            aria-live="polite"
+            hidden
+        ></div>
+    </form>
 
-    <p>Spell lists, schools, components, durations, and descriptions.</p>
+    <nav class="header-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/classes/">Classes</a>
+        <a href="/combat/">Combat</a>
+        <a href="/spells/">Spells</a>
+        <a href="/monsters/">Monsters</a>
+        <a href="/bookmarks/">Bookmarks</a>
+        <a href="/legal/">Legal</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle type="button">
+        ☾ Dark
+    </button>
+</header>
 
-    <div class="notice">
-      <strong>Section status:</strong>
-      This section has been created and is ready for properly licensed rules
-      content.
+<div class="layout">
+
+    <aside class="sidebar">
+        <p class="sidebar-title">SRD Sections</p>
+        <button
+            class="sidebar-toggle"
+            data-sidebar-toggle
+            type="button"
+            aria-controls="sidebar-navigation"
+            aria-expanded="false"
+        >
+            Browse sections
+        </button>
+
+        <nav
+            id="sidebar-navigation"
+            class="sidebar-nav"
+            aria-label="SRD sections"
+        >
+            <a href="/basics/">Basics</a>
+            <a href="/races/">Races</a>
+            <a href="/classes/">Classes</a>
+            <a href="/skills/">Skills</a>
+            <a href="/feats/">Feats</a>
+            <a href="/equipment/">Equipment</a>
+            <a href="/combat/">Combat</a>
+            <a href="/magic/">Magic</a>
+            <a href="/spells/">Spells</a>
+            <a href="/magic-items/">Magic Items</a>
+            <a href="/monsters/">Monsters</a>
+            <a href="/special-abilities/">Special Abilities</a>
+            <a href="/conditions/">Conditions</a>
+            <a href="/psionics/">Psionics</a>
+            <a href="/epic/">Epic Rules</a>
+            <a href="/variant/">Variant Rules</a>
+        </nav>
+    </aside>
+
+    <div class="content-column">
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Spells</span>
+        </nav>
+
+        <div class="article-tools" aria-label="Page tools">
+            <button class="bookmark-button" data-bookmark-page type="button">
+                ☆ Save rule
+            </button>
+            <button class="print-button" data-print-page type="button">
+                Print / Save PDF
+            </button>
+        </div>
+
+        <main class="article-card">
+            <h1>Spells</h1>
+<p>Browse 608 spells from the d20 System Reference Document by class, name, school, or spell level.</p>
+<section class="spell-list-shortcuts" aria-labelledby="class-lists">
+    <h2 id="class-lists">Spell lists by class</h2>
+    <div class="spell-list-links">
+            <a href="/spell-lists/bard-spells/">Bard</a>
+            <a href="/spell-lists/cleric-spells/">Cleric</a>
+            <a href="/spell-lists/cleric-domains/">Cleric Domains</a>
+            <a href="/spell-lists/druid-spells/">Druid</a>
+            <a href="/spell-lists/paladin-spells/">Paladin</a>
+            <a href="/spell-lists/ranger-spells/">Ranger</a>
+            <a href="/spell-lists/sorcerer-wizard-spells/">Sorcerer / Wizard</a>
     </div>
-  </main>
+</section>
+<section class="spell-directory" data-spell-directory aria-labelledby="all-spells">
+    <h2 id="all-spells">All spells</h2>
+    <div class="spell-filters">
+        <label>Spell name<input data-spell-search type="search" placeholder="Filter by name…"></label>
+        <label>School<select data-spell-school><option value="">All schools</option>
+                    <option value="Abjuration">Abjuration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Divination">Divination</option>
+                    <option value="Enchantment">Enchantment</option>
+                    <option value="Evocation">Evocation</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Necromancy">Necromancy</option>
+                    <option value="Other">Other</option>
+                    <option value="Transmutation">Transmutation</option>
+                    <option value="Universal">Universal</option></select></label>
+        <label>Level<select data-spell-level><option value="">All levels</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></label>
+        <p class="spell-result-count" data-spell-count aria-live="polite"></p>
+    </div>
+        <section class="spell-letter-group" data-spell-group><h2>A</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="acid arrow" data-school="Conjuration" data-levels="2"><a href="/spells/acid-arrow/"><strong>Acid Arrow</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="acid fog" data-school="Conjuration" data-levels="6,7"><a href="/spells/acid-fog/"><strong>Acid Fog</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 6 , Water 7</span></a></li>
+                <li data-spell-item data-name="acid splash" data-school="Conjuration" data-levels="0"><a href="/spells/acid-splash/"><strong>Acid Splash</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="aid" data-school="Enchantment" data-levels="2"><a href="/spells/aid/"><strong>Aid</strong><span class="spell-directory-meta">Enchantment · Clr 2 , Good 2 , Luck 2</span></a></li>
+                <li data-spell-item data-name="air walk" data-school="Transmutation" data-levels="4"><a href="/spells/air-walk/"><strong>Air Walk</strong><span class="spell-directory-meta">Transmutation · Air 4 , Clr 4 , Drd 4</span></a></li>
+                <li data-spell-item data-name="alarm" data-school="Abjuration" data-levels="1"><a href="/spells/alarm/"><strong>Alarm</strong><span class="spell-directory-meta">Abjuration · Brd 1 , Rgr 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="align weapon" data-school="Transmutation" data-levels="2"><a href="/spells/align-weapon/"><strong>Align Weapon</strong><span class="spell-directory-meta">Transmutation · Clr 2</span></a></li>
+                <li data-spell-item data-name="alter self" data-school="Transmutation" data-levels="2"><a href="/spells/alter-self/"><strong>Alter Self</strong><span class="spell-directory-meta">Transmutation · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="analyze dweomer" data-school="Divination" data-levels="6"><a href="/spells/analyze-dweomer/"><strong>Analyze Dweomer</strong><span class="spell-directory-meta">Divination · Brd 6 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="animal growth" data-school="Transmutation" data-levels="4,5"><a href="/spells/animal-growth/"><strong>Animal Growth</strong><span class="spell-directory-meta">Transmutation · Drd 5 , Rgr 4 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="animal messenger" data-school="Enchantment" data-levels="1,2"><a href="/spells/animal-messenger/"><strong>Animal Messenger</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Drd 2 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="animal shapes" data-school="Transmutation" data-levels="7,8"><a href="/spells/animal-shapes/"><strong>Animal Shapes</strong><span class="spell-directory-meta">Transmutation · Animal 7 , Drd 8</span></a></li>
+                <li data-spell-item data-name="animal trance" data-school="Enchantment" data-levels="2"><a href="/spells/animal-trance/"><strong>Animal Trance</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Drd 2</span></a></li>
+                <li data-spell-item data-name="animate dead" data-school="Necromancy" data-levels="3,4"><a href="/spells/animate-dead/"><strong>Animate Dead</strong><span class="spell-directory-meta">Necromancy · Clr 3 , Death 3 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="animate objects" data-school="Transmutation" data-levels="6"><a href="/spells/animate-objects/"><strong>Animate Objects</strong><span class="spell-directory-meta">Transmutation · Brd 6 , Chaos 6 , Clr 6</span></a></li>
+                <li data-spell-item data-name="animate plants" data-school="Transmutation" data-levels="7"><a href="/spells/animate-plants/"><strong>Animate Plants</strong><span class="spell-directory-meta">Transmutation · Drd 7 , Plant 7</span></a></li>
+                <li data-spell-item data-name="animate rope" data-school="Transmutation" data-levels="1"><a href="/spells/animate-rope/"><strong>Animate Rope</strong><span class="spell-directory-meta">Transmutation · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="antilife shell" data-school="Abjuration" data-levels="6"><a href="/spells/antilife-shell/"><strong>Antilife Shell</strong><span class="spell-directory-meta">Abjuration · Animal 6 , Clr 6 , Drd 6</span></a></li>
+                <li data-spell-item data-name="antimagic field" data-school="Abjuration" data-levels="6,8"><a href="/spells/antimagic-field/"><strong>Antimagic Field</strong><span class="spell-directory-meta">Abjuration · Clr 8 , Magic 6 , Protection 6 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="antipathy" data-school="Enchantment" data-levels="8,9"><a href="/spells/antipathy/"><strong>Antipathy</strong><span class="spell-directory-meta">Enchantment · Drd 9 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="antiplant shell" data-school="Abjuration" data-levels="4"><a href="/spells/antiplant-shell/"><strong>Antiplant Shell</strong><span class="spell-directory-meta">Abjuration · Drd 4</span></a></li>
+                <li data-spell-item data-name="arcane eye" data-school="Divination" data-levels="4"><a href="/spells/arcane-eye/"><strong>Arcane Eye</strong><span class="spell-directory-meta">Divination · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="arcane lock" data-school="Abjuration" data-levels="2"><a href="/spells/arcane-lock/"><strong>Arcane Lock</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="arcane mark" data-school="Universal" data-levels="0"><a href="/spells/arcane-mark/"><strong>Arcane Mark</strong><span class="spell-directory-meta">Universal · Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="arcane sight" data-school="Divination" data-levels="3"><a href="/spells/arcane-sight/"><strong>Arcane Sight</strong><span class="spell-directory-meta">Divination · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="arcane sight, greater" data-school="Divination" data-levels="7"><a href="/spells/arcane-sight-greater/"><strong>Arcane Sight, Greater</strong><span class="spell-directory-meta">Divination · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="astral projection" data-school="Necromancy" data-levels="9"><a href="/spells/astral-projection/"><strong>Astral Projection</strong><span class="spell-directory-meta">Necromancy · Clr 9 , Sor/Wiz 9 , Travel 9</span></a></li>
+                <li data-spell-item data-name="atonement" data-school="Abjuration" data-levels="5"><a href="/spells/atonement/"><strong>Atonement</strong><span class="spell-directory-meta">Abjuration · Clr 5 , Drd 5</span></a></li>
+                <li data-spell-item data-name="augury" data-school="Divination" data-levels="2"><a href="/spells/augury/"><strong>Augury</strong><span class="spell-directory-meta">Divination · Clr 2</span></a></li>
+                <li data-spell-item data-name="awaken" data-school="Transmutation" data-levels="5"><a href="/spells/awaken/"><strong>Awaken</strong><span class="spell-directory-meta">Transmutation · Drd 5</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>B</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="baleful polymorph" data-school="Transmutation" data-levels="5"><a href="/spells/baleful-polymorph/"><strong>Baleful Polymorph</strong><span class="spell-directory-meta">Transmutation · Drd 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="bane" data-school="Enchantment" data-levels="1"><a href="/spells/bane/"><strong>Bane</strong><span class="spell-directory-meta">Enchantment · Clr 1</span></a></li>
+                <li data-spell-item data-name="banishment" data-school="Abjuration" data-levels="6,7"><a href="/spells/banishment/"><strong>Banishment</strong><span class="spell-directory-meta">Abjuration · Clr 6 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="barkskin" data-school="Transmutation" data-levels="2"><a href="/spells/barkskin/"><strong>Barkskin</strong><span class="spell-directory-meta">Transmutation · Drd 2 , Rgr 2 , Plant 2</span></a></li>
+                <li data-spell-item data-name="bear’s endurance" data-school="Transmutation" data-levels="2"><a href="/spells/bears-endurance/"><strong>Bear’s Endurance</strong><span class="spell-directory-meta">Transmutation · Clr 2 , Drd 2 , Rgr 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="bear’s endurance, mass" data-school="Transmutation" data-levels="2,5,6"><a href="/spells/bears-endurance-mass/"><strong>Bear’s Endurance, Mass</strong><span class="spell-directory-meta">Transmutation · Clr 6 , Drd 6 , Sor/Wiz 6 Range : Close (25 ft. + 5 ft./2 levels) Targets : One creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="bestow curse" data-school="Necromancy" data-levels="3,4"><a href="/spells/bestow-curse/"><strong>Bestow Curse</strong><span class="spell-directory-meta">Necromancy · Clr 3 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="binding" data-school="Enchantment" data-levels="8"><a href="/spells/binding/"><strong>Binding</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="black tentacles" data-school="Conjuration" data-levels="4"><a href="/spells/black-tentacles/"><strong>Black Tentacles</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="blade barrier" data-school="Evocation" data-levels="6"><a href="/spells/blade-barrier/"><strong>Blade Barrier</strong><span class="spell-directory-meta">Evocation · Clr 6 , Good 6 , War 6</span></a></li>
+                <li data-spell-item data-name="blasphemy" data-school="Evocation" data-levels="7"><a href="/spells/blasphemy/"><strong>Blasphemy</strong><span class="spell-directory-meta">Evocation · Clr 7 , Evil 7</span></a></li>
+                <li data-spell-item data-name="bless" data-school="Enchantment" data-levels="1"><a href="/spells/bless/"><strong>Bless</strong><span class="spell-directory-meta">Enchantment · Clr 1 , Pal 1</span></a></li>
+                <li data-spell-item data-name="bless water" data-school="Transmutation" data-levels="1"><a href="/spells/bless-water/"><strong>Bless Water</strong><span class="spell-directory-meta">Transmutation · Clr 1 , Pal 1</span></a></li>
+                <li data-spell-item data-name="bless weapon" data-school="Transmutation" data-levels="1"><a href="/spells/bless-weapon/"><strong>Bless Weapon</strong><span class="spell-directory-meta">Transmutation · Pal 1</span></a></li>
+                <li data-spell-item data-name="blight" data-school="Necromancy" data-levels="4,5"><a href="/spells/blight/"><strong>Blight</strong><span class="spell-directory-meta">Necromancy · Drd 4 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="blindness/deafness" data-school="Necromancy" data-levels="2,3"><a href="/spells/blindness-deafness/"><strong>Blindness/Deafness</strong><span class="spell-directory-meta">Necromancy · Brd 2 , Clr 3 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="blink" data-school="Transmutation" data-levels="3"><a href="/spells/blink/"><strong>Blink</strong><span class="spell-directory-meta">Transmutation · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="blur" data-school="Illusion" data-levels="2"><a href="/spells/blur/"><strong>Blur</strong><span class="spell-directory-meta">Illusion · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="break enchantment" data-school="Abjuration" data-levels="4,5"><a href="/spells/break-enchantment/"><strong>Break Enchantment</strong><span class="spell-directory-meta">Abjuration · Brd 4 , Clr 5 , Luck 5 , Pal 4 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="bull’s strength" data-school="Transmutation" data-levels="2"><a href="/spells/bulls-strength/"><strong>Bull’s Strength</strong><span class="spell-directory-meta">Transmutation · Clr 2 , Drd 2 , Pal 2 , Sor/Wiz 2 , Strength 2</span></a></li>
+                <li data-spell-item data-name="bull’s strength, mass" data-school="Transmutation" data-levels="2,5,6"><a href="/spells/bulls-strength-mass/"><strong>Bull’s Strength, Mass</strong><span class="spell-directory-meta">Transmutation · Clr 6 , Drd 6 , Sor/Wiz 6 Range : Close (25 ft. + 5 ft./2 levels) Targets : One creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="burning hands" data-school="Evocation" data-levels="1"><a href="/spells/burning-hands/"><strong>Burning Hands</strong><span class="spell-directory-meta">Evocation · Fire 1 , Sor/Wiz 1</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>C</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="call lightning" data-school="Evocation" data-levels="3"><a href="/spells/call-lightning/"><strong>Call Lightning</strong><span class="spell-directory-meta">Evocation · Drd 3</span></a></li>
+                <li data-spell-item data-name="call lightning storm" data-school="Evocation" data-levels="5"><a href="/spells/call-lightning-storm/"><strong>Call Lightning Storm</strong><span class="spell-directory-meta">Evocation · Drd 5 Range : Long (400 ft. + 40 ft./level)</span></a></li>
+                <li data-spell-item data-name="calm animals" data-school="Enchantment" data-levels="1"><a href="/spells/calm-animals/"><strong>Calm Animals</strong><span class="spell-directory-meta">Enchantment · Animal 1 , Drd 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="calm emotions" data-school="Enchantment" data-levels="2"><a href="/spells/calm-emotions/"><strong>Calm Emotions</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Clr 2 , Law 2</span></a></li>
+                <li data-spell-item data-name="cat’s grace" data-school="Transmutation" data-levels="2"><a href="/spells/cats-grace/"><strong>Cat’s Grace</strong><span class="spell-directory-meta">Transmutation · Brd 2 , Drd 2 , Rgr 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="cat’s grace, mass" data-school="Transmutation" data-levels="2,5,6"><a href="/spells/cats-grace-mass/"><strong>Cat’s Grace, Mass</strong><span class="spell-directory-meta">Transmutation · Brd 6 , Drd 6 , Sor/Wiz 6 Range : Close (25 ft. + 5 ft./2 levels) Targets : One creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="cause fear" data-school="Necromancy" data-levels="1"><a href="/spells/cause-fear/"><strong>Cause Fear</strong><span class="spell-directory-meta">Necromancy · Brd 1 , Clr 1 , Death 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="chain lightning" data-school="Evocation" data-levels="6"><a href="/spells/chain-lightning/"><strong>Chain Lightning</strong><span class="spell-directory-meta">Evocation · Air 6 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="changestaff" data-school="Transmutation" data-levels="7"><a href="/spells/changestaff/"><strong>Changestaff</strong><span class="spell-directory-meta">Transmutation · Drd 7</span></a></li>
+                <li data-spell-item data-name="chaos hammer" data-school="Evocation" data-levels="4"><a href="/spells/chaos-hammer/"><strong>Chaos Hammer</strong><span class="spell-directory-meta">Evocation · Chaos 4</span></a></li>
+                <li data-spell-item data-name="charm animal" data-school="Enchantment" data-levels="1"><a href="/spells/charm-animal/"><strong>Charm Animal</strong><span class="spell-directory-meta">Enchantment · Drd 1 , Rgr 1 Target : One animal</span></a></li>
+                <li data-spell-item data-name="charm monster" data-school="Enchantment" data-levels="3,4"><a href="/spells/charm-monster/"><strong>Charm Monster</strong><span class="spell-directory-meta">Enchantment · Brd 3 , Sor/Wiz 4 Target : One living creature Duration : One day/level</span></a></li>
+                <li data-spell-item data-name="charm monster, mass" data-school="Enchantment" data-levels="6,8"><a href="/spells/charm-monster-mass/"><strong>Charm Monster, Mass</strong><span class="spell-directory-meta">Enchantment · Brd 6 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="charm person" data-school="Enchantment" data-levels="1"><a href="/spells/charm-person/"><strong>Charm Person</strong><span class="spell-directory-meta">Enchantment · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="chill metal" data-school="Transmutation" data-levels="2"><a href="/spells/chill-metal/"><strong>Chill Metal</strong><span class="spell-directory-meta">Transmutation · Drd 2</span></a></li>
+                <li data-spell-item data-name="chill touch" data-school="Necromancy" data-levels="1"><a href="/spells/chill-touch/"><strong>Chill Touch</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="circle of death" data-school="Necromancy" data-levels="6"><a href="/spells/circle-of-death/"><strong>Circle of Death</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="clairaudience/clairvoyance" data-school="Divination" data-levels="3"><a href="/spells/clairaudience-clairvoyance/"><strong>Clairaudience/Clairvoyance</strong><span class="spell-directory-meta">Divination · Brd 3 , Knowledge 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="clenched fist" data-school="Evocation" data-levels="8"><a href="/spells/clenched-fist/"><strong>Clenched Fist</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 8 , Strength 8</span></a></li>
+                <li data-spell-item data-name="cloak of chaos" data-school="Abjuration" data-levels="8"><a href="/spells/cloak-of-chaos/"><strong>Cloak of Chaos</strong><span class="spell-directory-meta">Abjuration · Chaos 8 , Clr 8</span></a></li>
+                <li data-spell-item data-name="clone" data-school="Necromancy" data-levels="8"><a href="/spells/clone/"><strong>Clone</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="cloudkill" data-school="Conjuration" data-levels="5"><a href="/spells/cloudkill/"><strong>Cloudkill</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="color spray" data-school="Illusion" data-levels="1"><a href="/spells/color-spray/"><strong>Color Spray</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="command" data-school="Enchantment" data-levels="1"><a href="/spells/command/"><strong>Command</strong><span class="spell-directory-meta">Enchantment · Clr 1</span></a></li>
+                <li data-spell-item data-name="command plants" data-school="Transmutation" data-levels="3,4"><a href="/spells/comm-and-plants/"><strong>Command Plants</strong><span class="spell-directory-meta">Transmutation · Drd 4 , Plant 4 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="command undead" data-school="Necromancy" data-levels="2"><a href="/spells/comm-and-undead/"><strong>Command Undead</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="command, greater" data-school="Enchantment" data-levels="1,5"><a href="/spells/comm-and-greater/"><strong>Command, Greater</strong><span class="spell-directory-meta">Enchantment · Clr 5 Targets : One creature/level, no two of which can be more than 30 ft. apart Duration : 1 round/level</span></a></li>
+                <li data-spell-item data-name="commune" data-school="Divination" data-levels="5"><a href="/spells/commune/"><strong>Commune</strong><span class="spell-directory-meta">Divination · Clr 5</span></a></li>
+                <li data-spell-item data-name="commune with nature" data-school="Divination" data-levels="4,5"><a href="/spells/commune-with-nature/"><strong>Commune with Nature</strong><span class="spell-directory-meta">Divination · Animal 5 , Drd 5 , Rgr 4</span></a></li>
+                <li data-spell-item data-name="comprehend languages" data-school="Divination" data-levels="1"><a href="/spells/comprehend-languages/"><strong>Comprehend Languages</strong><span class="spell-directory-meta">Divination · Brd 1 , Clr 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="cone of cold" data-school="Evocation" data-levels="5,6"><a href="/spells/cone-of-cold/"><strong>Cone of Cold</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 5 , Water 6</span></a></li>
+                <li data-spell-item data-name="confusion" data-school="Enchantment" data-levels="3,4"><a href="/spells/confusion/"><strong>Confusion</strong><span class="spell-directory-meta">Enchantment · Brd 3 , Sor/Wiz 4 , Trickery 4</span></a></li>
+                <li data-spell-item data-name="confusion, lesser" data-school="Enchantment" data-levels="1"><a href="/spells/confusion-lesser/"><strong>Confusion, Lesser</strong><span class="spell-directory-meta">Enchantment · Brd 1</span></a></li>
+                <li data-spell-item data-name="consecrate" data-school="Evocation" data-levels="2"><a href="/spells/consecrate/"><strong>Consecrate</strong><span class="spell-directory-meta">Evocation · Clr 2</span></a></li>
+                <li data-spell-item data-name="contact other plane" data-school="Divination" data-levels="5"><a href="/spells/contact-other-plane/"><strong>Contact Other Plane</strong><span class="spell-directory-meta">Divination · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="contagion" data-school="Necromancy" data-levels="3,4"><a href="/spells/contagion/"><strong>Contagion</strong><span class="spell-directory-meta">Necromancy · Clr 3 , Destruction 3 , Drd 3 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="contingency" data-school="Evocation" data-levels="6"><a href="/spells/contingency/"><strong>Contingency</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="continual flame" data-school="Evocation" data-levels="2,3"><a href="/spells/continual-flame/"><strong>Continual Flame</strong><span class="spell-directory-meta">Evocation · Clr 3 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="control plants" data-school="Transmutation" data-levels="8"><a href="/spells/control-plants/"><strong>Control Plants</strong><span class="spell-directory-meta">Transmutation · Drd 8 , Plant 8</span></a></li>
+                <li data-spell-item data-name="control undead" data-school="Necromancy" data-levels="7"><a href="/spells/control-undead/"><strong>Control Undead</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="control water" data-school="Transmutation" data-levels="4,6"><a href="/spells/control-water/"><strong>Control Water</strong><span class="spell-directory-meta">Transmutation · Clr 4 , Drd 4 , Sor/Wiz 6 , Water 4</span></a></li>
+                <li data-spell-item data-name="control weather" data-school="Transmutation" data-levels="7"><a href="/spells/control-weather/"><strong>Control Weather</strong><span class="spell-directory-meta">Transmutation · Air 7 , Clr 7 , Drd 7 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="control winds" data-school="Transmutation" data-levels="5"><a href="/spells/control-winds/"><strong>Control Winds</strong><span class="spell-directory-meta">Transmutation · Air 5 , Drd 5</span></a></li>
+                <li data-spell-item data-name="create food and water" data-school="Conjuration" data-levels="3"><a href="/spells/create-food-and-water/"><strong>Create Food and Water</strong><span class="spell-directory-meta">Conjuration · Clr 3</span></a></li>
+                <li data-spell-item data-name="create greater undead" data-school="Necromancy" data-levels="8"><a href="/spells/create-greater-undead/"><strong>Create Greater Undead</strong><span class="spell-directory-meta">Necromancy · Clr 8 , Death 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="create undead" data-school="Necromancy" data-levels="6"><a href="/spells/create-undead/"><strong>Create Undead</strong><span class="spell-directory-meta">Necromancy · Clr 6 , Death 6 , Evil 6 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="create water" data-school="Conjuration" data-levels="0,1"><a href="/spells/create-water/"><strong>Create Water</strong><span class="spell-directory-meta">Conjuration · Clr 0 , Drd 0 , Pal 1</span></a></li>
+                <li data-spell-item data-name="creeping doom" data-school="Conjuration" data-levels="7"><a href="/spells/creeping-doom/"><strong>Creeping Doom</strong><span class="spell-directory-meta">Conjuration · Drd 7</span></a></li>
+                <li data-spell-item data-name="crushing despair" data-school="Enchantment" data-levels="3,4"><a href="/spells/crushing-despair/"><strong>Crushing Despair</strong><span class="spell-directory-meta">Enchantment · Brd 3 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="crushing hand" data-school="Evocation" data-levels="9"><a href="/spells/crushing-hand/"><strong>Crushing Hand</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 9 , Strength 9</span></a></li>
+                <li data-spell-item data-name="cure critical wounds" data-school="Conjuration" data-levels="4,5"><a href="/spells/cure-critical-wounds/"><strong>Cure Critical Wounds</strong><span class="spell-directory-meta">Conjuration · Brd 4 , Clr 4 , Drd 5 , Healing 4</span></a></li>
+                <li data-spell-item data-name="cure critical wounds, mass" data-school="Conjuration" data-levels="8,9"><a href="/spells/cure-critical-wounds-mass/"><strong>Cure Critical Wounds, Mass</strong><span class="spell-directory-meta">Conjuration · Clr 8 , Drd 9 , Healing 8</span></a></li>
+                <li data-spell-item data-name="cure light wounds" data-school="Conjuration" data-levels="1,2"><a href="/spells/cure-light-wounds/"><strong>Cure Light Wounds</strong><span class="spell-directory-meta">Conjuration · Brd 1 , Clr 1 , Drd 1 , Healing 1 , Pal 1 , Rgr 2</span></a></li>
+                <li data-spell-item data-name="cure light wounds, mass" data-school="Conjuration" data-levels="5,6"><a href="/spells/cure-light-wounds-mass/"><strong>Cure Light Wounds, Mass</strong><span class="spell-directory-meta">Conjuration · Brd 5 , Clr 5 , Drd 6 , Healing 5</span></a></li>
+                <li data-spell-item data-name="cure minor wounds" data-school="Conjuration" data-levels="0"><a href="/spells/cure-minor-wounds/"><strong>Cure Minor Wounds</strong><span class="spell-directory-meta">Conjuration · Clr 0 , Drd 0</span></a></li>
+                <li data-spell-item data-name="cure moderate wounds" data-school="Conjuration" data-levels="2,3"><a href="/spells/cure-moderate-wounds/"><strong>Cure Moderate Wounds</strong><span class="spell-directory-meta">Conjuration · Brd 2 , Clr 2 , Drd 3 , Healing 2 , Pal 3 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="cure moderate wounds, mass" data-school="Conjuration" data-levels="6,7"><a href="/spells/cure-moderate-wounds-mass/"><strong>Cure Moderate Wounds, Mass</strong><span class="spell-directory-meta">Conjuration · Brd 6 , Clr 6 , Drd 7</span></a></li>
+                <li data-spell-item data-name="cure serious wounds" data-school="Conjuration" data-levels="3,4"><a href="/spells/cure-serious-wounds/"><strong>Cure Serious Wounds</strong><span class="spell-directory-meta">Conjuration · Brd 3 , Clr 3 , Drd 4 , Pal 4 , Rgr 4 , Healing 3</span></a></li>
+                <li data-spell-item data-name="cure serious wounds, mass" data-school="Conjuration" data-levels="7,8"><a href="/spells/cure-serious-wounds-mass/"><strong>Cure Serious Wounds, Mass</strong><span class="spell-directory-meta">Conjuration · Clr 7 , Drd 8</span></a></li>
+                <li data-spell-item data-name="curse water" data-school="Necromancy" data-levels="1"><a href="/spells/curse-water/"><strong>Curse Water</strong><span class="spell-directory-meta">Necromancy · Clr 1</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>D</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="dancing lights" data-school="Evocation" data-levels="0"><a href="/spells/dancing-lights/"><strong>Dancing Lights</strong><span class="spell-directory-meta">Evocation · Brd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="darkness" data-school="Evocation" data-levels="2"><a href="/spells/darkness/"><strong>Darkness</strong><span class="spell-directory-meta">Evocation · Brd 2 , Clr 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="darkvision" data-school="Transmutation" data-levels="2,3"><a href="/spells/darkvision/"><strong>Darkvision</strong><span class="spell-directory-meta">Transmutation · Rgr 3 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="daylight" data-school="Evocation" data-levels="3"><a href="/spells/daylight/"><strong>Daylight</strong><span class="spell-directory-meta">Evocation · Brd 3 , Clr 3 , Drd 3 , Pal 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="daze" data-school="Enchantment" data-levels="0"><a href="/spells/daze/"><strong>Daze</strong><span class="spell-directory-meta">Enchantment · Brd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="daze monster" data-school="Enchantment" data-levels="2,6"><a href="/spells/daze-monster/"><strong>Daze Monster</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Sor/Wiz 2 Range : Medium (100 ft. + 10 ft./level) Target : One living creature of 6 HD or less</span></a></li>
+                <li data-spell-item data-name="death knell" data-school="Necromancy" data-levels="2"><a href="/spells/death-knell/"><strong>Death Knell</strong><span class="spell-directory-meta">Necromancy · Clr 2 , Death 2</span></a></li>
+                <li data-spell-item data-name="death ward" data-school="Necromancy" data-levels="4,5"><a href="/spells/death-ward/"><strong>Death Ward</strong><span class="spell-directory-meta">Necromancy · Clr 4 , Death 4 , Drd 5 , Pal 4</span></a></li>
+                <li data-spell-item data-name="deathwatch" data-school="Necromancy" data-levels="1"><a href="/spells/deathwatch/"><strong>Deathwatch</strong><span class="spell-directory-meta">Necromancy · Clr 1</span></a></li>
+                <li data-spell-item data-name="deep slumber" data-school="Enchantment" data-levels="2,3,5"><a href="/spells/deep-slumber/"><strong>Deep Slumber</strong><span class="spell-directory-meta">Enchantment · Brd 3 , Sor/Wiz 3 Range : Close (25 ft. + 5 ft./2 levels)</span></a></li>
+                <li data-spell-item data-name="deeper darkness" data-school="Evocation" data-levels="3"><a href="/spells/deeper-darkness/"><strong>Deeper Darkness</strong><span class="spell-directory-meta">Evocation · Clr 3 Duration : One day/level (D)</span></a></li>
+                <li data-spell-item data-name="delay poison" data-school="Conjuration" data-levels="1,2"><a href="/spells/delay-poison/"><strong>Delay Poison</strong><span class="spell-directory-meta">Conjuration · Brd 2 , Clr 2 , Drd 2 , Pal 2 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="delayed blast fireball" data-school="Evocation" data-levels="5,7"><a href="/spells/delayed-blast-fireball/"><strong>Delayed Blast Fireball</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 7 Duration : 5 rounds or less; see text</span></a></li>
+                <li data-spell-item data-name="demand" data-school="Enchantment" data-levels="8"><a href="/spells/demand/"><strong>Demand</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 8 Saving Throw : Will partial Spell Resistance : Yes</span></a></li>
+                <li data-spell-item data-name="desecrate" data-school="Evocation" data-levels="2"><a href="/spells/desecrate/"><strong>Desecrate</strong><span class="spell-directory-meta">Evocation · Clr 2 , Evil 2</span></a></li>
+                <li data-spell-item data-name="destruction" data-school="Necromancy" data-levels="7"><a href="/spells/destruction/"><strong>Destruction</strong><span class="spell-directory-meta">Necromancy · Clr 7 , Death 7</span></a></li>
+                <li data-spell-item data-name="detect animals or plants" data-school="Divination" data-levels="1"><a href="/spells/detect-animals-or-plants/"><strong>Detect Animals or Plants</strong><span class="spell-directory-meta">Divination · Drd 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="detect chaos" data-school="Divination" data-levels="1"><a href="/spells/detect-chaos/"><strong>Detect Chaos</strong><span class="spell-directory-meta">Divination · Clr 1</span></a></li>
+                <li data-spell-item data-name="detect evil" data-school="Divination" data-levels="1"><a href="/spells/detect-evil/"><strong>Detect Evil</strong><span class="spell-directory-meta">Divination · Clr 1</span></a></li>
+                <li data-spell-item data-name="detect good" data-school="Divination" data-levels="1"><a href="/spells/detect-good/"><strong>Detect Good</strong><span class="spell-directory-meta">Divination · Clr 1</span></a></li>
+                <li data-spell-item data-name="detect law" data-school="Divination" data-levels="1"><a href="/spells/detect-law/"><strong>Detect Law</strong><span class="spell-directory-meta">Divination · Clr 1</span></a></li>
+                <li data-spell-item data-name="detect magic" data-school="Divination" data-levels="0"><a href="/spells/detect-magic/"><strong>Detect Magic</strong><span class="spell-directory-meta">Divination · Brd 0 , Clr 0 , Drd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="detect poison" data-school="Divination" data-levels="0,1"><a href="/spells/detect-poison/"><strong>Detect Poison</strong><span class="spell-directory-meta">Divination · Clr 0 , Drd 0 , Pal 1 , Rgr 1 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="detect scrying" data-school="Divination" data-levels="4"><a href="/spells/detect-scrying/"><strong>Detect Scrying</strong><span class="spell-directory-meta">Divination · Brd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="detect secret doors" data-school="Divination" data-levels="1"><a href="/spells/detect-secret-doors/"><strong>Detect Secret Doors</strong><span class="spell-directory-meta">Divination · Brd 1 , Knowledge 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="detect snares and pits" data-school="Divination" data-levels="1"><a href="/spells/detect-snares-and-pits/"><strong>Detect Snares and Pits</strong><span class="spell-directory-meta">Divination · Drd 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="detect thoughts" data-school="Divination" data-levels="2"><a href="/spells/detect-thoughts/"><strong>Detect Thoughts</strong><span class="spell-directory-meta">Divination · Brd 2 , Knowledge 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="detect undead" data-school="Divination" data-levels="1"><a href="/spells/detect-undead/"><strong>Detect Undead</strong><span class="spell-directory-meta">Divination · Clr 1 , Pal 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="dictum" data-school="Evocation" data-levels="7"><a href="/spells/dictum/"><strong>Dictum</strong><span class="spell-directory-meta">Evocation · Clr 7 , Law 7</span></a></li>
+                <li data-spell-item data-name="dimension door" data-school="Conjuration" data-levels="4"><a href="/spells/dimension-door/"><strong>Dimension Door</strong><span class="spell-directory-meta">Conjuration · Brd 4 , Sor/Wiz 4 , Travel 4</span></a></li>
+                <li data-spell-item data-name="dimensional anchor" data-school="Abjuration" data-levels="4"><a href="/spells/dimensional-anchor/"><strong>Dimensional Anchor</strong><span class="spell-directory-meta">Abjuration · Clr 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="dimensional lock" data-school="Abjuration" data-levels="8"><a href="/spells/dimensional-lock/"><strong>Dimensional Lock</strong><span class="spell-directory-meta">Abjuration · Clr 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="diminish plants" data-school="Transmutation" data-levels="3"><a href="/spells/diminish-plants/"><strong>Diminish Plants</strong><span class="spell-directory-meta">Transmutation · Drd 3 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="discern lies" data-school="Divination" data-levels="3,4"><a href="/spells/discern-lies/"><strong>Discern Lies</strong><span class="spell-directory-meta">Divination · Clr 4 , Pal 3</span></a></li>
+                <li data-spell-item data-name="discern location" data-school="Divination" data-levels="8"><a href="/spells/discern-location/"><strong>Discern Location</strong><span class="spell-directory-meta">Divination · Clr 8 , Knowledge 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="disguise self" data-school="Illusion" data-levels="1"><a href="/spells/disguise-self/"><strong>Disguise Self</strong><span class="spell-directory-meta">Illusion · Brd 1 , Sor/Wiz 1 , Trickery 1</span></a></li>
+                <li data-spell-item data-name="disintegrate" data-school="Transmutation" data-levels="6,7"><a href="/spells/disintegrate/"><strong>Disintegrate</strong><span class="spell-directory-meta">Transmutation · Destruction 7 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="dismissal" data-school="Abjuration" data-levels="4,5"><a href="/spells/dismissal/"><strong>Dismissal</strong><span class="spell-directory-meta">Abjuration · Clr 4 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="dispel chaos" data-school="Abjuration" data-levels="4,5"><a href="/spells/dispel-chaos/"><strong>Dispel Chaos</strong><span class="spell-directory-meta">Abjuration · Clr 5 , Law 5 , Pal 4</span></a></li>
+                <li data-spell-item data-name="dispel evil" data-school="Abjuration" data-levels="4,5"><a href="/spells/dispel-evil/"><strong>Dispel Evil</strong><span class="spell-directory-meta">Abjuration · Clr 5 , Good 5 , Pal 4</span></a></li>
+                <li data-spell-item data-name="dispel good" data-school="Abjuration" data-levels="5"><a href="/spells/dispel-good/"><strong>Dispel Good</strong><span class="spell-directory-meta">Abjuration · Clr 5 , Evil 5</span></a></li>
+                <li data-spell-item data-name="dispel law" data-school="Abjuration" data-levels="5"><a href="/spells/dispel-law/"><strong>Dispel Law</strong><span class="spell-directory-meta">Abjuration · Chaos 5 , Clr 5</span></a></li>
+                <li data-spell-item data-name="dispel magic" data-school="Abjuration" data-levels="3,4"><a href="/spells/dispel-magic/"><strong>Dispel Magic</strong><span class="spell-directory-meta">Abjuration · Brd 3 , Clr 3 , Drd 4 , Magic 3 , Pal 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="dispel magic, greater" data-school="Abjuration" data-levels="5,6"><a href="/spells/dispel-magic-greater/"><strong>Dispel Magic, Greater</strong><span class="spell-directory-meta">Abjuration · Brd 5 , Clr 6 , Drd 6 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="displacement" data-school="Illusion" data-levels="3"><a href="/spells/displacement/"><strong>Displacement</strong><span class="spell-directory-meta">Illusion · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="disrupt undead" data-school="Necromancy" data-levels="0"><a href="/spells/disrupt-undead/"><strong>Disrupt Undead</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="disrupting weapon" data-school="Transmutation" data-levels="5"><a href="/spells/disrupting-weapon/"><strong>Disrupting Weapon</strong><span class="spell-directory-meta">Transmutation · Clr 5</span></a></li>
+                <li data-spell-item data-name="divination" data-school="Divination" data-levels="4"><a href="/spells/divination/"><strong>Divination</strong><span class="spell-directory-meta">Divination · Clr 4 , Knowledge 4</span></a></li>
+                <li data-spell-item data-name="divine favor" data-school="Evocation" data-levels="1"><a href="/spells/divine-favor/"><strong>Divine Favor</strong><span class="spell-directory-meta">Evocation · Clr 1 , Pal 1</span></a></li>
+                <li data-spell-item data-name="divine power" data-school="Evocation" data-levels="4"><a href="/spells/divine-power/"><strong>Divine Power</strong><span class="spell-directory-meta">Evocation · Clr 4 , War 4</span></a></li>
+                <li data-spell-item data-name="dominate animal" data-school="Enchantment" data-levels="3"><a href="/spells/dominate-animal/"><strong>Dominate Animal</strong><span class="spell-directory-meta">Enchantment · Animal 3 , Drd 3</span></a></li>
+                <li data-spell-item data-name="dominate monster" data-school="Enchantment" data-levels="9"><a href="/spells/dominate-monster/"><strong>Dominate Monster</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 9 Target : One creature</span></a></li>
+                <li data-spell-item data-name="dominate person" data-school="Enchantment" data-levels="4,5"><a href="/spells/dominate-person/"><strong>Dominate Person</strong><span class="spell-directory-meta">Enchantment · Brd 4 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="doom" data-school="Necromancy" data-levels="1"><a href="/spells/doom/"><strong>Doom</strong><span class="spell-directory-meta">Necromancy · Clr 1</span></a></li>
+                <li data-spell-item data-name="dream" data-school="Illusion" data-levels="5"><a href="/spells/dream/"><strong>Dream</strong><span class="spell-directory-meta">Illusion · Brd 5 , Sor/Wiz 5</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>E</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="eagle’s splendor" data-school="Transmutation" data-levels="2"><a href="/spells/eagles-splendor/"><strong>Eagle’s Splendor</strong><span class="spell-directory-meta">Transmutation · Brd 2 , Clr 2 , Pal 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="eagle’s splendor, mass" data-school="Transmutation" data-levels="2,5,6"><a href="/spells/eagles-splendor-mass/"><strong>Eagle’s Splendor, Mass</strong><span class="spell-directory-meta">Transmutation · Brd 6 , Clr 6 , Sor/Wiz 6 Range : Close (25 ft. + 5 ft./2 levels) Target : One creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="earthquake" data-school="Evocation" data-levels="7,8"><a href="/spells/earthquake/"><strong>Earthquake</strong><span class="spell-directory-meta">Evocation · Clr 8 , Destruction 8 , Drd 8 , Earth 7</span></a></li>
+                <li data-spell-item data-name="elemental swarm" data-school="Conjuration" data-levels="9"><a href="/spells/elemental-swarm/"><strong>Elemental Swarm</strong><span class="spell-directory-meta">Conjuration · Air 9 , Drd 9 , Earth 9 , Fire 9 , Water 9</span></a></li>
+                <li data-spell-item data-name="endure elements" data-school="Abjuration" data-levels="1"><a href="/spells/endure-elements/"><strong>Endure Elements</strong><span class="spell-directory-meta">Abjuration · Clr 1 , Drd 1 , Pal 1 , Rgr 1 , Sor/Wiz 1 , Sun 1</span></a></li>
+                <li data-spell-item data-name="energy drain" data-school="Necromancy" data-levels="9"><a href="/spells/energy-drain/"><strong>Energy Drain</strong><span class="spell-directory-meta">Necromancy · Clr 9 , Sor/Wiz 9 Saving Throw : Fortitude partial; see text for enervation</span></a></li>
+                <li data-spell-item data-name="enervation" data-school="Necromancy" data-levels="4"><a href="/spells/enervation/"><strong>Enervation</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="enlarge person" data-school="Transmutation" data-levels="1"><a href="/spells/enlarge-person/"><strong>Enlarge Person</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 1 , Strength 1</span></a></li>
+                <li data-spell-item data-name="enlarge person, mass" data-school="Transmutation" data-levels="4"><a href="/spells/enlarge-person-mass/"><strong>Enlarge Person, Mass</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 4 Target : One humanoid creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="entangle" data-school="Transmutation" data-levels="1"><a href="/spells/entangle/"><strong>Entangle</strong><span class="spell-directory-meta">Transmutation · Drd 1 , Plant 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="enthrall" data-school="Enchantment" data-levels="2"><a href="/spells/enthrall/"><strong>Enthrall</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Clr 2</span></a></li>
+                <li data-spell-item data-name="entropic shield" data-school="Abjuration" data-levels="1"><a href="/spells/entropic-shield/"><strong>Entropic Shield</strong><span class="spell-directory-meta">Abjuration · Clr 1 , Luck 1</span></a></li>
+                <li data-spell-item data-name="erase" data-school="Transmutation" data-levels="1"><a href="/spells/erase/"><strong>Erase</strong><span class="spell-directory-meta">Transmutation · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="ethereal jaunt" data-school="Transmutation" data-levels="7"><a href="/spells/ethereal-jaunt/"><strong>Ethereal Jaunt</strong><span class="spell-directory-meta">Transmutation · Clr 7 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="etherealness" data-school="Transmutation" data-levels="1,9"><a href="/spells/etherealness/"><strong>Etherealness</strong><span class="spell-directory-meta">Transmutation · Clr 9 , Sor/Wiz 9 Range : Touch; see text Targets : You and one other touched creature per three levels Duration : 1 min./level (D) Spell Resistance : Yes</span></a></li>
+                <li data-spell-item data-name="expeditious retreat" data-school="Transmutation" data-levels="1"><a href="/spells/expeditious-retreat/"><strong>Expeditious Retreat</strong><span class="spell-directory-meta">Transmutation · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="explosive runes" data-school="Abjuration" data-levels="3"><a href="/spells/explosive-runes/"><strong>Explosive Runes</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="eyebite" data-school="Necromancy" data-levels="6"><a href="/spells/eyebite/"><strong>Eyebite</strong><span class="spell-directory-meta">Necromancy · Brd 6 , Sor/Wiz 6</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>F</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="fabricate" data-school="Transmutation" data-levels="5"><a href="/spells/fabricate/"><strong>Fabricate</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="faerie fire" data-school="Evocation" data-levels="1"><a href="/spells/faerie-fire/"><strong>Faerie Fire</strong><span class="spell-directory-meta">Evocation · Drd 1</span></a></li>
+                <li data-spell-item data-name="false life" data-school="Necromancy" data-levels="2"><a href="/spells/false-life/"><strong>False Life</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="false vision" data-school="Illusion" data-levels="5"><a href="/spells/false-vision/"><strong>False Vision</strong><span class="spell-directory-meta">Illusion · Brd 5 , Sor/Wiz 5 , Trickery 5</span></a></li>
+                <li data-spell-item data-name="fear" data-school="Necromancy" data-levels="3,4"><a href="/spells/fear/"><strong>Fear</strong><span class="spell-directory-meta">Necromancy · Brd 3 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="feather fall" data-school="Transmutation" data-levels="1"><a href="/spells/feather-fall/"><strong>Feather Fall</strong><span class="spell-directory-meta">Transmutation · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="feeblemind" data-school="Enchantment" data-levels="5"><a href="/spells/feeblemind/"><strong>Feeblemind</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="find the path" data-school="Divination" data-levels="6"><a href="/spells/find-the-path/"><strong>Find the Path</strong><span class="spell-directory-meta">Divination · Brd 6 , Clr 6 , Drd 6 , Knowledge 6 , Travel 6</span></a></li>
+                <li data-spell-item data-name="find traps" data-school="Divination" data-levels="2"><a href="/spells/find-traps/"><strong>Find Traps</strong><span class="spell-directory-meta">Divination · Clr 2</span></a></li>
+                <li data-spell-item data-name="finger of death" data-school="Necromancy" data-levels="7,8"><a href="/spells/finger-of-death/"><strong>Finger of Death</strong><span class="spell-directory-meta">Necromancy · Drd 8 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="fire seeds" data-school="Conjuration" data-levels="6"><a href="/spells/fire-seeds/"><strong>Fire Seeds</strong><span class="spell-directory-meta">Conjuration · Drd 6 , Fire 6 , Sun 6</span></a></li>
+                <li data-spell-item data-name="fire shield" data-school="Evocation" data-levels="4,5"><a href="/spells/fire-shield/"><strong>Fire Shield</strong><span class="spell-directory-meta">Evocation · Fire 5 , Sor/Wiz 4 , Sun 4</span></a></li>
+                <li data-spell-item data-name="fire storm" data-school="Evocation" data-levels="7,8"><a href="/spells/fire-storm/"><strong>Fire Storm</strong><span class="spell-directory-meta">Evocation · Clr 8 , Drd 7 , Fire 7</span></a></li>
+                <li data-spell-item data-name="fire trap" data-school="Abjuration" data-levels="2,4"><a href="/spells/fire-trap/"><strong>Fire Trap</strong><span class="spell-directory-meta">Abjuration · Drd 2 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="fireball" data-school="Evocation" data-levels="3"><a href="/spells/fireball/"><strong>Fireball</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="flame arrow" data-school="Transmutation" data-levels="3"><a href="/spells/flame-arrow/"><strong>Flame Arrow</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="flame blade" data-school="Evocation" data-levels="2"><a href="/spells/flame-blade/"><strong>Flame Blade</strong><span class="spell-directory-meta">Evocation · Drd 2</span></a></li>
+                <li data-spell-item data-name="flame strike" data-school="Evocation" data-levels="4,5"><a href="/spells/flame-strike/"><strong>Flame Strike</strong><span class="spell-directory-meta">Evocation · Clr 5 , Drd 4 , Sun 5 , War 5</span></a></li>
+                <li data-spell-item data-name="flaming sphere" data-school="Evocation" data-levels="2"><a href="/spells/flaming-sphere/"><strong>Flaming Sphere</strong><span class="spell-directory-meta">Evocation · Drd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="flare" data-school="Evocation" data-levels="0"><a href="/spells/flare/"><strong>Flare</strong><span class="spell-directory-meta">Evocation · Brd 0 , Drd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="flesh to stone" data-school="Transmutation" data-levels="6"><a href="/spells/flesh-to-stone/"><strong>Flesh to Stone</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="floating disk" data-school="Evocation" data-levels="1"><a href="/spells/floating-disk/"><strong>Floating Disk</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="fly" data-school="Transmutation" data-levels="3"><a href="/spells/fly/"><strong>Fly</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 3 , Travel 3</span></a></li>
+                <li data-spell-item data-name="fog cloud" data-school="Conjuration" data-levels="2"><a href="/spells/fog-cloud/"><strong>Fog Cloud</strong><span class="spell-directory-meta">Conjuration · Drd 2 , Sor/Wiz 2 , Water 2</span></a></li>
+                <li data-spell-item data-name="forbiddance" data-school="Abjuration" data-levels="6"><a href="/spells/forbiddance/"><strong>Forbiddance</strong><span class="spell-directory-meta">Abjuration · Clr 6</span></a></li>
+                <li data-spell-item data-name="forcecage" data-school="Evocation" data-levels="7"><a href="/spells/forcecage/"><strong>Forcecage</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="forceful hand" data-school="Evocation" data-levels="6"><a href="/spells/forceful-hand/"><strong>Forceful Hand</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="foresight" data-school="Divination" data-levels="9"><a href="/spells/foresight/"><strong>Foresight</strong><span class="spell-directory-meta">Divination · Drd 9 , Knowledge 9 , Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="fox’s cunning" data-school="Transmutation" data-levels="2"><a href="/spells/foxs-cunning/"><strong>Fox’s Cunning</strong><span class="spell-directory-meta">Transmutation · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="fox’s cunning, mass" data-school="Transmutation" data-levels="2,5,6"><a href="/spells/foxs-cunning-mass/"><strong>Fox’s Cunning, Mass</strong><span class="spell-directory-meta">Transmutation · Brd 6 , Sor/Wiz 6 Range : Close (25 ft. + 5 ft./2 levels) Target : One creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="freedom" data-school="Abjuration" data-levels="9"><a href="/spells/freedom/"><strong>Freedom</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="freedom of movement" data-school="Abjuration" data-levels="4"><a href="/spells/freedom-of-movement/"><strong>Freedom of Movement</strong><span class="spell-directory-meta">Abjuration · Brd 4 , Clr 4 , Drd 4 , Luck 4 , Rgr 4</span></a></li>
+                <li data-spell-item data-name="freezing sphere" data-school="Evocation" data-levels="6"><a href="/spells/freezing-sphere/"><strong>Freezing Sphere</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 6</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>G</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="gaseous form" data-school="Transmutation" data-levels="3"><a href="/spells/gaseous-form/"><strong>Gaseous Form</strong><span class="spell-directory-meta">Transmutation · Air 3 , Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="gate" data-school="Conjuration" data-levels="9"><a href="/spells/gate/"><strong>Gate</strong><span class="spell-directory-meta">Conjuration · Clr 9 , Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="geas, lesser" data-school="Enchantment" data-levels="3,4"><a href="/spells/geas-lesser/"><strong>Geas, Lesser</strong><span class="spell-directory-meta">Enchantment · Brd 3 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="geas/quest" data-school="Enchantment" data-levels="6"><a href="/spells/geas-quest/"><strong>Geas/Quest</strong><span class="spell-directory-meta">Enchantment · Brd 6 , Clr 6 , Sor/Wiz 6 Casting Time : 10 minutes Target : One living creature Saving Throw : None</span></a></li>
+                <li data-spell-item data-name="gentle repose" data-school="Necromancy" data-levels="2,3"><a href="/spells/gentle-repose/"><strong>Gentle Repose</strong><span class="spell-directory-meta">Necromancy · Clr 2 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="ghost sound" data-school="Illusion" data-levels="0"><a href="/spells/ghost-sound/"><strong>Ghost Sound</strong><span class="spell-directory-meta">Illusion · Brd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="ghoul touch" data-school="Necromancy" data-levels="2"><a href="/spells/ghoul-touch/"><strong>Ghoul Touch</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="giant vermin" data-school="Transmutation" data-levels="4"><a href="/spells/giant-vermin/"><strong>Giant Vermin</strong><span class="spell-directory-meta">Transmutation · Clr 4 , Drd 4</span></a></li>
+                <li data-spell-item data-name="glibness" data-school="Transmutation" data-levels="3"><a href="/spells/glibness/"><strong>Glibness</strong><span class="spell-directory-meta">Transmutation · Brd 3</span></a></li>
+                <li data-spell-item data-name="glitterdust" data-school="Conjuration" data-levels="2"><a href="/spells/glitterdust/"><strong>Glitterdust</strong><span class="spell-directory-meta">Conjuration · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="globe of invulnerability" data-school="Abjuration" data-levels="6"><a href="/spells/globe-of-invulnerability/"><strong>Globe of Invulnerability</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="globe of invulnerability, lesser" data-school="Abjuration" data-levels="4"><a href="/spells/globe-of-invulnerability-lesser/"><strong>Globe of Invulnerability, Lesser</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="glyph of warding" data-school="Abjuration" data-levels="3"><a href="/spells/glyph-of-warding/"><strong>Glyph of Warding</strong><span class="spell-directory-meta">Abjuration · Clr 3</span></a></li>
+                <li data-spell-item data-name="glyph of warding, greater" data-school="Abjuration" data-levels="6"><a href="/spells/glyph-of-warding-greater/"><strong>Glyph of Warding, Greater</strong><span class="spell-directory-meta">Abjuration · Clr 6</span></a></li>
+                <li data-spell-item data-name="good hope" data-school="Enchantment" data-levels="3"><a href="/spells/good-hope/"><strong>Good Hope</strong><span class="spell-directory-meta">Enchantment · Brd 3</span></a></li>
+                <li data-spell-item data-name="goodberry" data-school="Transmutation" data-levels="1"><a href="/spells/goodberry/"><strong>Goodberry</strong><span class="spell-directory-meta">Transmutation · Drd 1</span></a></li>
+                <li data-spell-item data-name="grasping hand" data-school="Evocation" data-levels="7"><a href="/spells/grasping-hand/"><strong>Grasping Hand</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 7 , Strength 7</span></a></li>
+                <li data-spell-item data-name="grease" data-school="Conjuration" data-levels="1"><a href="/spells/grease/"><strong>Grease</strong><span class="spell-directory-meta">Conjuration · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="greater (spell name)" data-school="Other" data-levels=""><a href="/spells/greater-spell-name/"><strong>Greater (Spell Name)</strong><span class="spell-directory-meta">Other</span></a></li>
+                <li data-spell-item data-name="guards and wards" data-school="Abjuration" data-levels="6"><a href="/spells/guards-and-wards/"><strong>Guards and Wards</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="guidance" data-school="Divination" data-levels="0"><a href="/spells/guidance/"><strong>Guidance</strong><span class="spell-directory-meta">Divination · Clr 0 , Drd 0</span></a></li>
+                <li data-spell-item data-name="gust of wind" data-school="Evocation" data-levels="2"><a href="/spells/gust-of-wind/"><strong>Gust of Wind</strong><span class="spell-directory-meta">Evocation · Drd 2 , Sor/Wiz 2</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>H</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="hallow" data-school="Evocation" data-levels="5"><a href="/spells/hallow/"><strong>Hallow</strong><span class="spell-directory-meta">Evocation · Clr 5 , Drd 5</span></a></li>
+                <li data-spell-item data-name="hallucinatory terrain" data-school="Illusion" data-levels="4"><a href="/spells/hallucinatory-terrain/"><strong>Hallucinatory Terrain</strong><span class="spell-directory-meta">Illusion · Brd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="halt undead" data-school="Necromancy" data-levels="3"><a href="/spells/halt-undead/"><strong>Halt Undead</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="harm" data-school="Necromancy" data-levels="6"><a href="/spells/harm/"><strong>Harm</strong><span class="spell-directory-meta">Necromancy · Clr 6 , Destruction 6</span></a></li>
+                <li data-spell-item data-name="haste" data-school="Transmutation" data-levels="3"><a href="/spells/haste/"><strong>Haste</strong><span class="spell-directory-meta">Transmutation · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="heal" data-school="Conjuration" data-levels="6,7"><a href="/spells/heal/"><strong>Heal</strong><span class="spell-directory-meta">Conjuration · Clr 6 , Drd 7 , Healing 6</span></a></li>
+                <li data-spell-item data-name="heal mount" data-school="Conjuration" data-levels="3"><a href="/spells/heal-mount/"><strong>Heal Mount</strong><span class="spell-directory-meta">Conjuration · Pal 3</span></a></li>
+                <li data-spell-item data-name="heal, mass" data-school="Conjuration" data-levels="2,5,9"><a href="/spells/heal-mass/"><strong>Heal, Mass</strong><span class="spell-directory-meta">Conjuration · Clr 9 , Healing 9 Range : Close (25 ft. + 5 ft./2 levels) Targets : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="heat metal" data-school="Transmutation" data-levels="2"><a href="/spells/heat-metal/"><strong>Heat Metal</strong><span class="spell-directory-meta">Transmutation · Drd 2 , Sun 2</span></a></li>
+                <li data-spell-item data-name="helping hand" data-school="Evocation" data-levels="3"><a href="/spells/helping-hand/"><strong>Helping Hand</strong><span class="spell-directory-meta">Evocation · Clr 3</span></a></li>
+                <li data-spell-item data-name="heroes’ feast" data-school="Conjuration" data-levels="6"><a href="/spells/heroes-feast/"><strong>Heroes’ Feast</strong><span class="spell-directory-meta">Conjuration · Brd 6 , Clr 6</span></a></li>
+                <li data-spell-item data-name="heroism" data-school="Enchantment" data-levels="2,3"><a href="/spells/heroism/"><strong>Heroism</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="heroism, greater" data-school="Enchantment" data-levels="1,5,6"><a href="/spells/heroism-greater/"><strong>Heroism, Greater</strong><span class="spell-directory-meta">Enchantment · Brd 5 , Sor/Wiz 6 Duration : 1 min./level</span></a></li>
+                <li data-spell-item data-name="hide from animals" data-school="Abjuration" data-levels="1"><a href="/spells/hide-from-animals/"><strong>Hide from Animals</strong><span class="spell-directory-meta">Abjuration · Drd 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="hide from undead" data-school="Abjuration" data-levels="1"><a href="/spells/hide-from-undead/"><strong>Hide from Undead</strong><span class="spell-directory-meta">Abjuration · Clr 1</span></a></li>
+                <li data-spell-item data-name="hideous laughter" data-school="Enchantment" data-levels="1,2"><a href="/spells/hideous-laughter/"><strong>Hideous Laughter</strong><span class="spell-directory-meta">Enchantment · Brd 1 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="hold animal" data-school="Enchantment" data-levels="2"><a href="/spells/hold-animal/"><strong>Hold Animal</strong><span class="spell-directory-meta">Enchantment · Animal 2 , Drd 2 , Rgr 2</span></a></li>
+                <li data-spell-item data-name="hold monster" data-school="Enchantment" data-levels="4,5,6"><a href="/spells/hold-monster/"><strong>Hold Monster</strong><span class="spell-directory-meta">Enchantment · Brd 4 , Law 6 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="hold monster, mass" data-school="Enchantment" data-levels="9"><a href="/spells/hold-monster-mass/"><strong>Hold Monster, Mass</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 9 Targets : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="hold person" data-school="Enchantment" data-levels="2,3"><a href="/spells/hold-person/"><strong>Hold Person</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Clr 2 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="hold person, mass" data-school="Enchantment" data-levels="7"><a href="/spells/hold-person-mass/"><strong>Hold Person, Mass</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 7 Targets : One or more humanoid creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="hold portal" data-school="Abjuration" data-levels="1"><a href="/spells/hold-portal/"><strong>Hold Portal</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 1 Component : V Casting Time : 1 standard action Range : Medium (100 ft. + 10 ft./level) Target : One portal, up to 20 sq. ft./level Duration : 1 min./level (D) Saving Throw : None Spell Resistance : No</span></a></li>
+                <li data-spell-item data-name="holy aura" data-school="Abjuration" data-levels="8"><a href="/spells/holy-aura/"><strong>Holy Aura</strong><span class="spell-directory-meta">Abjuration · Clr 8 , Good 8</span></a></li>
+                <li data-spell-item data-name="holy smite" data-school="Evocation" data-levels="4"><a href="/spells/holy-smite/"><strong>Holy Smite</strong><span class="spell-directory-meta">Evocation · Good 4</span></a></li>
+                <li data-spell-item data-name="holy sword" data-school="Evocation" data-levels="4"><a href="/spells/holy-sword/"><strong>Holy Sword</strong><span class="spell-directory-meta">Evocation · Pal 4</span></a></li>
+                <li data-spell-item data-name="holy word" data-school="Evocation" data-levels="7"><a href="/spells/holy-word/"><strong>Holy Word</strong><span class="spell-directory-meta">Evocation · Clr 7 , Good 7</span></a></li>
+                <li data-spell-item data-name="horrid wilting" data-school="Necromancy" data-levels="8"><a href="/spells/horrid-wilting/"><strong>Horrid Wilting</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 8 , Water 8</span></a></li>
+                <li data-spell-item data-name="hypnotic pattern" data-school="Illusion" data-levels="2"><a href="/spells/hypnotic-pattern/"><strong>Hypnotic Pattern</strong><span class="spell-directory-meta">Illusion · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="hypnotism" data-school="Enchantment" data-levels="1"><a href="/spells/hypnotism/"><strong>Hypnotism</strong><span class="spell-directory-meta">Enchantment · Brd 1 , Sor/Wiz 1</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>I</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="ice storm" data-school="Evocation" data-levels="4,5"><a href="/spells/ice-storm/"><strong>Ice Storm</strong><span class="spell-directory-meta">Evocation · Drd 4 , Sor/Wiz 4 , Water 5</span></a></li>
+                <li data-spell-item data-name="identify" data-school="Divination" data-levels="1,2"><a href="/spells/identify/"><strong>Identify</strong><span class="spell-directory-meta">Divination · Brd 1 , Magic 2 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="illusory script" data-school="Illusion" data-levels="3"><a href="/spells/illusory-script/"><strong>Illusory Script</strong><span class="spell-directory-meta">Illusion · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="illusory wall" data-school="Illusion" data-levels="4"><a href="/spells/illusory-wall/"><strong>Illusory Wall</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="imbue with spell ability" data-school="Evocation" data-levels="4"><a href="/spells/imbue-with-spell-ability/"><strong>Imbue with Spell Ability</strong><span class="spell-directory-meta">Evocation · Clr 4 , Magic 4</span></a></li>
+                <li data-spell-item data-name="implosion" data-school="Evocation" data-levels="9"><a href="/spells/implosion/"><strong>Implosion</strong><span class="spell-directory-meta">Evocation · Clr 9 , Destruction 9</span></a></li>
+                <li data-spell-item data-name="imprisonment" data-school="Abjuration" data-levels="9"><a href="/spells/imprisonment/"><strong>Imprisonment</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="incendiary cloud" data-school="Conjuration" data-levels="8"><a href="/spells/incendiary-cloud/"><strong>Incendiary Cloud</strong><span class="spell-directory-meta">Conjuration · Fire 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="inflict critical wounds" data-school="Necromancy" data-levels="4"><a href="/spells/inflict-critical-wounds/"><strong>Inflict Critical Wounds</strong><span class="spell-directory-meta">Necromancy · Clr 4 , Destruction 4</span></a></li>
+                <li data-spell-item data-name="inflict critical wounds, mass" data-school="Necromancy" data-levels="8"><a href="/spells/inflict-critical-wounds-mass/"><strong>Inflict Critical Wounds, Mass</strong><span class="spell-directory-meta">Necromancy · Clr 8</span></a></li>
+                <li data-spell-item data-name="inflict light wounds" data-school="Necromancy" data-levels="1"><a href="/spells/inflict-light-wounds/"><strong>Inflict Light Wounds</strong><span class="spell-directory-meta">Necromancy · Clr 1 , Destruction 1</span></a></li>
+                <li data-spell-item data-name="inflict light wounds, mass" data-school="Necromancy" data-levels="5"><a href="/spells/inflict-light-wounds-mass/"><strong>Inflict Light Wounds, Mass</strong><span class="spell-directory-meta">Necromancy · Clr 5 , Destruction 5</span></a></li>
+                <li data-spell-item data-name="inflict minor wounds" data-school="Necromancy" data-levels="0"><a href="/spells/inflict-minor-wounds/"><strong>Inflict Minor Wounds</strong><span class="spell-directory-meta">Necromancy · Clr 0 Saving Throw : Will negates</span></a></li>
+                <li data-spell-item data-name="inflict moderate wounds" data-school="Necromancy" data-levels="2"><a href="/spells/inflict-moderate-wounds/"><strong>Inflict Moderate Wounds</strong><span class="spell-directory-meta">Necromancy · Clr 2</span></a></li>
+                <li data-spell-item data-name="inflict moderate wounds, mass" data-school="Necromancy" data-levels="6"><a href="/spells/inflict-moderate-wounds-mass/"><strong>Inflict Moderate Wounds, Mass</strong><span class="spell-directory-meta">Necromancy · Clr 6</span></a></li>
+                <li data-spell-item data-name="inflict serious wounds" data-school="Necromancy" data-levels="3"><a href="/spells/inflict-serious-wounds/"><strong>Inflict Serious Wounds</strong><span class="spell-directory-meta">Necromancy · Clr 3</span></a></li>
+                <li data-spell-item data-name="inflict serious wounds, mass" data-school="Necromancy" data-levels="7"><a href="/spells/inflict-serious-wounds-mass/"><strong>Inflict Serious Wounds, Mass</strong><span class="spell-directory-meta">Necromancy · Clr 7</span></a></li>
+                <li data-spell-item data-name="insanity" data-school="Enchantment" data-levels="7"><a href="/spells/insanity/"><strong>Insanity</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="insect plague" data-school="Conjuration" data-levels="5"><a href="/spells/insect-plague/"><strong>Insect Plague</strong><span class="spell-directory-meta">Conjuration · Clr 5 , Drd 5</span></a></li>
+                <li data-spell-item data-name="instant summons" data-school="Conjuration" data-levels="7"><a href="/spells/instant-summons/"><strong>Instant Summons</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="interposing hand" data-school="Evocation" data-levels="5"><a href="/spells/interposing-hand/"><strong>Interposing Hand</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="invisibility" data-school="Illusion" data-levels="2"><a href="/spells/invisibility/"><strong>Invisibility</strong><span class="spell-directory-meta">Illusion · Brd 2 , Sor/Wiz 2 , Trickery 2</span></a></li>
+                <li data-spell-item data-name="invisibility purge" data-school="Evocation" data-levels="3"><a href="/spells/invisibility-purge/"><strong>Invisibility Purge</strong><span class="spell-directory-meta">Evocation · Clr 3</span></a></li>
+                <li data-spell-item data-name="invisibility sphere" data-school="Illusion" data-levels="3"><a href="/spells/invisibility-sphere/"><strong>Invisibility Sphere</strong><span class="spell-directory-meta">Illusion · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="invisibility, greater" data-school="Illusion" data-levels="4"><a href="/spells/invisibility-greater/"><strong>Invisibility, Greater</strong><span class="spell-directory-meta">Illusion · Brd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="invisibility, mass" data-school="Illusion" data-levels="7"><a href="/spells/invisibility-mass/"><strong>Invisibility, Mass</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="iron body" data-school="Transmutation" data-levels="8"><a href="/spells/iron-body/"><strong>Iron Body</strong><span class="spell-directory-meta">Transmutation · Earth 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="ironwood" data-school="Transmutation" data-levels="6"><a href="/spells/ironwood/"><strong>Ironwood</strong><span class="spell-directory-meta">Transmutation · Drd 6</span></a></li>
+                <li data-spell-item data-name="irresistible dance" data-school="Enchantment" data-levels="6,8"><a href="/spells/irresistible-dance/"><strong>Irresistible Dance</strong><span class="spell-directory-meta">Enchantment · Brd 6 , Sor/Wiz 8</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>J</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="jump" data-school="Transmutation" data-levels="1"><a href="/spells/jump/"><strong>Jump</strong><span class="spell-directory-meta">Transmutation · Drd 1 , Rgr 1 , Sor/Wiz 1</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>K</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="keen edge" data-school="Transmutation" data-levels="3"><a href="/spells/keen-edge/"><strong>Keen Edge</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="knock" data-school="Transmutation" data-levels="2"><a href="/spells/knock/"><strong>Knock</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="know direction" data-school="Divination" data-levels="0"><a href="/spells/know-direction/"><strong>Know Direction</strong><span class="spell-directory-meta">Divination · Brd 0 , Drd 0</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>L</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="legend lore" data-school="Divination" data-levels="4,6,7"><a href="/spells/legend-lore/"><strong>Legend Lore</strong><span class="spell-directory-meta">Divination · Brd 4 , Knowledge 7 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="lesser (spell name)" data-school="Other" data-levels=""><a href="/spells/lesser-spell-name/"><strong>Lesser (Spell Name)</strong><span class="spell-directory-meta">Other</span></a></li>
+                <li data-spell-item data-name="levitate" data-school="Transmutation" data-levels="2"><a href="/spells/levitate/"><strong>Levitate</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="light" data-school="Evocation" data-levels="0"><a href="/spells/light/"><strong>Light</strong><span class="spell-directory-meta">Evocation · Brd 0 , Clr 0 , Drd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="lightning bolt" data-school="Evocation" data-levels="3"><a href="/spells/lightning-bolt/"><strong>Lightning Bolt</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="limited wish" data-school="Universal" data-levels="7"><a href="/spells/limited-wish/"><strong>Limited Wish</strong><span class="spell-directory-meta">Universal · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="liveoak" data-school="Transmutation" data-levels="6"><a href="/spells/liveoak/"><strong>Liveoak</strong><span class="spell-directory-meta">Transmutation · Drd 6</span></a></li>
+                <li data-spell-item data-name="locate creature" data-school="Divination" data-levels="4"><a href="/spells/locate-creature/"><strong>Locate Creature</strong><span class="spell-directory-meta">Divination · Brd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="locate object" data-school="Divination" data-levels="2,3"><a href="/spells/locate-object/"><strong>Locate Object</strong><span class="spell-directory-meta">Divination · Brd 2 , Clr 3 , Sor/Wiz 2 , Travel 2</span></a></li>
+                <li data-spell-item data-name="longstrider" data-school="Transmutation" data-levels="1"><a href="/spells/longstrider/"><strong>Longstrider</strong><span class="spell-directory-meta">Transmutation · Drd 1 , Rgr 1 , Travel 1</span></a></li>
+                <li data-spell-item data-name="lullaby" data-school="Enchantment" data-levels="0"><a href="/spells/lullaby/"><strong>Lullaby</strong><span class="spell-directory-meta">Enchantment · Brd 0</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>M</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="mage armor" data-school="Conjuration" data-levels="1"><a href="/spells/mage-armor/"><strong>Mage Armor</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="mage hand" data-school="Transmutation" data-levels="0"><a href="/spells/mage-hand/"><strong>Mage Hand</strong><span class="spell-directory-meta">Transmutation · Brd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="mage’s disjunction" data-school="Abjuration" data-levels="9"><a href="/spells/mages-disjunction/"><strong>Mage’s Disjunction</strong><span class="spell-directory-meta">Abjuration · Magic 9 , Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="mage’s faithful hound" data-school="Conjuration" data-levels="5"><a href="/spells/mages-faithful-hound/"><strong>Mage’s Faithful Hound</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="mage’s lucubration" data-school="Transmutation" data-levels="6"><a href="/spells/mages-lucubration/"><strong>Mage’s Lucubration</strong><span class="spell-directory-meta">Transmutation · Wiz 6</span></a></li>
+                <li data-spell-item data-name="mage’s magnificent mansion" data-school="Conjuration" data-levels="7"><a href="/spells/mages-magnificent-mansion/"><strong>Mage’s Magnificent Mansion</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="mage’s private sanctum" data-school="Abjuration" data-levels="5"><a href="/spells/mages-private-sanctum/"><strong>Mage’s Private Sanctum</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="mage’s sword" data-school="Evocation" data-levels="7"><a href="/spells/mages-sword/"><strong>Mage’s Sword</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="magic aura" data-school="Illusion" data-levels="1"><a href="/spells/magic-aura/"><strong>Magic Aura</strong><span class="spell-directory-meta">Illusion · Brd 1 , Magic 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="magic circle against chaos" data-school="Abjuration" data-levels="3"><a href="/spells/magic-circle-against-chaos/"><strong>Magic Circle against Chaos</strong><span class="spell-directory-meta">Abjuration · Clr 3 , Law 3 , Pal 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="magic circle against evil" data-school="Abjuration" data-levels="3"><a href="/spells/magic-circle-against-evil/"><strong>Magic Circle against Evil</strong><span class="spell-directory-meta">Abjuration · Clr 3 , Good 3 , Pal 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="magic circle against good" data-school="Abjuration" data-levels="3"><a href="/spells/magic-circle-against-good/"><strong>Magic Circle against Good</strong><span class="spell-directory-meta">Abjuration · Clr 3 , Evil 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="magic circle against law" data-school="Abjuration" data-levels="3"><a href="/spells/magic-circle-against-law/"><strong>Magic Circle against Law</strong><span class="spell-directory-meta">Abjuration · Chaos 3 , Clr 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="magic fang" data-school="Transmutation" data-levels="1"><a href="/spells/magic-fang/"><strong>Magic Fang</strong><span class="spell-directory-meta">Transmutation · Drd 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="magic fang, greater" data-school="Transmutation" data-levels="1,2,3,5"><a href="/spells/magic-fang-greater/"><strong>Magic Fang, Greater</strong><span class="spell-directory-meta">Transmutation · Drd 3 , Rgr 3 Range : Close (25 ft. + 5 ft./2 levels) Target : One living creature Duration : 1 hour/level</span></a></li>
+                <li data-spell-item data-name="magic jar" data-school="Necromancy" data-levels="5"><a href="/spells/magic-jar/"><strong>Magic Jar</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="magic missile" data-school="Evocation" data-levels="1"><a href="/spells/magic-missile/"><strong>Magic Missile</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="magic mouth" data-school="Illusion" data-levels="1,2"><a href="/spells/magic-mouth/"><strong>Magic Mouth</strong><span class="spell-directory-meta">Illusion · Brd 1 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="magic stone" data-school="Transmutation" data-levels="1"><a href="/spells/magic-stone/"><strong>Magic Stone</strong><span class="spell-directory-meta">Transmutation · Clr 1 , Drd 1 , Earth 1</span></a></li>
+                <li data-spell-item data-name="magic vestment" data-school="Transmutation" data-levels="3"><a href="/spells/magic-vestment/"><strong>Magic Vestment</strong><span class="spell-directory-meta">Transmutation · Clr 3 , Strength 3 , War 3</span></a></li>
+                <li data-spell-item data-name="magic weapon" data-school="Transmutation" data-levels="1"><a href="/spells/magic-weapon/"><strong>Magic Weapon</strong><span class="spell-directory-meta">Transmutation · Clr 1 , Pal 1 , Sor/Wiz 1 , War 1</span></a></li>
+                <li data-spell-item data-name="magic weapon, greater" data-school="Transmutation" data-levels="3,4"><a href="/spells/magic-weapon-greater/"><strong>Magic Weapon, Greater</strong><span class="spell-directory-meta">Transmutation · Clr 4 , Pal 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="major creation" data-school="Conjuration" data-levels="2,5"><a href="/spells/major-creation/"><strong>Major Creation</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 5 Casting Time : 10 minutes Range : Close (25 ft. + 5 ft./2 levels) Duration : See text</span></a></li>
+                <li data-spell-item data-name="major image" data-school="Illusion" data-levels="3"><a href="/spells/major-image/"><strong>Major Image</strong><span class="spell-directory-meta">Illusion · Brd 3 , Sor/Wiz 3 Duration : Concentration + 3 rounds</span></a></li>
+                <li data-spell-item data-name="make whole" data-school="Transmutation" data-levels="1,2,5"><a href="/spells/make-whole/"><strong>Make Whole</strong><span class="spell-directory-meta">Transmutation · Clr 2 Casting Time : 1 standard action Range : Close (25 ft. + 5 ft./2 levels) Target : One object of up to 10 cu. ft./ level</span></a></li>
+                <li data-spell-item data-name="mark of justice" data-school="Necromancy" data-levels="4,5"><a href="/spells/mark-of-justice/"><strong>Mark of Justice</strong><span class="spell-directory-meta">Necromancy · Clr 5 , Pal 4</span></a></li>
+                <li data-spell-item data-name="mass (spell name)" data-school="Other" data-levels=""><a href="/spells/mass-spell-name/"><strong>Mass (Spell Name)</strong><span class="spell-directory-meta">Other</span></a></li>
+                <li data-spell-item data-name="maze" data-school="Conjuration" data-levels="8"><a href="/spells/maze/"><strong>Maze</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="meld into stone" data-school="Transmutation" data-levels="3"><a href="/spells/meld-into-stone/"><strong>Meld into Stone</strong><span class="spell-directory-meta">Transmutation · Clr 3 , Drd 3</span></a></li>
+                <li data-spell-item data-name="mending" data-school="Transmutation" data-levels="0"><a href="/spells/mending/"><strong>Mending</strong><span class="spell-directory-meta">Transmutation · Brd 0 , Clr 0 , Drd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="message" data-school="Transmutation" data-levels="0"><a href="/spells/message/"><strong>Message</strong><span class="spell-directory-meta">Transmutation · Brd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="meteor swarm" data-school="Evocation" data-levels="9"><a href="/spells/meteor-swarm/"><strong>Meteor Swarm</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="mind blank" data-school="Abjuration" data-levels="8"><a href="/spells/mind-blank/"><strong>Mind Blank</strong><span class="spell-directory-meta">Abjuration · Protection 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="mind fog" data-school="Enchantment" data-levels="5"><a href="/spells/mind-fog/"><strong>Mind Fog</strong><span class="spell-directory-meta">Enchantment · Brd 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="minor creation" data-school="Conjuration" data-levels="4"><a href="/spells/minor-creation/"><strong>Minor Creation</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="minor image" data-school="Illusion" data-levels="2"><a href="/spells/minor-image/"><strong>Minor Image</strong><span class="spell-directory-meta">Illusion · Brd 2 , Sor/Wiz 2 Duration : Concentration +2 rounds</span></a></li>
+                <li data-spell-item data-name="miracle" data-school="Evocation" data-levels="9"><a href="/spells/miracle/"><strong>Miracle</strong><span class="spell-directory-meta">Evocation · Clr 9 , Luck 9</span></a></li>
+                <li data-spell-item data-name="mirage arcana" data-school="Illusion" data-levels="5"><a href="/spells/mirage-arcana/"><strong>Mirage Arcana</strong><span class="spell-directory-meta">Illusion · Brd 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="mirror image" data-school="Illusion" data-levels="2"><a href="/spells/mirror-image/"><strong>Mirror Image</strong><span class="spell-directory-meta">Illusion · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="misdirection" data-school="Illusion" data-levels="2"><a href="/spells/misdirection/"><strong>Misdirection</strong><span class="spell-directory-meta">Illusion · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="mislead" data-school="Illusion" data-levels="5,6"><a href="/spells/mislead/"><strong>Mislead</strong><span class="spell-directory-meta">Illusion · Brd 5 , Luck 6 , Sor/Wiz 6 , Trickery 6</span></a></li>
+                <li data-spell-item data-name="mnemonic enhancer" data-school="Transmutation" data-levels="4"><a href="/spells/mnemonic-enhancer/"><strong>Mnemonic Enhancer</strong><span class="spell-directory-meta">Transmutation · Wiz 4</span></a></li>
+                <li data-spell-item data-name="modify memory" data-school="Enchantment" data-levels="4"><a href="/spells/modify-memory/"><strong>Modify Memory</strong><span class="spell-directory-meta">Enchantment · Brd 4</span></a></li>
+                <li data-spell-item data-name="moment of prescience" data-school="Divination" data-levels="8"><a href="/spells/moment-of-prescience/"><strong>Moment of Prescience</strong><span class="spell-directory-meta">Divination · Luck 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="mount" data-school="Conjuration" data-levels="1"><a href="/spells/mount/"><strong>Mount</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="move earth" data-school="Transmutation" data-levels="6"><a href="/spells/move-earth/"><strong>Move Earth</strong><span class="spell-directory-meta">Transmutation · Drd 6 , Sor/Wiz 6</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>N</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="neutralize poison" data-school="Conjuration" data-levels="3,4"><a href="/spells/neutralize-poison/"><strong>Neutralize Poison</strong><span class="spell-directory-meta">Conjuration · Brd 4 , Clr 4 , Drd 3 , Pal 4 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="nightmare" data-school="Illusion" data-levels="5"><a href="/spells/nightmare/"><strong>Nightmare</strong><span class="spell-directory-meta">Illusion · Brd 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="nondetection" data-school="Abjuration" data-levels="3,4"><a href="/spells/nondetection/"><strong>Nondetection</strong><span class="spell-directory-meta">Abjuration · Rgr 4 , Sor/Wiz 3 , Trickery 3</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>O</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="obscure object" data-school="Abjuration" data-levels="1,2,3"><a href="/spells/obscure-object/"><strong>Obscure Object</strong><span class="spell-directory-meta">Abjuration · Brd 1 , Clr 3 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="obscuring mist" data-school="Conjuration" data-levels="1"><a href="/spells/obscuring-mist/"><strong>Obscuring Mist</strong><span class="spell-directory-meta">Conjuration · Air 1 , Clr 1 , Drd 1 , Sor/Wiz 1 , Water 1</span></a></li>
+                <li data-spell-item data-name="open/close" data-school="Transmutation" data-levels="0"><a href="/spells/open-close/"><strong>Open/Close</strong><span class="spell-directory-meta">Transmutation · Brd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="order’s wrath" data-school="Evocation" data-levels="4"><a href="/spells/orders-wrath/"><strong>Order’s Wrath</strong><span class="spell-directory-meta">Evocation · Law 4</span></a></li>
+                <li data-spell-item data-name="overland flight" data-school="Transmutation" data-levels="5"><a href="/spells/overl-and-flight/"><strong>Overland Flight</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="owl’s wisdom" data-school="Transmutation" data-levels="2"><a href="/spells/owls-wisdom/"><strong>Owl’s Wisdom</strong><span class="spell-directory-meta">Transmutation · Clr 2 , Drd 2 , Pal 2 , Rgr 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="owl’s wisdom, mass" data-school="Transmutation" data-levels="2,5,6"><a href="/spells/owls-wisdom-mass/"><strong>Owl’s Wisdom, Mass</strong><span class="spell-directory-meta">Transmutation · Clr 6 , Drd 6 , Sor/Wiz 6 Range : Close (25 ft. + 5 ft./2 levels) Target : One creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>P</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="pass without trace" data-school="Transmutation" data-levels="1"><a href="/spells/pass-without-trace/"><strong>Pass without Trace</strong><span class="spell-directory-meta">Transmutation · Drd 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="passwall" data-school="Transmutation" data-levels="5"><a href="/spells/passwall/"><strong>Passwall</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="permanency" data-school="Universal" data-levels="5"><a href="/spells/permanency/"><strong>Permanency</strong><span class="spell-directory-meta">Universal · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="permanent image" data-school="Illusion" data-levels="6"><a href="/spells/permanent-image/"><strong>Permanent Image</strong><span class="spell-directory-meta">Illusion · Brd 6 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="persistent image" data-school="Illusion" data-levels="1,5"><a href="/spells/persistent-image/"><strong>Persistent Image</strong><span class="spell-directory-meta">Illusion · Brd 5 , Sor/Wiz 5 Duration : 1 min./level (D)</span></a></li>
+                <li data-spell-item data-name="phantasmal killer" data-school="Illusion" data-levels="4"><a href="/spells/phantasmal-killer/"><strong>Phantasmal Killer</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="phantom steed" data-school="Conjuration" data-levels="3"><a href="/spells/phantom-steed/"><strong>Phantom Steed</strong><span class="spell-directory-meta">Conjuration · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="phantom trap" data-school="Illusion" data-levels="2"><a href="/spells/phantom-trap/"><strong>Phantom Trap</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="phase door" data-school="Conjuration" data-levels="7,8"><a href="/spells/phase-door/"><strong>Phase Door</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 7 , Travel 8</span></a></li>
+                <li data-spell-item data-name="planar ally" data-school="Conjuration" data-levels="6"><a href="/spells/planar-ally/"><strong>Planar Ally</strong><span class="spell-directory-meta">Conjuration · Clr 6 Effect : One or two called elementals or outsiders , totaling no more than 12 HD, which cannot be more than 30 ft. apart when they appear</span></a></li>
+                <li data-spell-item data-name="planar ally, greater" data-school="Conjuration" data-levels="8"><a href="/spells/planar-ally-greater/"><strong>Planar Ally, Greater</strong><span class="spell-directory-meta">Conjuration · Clr 8 Effect : Up to three called elementals or outsiders , totaling no more than 18 HD, no two of which can be more than 30 ft. apart when they appear.</span></a></li>
+                <li data-spell-item data-name="planar ally, lesser" data-school="Conjuration" data-levels="4"><a href="/spells/planar-ally-lesser/"><strong>Planar Ally, Lesser</strong><span class="spell-directory-meta">Conjuration · Clr 4</span></a></li>
+                <li data-spell-item data-name="planar binding" data-school="Conjuration" data-levels="6"><a href="/spells/planar-binding/"><strong>Planar Binding</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="planar binding, greater" data-school="Conjuration" data-levels="8"><a href="/spells/planar-binding-greater/"><strong>Planar Binding, Greater</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="planar binding, lesser" data-school="Conjuration" data-levels="5"><a href="/spells/planar-binding-lesser/"><strong>Planar Binding, Lesser</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="plane shift" data-school="Conjuration" data-levels="5,7"><a href="/spells/plane-shift/"><strong>Plane Shift</strong><span class="spell-directory-meta">Conjuration · Clr 5 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="plant growth" data-school="Transmutation" data-levels="3"><a href="/spells/plant-growth/"><strong>Plant Growth</strong><span class="spell-directory-meta">Transmutation · Drd 3 , Plant 3 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="poison" data-school="Necromancy" data-levels="3,4"><a href="/spells/poison/"><strong>Poison</strong><span class="spell-directory-meta">Necromancy · Clr 4 , Drd 3</span></a></li>
+                <li data-spell-item data-name="polar ray" data-school="Evocation" data-levels="8"><a href="/spells/polar-ray/"><strong>Polar Ray</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="polymorph" data-school="Transmutation" data-levels="4"><a href="/spells/polymorph/"><strong>Polymorph</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="polymorph any object" data-school="Transmutation" data-levels="8"><a href="/spells/polymorph-any-object/"><strong>Polymorph Any Object</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 8 , Trickery 8</span></a></li>
+                <li data-spell-item data-name="power word blind" data-school="Enchantment" data-levels="7"><a href="/spells/power-word-blind/"><strong>Power Word Blind</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 7 , War 7</span></a></li>
+                <li data-spell-item data-name="power word kill" data-school="Enchantment" data-levels="9"><a href="/spells/power-word-kill/"><strong>Power Word Kill</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 9 , War 9</span></a></li>
+                <li data-spell-item data-name="power word stun" data-school="Enchantment" data-levels="8"><a href="/spells/power-word-stun/"><strong>Power Word Stun</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 8 , War 8</span></a></li>
+                <li data-spell-item data-name="prayer" data-school="Enchantment" data-levels="3"><a href="/spells/prayer/"><strong>Prayer</strong><span class="spell-directory-meta">Enchantment · Clr 3 , Pal 3</span></a></li>
+                <li data-spell-item data-name="prestidigitation" data-school="Universal" data-levels="0"><a href="/spells/prestidigitation/"><strong>Prestidigitation</strong><span class="spell-directory-meta">Universal · Brd 0 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="prismatic sphere" data-school="Abjuration" data-levels="9"><a href="/spells/prismatic-sphere/"><strong>Prismatic Sphere</strong><span class="spell-directory-meta">Abjuration · Protection 9 , Sor/Wiz 9 , Sun 9</span></a></li>
+                <li data-spell-item data-name="prismatic spray" data-school="Evocation" data-levels="7"><a href="/spells/prismatic-spray/"><strong>Prismatic Spray</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="prismatic wall" data-school="Abjuration" data-levels="8"><a href="/spells/prismatic-wall/"><strong>Prismatic Wall</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="produce flame" data-school="Evocation" data-levels="1,2"><a href="/spells/produce-flame/"><strong>Produce Flame</strong><span class="spell-directory-meta">Evocation · Drd 1 , Fire 2</span></a></li>
+                <li data-spell-item data-name="programmed image" data-school="Illusion" data-levels="1,6"><a href="/spells/programmed-image/"><strong>Programmed Image</strong><span class="spell-directory-meta">Illusion · Brd 6 , Sor/Wiz 6 Effect : Visual figment that cannot extend beyond a 20-ft. cube + one 10-ft. cube/level (S) Duration : Permanent until triggered, then 1 round/level</span></a></li>
+                <li data-spell-item data-name="project image" data-school="Illusion" data-levels="6,7"><a href="/spells/project-image/"><strong>Project Image</strong><span class="spell-directory-meta">Illusion · Brd 6 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="protection from arrows" data-school="Abjuration" data-levels="2"><a href="/spells/protection-from-arrows/"><strong>Protection from Arrows</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="protection from chaos" data-school="Abjuration" data-levels="1"><a href="/spells/protection-from-chaos/"><strong>Protection from Chaos</strong><span class="spell-directory-meta">Abjuration · Clr 1 , Law 1 , Pal 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="protection from energy" data-school="Abjuration" data-levels="2,3"><a href="/spells/protection-from-energy/"><strong>Protection from Energy</strong><span class="spell-directory-meta">Abjuration · Clr 3 , Drd 3 , Luck 3 , Protection 3 , Rgr 2 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="protection from evil" data-school="Abjuration" data-levels="1"><a href="/spells/protection-from-evil/"><strong>Protection from Evil</strong><span class="spell-directory-meta">Abjuration · Clr 1 , Good 1 , Pal 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="protection from good" data-school="Abjuration" data-levels="1"><a href="/spells/protection-from-good/"><strong>Protection from Good</strong><span class="spell-directory-meta">Abjuration · Clr 1 , Evil 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="protection from law" data-school="Abjuration" data-levels="1"><a href="/spells/protection-from-law/"><strong>Protection from Law</strong><span class="spell-directory-meta">Abjuration · Chaos 1 , Clr 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="protection from spells" data-school="Abjuration" data-levels="8"><a href="/spells/protection-from-spells/"><strong>Protection from Spells</strong><span class="spell-directory-meta">Abjuration · Magic 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="prying eyes" data-school="Divination" data-levels="5"><a href="/spells/prying-eyes/"><strong>Prying Eyes</strong><span class="spell-directory-meta">Divination · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="prying eyes, greater" data-school="Divination" data-levels="8"><a href="/spells/prying-eyes-greater/"><strong>Prying Eyes, Greater</strong><span class="spell-directory-meta">Divination · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="purify food and drink" data-school="Transmutation" data-levels="0"><a href="/spells/purify-food-and-drink/"><strong>Purify Food and Drink</strong><span class="spell-directory-meta">Transmutation · Clr 0 , Drd 0</span></a></li>
+                <li data-spell-item data-name="pyrotechnics" data-school="Transmutation" data-levels="2"><a href="/spells/pyrotechnics/"><strong>Pyrotechnics</strong><span class="spell-directory-meta">Transmutation · Brd 2 , Sor/Wiz 2</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>Q</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="quench" data-school="Transmutation" data-levels="3"><a href="/spells/quench/"><strong>Quench</strong><span class="spell-directory-meta">Transmutation · Drd 3</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>R</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="rage" data-school="Enchantment" data-levels="2,3"><a href="/spells/rage/"><strong>Rage</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="rainbow pattern" data-school="Illusion" data-levels="4"><a href="/spells/rainbow-pattern/"><strong>Rainbow Pattern</strong><span class="spell-directory-meta">Illusion · Brd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="raise dead" data-school="Conjuration" data-levels="5"><a href="/spells/raise-dead/"><strong>Raise Dead</strong><span class="spell-directory-meta">Conjuration · Clr 5</span></a></li>
+                <li data-spell-item data-name="ray of enfeeblement" data-school="Necromancy" data-levels="1"><a href="/spells/ray-of-enfeeblement/"><strong>Ray of Enfeeblement</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="ray of exhaustion" data-school="Necromancy" data-levels="3"><a href="/spells/ray-of-exhaustion/"><strong>Ray of Exhaustion</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="ray of frost" data-school="Evocation" data-levels="0"><a href="/spells/ray-of-frost/"><strong>Ray of Frost</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="read magic" data-school="Divination" data-levels="0,1"><a href="/spells/read-magic/"><strong>Read Magic</strong><span class="spell-directory-meta">Divination · Brd 0 , Clr 0 , Drd 0 , Pal 1 , Rgr 1 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="reduce animal" data-school="Transmutation" data-levels="2,3"><a href="/spells/reduce-animal/"><strong>Reduce Animal</strong><span class="spell-directory-meta">Transmutation · Drd 2 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="reduce person" data-school="Transmutation" data-levels="1"><a href="/spells/reduce-person/"><strong>Reduce Person</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="reduce person, mass" data-school="Transmutation" data-levels="4"><a href="/spells/reduce-person-mass/"><strong>Reduce Person, Mass</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 4 Target : One humanoid creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="refuge" data-school="Conjuration" data-levels="7,9"><a href="/spells/refuge/"><strong>Refuge</strong><span class="spell-directory-meta">Conjuration · Clr 7 , Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="regenerate" data-school="Conjuration" data-levels="7,9"><a href="/spells/regenerate/"><strong>Regenerate</strong><span class="spell-directory-meta">Conjuration · Clr 7 , Drd 9 , Healing 7</span></a></li>
+                <li data-spell-item data-name="reincarnate" data-school="Transmutation" data-levels="4"><a href="/spells/reincarnate/"><strong>Reincarnate</strong><span class="spell-directory-meta">Transmutation · Drd 4</span></a></li>
+                <li data-spell-item data-name="remove blindness/deafness" data-school="Conjuration" data-levels="3"><a href="/spells/remove-blindness-deafness/"><strong>Remove Blindness/Deafness</strong><span class="spell-directory-meta">Conjuration · Clr 3 , Pal 3</span></a></li>
+                <li data-spell-item data-name="remove curse" data-school="Abjuration" data-levels="3,4"><a href="/spells/remove-curse/"><strong>Remove Curse</strong><span class="spell-directory-meta">Abjuration · Brd 3 , Clr 3 , Pal 3 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="remove disease" data-school="Conjuration" data-levels="3"><a href="/spells/remove-disease/"><strong>Remove Disease</strong><span class="spell-directory-meta">Conjuration · Clr 3 , Drd 3 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="remove fear" data-school="Abjuration" data-levels="1"><a href="/spells/remove-fear/"><strong>Remove Fear</strong><span class="spell-directory-meta">Abjuration · Brd 1 , Clr 1</span></a></li>
+                <li data-spell-item data-name="remove paralysis" data-school="Conjuration" data-levels="2"><a href="/spells/remove-paralysis/"><strong>Remove Paralysis</strong><span class="spell-directory-meta">Conjuration · Clr 2 , Pal 2</span></a></li>
+                <li data-spell-item data-name="repel metal or stone" data-school="Abjuration" data-levels="8"><a href="/spells/repel-metal-or-stone/"><strong>Repel Metal or Stone</strong><span class="spell-directory-meta">Abjuration · Drd 8</span></a></li>
+                <li data-spell-item data-name="repel vermin" data-school="Abjuration" data-levels="3,4"><a href="/spells/repel-vermin/"><strong>Repel Vermin</strong><span class="spell-directory-meta">Abjuration · Brd 4 , Clr 4 , Drd 4 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="repel wood" data-school="Transmutation" data-levels="6"><a href="/spells/repel-wood/"><strong>Repel Wood</strong><span class="spell-directory-meta">Transmutation · Drd 6 , Plant 6</span></a></li>
+                <li data-spell-item data-name="repulsion" data-school="Abjuration" data-levels="6,7"><a href="/spells/repulsion/"><strong>Repulsion</strong><span class="spell-directory-meta">Abjuration · Clr 7 , Protection 7 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="resilient sphere" data-school="Evocation" data-levels="4"><a href="/spells/resilient-sphere/"><strong>Resilient Sphere</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="resist energy" data-school="Abjuration" data-levels="1,2,3"><a href="/spells/resist-energy/"><strong>Resist Energy</strong><span class="spell-directory-meta">Abjuration · Clr 2 , Drd 2 , Fire 3 , Pal 2 , Rgr 1 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="resistance" data-school="Abjuration" data-levels="0,1"><a href="/spells/resistance/"><strong>Resistance</strong><span class="spell-directory-meta">Abjuration · Brd 0 , Clr 0 , Drd 0 , Pal 1 , Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="restoration" data-school="Conjuration" data-levels="4"><a href="/spells/restoration/"><strong>Restoration</strong><span class="spell-directory-meta">Conjuration · Clr 4 , Pal 4</span></a></li>
+                <li data-spell-item data-name="restoration, greater" data-school="Conjuration" data-levels="7"><a href="/spells/restoration-greater/"><strong>Restoration, Greater</strong><span class="spell-directory-meta">Conjuration · Clr 7</span></a></li>
+                <li data-spell-item data-name="restoration, lesser" data-school="Conjuration" data-levels="1,2"><a href="/spells/restoration-lesser/"><strong>Restoration, Lesser</strong><span class="spell-directory-meta">Conjuration · Clr 2 , Drd 2 , Pal 1</span></a></li>
+                <li data-spell-item data-name="resurrection" data-school="Conjuration" data-levels="7"><a href="/spells/resurrection/"><strong>Resurrection</strong><span class="spell-directory-meta">Conjuration · Clr 7 Casting Time : 10 minutes</span></a></li>
+                <li data-spell-item data-name="reverse gravity" data-school="Transmutation" data-levels="7,8"><a href="/spells/reverse-gravity/"><strong>Reverse Gravity</strong><span class="spell-directory-meta">Transmutation · Drd 8 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="righteous might" data-school="Transmutation" data-levels="5"><a href="/spells/righteous-might/"><strong>Righteous Might</strong><span class="spell-directory-meta">Transmutation · Clr 5 , Strength 5</span></a></li>
+                <li data-spell-item data-name="rope trick" data-school="Transmutation" data-levels="2"><a href="/spells/rope-trick/"><strong>Rope Trick</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="rusting grasp" data-school="Transmutation" data-levels="4"><a href="/spells/rusting-grasp/"><strong>Rusting Grasp</strong><span class="spell-directory-meta">Transmutation · Drd 4</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>S</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="sanctuary" data-school="Abjuration" data-levels="1"><a href="/spells/sanctuary/"><strong>Sanctuary</strong><span class="spell-directory-meta">Abjuration · Clr 1 , Protection 1</span></a></li>
+                <li data-spell-item data-name="scare" data-school="Necromancy" data-levels="2"><a href="/spells/scare/"><strong>Scare</strong><span class="spell-directory-meta">Necromancy · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="scintillating pattern" data-school="Illusion" data-levels="8"><a href="/spells/scintillating-pattern/"><strong>Scintillating Pattern</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="scorching ray" data-school="Evocation" data-levels="2"><a href="/spells/scorching-ray/"><strong>Scorching Ray</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="screen" data-school="Illusion" data-levels="7,8"><a href="/spells/screen/"><strong>Screen</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 8 , Trickery 7</span></a></li>
+                <li data-spell-item data-name="scrying" data-school="Divination" data-levels="3,4,5"><a href="/spells/scrying/"><strong>Scrying</strong><span class="spell-directory-meta">Divination · Brd 3 , Clr 5 , Drd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="scrying, greater" data-school="Divination" data-levels="6,7"><a href="/spells/scrying-greater/"><strong>Scrying, Greater</strong><span class="spell-directory-meta">Divination · Brd 6 , Clr 7 , Drd 7 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="sculpt sound" data-school="Transmutation" data-levels="3"><a href="/spells/sculpt-sound/"><strong>Sculpt Sound</strong><span class="spell-directory-meta">Transmutation · Brd 3</span></a></li>
+                <li data-spell-item data-name="searing light" data-school="Evocation" data-levels="3"><a href="/spells/searing-light/"><strong>Searing Light</strong><span class="spell-directory-meta">Evocation · Clr 3 , Sun 3</span></a></li>
+                <li data-spell-item data-name="secret chest" data-school="Conjuration" data-levels="5"><a href="/spells/secret-chest/"><strong>Secret Chest</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="secret page" data-school="Transmutation" data-levels="3"><a href="/spells/secret-page/"><strong>Secret Page</strong><span class="spell-directory-meta">Transmutation · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="secure shelter" data-school="Conjuration" data-levels="4"><a href="/spells/secure-shelter/"><strong>Secure Shelter</strong><span class="spell-directory-meta">Conjuration · Brd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="see invisibility" data-school="Divination" data-levels="2,3"><a href="/spells/see-invisibility/"><strong>See Invisibility</strong><span class="spell-directory-meta">Divination · Brd 3 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="seeming" data-school="Illusion" data-levels="5"><a href="/spells/seeming/"><strong>Seeming</strong><span class="spell-directory-meta">Illusion · Brd 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="sending" data-school="Evocation" data-levels="4,5"><a href="/spells/sending/"><strong>Sending</strong><span class="spell-directory-meta">Evocation · Clr 4 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="sepia snake sigil" data-school="Conjuration" data-levels="3"><a href="/spells/sepia-snake-sigil/"><strong>Sepia Snake Sigil</strong><span class="spell-directory-meta">Conjuration · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="sequester" data-school="Abjuration" data-levels="7"><a href="/spells/sequester/"><strong>Sequester</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="shades" data-school="Illusion" data-levels="9"><a href="/spells/shades/"><strong>Shades</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="shadow conjuration" data-school="Illusion" data-levels="4"><a href="/spells/shadow-conjuration/"><strong>Shadow Conjuration</strong><span class="spell-directory-meta">Illusion · Brd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="shadow conjuration, greater" data-school="Illusion" data-levels="7"><a href="/spells/shadow-conjuration-greater/"><strong>Shadow Conjuration, Greater</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="shadow evocation" data-school="Illusion" data-levels="5"><a href="/spells/shadow-evocation/"><strong>Shadow Evocation</strong><span class="spell-directory-meta">Illusion · Brd 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="shadow evocation, greater" data-school="Illusion" data-levels="8"><a href="/spells/shadow-evocation-greater/"><strong>Shadow Evocation, Greater</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="shadow walk" data-school="Illusion" data-levels="5,6"><a href="/spells/shadow-walk/"><strong>Shadow Walk</strong><span class="spell-directory-meta">Illusion · Brd 5 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="shambler" data-school="Conjuration" data-levels="9"><a href="/spells/shambler/"><strong>Shambler</strong><span class="spell-directory-meta">Conjuration · Drd 9 , Plant 9</span></a></li>
+                <li data-spell-item data-name="shapechange" data-school="Transmutation" data-levels="9"><a href="/spells/shapechange/"><strong>Shapechange</strong><span class="spell-directory-meta">Transmutation · Animal 9 , Drd 9 , Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="shatter" data-school="Evocation" data-levels="2"><a href="/spells/shatter/"><strong>Shatter</strong><span class="spell-directory-meta">Evocation · Brd 2 , Chaos 2 , Clr 2 , Destruction 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="shield" data-school="Abjuration" data-levels="1"><a href="/spells/shield/"><strong>Shield</strong><span class="spell-directory-meta">Abjuration · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="shield of faith" data-school="Abjuration" data-levels="1"><a href="/spells/shield-of-faith/"><strong>Shield of Faith</strong><span class="spell-directory-meta">Abjuration · Clr 1</span></a></li>
+                <li data-spell-item data-name="shield of law" data-school="Abjuration" data-levels="8"><a href="/spells/shield-of-law/"><strong>Shield of Law</strong><span class="spell-directory-meta">Abjuration · Clr 8 , Law 8</span></a></li>
+                <li data-spell-item data-name="shield other" data-school="Abjuration" data-levels="2"><a href="/spells/shield-other/"><strong>Shield Other</strong><span class="spell-directory-meta">Abjuration · Clr 2 , Pal 2 , Protection 2</span></a></li>
+                <li data-spell-item data-name="shillelagh" data-school="Transmutation" data-levels="1"><a href="/spells/shillelagh/"><strong>Shillelagh</strong><span class="spell-directory-meta">Transmutation · Drd 1</span></a></li>
+                <li data-spell-item data-name="shocking grasp" data-school="Evocation" data-levels="1"><a href="/spells/shocking-grasp/"><strong>Shocking Grasp</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="shout" data-school="Evocation" data-levels="4"><a href="/spells/shout/"><strong>Shout</strong><span class="spell-directory-meta">Evocation · Brd 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="shout, greater" data-school="Evocation" data-levels="6,8"><a href="/spells/shout-greater/"><strong>Shout, Greater</strong><span class="spell-directory-meta">Evocation · Brd 6 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="shrink item" data-school="Transmutation" data-levels="3"><a href="/spells/shrink-item/"><strong>Shrink Item</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="silence" data-school="Illusion" data-levels="2"><a href="/spells/silence/"><strong>Silence</strong><span class="spell-directory-meta">Illusion · Brd 2 , Clr 2</span></a></li>
+                <li data-spell-item data-name="silent image" data-school="Illusion" data-levels="1"><a href="/spells/silent-image/"><strong>Silent Image</strong><span class="spell-directory-meta">Illusion · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="simulacrum" data-school="Illusion" data-levels="7"><a href="/spells/simulacrum/"><strong>Simulacrum</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="slay living" data-school="Necromancy" data-levels="5"><a href="/spells/slay-living/"><strong>Slay Living</strong><span class="spell-directory-meta">Necromancy · Clr 5 , Death 5</span></a></li>
+                <li data-spell-item data-name="sleep" data-school="Enchantment" data-levels="1"><a href="/spells/sleep/"><strong>Sleep</strong><span class="spell-directory-meta">Enchantment · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="sleet storm" data-school="Conjuration" data-levels="3"><a href="/spells/sleet-storm/"><strong>Sleet Storm</strong><span class="spell-directory-meta">Conjuration · Drd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="slow" data-school="Transmutation" data-levels="3"><a href="/spells/slow/"><strong>Slow</strong><span class="spell-directory-meta">Transmutation · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="snare" data-school="Transmutation" data-levels="2,3"><a href="/spells/snare/"><strong>Snare</strong><span class="spell-directory-meta">Transmutation · Rgr 2 , Drd 3</span></a></li>
+                <li data-spell-item data-name="soften earth and stone" data-school="Transmutation" data-levels="2"><a href="/spells/soften-earth-and-stone/"><strong>Soften Earth and Stone</strong><span class="spell-directory-meta">Transmutation · Drd 2 , Earth 2</span></a></li>
+                <li data-spell-item data-name="solid fog" data-school="Conjuration" data-levels="4"><a href="/spells/solid-fog/"><strong>Solid Fog</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="song of discord" data-school="Enchantment" data-levels="5"><a href="/spells/song-of-discord/"><strong>Song of Discord</strong><span class="spell-directory-meta">Enchantment · Brd 5</span></a></li>
+                <li data-spell-item data-name="soul bind" data-school="Necromancy" data-levels="9"><a href="/spells/soul-bind/"><strong>Soul Bind</strong><span class="spell-directory-meta">Necromancy · Clr 9 , Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="sound burst" data-school="Evocation" data-levels="2"><a href="/spells/sound-burst/"><strong>Sound Burst</strong><span class="spell-directory-meta">Evocation · Brd 2 , Clr 2</span></a></li>
+                <li data-spell-item data-name="speak with animals" data-school="Divination" data-levels="1,3"><a href="/spells/speak-with-animals/"><strong>Speak with Animals</strong><span class="spell-directory-meta">Divination · Brd 3 , Drd 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="speak with dead" data-school="Necromancy" data-levels="3"><a href="/spells/speak-with-dead/"><strong>Speak with Dead</strong><span class="spell-directory-meta">Necromancy · Clr 3</span></a></li>
+                <li data-spell-item data-name="speak with plants" data-school="Divination" data-levels="2,3,4"><a href="/spells/speak-with-plants/"><strong>Speak with Plants</strong><span class="spell-directory-meta">Divination · Brd 4 , Drd 3 , Rgr 2</span></a></li>
+                <li data-spell-item data-name="spectral hand" data-school="Necromancy" data-levels="2"><a href="/spells/spectral-hand/"><strong>Spectral Hand</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="spell immunity" data-school="Abjuration" data-levels="4"><a href="/spells/spell-immunity/"><strong>Spell Immunity</strong><span class="spell-directory-meta">Abjuration · Clr 4 , Protection 4 , Strength 4</span></a></li>
+                <li data-spell-item data-name="spell immunity, greater" data-school="Abjuration" data-levels="8"><a href="/spells/spell-immunity-greater/"><strong>Spell Immunity, Greater</strong><span class="spell-directory-meta">Abjuration · Clr 8</span></a></li>
+                <li data-spell-item data-name="spell resistance" data-school="Abjuration" data-levels="5"><a href="/spells/spell-resistance/"><strong>Spell Resistance</strong><span class="spell-directory-meta">Abjuration · Clr 5 , Magic 5 , Protection 5</span></a></li>
+                <li data-spell-item data-name="spell turning" data-school="Abjuration" data-levels="7"><a href="/spells/spell-turning/"><strong>Spell Turning</strong><span class="spell-directory-meta">Abjuration · Luck 7 , Magic 7 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="spellstaff" data-school="Transmutation" data-levels="6"><a href="/spells/spellstaff/"><strong>Spellstaff</strong><span class="spell-directory-meta">Transmutation · Drd 6</span></a></li>
+                <li data-spell-item data-name="spider climb" data-school="Transmutation" data-levels="2"><a href="/spells/spider-climb/"><strong>Spider Climb</strong><span class="spell-directory-meta">Transmutation · Drd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="spike growth" data-school="Transmutation" data-levels="2,3"><a href="/spells/spike-growth/"><strong>Spike Growth</strong><span class="spell-directory-meta">Transmutation · Drd 3 , Rgr 2</span></a></li>
+                <li data-spell-item data-name="spike stones" data-school="Transmutation" data-levels="4"><a href="/spells/spike-stones/"><strong>Spike Stones</strong><span class="spell-directory-meta">Transmutation · Drd 4 , Earth 4</span></a></li>
+                <li data-spell-item data-name="spiritual weapon" data-school="Evocation" data-levels="2"><a href="/spells/spiritual-weapon/"><strong>Spiritual Weapon</strong><span class="spell-directory-meta">Evocation · Clr 2 , War 2</span></a></li>
+                <li data-spell-item data-name="statue" data-school="Transmutation" data-levels="7"><a href="/spells/statue/"><strong>Statue</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="status" data-school="Divination" data-levels="2"><a href="/spells/status/"><strong>Status</strong><span class="spell-directory-meta">Divination · Clr 2</span></a></li>
+                <li data-spell-item data-name="stinking cloud" data-school="Conjuration" data-levels="3"><a href="/spells/stinking-cloud/"><strong>Stinking Cloud</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="stone shape" data-school="Transmutation" data-levels="3,4"><a href="/spells/stone-shape/"><strong>Stone Shape</strong><span class="spell-directory-meta">Transmutation · Clr 3 , Drd 3 , Earth 3 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="stone tell" data-school="Divination" data-levels="6"><a href="/spells/stone-tell/"><strong>Stone Tell</strong><span class="spell-directory-meta">Divination · Drd 6</span></a></li>
+                <li data-spell-item data-name="stone to flesh" data-school="Transmutation" data-levels="6"><a href="/spells/stone-to-flesh/"><strong>Stone to Flesh</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="stoneskin" data-school="Abjuration" data-levels="4,5,6"><a href="/spells/stoneskin/"><strong>Stoneskin</strong><span class="spell-directory-meta">Abjuration · Drd 5 , Earth 6 , Sor/Wiz 4 , Strength 6</span></a></li>
+                <li data-spell-item data-name="storm of vengeance" data-school="Conjuration" data-levels="9"><a href="/spells/storm-of-vengeance/"><strong>Storm of Vengeance</strong><span class="spell-directory-meta">Conjuration · Drd 9 , Clr 9</span></a></li>
+                <li data-spell-item data-name="suggestion" data-school="Enchantment" data-levels="2,3"><a href="/spells/suggestion/"><strong>Suggestion</strong><span class="spell-directory-meta">Enchantment · Brd 2 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="suggestion, mass" data-school="Enchantment" data-levels="5,6"><a href="/spells/suggestion-mass/"><strong>Suggestion, Mass</strong><span class="spell-directory-meta">Enchantment · Brd 5 , Sor/Wiz 6 Range : Medium (100 ft. + 10 ft./level) Targets : One creature/level, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon instrument" data-school="Conjuration" data-levels="0"><a href="/spells/summon-instrument/"><strong>Summon Instrument</strong><span class="spell-directory-meta">Conjuration · Brd 0</span></a></li>
+                <li data-spell-item data-name="summon monster i" data-school="Conjuration" data-levels="1"><a href="/spells/summon-monster-i/"><strong>Summon Monster I</strong><span class="spell-directory-meta">Conjuration · Brd 1 , Clr 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="summon monster ii" data-school="Conjuration" data-levels="2"><a href="/spells/summon-monster-ii/"><strong>Summon Monster II</strong><span class="spell-directory-meta">Conjuration · Brd 2 , Clr 2 , Sor/Wiz 2 Effect : One or more summoned creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon monster iii" data-school="Conjuration" data-levels="3"><a href="/spells/summon-monster-iii/"><strong>Summon Monster III</strong><span class="spell-directory-meta">Conjuration · Brd 3 , Clr 3 , Sor/Wiz 3 Effect : One or more summoned creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon monster iv" data-school="Conjuration" data-levels="4"><a href="/spells/summon-monster-iv/"><strong>Summon Monster IV</strong><span class="spell-directory-meta">Conjuration · Brd 4 , Clr 4 , Sor/Wiz 4 Effect : One or more summoned creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon monster ix" data-school="Conjuration" data-levels="9"><a href="/spells/summon-monster-ix/"><strong>Summon Monster IX</strong><span class="spell-directory-meta">Conjuration · Chaos 9 , Clr 9 , Evil 9 , Good 9 , Law 9 , Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="summon monster v" data-school="Conjuration" data-levels="5"><a href="/spells/summon-monster-v/"><strong>Summon Monster V</strong><span class="spell-directory-meta">Conjuration · Brd 5 , Clr 5 , Sor/Wiz 5 Effect : One or more summoned creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon monster vi" data-school="Conjuration" data-levels="6"><a href="/spells/summon-monster-vi/"><strong>Summon Monster VI</strong><span class="spell-directory-meta">Conjuration · Brd 6 , Clr 6 , Sor/Wiz 6 Effect : One or more summoned creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon monster vii" data-school="Conjuration" data-levels="7"><a href="/spells/summon-monster-vii/"><strong>Summon Monster VII</strong><span class="spell-directory-meta">Conjuration · Clr 7 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="summon monster viii" data-school="Conjuration" data-levels="8"><a href="/spells/summon-monster-viii/"><strong>Summon Monster VIII</strong><span class="spell-directory-meta">Conjuration · Clr 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally i" data-school="Conjuration" data-levels="1"><a href="/spells/summon-natures-ally-i/"><strong>Summon Nature’s Ally I</strong><span class="spell-directory-meta">Conjuration · Drd 1 , Rgr 1</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally ii" data-school="Conjuration" data-levels="2"><a href="/spells/summon-natures-ally-ii/"><strong>Summon Nature’s Ally II</strong><span class="spell-directory-meta">Conjuration · Drd 2 , Rgr 2 Effect : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally iii" data-school="Conjuration" data-levels="3"><a href="/spells/summon-natures-ally-iii/"><strong>Summon Nature’s Ally III</strong><span class="spell-directory-meta">Conjuration · Drd 3 , Rgr 3 Effect : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally iv" data-school="Conjuration" data-levels="4"><a href="/spells/summon-natures-ally-iv/"><strong>Summon Nature’s Ally IV</strong><span class="spell-directory-meta">Conjuration · Animal 4 , Drd 4 , Rgr 4 Effect : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally ix" data-school="Conjuration" data-levels="9"><a href="/spells/summon-natures-ally-ix/"><strong>Summon Nature’s Ally IX</strong><span class="spell-directory-meta">Conjuration · Drd 9 Effect : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally v" data-school="Conjuration" data-levels="5"><a href="/spells/summon-natures-ally-v/"><strong>Summon Nature’s Ally V</strong><span class="spell-directory-meta">Conjuration · Drd 5 Effect : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally vi" data-school="Conjuration" data-levels="6"><a href="/spells/summon-natures-ally-vi/"><strong>Summon Nature’s Ally VI</strong><span class="spell-directory-meta">Conjuration · Drd 6 Effect : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally vii" data-school="Conjuration" data-levels="7"><a href="/spells/summon-natures-ally-vii/"><strong>Summon Nature’s Ally VII</strong><span class="spell-directory-meta">Conjuration · Drd 7 Effect : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon nature’s ally viii" data-school="Conjuration" data-levels="8"><a href="/spells/summon-natures-ally-viii/"><strong>Summon Nature’s Ally VIII</strong><span class="spell-directory-meta">Conjuration · Animal 8 , Drd 8 Effect : One or more creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="summon swarm" data-school="Conjuration" data-levels="2"><a href="/spells/summon-swarm/"><strong>Summon Swarm</strong><span class="spell-directory-meta">Conjuration · Brd 2 , Drd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="sunbeam" data-school="Evocation" data-levels="7"><a href="/spells/sunbeam/"><strong>Sunbeam</strong><span class="spell-directory-meta">Evocation · Drd 7 , Sun 7</span></a></li>
+                <li data-spell-item data-name="sunburst" data-school="Evocation" data-levels="8"><a href="/spells/sunburst/"><strong>Sunburst</strong><span class="spell-directory-meta">Evocation · Drd 8 , Sor/Wiz 8 , Sun 8</span></a></li>
+                <li data-spell-item data-name="symbol of death" data-school="Necromancy" data-levels="8"><a href="/spells/symbol-of-death/"><strong>Symbol of Death</strong><span class="spell-directory-meta">Necromancy · Clr 8 , Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="symbol of fear" data-school="Necromancy" data-levels="6"><a href="/spells/symbol-of-fear/"><strong>Symbol of Fear</strong><span class="spell-directory-meta">Necromancy · Clr 6 , Sor/Wiz 6 Saving Throw : Will negates</span></a></li>
+                <li data-spell-item data-name="symbol of insanity" data-school="Enchantment" data-levels="8"><a href="/spells/symbol-of-insanity/"><strong>Symbol of Insanity</strong><span class="spell-directory-meta">Enchantment · Clr 8 , Sor/Wiz 8 Saving Throw : Will negates</span></a></li>
+                <li data-spell-item data-name="symbol of pain" data-school="Necromancy" data-levels="5"><a href="/spells/symbol-of-pain/"><strong>Symbol of Pain</strong><span class="spell-directory-meta">Necromancy · Clr 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="symbol of persuasion" data-school="Enchantment" data-levels="6"><a href="/spells/symbol-of-persuasion/"><strong>Symbol of Persuasion</strong><span class="spell-directory-meta">Enchantment · Clr 6 , Sor/Wiz 6 Saving Throw : Will negates</span></a></li>
+                <li data-spell-item data-name="symbol of sleep" data-school="Enchantment" data-levels="5"><a href="/spells/symbol-of-sleep/"><strong>Symbol of Sleep</strong><span class="spell-directory-meta">Enchantment · Clr 5 , Sor/Wiz 5 Saving Throw : Will negates</span></a></li>
+                <li data-spell-item data-name="symbol of stunning" data-school="Enchantment" data-levels="7"><a href="/spells/symbol-of-stunning/"><strong>Symbol of Stunning</strong><span class="spell-directory-meta">Enchantment · Clr 7 , Sor/Wiz 7 Saving Throw : Will negates</span></a></li>
+                <li data-spell-item data-name="symbol of weakness" data-school="Necromancy" data-levels="7"><a href="/spells/symbol-of-weakness/"><strong>Symbol of Weakness</strong><span class="spell-directory-meta">Necromancy · Clr 7 , Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="sympathetic vibration" data-school="Evocation" data-levels="6"><a href="/spells/sympathetic-vibration/"><strong>Sympathetic Vibration</strong><span class="spell-directory-meta">Evocation · Brd 6</span></a></li>
+                <li data-spell-item data-name="sympathy" data-school="Enchantment" data-levels="8,9"><a href="/spells/sympathy/"><strong>Sympathy</strong><span class="spell-directory-meta">Enchantment · Drd 9 , Sor/Wiz 8</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>T</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="telekinesis" data-school="Transmutation" data-levels="5"><a href="/spells/telekinesis/"><strong>Telekinesis</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="telekinetic sphere" data-school="Evocation" data-levels="8"><a href="/spells/telekinetic-sphere/"><strong>Telekinetic Sphere</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="telepathic bond" data-school="Divination" data-levels="5"><a href="/spells/telepathic-bond/"><strong>Telepathic Bond</strong><span class="spell-directory-meta">Divination · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="teleport" data-school="Conjuration" data-levels="5"><a href="/spells/teleport/"><strong>Teleport</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 5 , Travel 5</span></a></li>
+                <li data-spell-item data-name="teleport object" data-school="Conjuration" data-levels="3,7"><a href="/spells/teleport-object/"><strong>Teleport Object</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 7 Range : Touch Target : One touched object of up to 50 lb./level and 3 cu. ft./level Saving Throw : Will negates (object) Spell Resistance : Yes (object)</span></a></li>
+                <li data-spell-item data-name="teleport, greater" data-school="Conjuration" data-levels="7"><a href="/spells/teleport-greater/"><strong>Teleport, Greater</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 7 , Travel 7</span></a></li>
+                <li data-spell-item data-name="teleportation circle" data-school="Conjuration" data-levels="9"><a href="/spells/teleportation-circle/"><strong>Teleportation Circle</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="temporal stasis" data-school="Transmutation" data-levels="8"><a href="/spells/temporal-stasis/"><strong>Temporal Stasis</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="time stop" data-school="Transmutation" data-levels="9"><a href="/spells/time-stop/"><strong>Time Stop</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 9 , Trickery 9</span></a></li>
+                <li data-spell-item data-name="tiny hut" data-school="Evocation" data-levels="3"><a href="/spells/tiny-hut/"><strong>Tiny Hut</strong><span class="spell-directory-meta">Evocation · Brd 3 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="tongues" data-school="Divination" data-levels="2,3,4"><a href="/spells/tongues/"><strong>Tongues</strong><span class="spell-directory-meta">Divination · Brd 2 , Clr 4 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="touch of fatigue" data-school="Necromancy" data-levels="0"><a href="/spells/touch-of-fatigue/"><strong>Touch of Fatigue</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 0</span></a></li>
+                <li data-spell-item data-name="touch of idiocy" data-school="Enchantment" data-levels="2"><a href="/spells/touch-of-idiocy/"><strong>Touch of Idiocy</strong><span class="spell-directory-meta">Enchantment · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="transformation" data-school="Transmutation" data-levels="6"><a href="/spells/transformation/"><strong>Transformation</strong><span class="spell-directory-meta">Transmutation · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="transmute metal to wood" data-school="Transmutation" data-levels="7"><a href="/spells/transmute-metal-to-wood/"><strong>Transmute Metal to Wood</strong><span class="spell-directory-meta">Transmutation · Drd 7</span></a></li>
+                <li data-spell-item data-name="transmute mud to rock" data-school="Transmutation" data-levels="5"><a href="/spells/transmute-mud-to-rock/"><strong>Transmute Mud to Rock</strong><span class="spell-directory-meta">Transmutation · Drd 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="transmute rock to mud" data-school="Transmutation" data-levels="5"><a href="/spells/transmute-rock-to-mud/"><strong>Transmute Rock to Mud</strong><span class="spell-directory-meta">Transmutation · Drd 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="transport via plants" data-school="Conjuration" data-levels="6"><a href="/spells/transport-via-plants/"><strong>Transport via Plants</strong><span class="spell-directory-meta">Conjuration · Drd 6</span></a></li>
+                <li data-spell-item data-name="trap the soul" data-school="Conjuration" data-levels="8"><a href="/spells/trap-the-soul/"><strong>Trap the Soul</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 8</span></a></li>
+                <li data-spell-item data-name="tree shape" data-school="Transmutation" data-levels="2,3"><a href="/spells/tree-shape/"><strong>Tree Shape</strong><span class="spell-directory-meta">Transmutation · Drd 2 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="tree stride" data-school="Conjuration" data-levels="4,5"><a href="/spells/tree-stride/"><strong>Tree Stride</strong><span class="spell-directory-meta">Conjuration · Drd 5 , Rgr 4</span></a></li>
+                <li data-spell-item data-name="true resurrection" data-school="Conjuration" data-levels="9"><a href="/spells/true-resurrection/"><strong>True Resurrection</strong><span class="spell-directory-meta">Conjuration · Clr 9 Casting Time : 10 minutes</span></a></li>
+                <li data-spell-item data-name="true seeing" data-school="Divination" data-levels="5,6,7"><a href="/spells/true-seeing/"><strong>True Seeing</strong><span class="spell-directory-meta">Divination · Clr 5 , Drd 7 , Knowledge 5 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="true strike" data-school="Divination" data-levels="1"><a href="/spells/true-strike/"><strong>True Strike</strong><span class="spell-directory-meta">Divination · Sor/Wiz 1</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>U</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="undeath to death" data-school="Necromancy" data-levels="6"><a href="/spells/undeath-to-death/"><strong>Undeath to Death</strong><span class="spell-directory-meta">Necromancy · Clr 6 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="undetectable alignment" data-school="Abjuration" data-levels="1,2"><a href="/spells/undetectable-alignment/"><strong>Undetectable Alignment</strong><span class="spell-directory-meta">Abjuration · Brd 1 , Clr 2 , Pal 2</span></a></li>
+                <li data-spell-item data-name="unhallow" data-school="Evocation" data-levels="5"><a href="/spells/unhallow/"><strong>Unhallow</strong><span class="spell-directory-meta">Evocation · Clr 5 , Drd 5</span></a></li>
+                <li data-spell-item data-name="unholy aura" data-school="Abjuration" data-levels="8"><a href="/spells/unholy-aura/"><strong>Unholy Aura</strong><span class="spell-directory-meta">Abjuration · Clr 8 , Evil 8</span></a></li>
+                <li data-spell-item data-name="unholy blight" data-school="Evocation" data-levels="4"><a href="/spells/unholy-blight/"><strong>Unholy Blight</strong><span class="spell-directory-meta">Evocation · Evil 4</span></a></li>
+                <li data-spell-item data-name="unseen servant" data-school="Conjuration" data-levels="1"><a href="/spells/unseen-servant/"><strong>Unseen Servant</strong><span class="spell-directory-meta">Conjuration · Brd 1 , Sor/Wiz 1</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>V</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="vampiric touch" data-school="Necromancy" data-levels="3"><a href="/spells/vampiric-touch/"><strong>Vampiric Touch</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="veil" data-school="Illusion" data-levels="6"><a href="/spells/veil/"><strong>Veil</strong><span class="spell-directory-meta">Illusion · Brd 6 , Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="ventriloquism" data-school="Illusion" data-levels="1"><a href="/spells/ventriloquism/"><strong>Ventriloquism</strong><span class="spell-directory-meta">Illusion · Brd 1 , Sor/Wiz 1</span></a></li>
+                <li data-spell-item data-name="virtue" data-school="Transmutation" data-levels="0,1"><a href="/spells/virtue/"><strong>Virtue</strong><span class="spell-directory-meta">Transmutation · Clr 0 , Drd 0 , Pal 1</span></a></li>
+                <li data-spell-item data-name="vision" data-school="Divination" data-levels="7"><a href="/spells/vision/"><strong>Vision</strong><span class="spell-directory-meta">Divination · Sor/Wiz 7</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>W</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="wail of the banshee" data-school="Necromancy" data-levels="9"><a href="/spells/wail-of-the-banshee/"><strong>Wail of the Banshee</strong><span class="spell-directory-meta">Necromancy · Death 9 , Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="wall of fire" data-school="Evocation" data-levels="4,5"><a href="/spells/wall-of-fire/"><strong>Wall of Fire</strong><span class="spell-directory-meta">Evocation · Drd 5 , Fire 4 , Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="wall of force" data-school="Evocation" data-levels="5"><a href="/spells/wall-of-force/"><strong>Wall of Force</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="wall of ice" data-school="Evocation" data-levels="4"><a href="/spells/wall-of-ice/"><strong>Wall of Ice</strong><span class="spell-directory-meta">Evocation · Sor/Wiz 4</span></a></li>
+                <li data-spell-item data-name="wall of iron" data-school="Conjuration" data-levels="6"><a href="/spells/wall-of-iron/"><strong>Wall of Iron</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 6</span></a></li>
+                <li data-spell-item data-name="wall of stone" data-school="Conjuration" data-levels="5,6"><a href="/spells/wall-of-stone/"><strong>Wall of Stone</strong><span class="spell-directory-meta">Conjuration · Clr 5 , Drd 6 , Earth 5 , Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="wall of thorns" data-school="Conjuration" data-levels="5"><a href="/spells/wall-of-thorns/"><strong>Wall of Thorns</strong><span class="spell-directory-meta">Conjuration · Drd 5 , Plant 5</span></a></li>
+                <li data-spell-item data-name="warp wood" data-school="Transmutation" data-levels="2"><a href="/spells/warp-wood/"><strong>Warp Wood</strong><span class="spell-directory-meta">Transmutation · Drd 2</span></a></li>
+                <li data-spell-item data-name="water breathing" data-school="Transmutation" data-levels="3"><a href="/spells/water-breathing/"><strong>Water Breathing</strong><span class="spell-directory-meta">Transmutation · Clr 3 , Drd 3 , Sor/Wiz 3 , Water 3</span></a></li>
+                <li data-spell-item data-name="water walk" data-school="Transmutation" data-levels="3"><a href="/spells/water-walk/"><strong>Water Walk</strong><span class="spell-directory-meta">Transmutation · Clr 3 , Rgr 3</span></a></li>
+                <li data-spell-item data-name="waves of exhaustion" data-school="Necromancy" data-levels="7"><a href="/spells/waves-of-exhaustion/"><strong>Waves of Exhaustion</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 7</span></a></li>
+                <li data-spell-item data-name="waves of fatigue" data-school="Necromancy" data-levels="5"><a href="/spells/waves-of-fatigue/"><strong>Waves of Fatigue</strong><span class="spell-directory-meta">Necromancy · Sor/Wiz 5</span></a></li>
+                <li data-spell-item data-name="web" data-school="Conjuration" data-levels="2"><a href="/spells/web/"><strong>Web</strong><span class="spell-directory-meta">Conjuration · Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="weird" data-school="Illusion" data-levels="9"><a href="/spells/weird/"><strong>Weird</strong><span class="spell-directory-meta">Illusion · Sor/Wiz 9 Targets : Any number of creatures, no two of which can be more than 30 ft. apart</span></a></li>
+                <li data-spell-item data-name="whirlwind" data-school="Evocation" data-levels="8"><a href="/spells/whirlwind/"><strong>Whirlwind</strong><span class="spell-directory-meta">Evocation · Air 8 , Drd 8</span></a></li>
+                <li data-spell-item data-name="whispering wind" data-school="Transmutation" data-levels="2"><a href="/spells/whispering-wind/"><strong>Whispering Wind</strong><span class="spell-directory-meta">Transmutation · Brd 2 , Sor/Wiz 2</span></a></li>
+                <li data-spell-item data-name="wind walk" data-school="Transmutation" data-levels="6,7"><a href="/spells/wind-walk/"><strong>Wind Walk</strong><span class="spell-directory-meta">Transmutation · Clr 6 , Drd 7</span></a></li>
+                <li data-spell-item data-name="wind wall" data-school="Evocation" data-levels="2,3"><a href="/spells/wind-wall/"><strong>Wind Wall</strong><span class="spell-directory-meta">Evocation · Air 2 , Clr 3 , Drd 3 , Rgr 2 , Sor/Wiz 3</span></a></li>
+                <li data-spell-item data-name="wish" data-school="Universal" data-levels="9"><a href="/spells/wish/"><strong>Wish</strong><span class="spell-directory-meta">Universal · Sor/Wiz 9</span></a></li>
+                <li data-spell-item data-name="wood shape" data-school="Transmutation" data-levels="2"><a href="/spells/wood-shape/"><strong>Wood Shape</strong><span class="spell-directory-meta">Transmutation · Drd 2</span></a></li>
+                <li data-spell-item data-name="word of chaos" data-school="Evocation" data-levels="7"><a href="/spells/word-of-chaos/"><strong>Word of Chaos</strong><span class="spell-directory-meta">Evocation · Chaos 7 , Clr 7</span></a></li>
+                <li data-spell-item data-name="word of recall" data-school="Conjuration" data-levels="6,8"><a href="/spells/word-of-recall/"><strong>Word of Recall</strong><span class="spell-directory-meta">Conjuration · Clr 6 , Drd 8</span></a></li>
+            </ul></section>
+        <section class="spell-letter-group" data-spell-group><h2>Z</h2><ul class="spell-directory-list">
+                <li data-spell-item data-name="zone of silence" data-school="Illusion" data-levels="4"><a href="/spells/zone-of-silence/"><strong>Zone of Silence</strong><span class="spell-directory-meta">Illusion · Brd 4</span></a></li>
+                <li data-spell-item data-name="zone of truth" data-school="Enchantment" data-levels="2"><a href="/spells/zone-of-truth/"><strong>Zone of Truth</strong><span class="spell-directory-meta">Enchantment · Clr 2 , Pal 2</span></a></li>
+            </ul></section>
+</section>
+<script src="/assets/spell-directory.js?v=1" defer></script>
+        </main>
 
-  <footer>
-    d20 SRD Hub
-  </footer>
+        <nav class="page-navigation" aria-label="Previous and next pages">
+            <a class="page-navigation-link previous" href="/spell-lists/"><span class="page-navigation-direction">← Previous</span><span>Spell Lists</span></a>
+<a class="page-navigation-link next" href="/the-basics/"><span class="page-navigation-direction">Next →</span><span>The Basics</span></a>
+        </nav>
+
+        <footer class="site-footer">
+            <p>
+                Open Game Content used under the Open Game License Version 1.0a.
+                See <a href="/legal/">Legal</a>.
+            </p>
+        </footer>
+
+    </div>
+
+</div>
+
+<script src="/assets/search.js?v=2" defer></script>
+<script src="/assets/toc.js?v=2" defer></script>
+<script src="/assets/theme.js?v=1" defer></script>
+<script src="/assets/navigation.js?v=1" defer></script>
+<script src="/assets/print.js?v=1" defer></script>
+<script src="/assets/bookmarks.js?v=1" defer></script>
 </body>
 </html>

@@ -70,7 +70,14 @@
         });
 
         details.append(summary, list);
-        article.insertBefore(details, headings[0]);
+
+        var insertionTarget = headings[0];
+
+        while (insertionTarget.parentElement !== article) {
+            insertionTarget = insertionTarget.parentElement;
+        }
+
+        article.insertBefore(details, insertionTarget);
 
         if ("IntersectionObserver" in window) {
             var observer = new IntersectionObserver(function (entries) {

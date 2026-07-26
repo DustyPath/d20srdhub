@@ -357,6 +357,96 @@
             border-left: 4px solid var(--accent);
         }
 
+        .spell-list-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .spell-list-links a {
+            padding: 8px 11px;
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font: 700 0.88rem Arial, Helvetica, sans-serif;
+        }
+
+        .spell-filters {
+            display: grid;
+            grid-template-columns: minmax(180px, 1fr) repeat(2, minmax(130px, auto));
+            gap: 12px;
+            align-items: end;
+            margin: 16px 0 24px;
+            padding: 16px;
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .spell-filters label {
+            display: grid;
+            gap: 5px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .spell-filters input,
+        .spell-filters select {
+            width: 100%;
+            padding: 9px 10px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background: var(--surface);
+            color: var(--text);
+            font: 1rem Arial, Helvetica, sans-serif;
+            text-transform: none;
+        }
+
+        .spell-result-count {
+            grid-column: 1 / -1;
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .spell-letter-group[hidden] {
+            display: none;
+        }
+
+        .spell-directory-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 7px 14px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .spell-directory-list li[hidden] {
+            display: none;
+        }
+
+        .spell-directory-list a {
+            display: flex;
+            flex-direction: column;
+            padding: 9px 11px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+        }
+
+        .spell-directory-list a:hover,
+        .spell-directory-list a:focus {
+            background: var(--surface-muted);
+            text-decoration: none;
+        }
+
+        .spell-directory-meta {
+            color: var(--text-muted);
+            font: 0.76rem Arial, Helvetica, sans-serif;
+        }
+
         .article-card {
             padding: 34px 40px;
             background: var(--surface);
@@ -595,6 +685,11 @@
 
             .page-toc-list {
                 columns: 1;
+            }
+
+            .spell-filters,
+            .spell-directory-list {
+                grid-template-columns: 1fr;
             }
         }
 
