@@ -551,6 +551,126 @@
             font: 0.76rem Arial, Helvetica, sans-serif;
         }
 
+        .combat-category-grid,
+        .combat-page-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin: 22px 0 30px;
+        }
+
+        .combat-category-card,
+        .combat-page-card {
+            display: block;
+            padding: 18px;
+            color: var(--text);
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--accent);
+            border-radius: 5px;
+        }
+
+        .combat-category-card:hover,
+        .combat-category-card:focus,
+        .combat-page-card:hover,
+        .combat-page-card:focus {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .combat-category-title {
+            display: block;
+            margin: 0 0 7px;
+            color: var(--accent-dark);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.25rem;
+        }
+
+        .combat-category-card p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        .combat-page-card strong,
+        .combat-page-card span {
+            display: block;
+        }
+
+        .combat-page-card span,
+        .combat-directory-meta {
+            margin-top: 3px;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        .combat-filters {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
+            gap: 12px;
+            align-items: end;
+            margin: 18px 0 24px;
+            padding: 16px;
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+        }
+
+        .combat-filters label {
+            display: grid;
+            gap: 5px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .combat-filters input,
+        .combat-filters select {
+            width: 100%;
+            padding: 9px 10px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background: var(--surface);
+            color: var(--text);
+            font: 1rem Arial, Helvetica, sans-serif;
+            text-transform: none;
+        }
+
+        .combat-result-count {
+            grid-column: 1 / -1;
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .combat-reference-group[hidden],
+        .combat-directory-list li[hidden] {
+            display: none;
+        }
+
+        .combat-directory-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 7px 14px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .combat-directory-list a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 9px 11px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+        }
+
+        .combat-directory-list a:hover,
+        .combat-directory-list a:focus {
+            background: var(--surface-muted);
+            text-decoration: none;
+        }
+
         .article-card {
             padding: 34px 40px;
             background: var(--surface);
@@ -795,7 +915,11 @@
             .spell-directory-list,
             .equipment-category-grid,
             .equipment-filters,
-            .equipment-directory-list {
+            .equipment-directory-list,
+            .combat-category-grid,
+            .combat-page-grid,
+            .combat-filters,
+            .combat-directory-list {
                 grid-template-columns: 1fr;
             }
         }
@@ -1082,7 +1206,9 @@ body::before {
 .spell-filters input,
 .spell-filters select,
 .equipment-filters input,
-.equipment-filters select {
+.equipment-filters select,
+.combat-filters input,
+.combat-filters select {
     border: 1px solid #725c38;
     border-radius: 2px;
     background:
@@ -1098,7 +1224,9 @@ body::before {
 :root[data-theme="dark"] .spell-filters input,
 :root[data-theme="dark"] .spell-filters select,
 :root[data-theme="dark"] .equipment-filters input,
-:root[data-theme="dark"] .equipment-filters select {
+:root[data-theme="dark"] .equipment-filters select,
+:root[data-theme="dark"] .combat-filters input,
+:root[data-theme="dark"] .combat-filters select {
     background: linear-gradient(#2f291f, #211c16);
     color: var(--text);
 }
@@ -1306,8 +1434,11 @@ blockquote,
 
 .category-card,
 .equipment-category-card,
+.combat-category-card,
+.combat-page-card,
 .spell-directory-list a,
 .equipment-directory-list a,
+.combat-directory-list a,
 .page-navigation-link {
     border: 1px solid #8e6f3f;
     border-top: 3px solid var(--accent);
@@ -1379,8 +1510,11 @@ blockquote,
 
 .category-card:hover,
 .equipment-category-card:hover,
+.combat-category-card:hover,
+.combat-page-card:hover,
 .spell-directory-list a:hover,
 .equipment-directory-list a:hover,
+.combat-directory-list a:hover,
 .page-navigation-link:hover {
     border-color: var(--gold);
     border-top-color: var(--gold);
