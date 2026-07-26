@@ -15,6 +15,7 @@ LEGACY_SEARCH_SCRIPT = '<script src="/assets/search.js" defer></script>'
 SEARCH_SCRIPT = '<script src="/assets/search.js?v=2" defer></script>'
 TOC_SCRIPT = '<script src="/assets/toc.js?v=1" defer></script>'
 THEME_SCRIPT = '<script src="/assets/theme.js?v=1" defer></script>'
+NAVIGATION_SCRIPT = '<script src="/assets/navigation.js?v=1" defer></script>'
 THEME_INIT = (
     '<script data-theme-init>(function(){try{var t=localStorage.getItem'
     '("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)")'
@@ -26,6 +27,18 @@ THEME_BUTTON = (
     "        ☾ Dark\n"
     "    </button>"
 )
+SIDEBAR_TITLE = '<p class="sidebar-title">SRD Sections</p>'
+SIDEBAR_TOGGLE = (
+    '<button class="sidebar-toggle" data-sidebar-toggle type="button" '
+    'aria-controls="sidebar-navigation" aria-expanded="false">\n'
+    "            Browse sections\n"
+    "        </button>"
+)
+SIDEBAR_NAV = '<nav class="sidebar-nav" aria-label="SRD sections">'
+SIDEBAR_NAV_WITH_ID = (
+    '<nav id="sidebar-navigation" class="sidebar-nav" '
+    'aria-label="SRD sections">'
+)
 
 
 def migrate_html(html):
@@ -33,6 +46,9 @@ def migrate_html(html):
 
     migrated = strip_source_artifacts(html)
     migrated = migrated.replace(LEGACY_SEARCH_SCRIPT, SEARCH_SCRIPT)
+    has_sidebar_navigation = (
+        SIDEBAR_NAV in migrated or SIDEBAR_NAV_WITH_ID in migrated
+    )
 
     if SEARCH_SCRIPT in migrated and TOC_SCRIPT not in migrated:
         migrated = migrated.replace(
@@ -47,6 +63,20 @@ def migrate_html(html):
             f"{TOC_SCRIPT}\n{THEME_SCRIPT}",
             1,
         )
+
+    if (
+        SEARCH_SCRIPT in migrated
+        and has_sidebar_navigation
+        and NAVIGATION_SCRIPT not in migrated
+    ):
+        migrated = migrated.replace(
+            THEME_SCRIPT,
+            f"{THEME_SCRIPT}\n{NAVIGATION_SCRIPT}",
+            1,
+        )
+
+    if not has_sidebar_navigation and NAVIGATION_SCRIPT in migrated:
+        migrated = migrated.replace(f"\n{NAVIGATION_SCRIPT}", "", 1)
 
     if SEARCH_SCRIPT in migrated and THEME_INIT not in migrated:
         if SHARED_STYLESHEET in migrated:
@@ -75,6 +105,20 @@ def migrate_html(html):
                 f"<body>\n    {THEME_BUTTON}",
                 1,
             )
+
+    if SEARCH_SCRIPT in migrated and "data-sidebar-toggle" not in migrated:
+        migrated = migrated.replace(
+            SIDEBAR_TITLE,
+            f"{SIDEBAR_TITLE}\n\n        {SIDEBAR_TOGGLE}",
+            1,
+        )
+
+    if SEARCH_SCRIPT in migrated and 'id="sidebar-navigation"' not in migrated:
+        migrated = migrated.replace(
+            SIDEBAR_NAV,
+            SIDEBAR_NAV_WITH_ID,
+            1,
+        )
 
     if SEARCH_SCRIPT not in migrated or not STYLE_BLOCK.search(migrated):
         return migrated
@@ -170,10 +214,17 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
         if "data-theme-toggle" not in html:
             problems.append((page_file, "theme toggle is missing"))
 
+        if 'class="sidebar-nav"' in html:
+            if NAVIGATION_SCRIPT not in html or "data-sidebar-toggle" not in html:
+                problems.append((page_file, "mobile navigation is missing"))
+
+            if 'id="sidebar-navigation"' not in html:
+                problems.append((page_file, "sidebar navigation id is missing"))
+
         script_audit_html = html.replace(THEME_INIT, "")
         other_scripts = re.findall(
             r"<script\b(?![^>]*\bsrc=[\"']/assets/"
-            r"(?:search|toc|theme)\.js(?:\?v=\d+)?[\"'])",
+            r"(?:search|toc|theme|navigation)\.js(?:\?v=\d+)?[\"'])",
             script_audit_html,
             re.IGNORECASE,
         )

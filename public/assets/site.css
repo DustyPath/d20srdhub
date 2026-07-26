@@ -235,6 +235,28 @@
             color: var(--text-muted);
         }
 
+        .sidebar-toggle {
+            display: none;
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            font: 700 0.94rem Arial, Helvetica, sans-serif;
+            text-align: left;
+        }
+
+        .sidebar-toggle::after {
+            float: right;
+            content: "▾";
+        }
+
+        .sidebar-toggle[aria-expanded="true"]::after {
+            content: "▴";
+        }
+
         .sidebar-nav {
             display: grid;
             gap: 4px;
@@ -454,8 +476,21 @@
                 border-bottom: 1px solid var(--border);
             }
 
+            .sidebar-title {
+                display: none;
+            }
+
+            .sidebar-toggle {
+                display: block;
+            }
+
             .sidebar-nav {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                margin-top: 10px;
+            }
+
+            .sidebar-nav[hidden] {
+                display: none;
             }
 
             .content-column {

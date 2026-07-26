@@ -58,7 +58,11 @@
     <aside class="sidebar">
         <p class="sidebar-title">SRD Sections</p>
 
-        <nav class="sidebar-nav" aria-label="SRD sections">
+        <button class="sidebar-toggle" data-sidebar-toggle type="button" aria-controls="sidebar-navigation" aria-expanded="false">
+            Browse sections
+        </button>
+
+        <nav id="sidebar-navigation" class="sidebar-nav" aria-label="SRD sections">
             <a href="/basics/">Basics</a>
             <a href="/races/">Races</a>
             <a href="/classes/">Classes</a>
@@ -312,5 +316,6 @@
 <script src="/assets/search.js?v=2" defer></script>
 <script src="/assets/toc.js?v=1" defer></script>
 <script src="/assets/theme.js?v=1" defer></script>
+<script src="/assets/navigation.js?v=1" defer></script>
 </body>
 </html>

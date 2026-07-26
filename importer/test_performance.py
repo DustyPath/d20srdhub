@@ -4,12 +4,15 @@ from pathlib import Path
 
 from importer.performance import (
     LEGACY_SEARCH_SCRIPT,
+    NAVIGATION_SCRIPT,
     SEARCH_SCRIPT,
     SHARED_STYLESHEET,
     TOC_SCRIPT,
     THEME_BUTTON,
     THEME_INIT,
     THEME_SCRIPT,
+    SIDEBAR_NAV_WITH_ID,
+    SIDEBAR_TOGGLE,
     audit_shared_styles,
     extract_template_css,
     migrate_generated_pages,
@@ -32,6 +35,22 @@ class PerformanceTests(unittest.TestCase):
         self.assertIn(THEME_INIT, migrated)
         self.assertIn(THEME_BUTTON, migrated)
         self.assertIn(THEME_SCRIPT, migrated)
+
+    def test_migrate_html_adds_mobile_sidebar_navigation(self):
+        html = (
+            "<html><head></head><body><header></header>"
+            '<aside class="sidebar">'
+            '<p class="sidebar-title">SRD Sections</p>'
+            '<nav class="sidebar-nav" aria-label="SRD sections"></nav>'
+            "</aside>"
+            f"{SEARCH_SCRIPT}{TOC_SCRIPT}{THEME_SCRIPT}</body></html>"
+        )
+
+        migrated = migrate_html(html)
+
+        self.assertIn(NAVIGATION_SCRIPT, migrated)
+        self.assertIn(SIDEBAR_TOGGLE, migrated)
+        self.assertIn(SIDEBAR_NAV_WITH_ID, migrated)
 
     def test_migrate_html_extracts_only_shared_template_style(self):
         html = (
