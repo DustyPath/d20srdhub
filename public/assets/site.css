@@ -554,7 +554,9 @@
         .combat-category-grid,
         .combat-page-grid,
         .class-category-grid,
-        .class-page-grid {
+        .class-page-grid,
+        .skill-category-grid,
+        .skill-page-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 14px;
@@ -564,7 +566,9 @@
         .combat-category-card,
         .combat-page-card,
         .class-category-card,
-        .class-page-card {
+        .class-page-card,
+        .skill-category-card,
+        .skill-page-card {
             display: block;
             padding: 18px;
             color: var(--text);
@@ -581,13 +585,18 @@
         .class-category-card:hover,
         .class-category-card:focus,
         .class-page-card:hover,
-        .class-page-card:focus {
+        .class-page-card:focus,
+        .skill-category-card:hover,
+        .skill-category-card:focus,
+        .skill-page-card:hover,
+        .skill-page-card:focus {
             border-color: var(--accent);
             text-decoration: none;
         }
 
         .combat-category-title,
-        .class-category-title {
+        .class-category-title,
+        .skill-category-title {
             display: block;
             margin: 0 0 7px;
             color: var(--accent-dark);
@@ -596,7 +605,8 @@
         }
 
         .combat-category-card p,
-        .class-category-card p {
+        .class-category-card p,
+        .skill-category-card p {
             margin: 0;
             color: var(--text-muted);
         }
@@ -604,20 +614,25 @@
         .combat-page-card strong,
         .combat-page-card span,
         .class-page-card strong,
-        .class-page-card span {
+        .class-page-card span,
+        .skill-page-card strong,
+        .skill-page-card span {
             display: block;
         }
 
         .combat-page-card span,
         .combat-directory-meta,
         .class-page-card span,
-        .class-directory-meta {
+        .class-directory-meta,
+        .skill-page-card span,
+        .skill-directory-meta {
             margin-top: 3px;
             color: var(--text-muted);
             font-size: 0.82rem;
         }
 
-        .class-reference-title {
+        .class-reference-title,
+        .skill-reference-title {
             display: block;
             margin: 1.8rem 0 0.75rem;
             padding-bottom: 5px;
@@ -630,7 +645,8 @@
         }
 
         .combat-filters,
-        .class-filters {
+        .class-filters,
+        .skill-filters {
             display: grid;
             grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
             gap: 12px;
@@ -643,7 +659,8 @@
         }
 
         .combat-filters label,
-        .class-filters label {
+        .class-filters label,
+        .skill-filters label {
             display: grid;
             gap: 5px;
             color: var(--text-muted);
@@ -655,7 +672,9 @@
         .combat-filters input,
         .combat-filters select,
         .class-filters input,
-        .class-filters select {
+        .class-filters select,
+        .skill-filters input,
+        .skill-filters select {
             width: 100%;
             padding: 9px 10px;
             border: 1px solid var(--border);
@@ -667,7 +686,8 @@
         }
 
         .combat-result-count,
-        .class-result-count {
+        .class-result-count,
+        .skill-result-count {
             grid-column: 1 / -1;
             margin: 0;
             color: var(--text-muted);
@@ -677,12 +697,15 @@
         .combat-reference-group[hidden],
         .combat-directory-list li[hidden],
         .class-reference-group[hidden],
-        .class-directory-list li[hidden] {
+        .class-directory-list li[hidden],
+        .skill-reference-group[hidden],
+        .skill-directory-list li[hidden] {
             display: none;
         }
 
         .combat-directory-list,
-        .class-directory-list {
+        .class-directory-list,
+        .skill-directory-list {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 7px 14px;
@@ -691,7 +714,8 @@
         }
 
         .combat-directory-list a,
-        .class-directory-list a {
+        .class-directory-list a,
+        .skill-directory-list a {
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -703,7 +727,9 @@
         .combat-directory-list a:hover,
         .combat-directory-list a:focus,
         .class-directory-list a:hover,
-        .class-directory-list a:focus {
+        .class-directory-list a:focus,
+        .skill-directory-list a:hover,
+        .skill-directory-list a:focus {
             background: var(--surface-muted);
             text-decoration: none;
         }
@@ -960,7 +986,11 @@
             .class-category-grid,
             .class-page-grid,
             .class-filters,
-            .class-directory-list {
+            .class-directory-list,
+            .skill-category-grid,
+            .skill-page-grid,
+            .skill-filters,
+            .skill-directory-list {
                 grid-template-columns: 1fr;
             }
         }
@@ -1251,7 +1281,9 @@ body::before {
 .combat-filters input,
 .combat-filters select,
 .class-filters input,
-.class-filters select {
+.class-filters select,
+.skill-filters input,
+.skill-filters select {
     border: 1px solid #725c38;
     border-radius: 2px;
     background:
@@ -1271,7 +1303,9 @@ body::before {
 :root[data-theme="dark"] .combat-filters input,
 :root[data-theme="dark"] .combat-filters select,
 :root[data-theme="dark"] .class-filters input,
-:root[data-theme="dark"] .class-filters select {
+:root[data-theme="dark"] .class-filters select,
+:root[data-theme="dark"] .skill-filters input,
+:root[data-theme="dark"] .skill-filters select {
     background: linear-gradient(#2f291f, #211c16);
     color: var(--text);
 }
@@ -1483,10 +1517,13 @@ blockquote,
 .combat-page-card,
 .class-category-card,
 .class-page-card,
+.skill-category-card,
+.skill-page-card,
 .spell-directory-list a,
 .equipment-directory-list a,
 .combat-directory-list a,
 .class-directory-list a,
+.skill-directory-list a,
 .page-navigation-link {
     border: 1px solid #8e6f3f;
     border-top: 3px solid var(--accent);
@@ -1562,10 +1599,13 @@ blockquote,
 .combat-page-card:hover,
 .class-category-card:hover,
 .class-page-card:hover,
+.skill-category-card:hover,
+.skill-page-card:hover,
 .spell-directory-list a:hover,
 .equipment-directory-list a:hover,
 .combat-directory-list a:hover,
 .class-directory-list a:hover,
+.skill-directory-list a:hover,
 .page-navigation-link:hover {
     border-color: var(--gold);
     border-top-color: var(--gold);
