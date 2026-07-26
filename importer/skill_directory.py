@@ -21,6 +21,7 @@ CATEGORIES = (
     ("Epic & Psionic Skills", "specialized", "Epic skill uses and the additional psionic skill system."),
 )
 GENERAL_SLUGS = {"using-skills", "skills-summary", "skill-descriptions"}
+DIRECTORY_SLUGS = {"a-z"}
 ABILITY_CATEGORIES = {
     "Str": "Strength Skills",
     "Dex": "Dexterity Skills",
@@ -139,6 +140,10 @@ def collect_skill_pages(public_dir=PUBLIC_DIR):
 
     for page_file in sorted(skills_dir.glob("*/index.html")):
         output_path = page_file.parent.relative_to(public_dir).as_posix()
+
+        if page_file.parent.name in DIRECTORY_SLUGS:
+            continue
+
         title = article_heading(page_file)
 
         if title:
@@ -270,7 +275,11 @@ def build_skill_article(pages, topics):
         )
 
     return (
+        '<div class="section-heading-row">\n'
         "<h1>Skills</h1>\n"
+        '<a class="section-directory-link" href="/skills/a-z/">'
+        "Skills List A–Z</a>\n"
+        "</div>\n"
         "<p>Browse every standard skill, general skill rules, individual "
         "skill uses, and specialized epic and psionic skill systems.</p>\n"
         '<section class="skill-category-grid" '
@@ -295,6 +304,71 @@ def build_skill_article(pages, topics):
     )
 
 
+def alphabetical_skill_pages(pages):
+    """Return named skills, excluding rule and overview pages."""
+
+    excluded_paths = {
+        "skills/using-skills",
+        "skills/skills-summary",
+        "skills/skill-descriptions",
+        "epic/skills",
+        "psionic/skills/overview",
+    }
+    return sorted(
+        (
+            page
+            for page in pages
+            if page.output_path not in excluded_paths
+        ),
+        key=lambda page: page.title.casefold(),
+    )
+
+
+def build_skill_az_article(pages):
+    """Build a simple alphabetical directory of named skills."""
+
+    skills = alphabetical_skill_pages(pages)
+    letters = {}
+
+    for page in skills:
+        letter = page.title[0].upper()
+        letters.setdefault(letter, []).append(page)
+
+    letter_links = " ".join(
+        f'<a href="#skills-{escape(letter.lower())}">{escape(letter)}</a>'
+        for letter in letters
+    )
+    groups = []
+
+    for letter, letter_skills in letters.items():
+        entries = "\n".join(
+            '<li><a href="/'
+            f'{escape(page.output_path, quote=True)}/">'
+            f"<strong>{escape(page.title)}</strong>"
+            f"<span>{escape(page.category)}</span></a></li>"
+            for page in letter_skills
+        )
+        groups.append(
+            f'<section class="skill-az-group" '
+            f'id="skills-{escape(letter.lower())}">'
+            f"<h2>{escape(letter)}</h2>"
+            f'<ul class="skill-az-list">{entries}</ul></section>'
+        )
+
+    return (
+        '<div class="section-heading-row">\n'
+        "<h1>Skills List A–Z</h1>\n"
+        '<a class="section-directory-link" href="/skills/">'
+        "Back to Skills</a>\n"
+        "</div>\n"
+        "<p>Select any skill to open its complete description, checks, "
+        "special uses, and related rules.</p>\n"
+        '<nav class="skill-letter-nav" aria-label="Skill letters">'
+        f"{letter_links}</nav>\n"
+        + "\n".join(groups)
+    )
+
+
 def generate_skill_directory(public_dir=PUBLIC_DIR):
     """Generate `/skills/` and return the indexed topic count."""
 
@@ -308,6 +382,11 @@ def generate_skill_directory(public_dir=PUBLIC_DIR):
 
     if public_dir == PUBLIC_DIR:
         write_page("skills", "Skills", build_skill_article(pages, topics))
+        write_page(
+            "skills/a-z",
+            "Skills List A–Z",
+            build_skill_az_article(pages),
+        )
 
     return len(pages), len(topics)
 

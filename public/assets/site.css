@@ -742,6 +742,96 @@
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
         }
 
+        .section-heading-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-heading-row h1 {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .section-directory-link {
+            flex: 0 0 auto;
+            color: var(--accent-dark);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .skill-letter-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 1.5rem 0 2rem;
+            padding: 13px;
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+        }
+
+        .skill-letter-nav a {
+            min-width: 34px;
+            padding: 5px 8px;
+            color: var(--accent-dark);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .skill-letter-nav a:hover,
+        .skill-letter-nav a:focus {
+            background: var(--surface);
+            text-decoration: none;
+        }
+
+        .skill-az-group h2 {
+            position: sticky;
+            top: calc(var(--header-height) + 8px);
+            z-index: 2;
+            padding: 5px 9px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-az-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 9px 14px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skill-az-list a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 11px 13px;
+            color: var(--text);
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+        }
+
+        .skill-az-list a:hover,
+        .skill-az-list a:focus {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .skill-az-list span {
+            margin-top: 3px;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
         .page-toc {
             margin: 0 0 2rem;
             padding: 14px 18px;
@@ -968,6 +1058,16 @@
             main table {
                 display: block;
                 overflow-x: auto;
+            }
+
+            .section-heading-row {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .skill-az-list {
+                grid-template-columns: 1fr;
             }
 
             .page-toc-list {

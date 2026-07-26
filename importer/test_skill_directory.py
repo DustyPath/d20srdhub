@@ -5,7 +5,9 @@ from pathlib import Path
 from importer.skill_directory import (
     SkillPage,
     add_heading_ids,
+    alphabetical_skill_pages,
     build_skill_article,
+    build_skill_az_article,
     collect_page_topics,
     skill_category,
 )
@@ -68,6 +70,46 @@ class SkillDirectoryTests(unittest.TestCase):
         self.assertIn("Epic &amp; Psionic Skills", article)
         self.assertIn("/skills/heal/", article)
         self.assertIn("Skill-use quick reference", article)
+        self.assertIn('href="/skills/a-z/"', article)
+
+    def test_builds_alphabetical_named_skill_directory(self):
+        pages = [
+            SkillPage("Using Skills", "skills/using-skills", "Skill Rules"),
+            SkillPage(
+                "Speak Language (None; Trained Only)",
+                "skills/speak-language",
+                "Skill Rules",
+            ),
+            SkillPage("Balance (Dex)", "skills/balance", "Dexterity Skills"),
+            SkillPage("Climb (Str)", "skills/climb", "Strength Skills"),
+            SkillPage(
+                "Autohypnosis (Wis; Trained Only)",
+                "psionic/skills/autohypnosis",
+                "Epic & Psionic Skills",
+            ),
+            SkillPage(
+                "Psionic Skills",
+                "psionic/skills/overview",
+                "Epic & Psionic Skills",
+            ),
+        ]
+
+        skills = alphabetical_skill_pages(pages)
+        article = build_skill_az_article(pages)
+
+        self.assertEqual(
+            [page.title for page in skills],
+            [
+                "Autohypnosis (Wis; Trained Only)",
+                "Balance (Dex)",
+                "Climb (Str)",
+                "Speak Language (None; Trained Only)",
+            ],
+        )
+        self.assertIn('id="skills-a"', article)
+        self.assertIn('href="/skills/balance/"', article)
+        self.assertNotIn("Using Skills", article)
+        self.assertNotIn('href="/psionic/skills/overview/"', article)
 
 
 if __name__ == "__main__":
