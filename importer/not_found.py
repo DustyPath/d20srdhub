@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+"""Generate the branded, searchable 404 page."""
+
+from importer.config import PUBLIC_DIR
+
+
+def render_not_found():
+    """Return the complete 404 page HTML."""
+
+    return """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,3 +79,21 @@
 <script src="/assets/search.js?v=2" defer></script>
 </body>
 </html>
+"""
+
+
+def write_not_found(public_dir=PUBLIC_DIR):
+    """Write the generated 404 page."""
+
+    destination = public_dir / "404.html"
+    destination.write_text(render_not_found(), encoding="utf-8")
+    return destination
+
+
+def main():
+    destination = write_not_found()
+    print(f"Created: {destination}")
+
+
+if __name__ == "__main__":
+    main()
