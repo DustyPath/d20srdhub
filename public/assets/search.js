@@ -91,6 +91,9 @@
     function clearResults(results) {
         results.replaceChildren();
         results.hidden = true;
+        results.closest("[data-search-form]")
+            ?.querySelector("[data-search-input]")
+            ?.setAttribute("aria-expanded", "false");
     }
 
     function renderResults(results, documents, query) {
@@ -129,6 +132,13 @@
 
         results.appendChild(list);
         results.hidden = false;
+
+        var input = results.closest("[data-search-form]")
+            ?.querySelector("[data-search-input]");
+
+        if (input) {
+            input.setAttribute("aria-expanded", "true");
+        }
     }
 
     function initializeSearch(form) {
@@ -139,6 +149,34 @@
 
         if (!input || !results) {
             return;
+        }
+
+        if (!results.id) {
+            results.id = "search-results";
+        }
+
+        input.setAttribute("aria-controls", results.id);
+        input.setAttribute("aria-expanded", "false");
+        input.setAttribute("aria-autocomplete", "list");
+
+        function focusResult(direction) {
+            var links = Array.from(results.querySelectorAll("a"));
+            var currentIndex = links.indexOf(document.activeElement);
+
+            if (!links.length) {
+                return;
+            }
+
+            var nextIndex;
+
+            if (currentIndex === -1) {
+                nextIndex = direction > 0 ? 0 : links.length - 1;
+            } else {
+                nextIndex = (currentIndex + direction + links.length) %
+                    links.length;
+            }
+
+            links[nextIndex].focus();
         }
 
         function runSearch() {
@@ -152,6 +190,7 @@
 
             results.hidden = false;
             results.textContent = "Searching…";
+            input.setAttribute("aria-expanded", "true");
 
             loadIndex()
                 .then(function (documents) {
@@ -175,12 +214,24 @@
                 currentResults = [];
                 clearResults(results);
             } else if (event.key === "ArrowDown" && !results.hidden) {
-                var firstLink = results.querySelector("a");
+                event.preventDefault();
+                focusResult(1);
+            }
+        });
 
-                if (firstLink) {
-                    event.preventDefault();
-                    firstLink.focus();
-                }
+        results.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowDown") {
+                event.preventDefault();
+                focusResult(1);
+            } else if (event.key === "ArrowUp") {
+                event.preventDefault();
+                focusResult(-1);
+            } else if (event.key === "Escape") {
+                event.preventDefault();
+                input.focus();
+                input.value = "";
+                currentResults = [];
+                clearResults(results);
             }
         });
 
@@ -197,6 +248,20 @@
         document.addEventListener("click", function (event) {
             if (!form.contains(event.target)) {
                 clearResults(results);
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            var target = event.target;
+            var isTyping = target instanceof HTMLInputElement ||
+                target instanceof HTMLTextAreaElement ||
+                target?.isContentEditable;
+
+            if (event.key === "/" && !isTyping &&
+                    !event.metaKey && !event.ctrlKey && !event.altKey) {
+                event.preventDefault();
+                input.focus();
+                input.select();
             }
         });
     }

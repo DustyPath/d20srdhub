@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 
 from importer.performance import (
+    LEGACY_SEARCH_SCRIPT,
     SEARCH_SCRIPT,
     SHARED_STYLESHEET,
     audit_shared_styles,
@@ -13,6 +14,14 @@ from importer.performance import (
 
 
 class PerformanceTests(unittest.TestCase):
+    def test_migrate_html_versions_legacy_search_asset(self):
+        html = f"<html><body>{LEGACY_SEARCH_SCRIPT}</body></html>"
+
+        migrated = migrate_html(html)
+
+        self.assertNotIn(LEGACY_SEARCH_SCRIPT, migrated)
+        self.assertIn(SEARCH_SCRIPT, migrated)
+
     def test_migrate_html_extracts_only_shared_template_style(self):
         html = (
             "<html><head><title>Rogue</title>"

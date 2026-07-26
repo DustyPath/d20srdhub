@@ -11,13 +11,15 @@ CANONICAL_LINK = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 SHARED_STYLESHEET = '<link rel="stylesheet" href="/assets/site.css">'
-SEARCH_SCRIPT = '<script src="/assets/search.js" defer></script>'
+LEGACY_SEARCH_SCRIPT = '<script src="/assets/search.js" defer></script>'
+SEARCH_SCRIPT = '<script src="/assets/search.js?v=2" defer></script>'
 
 
 def migrate_html(html):
     """Replace shared-template inline CSS with the shared stylesheet link."""
 
     migrated = strip_source_artifacts(html)
+    migrated = migrated.replace(LEGACY_SEARCH_SCRIPT, SEARCH_SCRIPT)
 
     if SEARCH_SCRIPT not in migrated or not STYLE_BLOCK.search(migrated):
         return migrated
@@ -105,7 +107,7 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
             problems.append((page_file, "shared stylesheet is missing"))
 
         other_scripts = re.findall(
-            r"<script\b(?![^>]*\bsrc=[\"']/assets/search\.js[\"'])",
+            r"<script\b(?![^>]*\bsrc=[\"']/assets/search\.js(?:\?v=\d+)?[\"'])",
             html,
             re.IGNORECASE,
         )
