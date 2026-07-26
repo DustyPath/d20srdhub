@@ -304,7 +304,8 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
         script_audit_html = html.replace(THEME_INIT, "")
         other_scripts = re.findall(
             r"<script\b(?![^>]*\bsrc=[\"']/assets/"
-            r"(?:search|toc|theme|navigation|print|bookmarks|spell-directory)"
+            r"(?:search|toc|theme|navigation|print|bookmarks|spell-directory|"
+            r"equipment-directory)"
             r"\.js(?:\?v=\d+)?[\"'])",
             script_audit_html,
             re.IGNORECASE,

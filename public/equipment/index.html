@@ -1,116 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipment | d20 SRD Hub</title>
-    <meta name="description" content="Weapons, armor, adventuring gear, services, and vehicles.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-theme-init>(function(){try{var t=localStorage.getItem("d20srdhub-theme");if(!t){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){}}())</script>
+
+    <title>Equipment | d20 SRD Hub</title>
+    <meta name="description" content="Browse weapons, armor, adventuring gear, services, transport, currency, and trade goods from the d20 System Reference Document.">
     <link rel="canonical" href="https://d20srdhub.com/equipment/">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: #eee8da;
-      color: #26211d;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 28px 20px;
-      background: #542020;
-      color: white;
-      text-align: center;
-      border-bottom: 5px solid #341313;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 3.5rem);
-    }
-
-    nav {
-      padding: 12px 20px;
-      background: #341313;
-      text-align: center;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 5px 10px;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    main {
-      max-width: 950px;
-      min-height: 420px;
-      margin: 36px auto;
-      padding: 38px;
-      background: #fffdf8;
-      border: 1px solid #c9bda9;
-      box-shadow: 0 8px 24px rgb(49 34 23 / 12%);
-    }
-
-    main h2 {
-      margin-top: 0;
-      color: #542020;
-      font-size: 2rem;
-    }
-
-    .notice {
-      margin-top: 28px;
-      padding: 16px 20px;
-      background: #f5efe4;
-      border-left: 5px solid #7a2e2e;
-    }
-
-    footer {
-      padding: 25px;
-      background: #341313;
-      color: white;
-      text-align: center;
-    }
-  </style>
+    <link rel="stylesheet" href="/assets/site.css">
+    <meta property="og:title" content="Equipment | d20 SRD Hub">
+    <meta property="og:description" content="Browse weapons, armor, adventuring gear, services, transport, currency, and trade goods from the d20 System Reference Document.">
+    <meta property="og:url" content="https://d20srdhub.com/equipment/">
+    <meta property="og:type" content="article">
 </head>
 
 <body>
-  <header>
-    <h1>d20 SRD Hub</h1>
-    <p>An independent tabletop roleplaying rules reference</p>
-  </header>
 
-  <nav aria-label="Primary navigation">
-    <a href="/">Home</a>
-    <a href="/classes/">Classes</a>
-    <a href="/races/">Races</a>
-    <a href="/skills/">Skills</a>
-    <a href="/feats/">Feats</a>
-    <a href="/spells/">Spells</a>
-    <a href="/monsters/">Monsters</a>
-    <a href="/equipment/">Equipment</a>
-  </nav>
+<header class="site-header">
+    <h1 class="site-title">
+        <a href="/">d20 SRD Hub</a>
+    </h1>
 
-  <main>
-    <h2>Equipment</h2>
+    <form class="site-search" data-search-form role="search">
+        <div class="site-search-row">
+            <label class="visually-hidden" for="header-search">
+                Search the rules
+            </label>
+            <input
+                id="header-search"
+                data-search-input
+                type="search"
+                autocomplete="off"
+                placeholder="Search rules…"
+            >
+            <button type="submit">Search</button>
+        </div>
+        <div
+            class="search-results"
+            data-search-results
+            aria-live="polite"
+            hidden
+        ></div>
+    </form>
 
-    <p>Weapons, armor, adventuring gear, services, and vehicles.</p>
+    <nav class="header-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/classes/">Classes</a>
+        <a href="/combat/">Combat</a>
+        <a href="/spells/">Spells</a>
+        <a href="/monsters/">Monsters</a>
+        <a href="/bookmarks/">Bookmarks</a>
+        <a href="/legal/">Legal</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle type="button">
+        ☾ Dark
+    </button>
+</header>
 
-    <div class="notice">
-      <strong>Section status:</strong>
-      This section has been created and is ready for properly licensed rules
-      content.
+<div class="layout">
+
+    <aside class="sidebar">
+        <p class="sidebar-title">SRD Sections</p>
+        <button
+            class="sidebar-toggle"
+            data-sidebar-toggle
+            type="button"
+            aria-controls="sidebar-navigation"
+            aria-expanded="false"
+        >
+            Browse sections
+        </button>
+
+        <nav
+            id="sidebar-navigation"
+            class="sidebar-nav"
+            aria-label="SRD sections"
+        >
+            <a href="/basics/">Basics</a>
+            <a href="/races/">Races</a>
+            <a href="/classes/">Classes</a>
+            <a href="/skills/">Skills</a>
+            <a href="/feats/">Feats</a>
+            <a href="/equipment/">Equipment</a>
+            <a href="/combat/">Combat</a>
+            <a href="/magic/">Magic</a>
+            <a href="/spells/">Spells</a>
+            <a href="/magic-items/">Magic Items</a>
+            <a href="/monsters/">Monsters</a>
+            <a href="/special-abilities/">Special Abilities</a>
+            <a href="/conditions/">Conditions</a>
+            <a href="/psionics/">Psionics</a>
+            <a href="/epic/">Epic Rules</a>
+            <a href="/variant/">Variant Rules</a>
+        </nav>
+    </aside>
+
+    <div class="content-column">
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Equipment</span>
+        </nav>
+
+        <div class="article-tools" aria-label="Page tools">
+            <button class="bookmark-button" data-bookmark-page type="button">
+                ☆ Save rule
+            </button>
+            <button class="print-button" data-print-page type="button">
+                Print / Save PDF
+            </button>
+        </div>
+
+        <main class="article-card">
+            <h1>Equipment</h1>
+<p>Browse weapons, armor, adventuring gear, services, transport, currency, and trade goods from the d20 System Reference Document.</p>
+<section class="equipment-category-grid" aria-label="Equipment categories">
+        <a class="equipment-category-card" href="/equipment/weapons/"><h2>Weapons</h2><p>Weapon categories, costs, damage, critical hits, range, weight, and descriptions.</p></a>
+        <a class="equipment-category-card" href="/equipment/armor/"><h2>Armor &amp; Shields</h2><p>Armor bonuses, Dexterity limits, check penalties, spell failure, speed, and weight.</p></a>
+        <a class="equipment-category-card" href="/equipment/goods-and-services/"><h2>Goods &amp; Services</h2><p>Adventuring gear, tools, clothing, lodging, mounts, transport, and spellcasting services.</p></a>
+        <a class="equipment-category-card" href="/equipment/wealth-and-money/"><h2>Wealth &amp; Money</h2><p>Coins, exchange values, trade goods, starting wealth, and selling loot.</p></a>
+</section>
+<section class="equipment-directory" data-equipment-directory aria-labelledby="equipment-reference">
+<h2 id="equipment-reference">Equipment quick reference</h2>
+<div class="equipment-filters">
+<label>Item or service<input data-equipment-search type="search" placeholder="Filter equipment…"></label>
+<label>Category<select data-equipment-category><option value="">All categories</option>
+                <option value="Weapons">Weapons</option>
+                <option value="Armor &amp; Shields">Armor &amp; Shields</option>
+                <option value="Goods &amp; Services">Goods &amp; Services</option>
+                <option value="Wealth &amp; Money">Wealth &amp; Money</option></select></label>
+<p class="equipment-result-count" data-equipment-count aria-live="polite"></p>
+</div>
+<section class="equipment-reference-group" data-equipment-group><h2>Adventuring Gear</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="backpack (empty)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Backpack (empty)</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 2 lb. 1</span></a></li>
+                <li data-equipment-item data-name="barrel (empty)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Barrel (empty)</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 30 lb.</span></a></li>
+                <li data-equipment-item data-name="basket (empty)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Basket (empty)</strong><span class="equipment-directory-meta">Goods &amp; Services · 4 sp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="bedroll" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Bedroll</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · 5 lb. 1</span></a></li>
+                <li data-equipment-item data-name="bell" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Bell</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · —</span></a></li>
+                <li data-equipment-item data-name="blanket, winter" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Blanket, winter</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · 3 lb. 1</span></a></li>
+                <li data-equipment-item data-name="block and tackle" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Block and tackle</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 gp · 5 lb.</span></a></li>
+                <li data-equipment-item data-name="bottle, wine, glass" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Bottle, wine, glass</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · —</span></a></li>
+                <li data-equipment-item data-name="bucket (empty)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Bucket (empty)</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="caltrops" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Caltrops</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="candle" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Candle</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 cp · —</span></a></li>
+                <li data-equipment-item data-name="canvas (sq. yd.)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Canvas (sq. yd.)</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="case, map or scroll" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Case, map or scroll</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · ½ lb.</span></a></li>
+                <li data-equipment-item data-name="chain (10 ft.)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Chain (10 ft.)</strong><span class="equipment-directory-meta">Goods &amp; Services · 30 gp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="chalk, 1 piece" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Chalk, 1 piece</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 cp · —</span></a></li>
+                <li data-equipment-item data-name="chest (empty)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Chest (empty)</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 25 lb.</span></a></li>
+                <li data-equipment-item data-name="crowbar" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Crowbar</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 5 lb.</span></a></li>
+                <li data-equipment-item data-name="firewood (per day)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Firewood (per day)</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 cp · 20 lb.</span></a></li>
+                <li data-equipment-item data-name="fishhook" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Fishhook</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · —</span></a></li>
+                <li data-equipment-item data-name="fishing net, 25 sq. ft." data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Fishing net, 25 sq. ft.</strong><span class="equipment-directory-meta">Goods &amp; Services · 4 gp · 5 lb.</span></a></li>
+                <li data-equipment-item data-name="flask (empty)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Flask (empty)</strong><span class="equipment-directory-meta">Goods &amp; Services · 3 cp · 1½ lb.</span></a></li>
+                <li data-equipment-item data-name="flint and steel" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Flint and steel</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · —</span></a></li>
+                <li data-equipment-item data-name="grappling hook" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Grappling hook</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 4 lb.</span></a></li>
+                <li data-equipment-item data-name="hammer" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Hammer</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="ink (1 oz. vial)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Ink (1 oz. vial)</strong><span class="equipment-directory-meta">Goods &amp; Services · 8 gp · —</span></a></li>
+                <li data-equipment-item data-name="inkpen" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Inkpen</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · —</span></a></li>
+                <li data-equipment-item data-name="jug, clay" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Jug, clay</strong><span class="equipment-directory-meta">Goods &amp; Services · 3 cp · 9 lb.</span></a></li>
+                <li data-equipment-item data-name="ladder, 10-foot" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Ladder, 10-foot</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 cp · 20 lb.</span></a></li>
+                <li data-equipment-item data-name="lamp, common" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Lamp, common</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="lantern, bullseye" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Lantern, bullseye</strong><span class="equipment-directory-meta">Goods &amp; Services · 12 gp · 3 lb.</span></a></li>
+                <li data-equipment-item data-name="lantern, hooded" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Lantern, hooded</strong><span class="equipment-directory-meta">Goods &amp; Services · 7 gp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="lock (amazing)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Lock (amazing)</strong><span class="equipment-directory-meta">Goods &amp; Services · 150 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="lock (average)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Lock (average)</strong><span class="equipment-directory-meta">Goods &amp; Services · 40 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="lock (good)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Lock (good)</strong><span class="equipment-directory-meta">Goods &amp; Services · 80 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="lock (very simple)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Lock (very simple)</strong><span class="equipment-directory-meta">Goods &amp; Services · 20 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="manacles" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Manacles</strong><span class="equipment-directory-meta">Goods &amp; Services · 15 gp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="manacles, masterwork" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Manacles, masterwork</strong><span class="equipment-directory-meta">Goods &amp; Services · 50 gp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="mirror, small steel" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Mirror, small steel</strong><span class="equipment-directory-meta">Goods &amp; Services · 10 gp · ½ lb.</span></a></li>
+                <li data-equipment-item data-name="mug/tankard, clay" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Mug/Tankard, clay</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 cp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="oil (1-pint flask)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Oil (1-pint flask)</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="paper (sheet)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Paper (sheet)</strong><span class="equipment-directory-meta">Goods &amp; Services · 4 sp · —</span></a></li>
+                <li data-equipment-item data-name="parchment (sheet)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Parchment (sheet)</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 sp · —</span></a></li>
+                <li data-equipment-item data-name="pick, miner’s" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Pick, miner’s</strong><span class="equipment-directory-meta">Goods &amp; Services · 3 gp · 10 lb.</span></a></li>
+                <li data-equipment-item data-name="pitcher, clay" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Pitcher, clay</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 cp · 5 lb.</span></a></li>
+                <li data-equipment-item data-name="piton" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Piton</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · ½ lb.</span></a></li>
+                <li data-equipment-item data-name="pole, 10-foot" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Pole, 10-foot</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 sp · 8 lb.</span></a></li>
+                <li data-equipment-item data-name="pot, iron" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Pot, iron</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · 10 lb.</span></a></li>
+                <li data-equipment-item data-name="pouch, belt (empty)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Pouch, belt (empty)</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · ½ lb. 1</span></a></li>
+                <li data-equipment-item data-name="ram, portable" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Ram, portable</strong><span class="equipment-directory-meta">Goods &amp; Services · 10 gp · 20 lb.</span></a></li>
+                <li data-equipment-item data-name="rations, trail (per day)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Rations, trail (per day)</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · 1 lb. 1</span></a></li>
+                <li data-equipment-item data-name="rope, hempen (50 ft.)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Rope, hempen (50 ft.)</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 10 lb.</span></a></li>
+                <li data-equipment-item data-name="rope, silk (50 ft.)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Rope, silk (50 ft.)</strong><span class="equipment-directory-meta">Goods &amp; Services · 10 gp · 5 lb.</span></a></li>
+                <li data-equipment-item data-name="sack (empty)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Sack (empty)</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · ½ lb. 1</span></a></li>
+                <li data-equipment-item data-name="sealing wax" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Sealing wax</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="sewing needle" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Sewing needle</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · —</span></a></li>
+                <li data-equipment-item data-name="signal whistle" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Signal whistle</strong><span class="equipment-directory-meta">Goods &amp; Services · 8 sp · —</span></a></li>
+                <li data-equipment-item data-name="signet ring" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Signet ring</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 gp · —</span></a></li>
+                <li data-equipment-item data-name="sledge" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Sledge</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 10 lb.</span></a></li>
+                <li data-equipment-item data-name="soap (per lb.)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Soap (per lb.)</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="spade or shovel" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spade or shovel</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 8 lb.</span></a></li>
+                <li data-equipment-item data-name="spyglass" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spyglass</strong><span class="equipment-directory-meta">Goods &amp; Services · 1,000 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="tent" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Tent</strong><span class="equipment-directory-meta">Goods &amp; Services · 10 gp · 20 lb. 1</span></a></li>
+                <li data-equipment-item data-name="torch" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Torch</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 cp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="vial, ink or potion" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Vial, ink or potion</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 1/10 lb.</span></a></li>
+                <li data-equipment-item data-name="waterskin" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Waterskin</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 4 lb. 1</span></a></li>
+                <li data-equipment-item data-name="whetstone" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Whetstone</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 cp · 1 lb.</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Armor and Shields</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="armor spikes" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Armor spikes</strong><span class="equipment-directory-meta">Armor &amp; Shields · +50 gp · — · —</span></a></li>
+                <li data-equipment-item data-name="banded mail" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Banded mail</strong><span class="equipment-directory-meta">Armor &amp; Shields · 250 gp · 6 · 1</span></a></li>
+                <li data-equipment-item data-name="breastplate" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Breastplate</strong><span class="equipment-directory-meta">Armor &amp; Shields · 200 gp · 5 · 3</span></a></li>
+                <li data-equipment-item data-name="buckler" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Buckler</strong><span class="equipment-directory-meta">Armor &amp; Shields · 15 gp · 1 · —</span></a></li>
+                <li data-equipment-item data-name="chain shirt" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Chain shirt</strong><span class="equipment-directory-meta">Armor &amp; Shields · 100 gp · 4 · 4</span></a></li>
+                <li data-equipment-item data-name="chainmail" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Chainmail</strong><span class="equipment-directory-meta">Armor &amp; Shields · 150 gp · 5 · 2</span></a></li>
+                <li data-equipment-item data-name="full plate" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Full plate</strong><span class="equipment-directory-meta">Armor &amp; Shields · 1,500 gp · 8 · 1</span></a></li>
+                <li data-equipment-item data-name="gauntlet, locked" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Gauntlet, locked</strong><span class="equipment-directory-meta">Armor &amp; Shields · 8 gp · — · —</span></a></li>
+                <li data-equipment-item data-name="half-plate" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Half-plate</strong><span class="equipment-directory-meta">Armor &amp; Shields · 600 gp · 7 · 0</span></a></li>
+                <li data-equipment-item data-name="hide" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Hide</strong><span class="equipment-directory-meta">Armor &amp; Shields · 15 gp · 3 · 4</span></a></li>
+                <li data-equipment-item data-name="leather" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Leather</strong><span class="equipment-directory-meta">Armor &amp; Shields · 10 gp · 2 · 6</span></a></li>
+                <li data-equipment-item data-name="padded" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Padded</strong><span class="equipment-directory-meta">Armor &amp; Shields · 5 gp · 1 · 8</span></a></li>
+                <li data-equipment-item data-name="scale mail" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Scale mail</strong><span class="equipment-directory-meta">Armor &amp; Shields · 50 gp · 4 · 3</span></a></li>
+                <li data-equipment-item data-name="shield spikes" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Shield spikes</strong><span class="equipment-directory-meta">Armor &amp; Shields · +10 gp · — · —</span></a></li>
+                <li data-equipment-item data-name="shield, heavy steel" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Shield, heavy steel</strong><span class="equipment-directory-meta">Armor &amp; Shields · 20 gp · 2 · —</span></a></li>
+                <li data-equipment-item data-name="shield, heavy wooden" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Shield, heavy wooden</strong><span class="equipment-directory-meta">Armor &amp; Shields · 7 gp · 2 · —</span></a></li>
+                <li data-equipment-item data-name="shield, light steel" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Shield, light steel</strong><span class="equipment-directory-meta">Armor &amp; Shields · 9 gp · 1 · —</span></a></li>
+                <li data-equipment-item data-name="shield, light wooden" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Shield, light wooden</strong><span class="equipment-directory-meta">Armor &amp; Shields · 3 gp · 1 · —</span></a></li>
+                <li data-equipment-item data-name="shield, tower" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Shield, tower</strong><span class="equipment-directory-meta">Armor &amp; Shields · 30 gp · 4 3 · 2</span></a></li>
+                <li data-equipment-item data-name="splint mail" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Splint mail</strong><span class="equipment-directory-meta">Armor &amp; Shields · 200 gp · 6 · 0</span></a></li>
+                <li data-equipment-item data-name="studded leather" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Studded leather</strong><span class="equipment-directory-meta">Armor &amp; Shields · 25 gp · 3 · 5</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Barding</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="heavy" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Heavy</strong><span class="equipment-directory-meta">Goods &amp; Services · 30 ft.1 · 35 ft.1 · 40 ft.1</span></a></li>
+                <li data-equipment-item data-name="medium" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Medium</strong><span class="equipment-directory-meta">Goods &amp; Services · 30 ft. · 35 ft. · 40 ft.</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Clothing</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="artisan’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Artisan’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 4 lb. 1</span></a></li>
+                <li data-equipment-item data-name="cleric’s vestments" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Cleric’s vestments</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 gp · 6 lb. 1</span></a></li>
+                <li data-equipment-item data-name="cold weather outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Cold weather outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 8 gp · 7 lb. 1</span></a></li>
+                <li data-equipment-item data-name="courtier’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Courtier’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 30 gp · 6 lb. 1</span></a></li>
+                <li data-equipment-item data-name="entertainer’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Entertainer’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 3 gp · 4 lb. 1</span></a></li>
+                <li data-equipment-item data-name="explorer’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Explorer’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 10 gp · 8 lb. 1</span></a></li>
+                <li data-equipment-item data-name="monk’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Monk’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 gp · 2 lb. 1</span></a></li>
+                <li data-equipment-item data-name="noble’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Noble’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 75 gp · 10 lb. 1</span></a></li>
+                <li data-equipment-item data-name="peasant’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Peasant’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · 2 lb. 1</span></a></li>
+                <li data-equipment-item data-name="royal outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Royal outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 200 gp · 15 lb. 1</span></a></li>
+                <li data-equipment-item data-name="scholar’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Scholar’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 gp · 6 lb. 1</span></a></li>
+                <li data-equipment-item data-name="traveler’s outfit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Traveler’s outfit</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · 5 lb. 1</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Coins</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="copper piece (cp) =" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>Copper piece (cp) =</strong><span class="equipment-directory-meta">Wealth &amp; Money · 1 · 1/10 · 1/100</span></a></li>
+                <li data-equipment-item data-name="gold piece (gp) =" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>Gold piece (gp) =</strong><span class="equipment-directory-meta">Wealth &amp; Money · 100 · 10 · 1</span></a></li>
+                <li data-equipment-item data-name="platinum piece (pp) =" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>Platinum piece (pp) =</strong><span class="equipment-directory-meta">Wealth &amp; Money · 1,000 · 100 · 10</span></a></li>
+                <li data-equipment-item data-name="silver piece (sp) =" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>Silver piece (sp) =</strong><span class="equipment-directory-meta">Wealth &amp; Money · 10 · 1 · 1/10</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Food, Drink, and Lodging</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="banquet (per person)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Banquet (per person)</strong><span class="equipment-directory-meta">Goods &amp; Services · 10 gp · —</span></a></li>
+                <li data-equipment-item data-name="bread, per loaf" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Bread, per loaf</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 cp · ½ lb.</span></a></li>
+                <li data-equipment-item data-name="cheese, hunk of" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Cheese, hunk of</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · ½ lb.</span></a></li>
+                <li data-equipment-item data-name="common" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Common</strong><span class="equipment-directory-meta">Goods &amp; Services · 3 sp · —</span></a></li>
+                <li data-equipment-item data-name="common (pitcher)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Common (pitcher)</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 sp · 6 lb.</span></a></li>
+                <li data-equipment-item data-name="fine (bottle)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Fine (bottle)</strong><span class="equipment-directory-meta">Goods &amp; Services · 10 gp · 1½ lb.</span></a></li>
+                <li data-equipment-item data-name="gallon" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Gallon</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 sp · 8 lb.</span></a></li>
+                <li data-equipment-item data-name="good" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Good</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · —</span></a></li>
+                <li data-equipment-item data-name="meat, chunk of" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Meat, chunk of</strong><span class="equipment-directory-meta">Goods &amp; Services · 3 sp · ½ lb.</span></a></li>
+                <li data-equipment-item data-name="mug" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Mug</strong><span class="equipment-directory-meta">Goods &amp; Services · 4 cp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="poor" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Poor</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp · —</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Mounts and Related Gear</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="bit and bridle" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Bit and bridle</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="dog, guard" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Dog, guard</strong><span class="equipment-directory-meta">Goods &amp; Services · 25 gp · —</span></a></li>
+                <li data-equipment-item data-name="dog, riding" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Dog, riding</strong><span class="equipment-directory-meta">Goods &amp; Services · 150 gp · —</span></a></li>
+                <li data-equipment-item data-name="donkey or mule" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Donkey or mule</strong><span class="equipment-directory-meta">Goods &amp; Services · 8 gp · —</span></a></li>
+                <li data-equipment-item data-name="feed (per day)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Feed (per day)</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 cp · 10 lb.</span></a></li>
+                <li data-equipment-item data-name="horse, heavy" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Horse, heavy</strong><span class="equipment-directory-meta">Goods &amp; Services · 200 gp · —</span></a></li>
+                <li data-equipment-item data-name="horse, light" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Horse, light</strong><span class="equipment-directory-meta">Goods &amp; Services · 75 gp · —</span></a></li>
+                <li data-equipment-item data-name="large creature" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Large creature</strong><span class="equipment-directory-meta">Goods &amp; Services · ×4 · ×2</span></a></li>
+                <li data-equipment-item data-name="medium creature" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Medium creature</strong><span class="equipment-directory-meta">Goods &amp; Services · ×2 · ×1</span></a></li>
+                <li data-equipment-item data-name="military" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Military</strong><span class="equipment-directory-meta">Goods &amp; Services · 60 gp · 40 lb.</span></a></li>
+                <li data-equipment-item data-name="pack" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Pack</strong><span class="equipment-directory-meta">Goods &amp; Services · 15 gp · 20 lb.</span></a></li>
+                <li data-equipment-item data-name="pony" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Pony</strong><span class="equipment-directory-meta">Goods &amp; Services · 30 gp · —</span></a></li>
+                <li data-equipment-item data-name="riding" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Riding</strong><span class="equipment-directory-meta">Goods &amp; Services · 30 gp · 30 lb.</span></a></li>
+                <li data-equipment-item data-name="saddlebags" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Saddlebags</strong><span class="equipment-directory-meta">Goods &amp; Services · 4 gp · 8 lb.</span></a></li>
+                <li data-equipment-item data-name="stabling (per day)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Stabling (per day)</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 sp · —</span></a></li>
+                <li data-equipment-item data-name="warhorse, heavy" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Warhorse, heavy</strong><span class="equipment-directory-meta">Goods &amp; Services · 400 gp · —</span></a></li>
+                <li data-equipment-item data-name="warhorse, light" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Warhorse, light</strong><span class="equipment-directory-meta">Goods &amp; Services · 150 gp · —</span></a></li>
+                <li data-equipment-item data-name="warpony" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Warpony</strong><span class="equipment-directory-meta">Goods &amp; Services · 100 gp · —</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Other Equipment</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="colossal" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Colossal</strong><span class="equipment-directory-meta">Armor &amp; Shields · ×16 · ×12 · ×32</span></a></li>
+                <li data-equipment-item data-name="gargantuan" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Gargantuan</strong><span class="equipment-directory-meta">Armor &amp; Shields · ×8 · ×8 · ×16</span></a></li>
+                <li data-equipment-item data-name="huge" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Huge</strong><span class="equipment-directory-meta">Armor &amp; Shields · ×4 · ×5 · ×8</span></a></li>
+                <li data-equipment-item data-name="large" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Large</strong><span class="equipment-directory-meta">Armor &amp; Shields · ×2 · ×2 · ×4</span></a></li>
+                <li data-equipment-item data-name="medium" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Medium</strong><span class="equipment-directory-meta">Armor &amp; Shields · ×1 · ×1 · ×2</span></a></li>
+                <li data-equipment-item data-name="small" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Small</strong><span class="equipment-directory-meta">Armor &amp; Shields · ×1 · ×½ · ×2</span></a></li>
+                <li data-equipment-item data-name="tiny or smaller 1" data-category="Armor &amp; Shields"><a href="/equipment/armor/"><strong>Tiny or smaller 1</strong><span class="equipment-directory-meta">Armor &amp; Shields · ×½ · ×1/10 · ×1</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Special Substances and Items</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="acid (flask)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/#acid"><strong>Acid (flask)</strong><span class="equipment-directory-meta">Goods &amp; Services · 10 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="alchemist’s fire (flask)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/#alchemistsFire"><strong>Alchemist’s fire (flask)</strong><span class="equipment-directory-meta">Goods &amp; Services · 20 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="antitoxin (vial)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Antitoxin (vial)</strong><span class="equipment-directory-meta">Goods &amp; Services · 50 gp · —</span></a></li>
+                <li data-equipment-item data-name="everburning torch" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Everburning torch</strong><span class="equipment-directory-meta">Goods &amp; Services · 110 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="holy water (flask)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Holy water (flask)</strong><span class="equipment-directory-meta">Goods &amp; Services · 25 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="smokestick" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Smokestick</strong><span class="equipment-directory-meta">Goods &amp; Services · 20 gp · ½ lb.</span></a></li>
+                <li data-equipment-item data-name="sunrod" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Sunrod</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="tanglefoot bag" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Tanglefoot bag</strong><span class="equipment-directory-meta">Goods &amp; Services · 50 gp · 4 lb.</span></a></li>
+                <li data-equipment-item data-name="thunderstone" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Thunderstone</strong><span class="equipment-directory-meta">Goods &amp; Services · 30 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="tindertwig" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Tindertwig</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · —</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Spellcasting and Services</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="coach cab" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Coach cab</strong><span class="equipment-directory-meta">Goods &amp; Services · 3 cp per mile</span></a></li>
+                <li data-equipment-item data-name="hireling, trained" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Hireling, trained</strong><span class="equipment-directory-meta">Goods &amp; Services · 3 sp per day</span></a></li>
+                <li data-equipment-item data-name="hireling, untrained" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Hireling, untrained</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp per day</span></a></li>
+                <li data-equipment-item data-name="messenger" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Messenger</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 cp per mile</span></a></li>
+                <li data-equipment-item data-name="road or gate toll" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Road or gate toll</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 cp</span></a></li>
+                <li data-equipment-item data-name="ship’s passage" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Ship’s passage</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 sp per mile</span></a></li>
+                <li data-equipment-item data-name="spell, 0-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 0-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 5 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 1st-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 1st-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 10 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 2nd-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 2nd-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 20 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 3rd-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 3rd-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 30 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 4th-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 4th-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 40 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 5th-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 5th-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 50 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 6th-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 6th-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 60 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 7th-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 7th-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 70 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 8th-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 8th-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 80 gp 1</span></a></li>
+                <li data-equipment-item data-name="spell, 9th-level" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell, 9th-level</strong><span class="equipment-directory-meta">Goods &amp; Services · Caster level × 90 gp 1</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Tools and Skill Kits</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="alchemist’s lab" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Alchemist’s lab</strong><span class="equipment-directory-meta">Goods &amp; Services · 500 gp · 40 lb.</span></a></li>
+                <li data-equipment-item data-name="artisan’s tools" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Artisan’s tools</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 gp · 5 lb.</span></a></li>
+                <li data-equipment-item data-name="artisan’s tools, masterwork" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Artisan’s tools, masterwork</strong><span class="equipment-directory-meta">Goods &amp; Services · 55 gp · 5 lb.</span></a></li>
+                <li data-equipment-item data-name="climber’s kit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Climber’s kit</strong><span class="equipment-directory-meta">Goods &amp; Services · 80 gp · 5 lb. 1</span></a></li>
+                <li data-equipment-item data-name="disguise kit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Disguise kit</strong><span class="equipment-directory-meta">Goods &amp; Services · 50 gp · 8 lb. 1</span></a></li>
+                <li data-equipment-item data-name="healer’s kit" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Healer’s kit</strong><span class="equipment-directory-meta">Goods &amp; Services · 50 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="holly and mistletoe" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Holly and mistletoe</strong><span class="equipment-directory-meta">Goods &amp; Services · — · —</span></a></li>
+                <li data-equipment-item data-name="holy symbol, silver" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Holy symbol, silver</strong><span class="equipment-directory-meta">Goods &amp; Services · 25 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="holy symbol, wooden" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Holy symbol, wooden</strong><span class="equipment-directory-meta">Goods &amp; Services · 1 gp · —</span></a></li>
+                <li data-equipment-item data-name="hourglass" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Hourglass</strong><span class="equipment-directory-meta">Goods &amp; Services · 25 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="magnifying glass" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Magnifying glass</strong><span class="equipment-directory-meta">Goods &amp; Services · 100 gp · —</span></a></li>
+                <li data-equipment-item data-name="musical instrument, common" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Musical instrument, common</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 gp · 3 lb. 1</span></a></li>
+                <li data-equipment-item data-name="musical instrument, masterwork" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Musical instrument, masterwork</strong><span class="equipment-directory-meta">Goods &amp; Services · 100 gp · 3 lb. 1</span></a></li>
+                <li data-equipment-item data-name="scale, merchant’s" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Scale, merchant’s</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="spell component pouch" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spell component pouch</strong><span class="equipment-directory-meta">Goods &amp; Services · 5 gp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="spellbook, wizard’s (blank)" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Spellbook, wizard’s (blank)</strong><span class="equipment-directory-meta">Goods &amp; Services · 15 gp · 3 lb.</span></a></li>
+                <li data-equipment-item data-name="thieves’ tools" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Thieves’ tools</strong><span class="equipment-directory-meta">Goods &amp; Services · 30 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="thieves’ tools, masterwork" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Thieves’ tools, masterwork</strong><span class="equipment-directory-meta">Goods &amp; Services · 100 gp · 2 lb.</span></a></li>
+                <li data-equipment-item data-name="tool, masterwork" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Tool, masterwork</strong><span class="equipment-directory-meta">Goods &amp; Services · 50 gp · 1 lb.</span></a></li>
+                <li data-equipment-item data-name="water clock" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Water clock</strong><span class="equipment-directory-meta">Goods &amp; Services · 1,000 gp · 200 lb.</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Trade Goods</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="one pig" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pig</strong><span class="equipment-directory-meta">Wealth &amp; Money · 3 gp</span></a></li>
+                <li data-equipment-item data-name="one pound of cinnamon, or one goat" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of cinnamon, or one goat</strong><span class="equipment-directory-meta">Wealth &amp; Money · 1 gp</span></a></li>
+                <li data-equipment-item data-name="one pound of flour, or one chicken" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of flour, or one chicken</strong><span class="equipment-directory-meta">Wealth &amp; Money · 2 cp</span></a></li>
+                <li data-equipment-item data-name="one pound of ginger or pepper, or one sheep" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of ginger or pepper, or one sheep</strong><span class="equipment-directory-meta">Wealth &amp; Money · 2 gp</span></a></li>
+                <li data-equipment-item data-name="one pound of gold" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of gold</strong><span class="equipment-directory-meta">Wealth &amp; Money · 50 gp</span></a></li>
+                <li data-equipment-item data-name="one pound of iron" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of iron</strong><span class="equipment-directory-meta">Wealth &amp; Money · 1 sp</span></a></li>
+                <li data-equipment-item data-name="one pound of platinum" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of platinum</strong><span class="equipment-directory-meta">Wealth &amp; Money · 500 gp</span></a></li>
+                <li data-equipment-item data-name="one pound of saffron or cloves, or one ox" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of saffron or cloves, or one ox</strong><span class="equipment-directory-meta">Wealth &amp; Money · 15 gp</span></a></li>
+                <li data-equipment-item data-name="one pound of salt or silver" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of salt or silver</strong><span class="equipment-directory-meta">Wealth &amp; Money · 5 gp</span></a></li>
+                <li data-equipment-item data-name="one pound of tobacco or copper" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of tobacco or copper</strong><span class="equipment-directory-meta">Wealth &amp; Money · 5 sp</span></a></li>
+                <li data-equipment-item data-name="one pound of wheat" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One pound of wheat</strong><span class="equipment-directory-meta">Wealth &amp; Money · 1 cp</span></a></li>
+                <li data-equipment-item data-name="one square yard of linen" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One square yard of linen</strong><span class="equipment-directory-meta">Wealth &amp; Money · 4 gp</span></a></li>
+                <li data-equipment-item data-name="one square yard of silk, or one cow" data-category="Wealth &amp; Money"><a href="/equipment/wealth-and-money/"><strong>One square yard of silk, or one cow</strong><span class="equipment-directory-meta">Wealth &amp; Money · 10 gp</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Transport</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="carriage" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Carriage</strong><span class="equipment-directory-meta">Goods &amp; Services · 100 gp · 600 lb.</span></a></li>
+                <li data-equipment-item data-name="cart" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Cart</strong><span class="equipment-directory-meta">Goods &amp; Services · 15 gp · 200 lb.</span></a></li>
+                <li data-equipment-item data-name="galley" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Galley</strong><span class="equipment-directory-meta">Goods &amp; Services · 30,000 gp · —</span></a></li>
+                <li data-equipment-item data-name="keelboat" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Keelboat</strong><span class="equipment-directory-meta">Goods &amp; Services · 3,000 gp · —</span></a></li>
+                <li data-equipment-item data-name="longship" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Longship</strong><span class="equipment-directory-meta">Goods &amp; Services · 10,000 gp · —</span></a></li>
+                <li data-equipment-item data-name="oar" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Oar</strong><span class="equipment-directory-meta">Goods &amp; Services · 2 gp · 10 lb.</span></a></li>
+                <li data-equipment-item data-name="rowboat" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Rowboat</strong><span class="equipment-directory-meta">Goods &amp; Services · 50 gp · 100 lb.</span></a></li>
+                <li data-equipment-item data-name="sailing ship" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Sailing ship</strong><span class="equipment-directory-meta">Goods &amp; Services · 10,000 gp · —</span></a></li>
+                <li data-equipment-item data-name="sled" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Sled</strong><span class="equipment-directory-meta">Goods &amp; Services · 20 gp · 300 lb.</span></a></li>
+                <li data-equipment-item data-name="wagon" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Wagon</strong><span class="equipment-directory-meta">Goods &amp; Services · 35 gp · 400 lb.</span></a></li>
+                <li data-equipment-item data-name="warship" data-category="Goods &amp; Services"><a href="/equipment/goods-and-services/"><strong>Warship</strong><span class="equipment-directory-meta">Goods &amp; Services · 25,000 gp · —</span></a></li>
+            </ul></section>
+<section class="equipment-reference-group" data-equipment-group><h2>Weapons</h2><ul class="equipment-directory-list">
+                <li data-equipment-item data-name="arrows (20)" data-category="Weapons"><a href="/equipment/weapons/#arrows"><strong>Arrows (20)</strong><span class="equipment-directory-meta">Weapons · 1 gp · — · —</span></a></li>
+                <li data-equipment-item data-name="axe, orc double 5" data-category="Weapons"><a href="/equipment/weapons/#axeOrcDouble"><strong>Axe, orc double 5</strong><span class="equipment-directory-meta">Weapons · 60 gp · 1d6/1d6 · 1d8/1d8</span></a></li>
+                <li data-equipment-item data-name="axe, throwing" data-category="Weapons"><a href="/equipment/weapons/"><strong>Axe, throwing</strong><span class="equipment-directory-meta">Weapons · 8 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="battleaxe" data-category="Weapons"><a href="/equipment/weapons/"><strong>Battleaxe</strong><span class="equipment-directory-meta">Weapons · 10 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="bolas" data-category="Weapons"><a href="/equipment/weapons/#bolas"><strong>Bolas</strong><span class="equipment-directory-meta">Weapons · 5 gp · 1d3 3 · 1d4 3</span></a></li>
+                <li data-equipment-item data-name="bolts (10)" data-category="Weapons"><a href="/equipment/weapons/#bolts"><strong>Bolts (10)</strong><span class="equipment-directory-meta">Weapons · 1 gp · — · —</span></a></li>
+                <li data-equipment-item data-name="bolts (5)" data-category="Weapons"><a href="/equipment/weapons/#bolts"><strong>Bolts (5)</strong><span class="equipment-directory-meta">Weapons · 1 gp · — · —</span></a></li>
+                <li data-equipment-item data-name="bolts, crossbow (10)" data-category="Weapons"><a href="/equipment/weapons/#bolts"><strong>Bolts, crossbow (10)</strong><span class="equipment-directory-meta">Weapons · 1 gp · — · —</span></a></li>
+                <li data-equipment-item data-name="bullets, sling (10)" data-category="Weapons"><a href="/equipment/weapons/#bulletsSling"><strong>Bullets, sling (10)</strong><span class="equipment-directory-meta">Weapons · 1 sp · — · —</span></a></li>
+                <li data-equipment-item data-name="chain, spiked 4" data-category="Weapons"><a href="/equipment/weapons/#chainSpiked"><strong>Chain, spiked 4</strong><span class="equipment-directory-meta">Weapons · 25 gp · 1d6 · 2d4</span></a></li>
+                <li data-equipment-item data-name="club" data-category="Weapons"><a href="/equipment/weapons/"><strong>Club</strong><span class="equipment-directory-meta">Weapons · — · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="crossbow, hand" data-category="Weapons"><a href="/equipment/weapons/#crossbowHand"><strong>Crossbow, hand</strong><span class="equipment-directory-meta">Weapons · 100 gp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="crossbow, heavy" data-category="Weapons"><a href="/equipment/weapons/#crossbowHeavy"><strong>Crossbow, heavy</strong><span class="equipment-directory-meta">Weapons · 50 gp · 1d8 · 1d10</span></a></li>
+                <li data-equipment-item data-name="crossbow, light" data-category="Weapons"><a href="/equipment/weapons/#crossbowLight"><strong>Crossbow, light</strong><span class="equipment-directory-meta">Weapons · 35 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="crossbow, repeating heavy" data-category="Weapons"><a href="/equipment/weapons/#crossbowRepeating"><strong>Crossbow, repeating heavy</strong><span class="equipment-directory-meta">Weapons · 400 gp · 1d8 · 1d10</span></a></li>
+                <li data-equipment-item data-name="crossbow, repeating light" data-category="Weapons"><a href="/equipment/weapons/#crossbowRepeating"><strong>Crossbow, repeating light</strong><span class="equipment-directory-meta">Weapons · 250 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="dagger" data-category="Weapons"><a href="/equipment/weapons/#dagger"><strong>Dagger</strong><span class="equipment-directory-meta">Weapons · 2 gp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="dagger , punching" data-category="Weapons"><a href="/equipment/weapons/#dagger"><strong>Dagger , punching</strong><span class="equipment-directory-meta">Weapons · 2 gp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="dart" data-category="Weapons"><a href="/equipment/weapons/"><strong>Dart</strong><span class="equipment-directory-meta">Weapons · 5 sp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="falchion" data-category="Weapons"><a href="/equipment/weapons/"><strong>Falchion</strong><span class="equipment-directory-meta">Weapons · 75 gp · 1d6 · 2d4</span></a></li>
+                <li data-equipment-item data-name="flail" data-category="Weapons"><a href="/equipment/weapons/#flailorHeavyFlail"><strong>Flail</strong><span class="equipment-directory-meta">Weapons · 8 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="flail, dire 5" data-category="Weapons"><a href="/equipment/weapons/#flailDire"><strong>Flail, dire 5</strong><span class="equipment-directory-meta">Weapons · 90 gp · 1d6/1d6 · 1d8/1d8</span></a></li>
+                <li data-equipment-item data-name="flail, heavy" data-category="Weapons"><a href="/equipment/weapons/#flailorHeavyFlail"><strong>Flail, heavy</strong><span class="equipment-directory-meta">Weapons · 15 gp · 1d8 · 1d10</span></a></li>
+                <li data-equipment-item data-name="gauntlet" data-category="Weapons"><a href="/equipment/weapons/#gauntlet"><strong>Gauntlet</strong><span class="equipment-directory-meta">Weapons · 2 gp · 1d2 · 1d3</span></a></li>
+                <li data-equipment-item data-name="gauntlet, spiked" data-category="Weapons"><a href="/equipment/weapons/#gauntletSpiked"><strong>Gauntlet, spiked</strong><span class="equipment-directory-meta">Weapons · 5 gp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="glaive 4" data-category="Weapons"><a href="/equipment/weapons/#glaive"><strong>Glaive 4</strong><span class="equipment-directory-meta">Weapons · 8 gp · 1d8 · 1d10</span></a></li>
+                <li data-equipment-item data-name="greataxe" data-category="Weapons"><a href="/equipment/weapons/"><strong>Greataxe</strong><span class="equipment-directory-meta">Weapons · 20 gp · 1d10 · 1d12</span></a></li>
+                <li data-equipment-item data-name="greatclub" data-category="Weapons"><a href="/equipment/weapons/"><strong>Greatclub</strong><span class="equipment-directory-meta">Weapons · 5 gp · 1d8 · 1d10</span></a></li>
+                <li data-equipment-item data-name="greatsword" data-category="Weapons"><a href="/equipment/weapons/"><strong>Greatsword</strong><span class="equipment-directory-meta">Weapons · 50 gp · 1d10 · 2d6</span></a></li>
+                <li data-equipment-item data-name="guisarme 4" data-category="Weapons"><a href="/equipment/weapons/#guisarme"><strong>Guisarme 4</strong><span class="equipment-directory-meta">Weapons · 9 gp · 1d6 · 2d4</span></a></li>
+                <li data-equipment-item data-name="halberd" data-category="Weapons"><a href="/equipment/weapons/#halberd"><strong>Halberd</strong><span class="equipment-directory-meta">Weapons · 10 gp · 1d8 · 1d10</span></a></li>
+                <li data-equipment-item data-name="hammer, gnome hooked 5" data-category="Weapons"><a href="/equipment/weapons/#hammerGnomeHooked"><strong>Hammer, gnome hooked 5</strong><span class="equipment-directory-meta">Weapons · 20 gp · 1d6/1d4 · 1d8/1d6</span></a></li>
+                <li data-equipment-item data-name="hammer, light" data-category="Weapons"><a href="/equipment/weapons/"><strong>Hammer, light</strong><span class="equipment-directory-meta">Weapons · 1 gp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="handaxe" data-category="Weapons"><a href="/equipment/weapons/"><strong>Handaxe</strong><span class="equipment-directory-meta">Weapons · 6 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="javelin" data-category="Weapons"><a href="/equipment/weapons/#javelin"><strong>Javelin</strong><span class="equipment-directory-meta">Weapons · 1 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="kama" data-category="Weapons"><a href="/equipment/weapons/#kama"><strong>Kama</strong><span class="equipment-directory-meta">Weapons · 2 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="kukri" data-category="Weapons"><a href="/equipment/weapons/"><strong>Kukri</strong><span class="equipment-directory-meta">Weapons · 8 gp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="lance 4" data-category="Weapons"><a href="/equipment/weapons/#lance"><strong>Lance 4</strong><span class="equipment-directory-meta">Weapons · 10 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="longbow" data-category="Weapons"><a href="/equipment/weapons/#longbow"><strong>Longbow</strong><span class="equipment-directory-meta">Weapons · 75 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="longbow, composite" data-category="Weapons"><a href="/equipment/weapons/#longbowComposite"><strong>Longbow, composite</strong><span class="equipment-directory-meta">Weapons · 100 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="longspear 4" data-category="Weapons"><a href="/equipment/weapons/#longspear"><strong>Longspear 4</strong><span class="equipment-directory-meta">Weapons · 5 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="longsword" data-category="Weapons"><a href="/equipment/weapons/"><strong>Longsword</strong><span class="equipment-directory-meta">Weapons · 15 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="mace, heavy" data-category="Weapons"><a href="/equipment/weapons/"><strong>Mace, heavy</strong><span class="equipment-directory-meta">Weapons · 12 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="mace, light" data-category="Weapons"><a href="/equipment/weapons/"><strong>Mace, light</strong><span class="equipment-directory-meta">Weapons · 5 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="morningstar" data-category="Weapons"><a href="/equipment/weapons/"><strong>Morningstar</strong><span class="equipment-directory-meta">Weapons · 8 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="net" data-category="Weapons"><a href="/equipment/weapons/#net"><strong>Net</strong><span class="equipment-directory-meta">Weapons · 20 gp · — · —</span></a></li>
+                <li data-equipment-item data-name="nunchaku" data-category="Weapons"><a href="/equipment/weapons/#nunchaku"><strong>Nunchaku</strong><span class="equipment-directory-meta">Weapons · 2 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="pick, heavy" data-category="Weapons"><a href="/equipment/weapons/"><strong>Pick, heavy</strong><span class="equipment-directory-meta">Weapons · 8 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="pick, light" data-category="Weapons"><a href="/equipment/weapons/"><strong>Pick, light</strong><span class="equipment-directory-meta">Weapons · 4 gp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="quarterstaff 5" data-category="Weapons"><a href="/equipment/weapons/#quarterstaff"><strong>Quarterstaff 5</strong><span class="equipment-directory-meta">Weapons · — · 1d4/1d4 · 1d6/1d6</span></a></li>
+                <li data-equipment-item data-name="ranseur 4" data-category="Weapons"><a href="/equipment/weapons/#ranseur"><strong>Ranseur 4</strong><span class="equipment-directory-meta">Weapons · 10 gp · 1d6 · 2d4</span></a></li>
+                <li data-equipment-item data-name="rapier" data-category="Weapons"><a href="/equipment/weapons/#rapier"><strong>Rapier</strong><span class="equipment-directory-meta">Weapons · 20 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="sai" data-category="Weapons"><a href="/equipment/weapons/#sai"><strong>Sai</strong><span class="equipment-directory-meta">Weapons · 1 gp · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="sap" data-category="Weapons"><a href="/equipment/weapons/"><strong>Sap</strong><span class="equipment-directory-meta">Weapons · 1 gp · 1d4 3 · 1d6 3</span></a></li>
+                <li data-equipment-item data-name="scimitar" data-category="Weapons"><a href="/equipment/weapons/"><strong>Scimitar</strong><span class="equipment-directory-meta">Weapons · 15 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="scythe" data-category="Weapons"><a href="/equipment/weapons/#scythe"><strong>Scythe</strong><span class="equipment-directory-meta">Weapons · 18 gp · 1d6 · 2d4</span></a></li>
+                <li data-equipment-item data-name="shield, heavy" data-category="Weapons"><a href="/equipment/weapons/"><strong>Shield, heavy</strong><span class="equipment-directory-meta">Weapons · special · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="shield, light" data-category="Weapons"><a href="/equipment/weapons/"><strong>Shield, light</strong><span class="equipment-directory-meta">Weapons · special · 1d2 · 1d3</span></a></li>
+                <li data-equipment-item data-name="shortbow" data-category="Weapons"><a href="/equipment/weapons/#shortbow"><strong>Shortbow</strong><span class="equipment-directory-meta">Weapons · 30 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="shortbow, composite" data-category="Weapons"><a href="/equipment/weapons/#shortbowComposite"><strong>Shortbow, composite</strong><span class="equipment-directory-meta">Weapons · 75 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="shortspear" data-category="Weapons"><a href="/equipment/weapons/#shortspear"><strong>Shortspear</strong><span class="equipment-directory-meta">Weapons · 1 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="shuriken (5)" data-category="Weapons"><a href="/equipment/weapons/#shuriken"><strong>Shuriken (5)</strong><span class="equipment-directory-meta">Weapons · 1 gp · 1 · 1d2</span></a></li>
+                <li data-equipment-item data-name="siangham" data-category="Weapons"><a href="/equipment/weapons/#siangham"><strong>Siangham</strong><span class="equipment-directory-meta">Weapons · 3 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="sickle" data-category="Weapons"><a href="/equipment/weapons/#sickle"><strong>Sickle</strong><span class="equipment-directory-meta">Weapons · 6 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="sling" data-category="Weapons"><a href="/equipment/weapons/#sling"><strong>Sling</strong><span class="equipment-directory-meta">Weapons · — · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="spear" data-category="Weapons"><a href="/equipment/weapons/"><strong>Spear</strong><span class="equipment-directory-meta">Weapons · 2 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="spiked armor" data-category="Weapons"><a href="/equipment/weapons/#spikedArmor"><strong>Spiked armor</strong><span class="equipment-directory-meta">Weapons · special · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="spiked shield , heavy" data-category="Weapons"><a href="/equipment/weapons/#spikedShieldHeavyorLight"><strong>Spiked shield , heavy</strong><span class="equipment-directory-meta">Weapons · special · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="spiked shield , light" data-category="Weapons"><a href="/equipment/weapons/#spikedShieldHeavyorLight"><strong>Spiked shield , light</strong><span class="equipment-directory-meta">Weapons · special · 1d3 · 1d4</span></a></li>
+                <li data-equipment-item data-name="sword, bastard" data-category="Weapons"><a href="/equipment/weapons/#swordBastard"><strong>Sword, bastard</strong><span class="equipment-directory-meta">Weapons · 35 gp · 1d8 · 1d10</span></a></li>
+                <li data-equipment-item data-name="sword, short" data-category="Weapons"><a href="/equipment/weapons/"><strong>Sword, short</strong><span class="equipment-directory-meta">Weapons · 10 gp · 1d4 · 1d6</span></a></li>
+                <li data-equipment-item data-name="sword, two-bladed 5" data-category="Weapons"><a href="/equipment/weapons/#swordTwoBladed"><strong>Sword, two-bladed 5</strong><span class="equipment-directory-meta">Weapons · 100 gp · 1d6/1d6 · 1d8/1d8</span></a></li>
+                <li data-equipment-item data-name="trident" data-category="Weapons"><a href="/equipment/weapons/#trident"><strong>Trident</strong><span class="equipment-directory-meta">Weapons · 15 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="unarmed strike" data-category="Weapons"><a href="/equipment/weapons/"><strong>Unarmed strike</strong><span class="equipment-directory-meta">Weapons · — · 1d2 3 · 1d3 3</span></a></li>
+                <li data-equipment-item data-name="urgrosh, dwarven 5" data-category="Weapons"><a href="/equipment/weapons/#urgroshDwarven"><strong>Urgrosh, dwarven 5</strong><span class="equipment-directory-meta">Weapons · 50 gp · 1d6/1d4 · 1d8/1d6</span></a></li>
+                <li data-equipment-item data-name="waraxe, dwarven" data-category="Weapons"><a href="/equipment/weapons/#waraxeDwarven"><strong>Waraxe, dwarven</strong><span class="equipment-directory-meta">Weapons · 30 gp · 1d8 · 1d10</span></a></li>
+                <li data-equipment-item data-name="warhammer" data-category="Weapons"><a href="/equipment/weapons/"><strong>Warhammer</strong><span class="equipment-directory-meta">Weapons · 12 gp · 1d6 · 1d8</span></a></li>
+                <li data-equipment-item data-name="whip 4" data-category="Weapons"><a href="/equipment/weapons/#whip"><strong>Whip 4</strong><span class="equipment-directory-meta">Weapons · 1 gp · 1d2 3 · 1d3 3</span></a></li>
+            </ul></section>
+</section>
+<script src="/assets/equipment-directory.js?v=1" defer></script>
+        </main>
+
+        <nav class="page-navigation" aria-label="Previous and next pages">
+            <a class="page-navigation-link previous" href="/epic/"><span class="page-navigation-direction">← Previous</span><span>Epic Rules</span></a>
+<a class="page-navigation-link next" href="/exploration/"><span class="page-navigation-direction">Next →</span><span>Exploration</span></a>
+        </nav>
+
+        <footer class="site-footer">
+            <p>
+                Open Game Content used under the Open Game License Version 1.0a.
+                See <a href="/legal/">Legal</a>.
+            </p>
+        </footer>
+
     </div>
-  </main>
 
-  <footer>
-    d20 SRD Hub
-  </footer>
+</div>
+
+<script src="/assets/search.js?v=2" defer></script>
+<script src="/assets/toc.js?v=2" defer></script>
+<script src="/assets/theme.js?v=1" defer></script>
+<script src="/assets/navigation.js?v=1" defer></script>
+<script src="/assets/print.js?v=1" defer></script>
+<script src="/assets/bookmarks.js?v=1" defer></script>
 </body>
 </html>
