@@ -1,5 +1,5 @@
-from config import BASE_URL
-from downloader import download
+from importer.config import BASE_URL
+from importer.downloader import download
 
 html = download(BASE_URL + "/index.htm")
 

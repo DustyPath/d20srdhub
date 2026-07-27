@@ -18,7 +18,11 @@ SIDEBAR_NAV_PATTERN = re.compile(
     r'<nav\b(?=[^>]*\bclass=["\']sidebar-nav["\'])',
     re.IGNORECASE | re.DOTALL,
 )
-SHARED_STYLESHEET = '<link rel="stylesheet" href="/assets/site.css">'
+SHARED_STYLESHEET = '<link rel="stylesheet" href="/assets/site.css?v=2">'
+SHARED_STYLESHEET_PATTERN = re.compile(
+    r'<link\b[^>]*\bhref=["\']/assets/site\.css(?:\?v=\d+)?["\'][^>]*>',
+    re.IGNORECASE,
+)
 LEGACY_SEARCH_SCRIPT = '<script src="/assets/search.js" defer></script>'
 SEARCH_SCRIPT = '<script src="/assets/search.js?v=2" defer></script>'
 LEGACY_TOC_SCRIPT = '<script src="/assets/toc.js?v=1" defer></script>'
@@ -276,7 +280,7 @@ def audit_shared_styles(public_dir=PUBLIC_DIR):
         if STYLE_BLOCK.search(html):
             problems.append((page_file, "inline style remains"))
 
-        if SHARED_STYLESHEET not in html:
+        if SHARED_STYLESHEET_PATTERN.search(html) is None:
             problems.append((page_file, "shared stylesheet is missing"))
 
         if TOC_SCRIPT not in html:

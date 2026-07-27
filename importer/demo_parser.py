@@ -1,6 +1,6 @@
-from config import BASE_URL
-from downloader import download
-from parser import get_headings, get_page_title, parse_html
+from importer.config import BASE_URL
+from importer.downloader import download
+from importer.parser import get_headings, get_page_title, parse_html
 
 
 url = BASE_URL + "/srd/combat/actionsInCombat.htm"
