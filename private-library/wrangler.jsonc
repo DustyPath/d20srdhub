@@ -2,6 +2,12 @@
   "name": "d20srdhub-private-library",
   "main": "./worker.mjs",
   "compatibility_date": "2026-07-20",
+  "routes": [
+    {
+      "pattern": "library.d20srdhub.com",
+      "custom_domain": true
+    }
+  ],
   "r2_buckets": [
     {
       "binding": "PRIVATE_LIBRARY",
@@ -9,4 +15,3 @@
     }
   ]
 }
-

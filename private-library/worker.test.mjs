@@ -9,12 +9,27 @@ const accessHeaders = {
 };
 
 const pdfBytes = new Uint8Array([37, 80, 68, 70]);
+const spellIndex = JSON.stringify({
+  spells: [
+    {
+      name: "Test Spell",
+      page: 42,
+      school: "Evocation",
+      levels: "Sor/Wiz 3",
+    },
+  ],
+});
 const env = {
   ALLOWED_EMAIL: "owner@example.test",
   PRIVATE_LIBRARY: {
     async get(key) {
-      if (key !== "Spell Compendium.pdf") return null;
-      return { body: pdfBytes, size: pdfBytes.byteLength };
+      if (key === "Spell Compendium.pdf") {
+        return { body: pdfBytes, size: pdfBytes.byteLength };
+      }
+      if (key === "spell-compendium-index.json") {
+        return { body: spellIndex, size: spellIndex.length };
+      }
+      return null;
     },
   },
 };
@@ -36,6 +51,30 @@ test("serves the private library to the allowed email", async () => {
   assert.equal(response.status, 200);
   assert.match(await response.text(), /Private Rules Library/);
   assert.match(response.headers.get("Content-Security-Policy"), /frame-ancestors 'none'/);
+});
+
+test("serves the private client-side search script", async () => {
+  const response = await handleRequest(
+    new Request("https://library.d20srdhub.com/library.js", {
+      headers: accessHeaders,
+    }),
+    env,
+  );
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("Content-Type"), /text\/javascript/);
+  assert.match(await response.text(), /fetch\("\/api\/spells"\)/);
+});
+
+test("serves the private non-SRD spell index", async () => {
+  const response = await handleRequest(
+    new Request("https://library.d20srdhub.com/api/spells", {
+      headers: accessHeaders,
+    }),
+    env,
+  );
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("Content-Type"), /application\/json/);
+  assert.deepEqual(await response.json(), JSON.parse(spellIndex));
 });
 
 test("streams the private PDF with safe headers", async () => {

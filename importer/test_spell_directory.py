@@ -58,6 +58,7 @@ class SpellDirectoryTests(unittest.TestCase):
             self.assertIn("data-spell-directory", article)
             self.assertIn('data-levels="0"', article)
             self.assertIn("/spell-lists/sorcerer-wizard-spells/", article)
+            self.assertIn("https://library.d20srdhub.com/", article)
 
 
 if __name__ == "__main__":

@@ -1,9 +1,10 @@
 const PDF_KEY = "Spell Compendium.pdf";
+const SPELL_INDEX_KEY = "spell-compendium-index.json";
 
 const SECURITY_HEADERS = {
   "Cache-Control": "private, no-store",
   "Content-Security-Policy":
-    "default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; frame-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+    "default-src 'none'; style-src 'unsafe-inline'; script-src 'self'; connect-src 'self'; img-src 'self'; frame-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
   "Referrer-Policy": "no-referrer",
   "X-Content-Type-Options": "nosniff",
   "X-Frame-Options": "DENY",
@@ -75,6 +76,36 @@ const LIBRARY_HTML = `<!doctype html>
       text-decoration: none;
       box-shadow: 0 3px 0 #5c401c;
     }
+    .search {
+      margin-top: 2rem;
+      padding: 1.35rem;
+      border: 1px solid var(--gold-dark);
+      background: #171411;
+    }
+    .search label {
+      display: block;
+      margin-bottom: .55rem;
+      color: #f2d48d;
+      font-weight: 700;
+    }
+    .search input {
+      width: 100%;
+      padding: .85rem 1rem;
+      border: 1px solid var(--gold-dark);
+      border-radius: 3px;
+      color: var(--ink);
+      background: #0f0d0b;
+      font: inherit;
+    }
+    .search-status { color: var(--muted); }
+    .results { display: grid; gap: .65rem; padding: 0; list-style: none; }
+    .result {
+      padding: .85rem 1rem;
+      border-left: 4px solid var(--gold-dark);
+      background: #211c17;
+    }
+    .result a { color: #f2d48d; font-weight: 700; }
+    .result-meta { margin: .2rem 0 0; color: var(--muted); font-size: .9rem; }
     footer { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
   </style>
 </head>
@@ -90,14 +121,80 @@ const LIBRARY_HTML = `<!doctype html>
       <p>This private area contains material you purchased for personal reference. It is available only through your protected account.</p>
       <article class="book">
         <h3>Spell Compendium</h3>
-        <p>Personal reference copy · PDF</p>
+        <p>Personal reference copy · searchable index · PDF</p>
         <a class="button" href="/spell-compendium.pdf">Open PDF</a>
       </article>
+      <section class="search" aria-labelledby="spell-search-heading">
+        <h3 id="spell-search-heading">Search non-SRD spells</h3>
+        <p>Results include only spells not already available in the public SRD. Open a result to jump to its page in your private PDF.</p>
+        <label for="spell-search">Spell name, school, class, or level</label>
+        <input id="spell-search" type="search" autocomplete="off" placeholder="Try: shadow, cleric 3, transmutation">
+        <p class="search-status" data-search-status>Loading your private spell index…</p>
+        <ul class="results" data-search-results></ul>
+      </section>
       <footer>Private personal library · Do not share this address or downloaded files.</footer>
     </section>
   </main>
+  <script src="/library.js" defer></script>
 </body>
 </html>`;
+
+const LIBRARY_JS = `
+const input = document.querySelector("#spell-search");
+const status = document.querySelector("[data-search-status]");
+const results = document.querySelector("[data-search-results]");
+let spells = [];
+
+function render() {
+  const query = input.value.trim().toLocaleLowerCase();
+  const tokens = query.split(/\\s+/).filter(Boolean);
+  const matches = spells.filter((spell) => {
+    if (!tokens.length) return false;
+    const haystack = [spell.name, spell.school, spell.levels].join(" ").toLocaleLowerCase();
+    return tokens.every((token) => haystack.includes(token));
+  });
+
+  results.replaceChildren();
+  const visible = matches.slice(0, 100);
+  for (const spell of visible) {
+    const item = document.createElement("li");
+    item.className = "result";
+    const link = document.createElement("a");
+    link.href = "/spell-compendium.pdf#page=" + spell.page;
+    link.textContent = spell.name;
+    const meta = document.createElement("p");
+    meta.className = "result-meta";
+    meta.textContent = [spell.school, spell.levels, "PDF page " + spell.page]
+      .filter(Boolean)
+      .join(" · ");
+    item.append(link, meta);
+    results.append(item);
+  }
+
+  if (!tokens.length) {
+    status.textContent = spells.length + " private, non-SRD spells indexed. Start typing to search.";
+  } else if (!matches.length) {
+    status.textContent = "No private spells matched your search.";
+  } else {
+    status.textContent = matches.length + " match" + (matches.length === 1 ? "" : "es") +
+      (matches.length > visible.length ? "; showing the first " + visible.length : "") + ".";
+  }
+}
+
+fetch("/api/spells")
+  .then((response) => {
+    if (!response.ok) throw new Error("Spell index unavailable");
+    return response.json();
+  })
+  .then((payload) => {
+    spells = Array.isArray(payload.spells) ? payload.spells : [];
+    render();
+    input.addEventListener("input", render);
+  })
+  .catch(() => {
+    status.textContent = "The private spell index is not available yet.";
+  });
+`;
 
 function securedResponse(body, init = {}) {
   const headers = new Headers(init.headers);
@@ -133,6 +230,35 @@ export async function handleRequest(request, env) {
   if (url.pathname === "/" && (request.method === "GET" || request.method === "HEAD")) {
     return securedResponse(request.method === "HEAD" ? null : LIBRARY_HTML, {
       headers: { "Content-Type": "text/html; charset=utf-8" },
+    });
+  }
+
+  if (
+    url.pathname === "/library.js" &&
+    (request.method === "GET" || request.method === "HEAD")
+  ) {
+    return securedResponse(request.method === "HEAD" ? null : LIBRARY_JS, {
+      headers: { "Content-Type": "text/javascript; charset=utf-8" },
+    });
+  }
+
+  if (
+    url.pathname === "/api/spells" &&
+    (request.method === "GET" || request.method === "HEAD")
+  ) {
+    const object = await env.PRIVATE_LIBRARY.get(SPELL_INDEX_KEY);
+    if (!object) {
+      return securedResponse('{"error":"Spell index not found"}', {
+        status: 503,
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+      });
+    }
+
+    return securedResponse(request.method === "HEAD" ? null : object.body, {
+      headers: {
+        "Content-Length": String(object.size),
+        "Content-Type": "application/json; charset=utf-8",
+      },
     });
   }
 

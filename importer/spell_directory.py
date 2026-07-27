@@ -134,6 +134,11 @@ def build_spell_article(spells):
         "<h1>Spells</h1>\n"
         f"<p>Browse {len(spells)} spells from the d20 System Reference "
         "Document by class, name, school, or spell level.</p>\n"
+        '<aside class="notice private-library-notice">\n'
+        "    <strong>Private Spell Compendium:</strong> "
+        "Owners can search additional non-SRD spells in the "
+        '<a href="https://library.d20srdhub.com/">protected personal library</a>.'
+        "\n</aside>\n"
         '<section class="spell-list-shortcuts" aria-labelledby="class-lists">\n'
         '    <h2 id="class-lists">Spell lists by class</h2>\n'
         f'    <div class="spell-list-links">\n{class_links}\n    </div>\n'
