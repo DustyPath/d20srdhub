@@ -1,5 +1,7 @@
 const PDF_KEY = "Spell Compendium.pdf";
 const SPELL_INDEX_KEY = "spell-compendium-index.json";
+const PDF_V2_KEY = "Spell Compendium v2.pdf";
+const SPELL_V2_INDEX_KEY = "spell-compendium-v2-index.json";
 
 const SECURITY_HEADERS = {
   "Cache-Control": "private, no-store",
@@ -97,6 +99,16 @@ const LIBRARY_HTML = `<!doctype html>
       background: #0f0d0b;
       font: inherit;
     }
+    .search select {
+      width: 100%;
+      margin-bottom: .8rem;
+      padding: .75rem 1rem;
+      border: 1px solid var(--gold-dark);
+      border-radius: 3px;
+      color: var(--ink);
+      background: #0f0d0b;
+      font: inherit;
+    }
     .search-status { color: var(--muted); }
     .results { display: grid; gap: .65rem; padding: 0; list-style: none; }
     .result {
@@ -124,9 +136,20 @@ const LIBRARY_HTML = `<!doctype html>
         <p>Personal reference copy · searchable index · PDF</p>
         <a class="button" href="/spell-compendium.pdf">Open PDF</a>
       </article>
+      <article class="book">
+        <h3>Spell Compendium v2</h3>
+        <p>Second personal reference copy · searchable index · PDF</p>
+        <a class="button" href="/spell-compendium-v2.pdf">Open PDF</a>
+      </article>
       <section class="search" aria-labelledby="spell-search-heading">
         <h3 id="spell-search-heading">Search non-SRD spells</h3>
         <p>Results include only spells not already available in the public SRD. Open a result to jump to its page in your private PDF.</p>
+        <label for="book-filter">Book</label>
+        <select id="book-filter">
+          <option value="">All private books</option>
+          <option value="Spell Compendium">Spell Compendium</option>
+          <option value="Spell Compendium v2">Spell Compendium v2</option>
+        </select>
         <label for="spell-search">Spell name, school, class, or level</label>
         <input id="spell-search" type="search" autocomplete="off" placeholder="Try: shadow, cleric 3, transmutation">
         <p class="search-status" data-search-status>Loading your private spell index…</p>
@@ -141,14 +164,17 @@ const LIBRARY_HTML = `<!doctype html>
 
 const LIBRARY_JS = `
 const input = document.querySelector("#spell-search");
+const bookFilter = document.querySelector("#book-filter");
 const status = document.querySelector("[data-search-status]");
 const results = document.querySelector("[data-search-results]");
 let spells = [];
 
 function render() {
   const query = input.value.trim().toLocaleLowerCase();
+  const selectedBook = bookFilter.value;
   const tokens = query.split(/\\s+/).filter(Boolean);
   const matches = spells.filter((spell) => {
+    if (selectedBook && spell.book !== selectedBook) return false;
     if (!tokens.length) return false;
     const haystack = [spell.name, spell.school, spell.levels].join(" ").toLocaleLowerCase();
     return tokens.every((token) => haystack.includes(token));
@@ -160,11 +186,11 @@ function render() {
     const item = document.createElement("li");
     item.className = "result";
     const link = document.createElement("a");
-    link.href = "/spell-compendium.pdf#page=" + spell.page;
+    link.href = spell.pdf + "#page=" + spell.page;
     link.textContent = spell.name;
     const meta = document.createElement("p");
     meta.className = "result-meta";
-    meta.textContent = [spell.school, spell.levels, "PDF page " + spell.page]
+    meta.textContent = [spell.book, spell.school, spell.levels, "PDF page " + spell.page]
       .filter(Boolean)
       .join(" · ");
     item.append(link, meta);
@@ -181,15 +207,28 @@ function render() {
   }
 }
 
-fetch("/api/spells")
-  .then((response) => {
+const libraries = [
+  { api: "/api/spells", pdf: "/spell-compendium.pdf", name: "Spell Compendium" },
+  { api: "/api/spells-v2", pdf: "/spell-compendium-v2.pdf", name: "Spell Compendium v2" },
+];
+
+Promise.all(libraries.map((library) =>
+  fetch(library.api).then((response) => {
     if (!response.ok) throw new Error("Spell index unavailable");
-    return response.json();
+    return response.json().then((payload) =>
+      (Array.isArray(payload.spells) ? payload.spells : []).map((spell) => ({
+        ...spell,
+        book: library.name,
+        pdf: library.pdf,
+      }))
+    );
   })
-  .then((payload) => {
-    spells = Array.isArray(payload.spells) ? payload.spells : [];
+))
+  .then((collections) => {
+    spells = collections.flat();
     render();
     input.addEventListener("input", render);
+    bookFilter.addEventListener("change", render);
   })
   .catch(() => {
     status.textContent = "The private spell index is not available yet.";
@@ -263,6 +302,26 @@ export async function handleRequest(request, env) {
   }
 
   if (
+    url.pathname === "/api/spells-v2" &&
+    (request.method === "GET" || request.method === "HEAD")
+  ) {
+    const object = await env.PRIVATE_LIBRARY.get(SPELL_V2_INDEX_KEY);
+    if (!object) {
+      return securedResponse('{"error":"Spell Compendium v2 index not found"}', {
+        status: 503,
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+      });
+    }
+
+    return securedResponse(request.method === "HEAD" ? null : object.body, {
+      headers: {
+        "Content-Length": String(object.size),
+        "Content-Type": "application/json; charset=utf-8",
+      },
+    });
+  }
+
+  if (
     url.pathname === "/spell-compendium.pdf" &&
     (request.method === "GET" || request.method === "HEAD")
   ) {
@@ -277,6 +336,27 @@ export async function handleRequest(request, env) {
     return securedResponse(request.method === "HEAD" ? null : object.body, {
       headers: {
         "Content-Disposition": 'inline; filename="Spell-Compendium.pdf"',
+        "Content-Length": String(object.size),
+        "Content-Type": "application/pdf",
+      },
+    });
+  }
+
+  if (
+    url.pathname === "/spell-compendium-v2.pdf" &&
+    (request.method === "GET" || request.method === "HEAD")
+  ) {
+    const object = await env.PRIVATE_LIBRARY.get(PDF_V2_KEY);
+    if (!object) {
+      return securedResponse("Book not found", {
+        status: 404,
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
+      });
+    }
+
+    return securedResponse(request.method === "HEAD" ? null : object.body, {
+      headers: {
+        "Content-Disposition": 'inline; filename="Spell-Compendium-v2.pdf"',
         "Content-Length": String(object.size),
         "Content-Type": "application/pdf",
       },

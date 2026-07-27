@@ -19,6 +19,16 @@ const spellIndex = JSON.stringify({
     },
   ],
 });
+const spellV2Index = JSON.stringify({
+  spells: [
+    {
+      name: "Second Test Spell",
+      page: 77,
+      school: "Transmutation",
+      levels: "Wizard 4",
+    },
+  ],
+});
 const env = {
   ALLOWED_EMAIL: "owner@example.test",
   PRIVATE_LIBRARY: {
@@ -28,6 +38,12 @@ const env = {
       }
       if (key === "spell-compendium-index.json") {
         return { body: spellIndex, size: spellIndex.length };
+      }
+      if (key === "Spell Compendium v2.pdf") {
+        return { body: pdfBytes, size: pdfBytes.byteLength };
+      }
+      if (key === "spell-compendium-v2-index.json") {
+        return { body: spellV2Index, size: spellV2Index.length };
       }
       return null;
     },
@@ -49,7 +65,9 @@ test("serves the private library to the allowed email", async () => {
     env,
   );
   assert.equal(response.status, 200);
-  assert.match(await response.text(), /Private Rules Library/);
+  const html = await response.text();
+  assert.match(html, /Private Rules Library/);
+  assert.match(html, /Spell Compendium v2/);
   assert.match(response.headers.get("Content-Security-Policy"), /frame-ancestors 'none'/);
 });
 
@@ -62,7 +80,20 @@ test("serves the private client-side search script", async () => {
   );
   assert.equal(response.status, 200);
   assert.match(response.headers.get("Content-Type"), /text\/javascript/);
-  assert.match(await response.text(), /fetch\("\/api\/spells"\)/);
+  const script = await response.text();
+  assert.match(script, /api: "\/api\/spells"/);
+  assert.match(script, /api: "\/api\/spells-v2"/);
+});
+
+test("serves the Spell Compendium v2 index", async () => {
+  const response = await handleRequest(
+    new Request("https://library.d20srdhub.com/api/spells-v2", {
+      headers: accessHeaders,
+    }),
+    env,
+  );
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), JSON.parse(spellV2Index));
 });
 
 test("serves the private non-SRD spell index", async () => {
@@ -75,6 +106,20 @@ test("serves the private non-SRD spell index", async () => {
   assert.equal(response.status, 200);
   assert.match(response.headers.get("Content-Type"), /application\/json/);
   assert.deepEqual(await response.json(), JSON.parse(spellIndex));
+});
+
+test("streams the Spell Compendium v2 PDF", async () => {
+  const response = await handleRequest(
+    new Request("https://library.d20srdhub.com/spell-compendium-v2.pdf", {
+      headers: accessHeaders,
+    }),
+    env,
+  );
+  assert.equal(response.status, 200);
+  assert.equal(
+    response.headers.get("Content-Disposition"),
+    'inline; filename="Spell-Compendium-v2.pdf"',
+  );
 });
 
 test("streams the private PDF with safe headers", async () => {

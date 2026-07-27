@@ -29,7 +29,13 @@ SCHOOLS = (
     "Universal",
 )
 SCHOOL_PATTERN = re.compile(
-    rf"^(?:{'|'.join(SCHOOLS)})(?:\s+\([^)]*\)|\s+\[[^]]*\])?\s+Level\s*:",
+    rf"^(?:{'|'.join(SCHOOLS)})(?:\s+\([^)]*\)|\s+\[[^]]*\])?",
+    re.IGNORECASE,
+)
+LEVEL_PATTERN = re.compile(
+    r"\bLevel\s*:\s*(.*?)(?=\bComponents\s*:|\bCasting Time\s*:|"
+    r"\bRange\s*:|\bTargets?\s*:|\bArea\s*:|\bDuration\s*:|"
+    r"\bSaving Throw\s*:|\bSpell Resistance\s*:|$)",
     re.IGNORECASE,
 )
 TITLE_PATTERN = re.compile(r"^[A-Z][A-Za-z0-9'’., -]{1,78}$")
@@ -103,14 +109,11 @@ def looks_like_title(line: str) -> bool:
     return any(character.isalpha() for character in line)
 
 
-def parse_school_and_levels(stat_line: str) -> tuple[str, str]:
-    school = stat_line.split(" ", 1)[0].title()
-    levels = re.split(
-        r"\bComponents\s*:|\bCasting Time\s*:|\bRange\s*:",
-        stat_line.split("Level:", 1)[-1],
-        maxsplit=1,
-        flags=re.IGNORECASE,
-    )[0].strip()
+def parse_school_and_levels(metadata: str) -> tuple[str, str]:
+    school_match = SCHOOL_PATTERN.search(metadata)
+    level_match = LEVEL_PATTERN.search(metadata)
+    school = school_match.group(0).split(" ", 1)[0].title()
+    levels = level_match.group(1).strip()
     return school, levels
 
 
@@ -121,20 +124,22 @@ def extract_spells(pages: list[dict], existing_slugs: set[str]) -> list[dict]:
     for page in pages:
         lines = clean_lines(page.get("text", ""))
 
-        for index, title in enumerate(lines):
-            if not looks_like_title(title):
+        for index, title_line in enumerate(lines):
+            if not looks_like_title(title_line):
                 continue
 
-            stat_line = next(
-                (
-                    candidate
-                    for candidate in lines[index + 1 : index + 4]
-                    if SCHOOL_PATTERN.search(candidate)
-                ),
-                "",
-            )
-            if not stat_line:
+            metadata = " ".join(lines[index + 1 : index + 8])
+            if not SCHOOL_PATTERN.search(metadata) or not LEVEL_PATTERN.search(metadata):
                 continue
+
+            title = title_line
+            if (
+                index > 0
+                and title_line == title_line.upper()
+                and lines[index - 1] == lines[index - 1].upper()
+                and looks_like_title(lines[index - 1])
+            ):
+                title = f"{lines[index - 1]} {title_line}"
 
             slug = slugify(title)
             if (
@@ -145,7 +150,7 @@ def extract_spells(pages: list[dict], existing_slugs: set[str]) -> list[dict]:
             ):
                 continue
 
-            school, levels = parse_school_and_levels(stat_line)
+            school, levels = parse_school_and_levels(metadata)
             discovered[slug] = {
                 "name": title,
                 "page": int(page["page"]),
@@ -172,12 +177,17 @@ def extract_pages(pdf_path: Path, swift_script: Path) -> list[dict]:
     return json.loads(result.stdout)
 
 
-def build_index(pdf_path: Path, public_dir: Path, output_path: Path) -> dict:
+def build_index(
+    pdf_path: Path,
+    public_dir: Path,
+    output_path: Path,
+    book_name: str = "Spell Compendium",
+) -> dict:
     pages = extract_pages(pdf_path, Path(__file__).with_name("extract_pdf.swift"))
     existing = public_spell_slugs(public_dir)
     spells = extract_spells(pages, existing)
     payload = {
-        "book": "Spell Compendium",
+        "book": book_name,
         "private": True,
         "public_srd_duplicates_excluded": True,
         "spell_count": len(spells),
@@ -204,8 +214,14 @@ def main() -> None:
         type=Path,
         default=Path(__file__).parent / "generated" / "spell-compendium-index.json",
     )
+    parser.add_argument("--book-name", default="Spell Compendium")
     args = parser.parse_args()
-    payload = build_index(args.pdf, args.public_dir, args.output)
+    payload = build_index(
+        args.pdf,
+        args.public_dir,
+        args.output,
+        book_name=args.book_name,
+    )
     print(f"Indexed {payload['spell_count']} private, non-SRD spells: {args.output}")
 
 

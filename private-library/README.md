@@ -21,6 +21,15 @@ private-library/generated/spell-compendium-index.json
 
 The generated file is intentionally ignored by Git.
 
+To build the second private volume:
+
+```bash
+python3 private-library/build_spell_index.py \
+  "/Users/thomaspaddenmacbookair/Documents/D&D/3E Books/Spell Compendium copy.pdf" \
+  --book-name "Spell Compendium v2" \
+  --output private-library/generated/spell-compendium-v2-index.json
+```
+
 ## Upload the private files
 
 ```bash

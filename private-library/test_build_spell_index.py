@@ -54,6 +54,58 @@ class SpellIndexTests(unittest.TestCase):
             ],
         )
 
+    def test_extracts_split_school_and_level_metadata(self):
+        pages = [
+            {
+                "page": 10,
+                "text": (
+                    "CREAKING\n"
+                    "CACOPHONY\n"
+                    "Illusion (Figment) [Sonic]\n"
+                    "Level: Bard 3, druid 3\n"
+                    "Components: V, S\n"
+                ),
+            }
+        ]
+        self.assertEqual(
+            MODULE.extract_spells(pages, set()),
+            [
+                {
+                    "name": "CREAKING CACOPHONY",
+                    "page": 10,
+                    "school": "Illusion",
+                    "levels": "Bard 3, druid 3",
+                }
+            ],
+        )
+
+    def test_build_index_records_requested_book_name(self):
+        original_extract_pages = MODULE.extract_pages
+        original_public_spell_slugs = MODULE.public_spell_slugs
+        try:
+            MODULE.extract_pages = lambda *_: [
+                {
+                    "page": 5,
+                    "text": "Private Spell\nEvocation\nLevel: Wizard 2\nComponents: V",
+                }
+            ]
+            MODULE.public_spell_slugs = lambda *_: set()
+            with self.subTest("custom book name"):
+                import tempfile
+
+                with tempfile.TemporaryDirectory() as directory:
+                    output = Path(directory) / "index.json"
+                    payload = MODULE.build_index(
+                        Path("book.pdf"),
+                        Path("public"),
+                        output,
+                        book_name="Spell Compendium v2",
+                    )
+                    self.assertEqual(payload["book"], "Spell Compendium v2")
+        finally:
+            MODULE.extract_pages = original_extract_pages
+            MODULE.public_spell_slugs = original_public_spell_slugs
+
 
 if __name__ == "__main__":
     unittest.main()
