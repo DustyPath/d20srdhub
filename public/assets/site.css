@@ -1942,3 +1942,87 @@ blockquote,
         grid-template-columns: 1fr;
     }
 }
+
+/* Monster directory */
+.monster-type-grid,
+.monster-reference-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 22px 0 30px;
+}
+
+.monster-type-card,
+.monster-reference-card,
+.monster-directory-list a {
+    display: block;
+    padding: 16px;
+    color: var(--text);
+    border: 1px solid #8e6f3f;
+    border-top: 3px solid var(--accent);
+    background: var(--surface);
+    box-shadow: 0 3px 9px rgba(49, 31, 12, 0.18);
+    text-decoration: none;
+}
+
+.monster-type-card strong,
+.monster-reference-card strong,
+.monster-directory-list strong,
+.monster-reference-card span,
+.monster-directory-list span {
+    display: block;
+}
+
+.monster-type-card strong,
+.monster-reference-card strong { color: var(--accent-dark); font-size: 1.08rem; }
+.monster-type-card p,
+.monster-reference-card span,
+.monster-directory-list span { margin: 5px 0 0; color: var(--text-muted); font-size: .88rem; }
+
+.monster-type-card:hover,
+.monster-reference-card:hover,
+.monster-directory-list a:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.monster-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) repeat(2, minmax(170px, 1fr));
+    gap: 14px;
+    margin: 18px 0 28px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+}
+
+.monster-filters label { color: var(--accent-dark); font-weight: 700; }
+.monster-filters input,
+.monster-filters select { display: block; width: 100%; margin-top: 6px; padding: 10px 12px; }
+.monster-filters [data-monster-count] { grid-column: 1 / -1; margin: 0; color: var(--text-muted); }
+
+.monster-letter-group > h2 { font-size: 1.7rem; }
+.monster-directory-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    padding: 0;
+    list-style: none;
+}
+.monster-directory-list a { padding: 11px 13px; }
+
+@media (max-width: 900px) {
+    .monster-directory-list,
+    .monster-type-grid,
+    .monster-reference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .monster-filters { grid-template-columns: 1fr 1fr; }
+    .monster-filters label:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+    .monster-directory-list,
+    .monster-type-grid,
+    .monster-reference-grid,
+    .monster-filters { grid-template-columns: 1fr; }
+    .monster-filters label:first-child { grid-column: auto; }
+}
