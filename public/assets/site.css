@@ -1827,3 +1827,118 @@ blockquote,
         background: #ffffff;
     }
 }
+
+/* Magic, Magic Items, and Conditions directories */
+.rule-category-grid,
+.rule-page-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 22px 0 30px;
+}
+
+.rule-category-card,
+.rule-page-card,
+.rule-directory-list a,
+.rule-callout {
+    border: 1px solid #8e6f3f;
+    border-top: 3px solid var(--accent);
+    background: var(--surface);
+    box-shadow: 0 3px 9px rgba(49, 31, 12, 0.18);
+}
+
+.rule-category-card,
+.rule-page-card {
+    display: block;
+    padding: 16px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.rule-category-card strong,
+.rule-page-card strong {
+    display: block;
+    color: var(--accent-dark);
+    font-size: 1.08rem;
+}
+
+.rule-category-card p,
+.rule-page-card span {
+    display: block;
+    margin: 5px 0 0;
+    color: var(--text-muted);
+    font-size: .9rem;
+}
+
+.rule-category-card:hover,
+.rule-page-card:hover,
+.rule-directory-list a:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.rule-callout {
+    margin: 28px 0;
+    padding: 18px 20px;
+    border-left: 5px solid var(--accent);
+}
+
+.rule-callout p { margin: 5px 0; }
+
+.rule-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
+    gap: 14px;
+    margin: 18px 0 26px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+}
+
+.rule-filters label {
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
+.rule-filters input,
+.rule-filters select {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 12px;
+}
+
+.rule-filters [data-rule-count] {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.rule-directory-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    padding: 0;
+    list-style: none;
+}
+
+.rule-directory-list a {
+    display: block;
+    padding: 11px 13px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.rule-directory-list strong,
+.rule-directory-list span { display: block; }
+.rule-directory-list span { margin-top: 3px; color: var(--text-muted); font-size: .84rem; }
+.rule-source-link { margin: 24px 0; font-weight: 700; }
+
+@media (max-width: 760px) {
+    .rule-category-grid,
+    .rule-page-grid,
+    .rule-directory-list,
+    .rule-filters {
+        grid-template-columns: 1fr;
+    }
+}
