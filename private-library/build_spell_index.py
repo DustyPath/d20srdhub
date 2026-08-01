@@ -117,6 +117,47 @@ def parse_school_and_levels(metadata: str) -> tuple[str, str]:
     return school, levels
 
 
+CLASS_NAMES = {
+    "asn": "Assassin",
+    "assassin": "Assassin",
+    "blackguard": "Blackguard",
+    "blk": "Blackguard",
+    "brd": "Bard",
+    "clr": "Cleric",
+    "drd": "Druid",
+    "pal": "Paladin",
+    "rgr": "Ranger",
+    "sor/wiz": "Sorcerer/Wizard",
+    "sorcerer/wizard": "Sorcerer/Wizard",
+    "wiz": "Wizard",
+}
+
+
+def parse_class_and_level_filters(levels: str) -> tuple[list[str], list[int]]:
+    """Return normalized class/domain labels and numeric spell levels."""
+
+    classes = []
+    spell_levels = []
+    for item in levels.split(","):
+        match = re.search(r"([A-Za-z][A-Za-z /'-]*?)\s+(\d+)\b", item.strip())
+        if not match:
+            continue
+        raw_class = re.sub(r"\s+", " ", match.group(1)).strip()
+        class_name = CLASS_NAMES.get(raw_class.casefold(), raw_class.title())
+        level = int(match.group(2))
+        rejected_words = {
+            "affects", "caster", "chapter", "creature", "damage", "except",
+            "grants", "levels", "only", "repairs", "that", "within", "you",
+        }
+        if level > 9 or rejected_words.intersection(raw_class.casefold().split()):
+            continue
+        if class_name not in classes:
+            classes.append(class_name)
+        if level not in spell_levels:
+            spell_levels.append(level)
+    return classes, sorted(spell_levels)
+
+
 def extract_spells(pages: list[dict], existing_slugs: set[str]) -> list[dict]:
     """Extract description headings and omit public-SRD spell titles."""
 
@@ -151,11 +192,14 @@ def extract_spells(pages: list[dict], existing_slugs: set[str]) -> list[dict]:
                 continue
 
             school, levels = parse_school_and_levels(metadata)
+            classes, spell_levels = parse_class_and_level_filters(levels)
             discovered[slug] = {
                 "name": title,
                 "page": int(page["page"]),
                 "school": school,
                 "levels": levels,
+                "classes": classes,
+                "spell_levels": spell_levels,
             }
 
     return sorted(discovered.values(), key=lambda spell: spell["name"].casefold())

@@ -50,6 +50,8 @@ class SpellIndexTests(unittest.TestCase):
                     "page": 42,
                     "school": "Illusion",
                     "levels": "Clr 3, Sor/Wiz 4",
+                    "classes": ["Cleric", "Sorcerer/Wizard"],
+                    "spell_levels": [3, 4],
                 }
             ],
         )
@@ -75,8 +77,24 @@ class SpellIndexTests(unittest.TestCase):
                     "page": 10,
                     "school": "Illusion",
                     "levels": "Bard 3, druid 3",
+                    "classes": ["Bard", "Druid"],
+                    "spell_levels": [3],
                 }
             ],
+        )
+
+    def test_builds_class_and_level_filters(self):
+        self.assertEqual(
+            MODULE.parse_class_and_level_filters("Clr 2, Sor/Wiz 4, Good 5"),
+            (["Cleric", "Sorcerer/Wizard", "Good"], [2, 4, 5]),
+        )
+
+    def test_ignores_description_text_that_resembles_a_class_and_level(self):
+        self.assertEqual(
+            MODULE.parse_class_and_level_filters(
+                "Cleric 3, except that it affects creatures within 30 feet"
+            ),
+            (["Cleric"], [3]),
         )
 
     def test_build_index_records_requested_book_name(self):
