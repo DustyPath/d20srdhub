@@ -30,6 +30,14 @@ class TorchThemeTests(unittest.TestCase):
         self.assertIn("/assets/site.css?v=6", homepage)
         self.assertIn("/assets/site.css?v=6", template)
 
+        unversioned_pages = []
+        for page_path in (ROOT / "public").rglob("*.html"):
+            page = page_path.read_text(encoding="utf-8")
+            if 'href="/assets/site.css"' in page:
+                unversioned_pages.append(str(page_path.relative_to(ROOT)))
+
+        self.assertEqual([], unversioned_pages)
+
 
 if __name__ == "__main__":
     unittest.main()
