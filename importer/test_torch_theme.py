@@ -10,23 +10,25 @@ class TorchThemeTests(unittest.TestCase):
         css = (ROOT / "public" / "assets" / "site.css").read_text(
             encoding="utf-8"
         )
-        self.assertIn("@media (min-width: 1321px)", css)
-        self.assertIn("width: min(1180px, calc(100% - 220px));", css)
-        self.assertIn("background-size: max(100vw, 1717px) auto;", css)
+        self.assertIn("@media (min-width: 1000px)", css)
+        self.assertIn("width: min(1180px, calc(100% - 180px));", css)
 
-    def test_flame_animation_respects_reduced_motion(self):
+    def test_wall_uses_a_stable_fixed_layer_without_animation(self):
         css = (ROOT / "public" / "assets" / "site.css").read_text(
             encoding="utf-8"
         )
-        self.assertIn("@keyframes torch-flicker", css)
-        self.assertIn("@media (prefers-reduced-motion: reduce)", css)
-        self.assertIn("animation: none;", css)
+        self.assertIn('url("/assets/medieval-hall-background.jpg")', css)
+        self.assertIn("transform: translateZ(0);", css)
+        self.assertIn("will-change: transform;", css)
+        self.assertNotIn("background-attachment: fixed", css)
+        self.assertNotIn("body::after {", css)
+        self.assertNotIn("torch-flicker", css)
 
     def test_stylesheet_cache_version_is_updated(self):
         homepage = (ROOT / "public" / "index.html").read_text(encoding="utf-8")
         template = (ROOT / "templates" / "page.html").read_text(encoding="utf-8")
-        self.assertIn("/assets/site.css?v=5", homepage)
-        self.assertIn("/assets/site.css?v=5", template)
+        self.assertIn("/assets/site.css?v=6", homepage)
+        self.assertIn("/assets/site.css?v=6", template)
 
 
 if __name__ == "__main__":

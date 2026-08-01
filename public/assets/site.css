@@ -1213,42 +1213,28 @@
 body {
     position: relative;
     min-height: 100vh;
-    background-color: var(--background);
-    background-image:
-        linear-gradient(rgba(5, 4, 3, 0.22), rgba(5, 4, 3, 0.7)),
-        url("/assets/medieval-hall-background.jpg");
-    background-attachment: fixed;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: max(100vw, 1717px) auto;
+    isolation: isolate;
+    background: var(--background);
     font-family: Georgia, "Times New Roman", serif;
 }
 
 body::before {
     position: fixed;
     inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    content: "";
-    background:
-        radial-gradient(circle at 50% 15%, rgba(203, 155, 73, 0.1), transparent 35%),
-        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 4px);
-}
-
-/* Keep the photographed wall torches visible and give their fire a subtle,
-   low-cost flicker without introducing an animated image download. */
-body::after {
-    position: fixed;
-    inset: 0;
     z-index: 0;
     pointer-events: none;
     content: "";
-    background:
-        radial-gradient(ellipse at 7.5% 56%, rgba(255, 244, 179, 0.9) 0 0.18%, rgba(255, 153, 38, 0.65) 0.45%, rgba(214, 78, 12, 0.2) 1.1%, transparent 3.8%),
-        radial-gradient(ellipse at 92.5% 56%, rgba(255, 244, 179, 0.9) 0 0.18%, rgba(255, 153, 38, 0.65) 0.45%, rgba(214, 78, 12, 0.2) 1.1%, transparent 3.8%);
-    mix-blend-mode: screen;
-    transform-origin: center 56%;
-    animation: torch-flicker 1.8s steps(1, end) infinite;
+    background-color: var(--background);
+    background-image:
+        linear-gradient(rgba(5, 4, 3, 0.22), rgba(5, 4, 3, 0.7)),
+        radial-gradient(circle at 50% 15%, rgba(203, 155, 73, 0.1), transparent 35%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 4px),
+        url("/assets/medieval-hall-background.jpg");
+    background-position: center, center, center, center top;
+    background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+    background-size: cover, cover, auto, 100% 100%;
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .site-header,
@@ -1257,15 +1243,6 @@ body::after {
 body > .site-footer {
     position: relative;
     z-index: 1;
-}
-
-@keyframes torch-flicker {
-    0%, 100% { opacity: 0.72; filter: brightness(0.95); transform: scaleY(1); }
-    13% { opacity: 0.92; filter: brightness(1.16); transform: scaleY(1.018); }
-    29% { opacity: 0.64; filter: brightness(0.9); transform: scaleY(0.988); }
-    47% { opacity: 0.86; filter: brightness(1.08); transform: scaleY(1.012); }
-    68% { opacity: 0.7; filter: brightness(0.98); transform: scaleY(0.994); }
-    83% { opacity: 0.95; filter: brightness(1.2); transform: scaleY(1.02); }
 }
 
 .site-header {
@@ -1459,10 +1436,10 @@ body > .site-footer {
         0 20px 50px rgba(0, 0, 0, 0.75);
 }
 
-@media (min-width: 1321px) {
+@media (min-width: 1000px) {
     .layout,
     .page-layout {
-        width: min(1180px, calc(100% - 220px));
+        width: min(1180px, calc(100% - 180px));
     }
 }
 
@@ -1776,10 +1753,6 @@ blockquote,
 }
 
 @media (max-width: 1320px) {
-    body::after {
-        display: none;
-    }
-
     .site-header {
         position: static;
         flex-wrap: wrap;
@@ -1792,13 +1765,6 @@ blockquote,
 
     .site-search {
         max-width: 320px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    body::after {
-        animation: none;
-        opacity: 0.76;
     }
 }
 
