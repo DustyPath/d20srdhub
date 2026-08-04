@@ -2,7 +2,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from importer.psionics_directory import build_psionics_article, parse_power_page
+from importer.psionics_directory import (
+    build_power_directory,
+    build_psionics_article,
+    parse_power_page,
+)
 
 
 class PsionicsDirectoryTests(unittest.TestCase):
@@ -35,11 +39,15 @@ class PsionicsDirectoryTests(unittest.TestCase):
                 encoding="utf-8",
             )
             article = build_psionics_article([parse_power_page(page, public)])
-            self.assertIn("data-power-directory", article)
-            self.assertIn("Test Power", article)
-            self.assertIn('href="/psionic/classes/"', article)
+            self.assertNotIn("data-power-directory", article)
+            self.assertIn('href="/psionics/powers/"', article)
+            self.assertIn('href="/psionics/character-classes/"', article)
             self.assertIn('href="/psionic/items/"', article)
-            self.assertIn("psionics-directory.js?v=1", article)
+
+            directory = build_power_directory([parse_power_page(page, public)])
+            self.assertIn("data-power-directory", directory)
+            self.assertIn("Test Power", directory)
+            self.assertIn("psionics-directory.js?v=1", directory)
 
     def test_normalizes_psychokinetic_source_label(self):
         with tempfile.TemporaryDirectory() as directory:

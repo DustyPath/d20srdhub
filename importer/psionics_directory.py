@@ -21,14 +21,14 @@ DISCIPLINES = (
 
 REFERENCE_CARDS = (
     ("Psionic Rules", "/psionic/psionic-powers-overview/", "Manifesting powers, displays, power resistance, and psionic disciplines."),
-    ("Power Lists", "/psionic/power-list/", "Powers by manifester class, discipline, and level."),
-    ("Psionic Feats", "/psionic/psionic-feats/", "General, metapsionic, and psionic feat descriptions."),
+    ("Psionic Powers", "/psionics/powers/", "Search powers by name, discipline, and level."),
+    ("Psionic Feats", "/psionics/feats/", "Search general, metapsionic, psionic, and item creation feats."),
     ("Psionic Races", "/psionic/psionic-races/", "Racial traits and psionic character options."),
 )
 
 LIBRARY_CARDS = (
-    ("Psionic Classes", "/psionic/classes/", "Psion, psychic warrior, soulknife, and wilder."),
-    ("Prestige Classes", "/psionic/prestige-classes/", "Advanced psionic paths and their class features."),
+    ("Character Classes", "/psionics/character-classes/", "Psion, psychic warrior, soulknife, and wilder."),
+    ("Prestige Classes", "/psionics/prestige-classes/", "Advanced psionic paths and their class features."),
     ("Psionic Skills", "/psionic/skills/", "Autohypnosis, Psicraft, and other psionic skill rules."),
     ("Psionic Items", "/psionic/items/", "Dorjes, power stones, psicrowns, weapons, armor, and artifacts."),
     ("Psionic Monsters", "/psionic/monsters/", "Psionic creatures and complete statistics."),
@@ -110,8 +110,8 @@ def _cards(cards, class_name):
     )
 
 
-def build_psionics_article(entries):
-    """Build the Psionics hub and filterable power directory."""
+def build_power_directory(entries):
+    """Build the filterable psionic power directory section."""
 
     disciplines = sorted({entry.discipline for entry in entries})
     discipline_options = "".join(
@@ -145,16 +145,6 @@ def build_psionics_article(entries):
         )
 
     return (
-        "<h1>Psionics</h1>\n"
-        "<p>Explore the complete SRD psionics system: manifesters, powers, disciplines, feats, skills, items, races, and creatures.</p>"
-        '<section aria-labelledby="psionic-rules-heading"><h2 id="psionic-rules-heading">Start with the rules</h2>'
-        '<div class="psionic-reference-grid">'
-        + _cards(REFERENCE_CARDS, "psionic-reference-card")
-        + "</div></section>"
-        '<section aria-labelledby="psionic-library-heading"><h2 id="psionic-library-heading">Characters and equipment</h2>'
-        '<div class="psionic-library-grid">'
-        + _cards(LIBRARY_CARDS, "psionic-library-card")
-        + "</div></section>"
         '<section class="power-directory" id="power-directory" data-power-directory>'
         '<h2>Power directory</h2><p>Search all imported psionic powers and narrow the results by discipline or power level.</p>'
         '<div class="power-filters"><label>Power name or keyword'
@@ -166,6 +156,34 @@ def build_psionics_article(entries):
         + '</select></label><p data-power-count aria-live="polite"></p></div>'
         + "".join(groups)
         + '</section><script src="/assets/psionics-directory.js?v=1" defer></script>'
+    )
+
+
+def build_psionics_article(entries):
+    """Build the master Psionics hub with dedicated content tabs."""
+
+    tabs = (
+        ("Character Classes", "/psionics/character-classes/"),
+        ("Prestige Classes", "/psionics/prestige-classes/"),
+        ("Feats", "/psionics/feats/"),
+        (f"Powers ({len(entries)})", "/psionics/powers/"),
+    )
+    tab_links = "".join(
+        f'<a href="{escape(href, quote=True)}">{escape(label)}</a>'
+        for label, href in tabs
+    )
+    return (
+        "<h1>Psionics</h1>\n"
+        "<p>Explore the complete SRD psionics system: manifesters, powers, disciplines, feats, skills, items, races, and creatures.</p>"
+        f'<nav class="psionics-content-tabs" aria-label="Psionics content">{tab_links}</nav>'
+        '<section aria-labelledby="psionic-rules-heading"><h2 id="psionic-rules-heading">Start with the rules</h2>'
+        '<div class="psionic-reference-grid">'
+        + _cards(REFERENCE_CARDS, "psionic-reference-card")
+        + "</div></section>"
+        '<section aria-labelledby="psionic-library-heading"><h2 id="psionic-library-heading">Characters and equipment</h2>'
+        '<div class="psionic-library-grid">'
+        + _cards(LIBRARY_CARDS, "psionic-library-card")
+        + "</div></section>"
     )
 
 

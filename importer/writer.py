@@ -145,6 +145,7 @@ def write_page(output_path, title, article_html):
         .replace("{{ARTICLE}}", article_html)
         .replace("{{PAGE_NAVIGATION}}", page_navigation)
     )
+    page = "\n".join(line.rstrip() for line in page.splitlines()) + "\n"
 
     destination = PUBLIC_DIR / output_path / "index.html"
 
