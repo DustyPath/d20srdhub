@@ -2045,3 +2045,85 @@ blockquote,
     .monster-filters { grid-template-columns: 1fr; }
     .monster-filters label:first-child { grid-column: auto; }
 }
+
+/* Psionics directory */
+.psionic-reference-grid,
+.psionic-library-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 18px 0 30px;
+}
+
+.psionic-reference-card,
+.psionic-library-card,
+.power-directory-list a {
+    display: block;
+    padding: 16px;
+    color: var(--text);
+    border: 1px solid #8e6f3f;
+    border-top: 3px solid var(--accent);
+    background: var(--surface);
+    box-shadow: 0 3px 9px rgba(49, 31, 12, 0.18);
+    text-decoration: none;
+}
+
+.psionic-reference-card strong,
+.psionic-reference-card span,
+.psionic-library-card strong,
+.psionic-library-card span,
+.power-directory-list strong,
+.power-directory-list span { display: block; }
+
+.psionic-reference-card strong,
+.psionic-library-card strong { color: var(--accent-dark); font-size: 1.08rem; }
+.psionic-reference-card span,
+.psionic-library-card span,
+.power-directory-list span { margin-top: 5px; color: var(--text-muted); font-size: .88rem; }
+
+.psionic-reference-card:hover,
+.psionic-library-card:hover,
+.power-directory-list a:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.power-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) repeat(2, minmax(160px, 1fr));
+    gap: 14px;
+    margin: 18px 0 28px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+}
+
+.power-filters label { color: var(--accent-dark); font-weight: 700; }
+.power-filters input,
+.power-filters select { display: block; width: 100%; margin-top: 6px; padding: 10px 12px; }
+.power-filters [data-power-count] { grid-column: 1 / -1; margin: 0; color: var(--text-muted); }
+.power-letter-group > h2 { font-size: 1.7rem; }
+.power-directory-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    padding: 0;
+    list-style: none;
+}
+.power-directory-list a { padding: 11px 13px; }
+
+@media (max-width: 900px) {
+    .psionic-reference-grid,
+    .psionic-library-grid,
+    .power-directory-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .power-filters { grid-template-columns: 1fr 1fr; }
+    .power-filters label:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+    .psionic-reference-grid,
+    .psionic-library-grid,
+    .power-directory-list,
+    .power-filters { grid-template-columns: 1fr; }
+    .power-filters label:first-child { grid-column: auto; }
+}
