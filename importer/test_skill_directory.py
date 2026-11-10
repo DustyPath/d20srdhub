@@ -59,16 +59,24 @@ class SkillDirectoryTests(unittest.TestCase):
             self.assertIn('<h5 id="check">Check</h5>', updated)
             self.assertIn('<h5 id="action">Action</h5>', updated)
 
-    def test_builds_skill_families_and_filter_controls(self):
-        page = SkillPage("Heal (Wis)", "skills/heal", "Wisdom Skills")
+    def test_builds_alphabetical_skill_list_and_filter_controls(self):
+        pages = [
+            SkillPage("Swim (Str)", "skills/swim", "Strength Skills"),
+            SkillPage("Heal (Wis)", "skills/heal", "Wisdom Skills"),
+        ]
         article = build_skill_article(
-            [page],
+            pages,
             [],
         )
 
         self.assertIn("data-skill-directory", article)
         self.assertIn("Epic &amp; Psionic Skills", article)
         self.assertIn("/skills/heal/", article)
+        self.assertLess(article.index("Heal (Wis)"), article.index("Swim (Str)"))
+        self.assertNotIn("skill-category-grid", article)
+        self.assertNotIn("skill-page-grid", article)
+        self.assertNotIn("<h2>Strength Skills</h2>", article)
+        self.assertNotIn("<h2>Wisdom Skills</h2>", article)
         self.assertIn("Skill-use quick reference", article)
         self.assertIn('href="/skills/a-z/"', article)
 

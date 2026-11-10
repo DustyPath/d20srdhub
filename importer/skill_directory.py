@@ -223,55 +223,32 @@ def collect_skill_topics(public_dir=PUBLIC_DIR):
 def build_skill_article(pages, topics):
     """Build the complete skill hub article."""
 
-    category_cards = "\n".join(
-        f'<a class="skill-category-card" href="#skill-{escape(slug)}">'
-        f'<strong class="skill-category-title">{escape(title)}</strong>'
-        f"<p>{escape(description)}</p></a>"
-        for title, slug, description in CATEGORIES
+    skill_entries = "\n".join(
+        '<li><a href="/'
+        f'{escape(page.output_path, quote=True)}/">'
+        f"<strong>{escape(page.title)}</strong>"
+        f"<span>{escape(page.category)}</span></a></li>"
+        for page in alphabetical_skill_pages(pages)
     )
     category_options = "\n".join(
         f'<option value="{escape(title, quote=True)}">{escape(title)}</option>'
         for title, _slug, _description in CATEGORIES
     )
-    page_sections = []
-    topic_sections = []
+    topic_entries = []
 
-    for category, slug, _description in CATEGORIES:
-        category_pages = [page for page in pages if page.category == category]
-        page_cards = "\n".join(
-            f'<a class="skill-page-card" href="/{escape(page.output_path)}/">'
-            f"<strong>{escape(page.title)}</strong>"
-            f"<span>{escape(category)}</span></a>"
-            for page in category_pages
-        )
-        page_sections.append(
-            f'<section class="skill-page-group" id="skill-{escape(slug)}">'
-            f"<h2>{escape(category)}</h2>"
-            f'<div class="skill-page-grid">{page_cards}</div></section>'
-        )
-        entries = []
-
-        for topic in topics:
-            if topic.category != category:
-                continue
-
-            search_text = f"{topic.name} {topic.page}".casefold()
-            entries.append(
-                '<li data-skill-item '
-                f'data-name="{escape(search_text, quote=True)}" '
-                f'data-category="{escape(topic.category, quote=True)}">'
-                f'<a href="{escape(topic.href, quote=True)}">'
-                f"<strong>{escape(topic.name)}</strong>"
-                f'<span class="skill-directory-meta">'
-                f"{escape(topic.page)}</span></a></li>"
-            )
-
-        topic_sections.append(
-            '<section class="skill-reference-group" data-skill-group>'
-            f'<strong class="skill-reference-title">{escape(category)}</strong>'
-            '<ul class="skill-directory-list">\n'
-            + "\n".join(entries)
-            + "\n</ul></section>"
+    for topic in sorted(
+        topics,
+        key=lambda item: (item.name.casefold(), item.page.casefold()),
+    ):
+        search_text = f"{topic.name} {topic.page}".casefold()
+        topic_entries.append(
+            '<li data-skill-item '
+            f'data-name="{escape(search_text, quote=True)}" '
+            f'data-category="{escape(topic.category, quote=True)}">'
+            f'<a href="{escape(topic.href, quote=True)}">'
+            f"<strong>{escape(topic.name)}</strong>"
+            f'<span class="skill-directory-meta">'
+            f"{escape(topic.page)}</span></a></li>"
         )
 
     return (
@@ -282,11 +259,10 @@ def build_skill_article(pages, topics):
         "</div>\n"
         "<p>Browse every standard skill, general skill rules, individual "
         "skill uses, and specialized epic and psionic skill systems.</p>\n"
-        '<section class="skill-category-grid" '
-        'aria-label="Skill categories">\n'
-        f"{category_cards}\n</section>\n"
-        + "\n".join(page_sections)
-        + "\n"
+        '<section class="skill-page-group" aria-labelledby="skills-a-z">\n'
+        '<h2 id="skills-a-z">Skills A–Z</h2>\n'
+        '<ul class="skill-az-list">\n'
+        f"{skill_entries}\n</ul>\n</section>\n"
         '<section class="skill-directory" data-skill-directory '
         'aria-labelledby="skill-reference">\n'
         '<h2 id="skill-reference">Skill-use quick reference</h2>\n'
@@ -298,8 +274,10 @@ def build_skill_article(pages, topics):
         f"{category_options}</select></label>\n"
         '<p class="skill-result-count" data-skill-count '
         'aria-live="polite"></p>\n</div>\n'
-        + "\n".join(topic_sections)
-        + "\n</section>\n"
+        '<section class="skill-reference-group" data-skill-group>\n'
+        '<ul class="skill-directory-list">\n'
+        + "\n".join(topic_entries)
+        + "\n</ul></section>\n</section>\n"
         '<script src="/assets/skill-directory.js?v=1" defer></script>'
     )
 
