@@ -30,7 +30,9 @@ class ForgottenRealmsArchiveTests(unittest.TestCase):
                 encoding="utf-8",
             )
             manifest = build(vault, root / "archive")
-            article = json.loads((root / "archive/articles" / f"{slug('Waterdeep')}.json").read_text())
+            article_slug = slug("Waterdeep")
+            shard = MODULE.hashlib.sha1(b"Waterdeep").hexdigest()[:2]
+            article = json.loads((root / "archive/article-shards" / f"{shard}.json").read_text())[article_slug]
             self.assertEqual(1, manifest["articles"])
             self.assertEqual("CC BY-SA 3.0", article["license"])
             self.assertFalse(manifest["images_included"])

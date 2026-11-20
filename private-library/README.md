@@ -77,7 +77,7 @@ python3 private-library/build_forgotten_realms_archive.py \
   private-library/generated-forgotten-realms
 ```
 
-The build creates 70,973 article objects, search shards, a manifest, and a
+The build creates 70,973 articles across 256 R2-sized content shards, search shards, a manifest, and a
 checksum. It rewrites wiki links to local GM Secrets paths and records the
 source URL and CC BY-SA 3.0 license on every article. It never imports images;
 Fandom's XML dump has none, and individual wiki files use varying rights terms.

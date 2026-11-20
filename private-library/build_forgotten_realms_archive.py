@@ -114,11 +114,12 @@ def markdown_to_html(markdown: str) -> str:
 
 
 def build(vault: Path, output: Path) -> dict[str, object]:
-    article_dir = output / "articles"
+    article_dir = output / "article-shards"
     search_dir = output / "search"
     article_dir.mkdir(parents=True, exist_ok=True)
     search_dir.mkdir(parents=True, exist_ok=True)
     search: dict[str, list[dict[str, str]]] = defaultdict(list)
+    article_shards: dict[str, dict[str, dict[str, str]]] = defaultdict(dict)
     categories: Counter[str] = Counter()
     count = 0
     for note in sorted(vault.rglob("*.md")):
@@ -135,9 +136,7 @@ def build(vault: Path, output: Path) -> dict[str, object]:
             "license_url": LICENSE_URL,
             "html": markdown_to_html(markdown),
         }
-        (article_dir / f"{article_slug}.json").write_text(
-            json.dumps(record, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
-        )
+        article_shards[hashlib.sha1(title.encode("utf-8")).hexdigest()[:2]][article_slug] = record
         plain = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", record["html"]))
         search[shard_key(title)].append({
             "title": title,
@@ -147,6 +146,10 @@ def build(vault: Path, output: Path) -> dict[str, object]:
         })
         categories[category] += 1
         count += 1
+    for key, records in article_shards.items():
+        (article_dir / f"{key}.json").write_text(
+            json.dumps(records, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
+        )
     for key, records in search.items():
         records.sort(key=lambda item: item["title"].casefold())
         (search_dir / f"{key}.json").write_text(
@@ -160,6 +163,7 @@ def build(vault: Path, output: Path) -> dict[str, object]:
         "license": LICENSE_NAME,
         "license_url": LICENSE_URL,
         "images_included": False,
+        "article_shards": len(article_shards),
     }
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     digest = hashlib.sha256((output / "manifest.json").read_bytes()).hexdigest()

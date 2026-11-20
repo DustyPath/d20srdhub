@@ -2,3 +2,4 @@
 import_errors.txt
 private-library/generated/
 private-library/generated-forgotten-realms/
+private-library/.wrangler/
